@@ -1,63 +1,65 @@
-
 const fs = require("fs");
-const path = __dirname + "/rangData.json";
+const dbPath = __dirname + "/rangData.json";
 
 module.exports = {
   config: {
     name: "rang",
     version: "1.0",
-    author: "Merdi Madimba",
+    author: "Merdi madimba",
     description: {
-      fr: "Classement de scores (admin modifie, tous consultent)",
-      en: "Scoreboard (admin edit, all consult)"
+      fr: "Classement des joueurs avec scores et rangs",
+      en: "Group scoreboard with ranks and scores"
     },
     usage: "{prefix}rang add/set/top/position",
-    commandCategory: "group",
+    commandCategory: "groupe",
     cooldowns: 2
   },
 
   onStart: async function ({ message, event, args, prefix }) {
-    const ADMIN_ID = "100065927401614"; // ← Mets ton UID Facebook ici
+    const ADMIN_ID = "100065927401614"; // ← Remplace par ton UID Facebook
     const threadID = event.threadID;
     const senderID = event.senderID;
 
-    // Crée le fichier JSON si inexistant
-    if (!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
-    const data = JSON.parse(fs.readFileSync(path));
+    if (!fs.existsSync(dbPath)) fs.writeFileSync(dbPath, JSON.stringify({}));
+    const data = JSON.parse(fs.readFileSync(dbPath));
     if (!data[threadID]) data[threadID] = {};
 
     const cmd = args[0];
-    const name = args[1];
-    const value = parseInt(args[2]);
+    const nom = args[1];
+    const valeur = parseInt(args[2]);
 
+    // Autorisation admin
     if (["add", "set"].includes(cmd) && senderID !== ADMIN_ID)
       return message.reply("⛔ Seul l’administrateur du bot peut modifier les scores.");
 
     switch (cmd) {
       case "add":
-        if (!name || isNaN(value)) return message.reply(`❗ Utilisation : prefixrang add [nom] [score]`);
-        data[threadID][name] = (data[threadID][name] || 0) + value;
-        fs.writeFileSync(path, JSON.stringify(data, null, 2));
-        return message.reply(`✅{name} a maintenant data[threadID][name] pts.`);
+        if (!nom || isNaN(valeur))
+          return message.reply(`❗ Utilisation : prefixrang add [nom] [score]`);
+        data[threadID][nom] = (data[threadID][nom] || 0) + valeur;
+        fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+        return message.reply(`✅{nom} a maintenant data[threadID][nom] pts.`);
 
       case "set":
-        if (!name || isNaN(value)) return message.reply(`❗ Utilisation :{prefix}rang set [nom] [score]`);
-        data[threadID][name] = value;
-        fs.writeFileSync(path, JSON.stringify(data, null, 2));
-        return message.reply(`✅ Score de name mis à jour à{value} pts.`);
+        if (!nom || isNaN(valeur))
+          return message.reply(`❗ Utilisation :{prefix}rang set [nom] [score]`);
+        data[threadID][nom] = valeur;
+        fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+        return message.reply(`✅ Score de nom mis à jour à{valeur} pts.`);
 
       case "position":
-        if (!name) return message.reply(`❗ Utilisation : prefixrang position [nom]`);
+        if (!nom)
+          return message.reply(`❗ Utilisation : prefixrang position [nom]`);
         const classement = Object.entries(data[threadID]).sort((a, b) => b[1] - a[1]);
-        const pos = classement.findIndex(([n]) => n.toLowerCase() === name.toLowerCase());
-        if (pos === -1) return message.reply(`🔍{name} n’est pas encore enregistré.`);
+        const pos = classement.findIndex(([n]) => n.toLowerCase() === nom.toLowerCase());
+        if (pos === -1) return message.reply(`🔍{nom} n’est pas encore enregistré.`);
         return message.reply(
-          `📌 Position de name :🏅 Rang : #{pos + 1}\n📊 Score : ${classement[pos][1]} pts`
+          `📌 Position de nom :🏅 Rang : #{pos + 1}\n📊 Score : ${classement[pos][1]} pts`
         );
 
       case "top":
         const sorted = Object.entries(data[threadID]).sort((a, b) => b[1] - a[1]);
-        if (sorted.length === 0) return message.reply("📭 Aucun joueur encore enregistré.");
+        if (sorted.length === 0) return message.reply("📭 Aucun joueur enregistré.");
         const list = sorted.map(([n, s], i) =>
           `#{i + 1}️⃣  n —{s} pts`).join("\n");
         return message.reply(`🏆 Classement du groupe :\n\nlist`);
@@ -71,4 +73,3 @@ module.exports = {
     }
   }
 };
- 
