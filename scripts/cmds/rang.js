@@ -17,7 +17,7 @@ module.exports = {
   },
 
   onStart: async function ({ message, event, args, prefix }) {
-    const ADMIN_ID = "1000XXXXXXXXXX"; // ← Mets ton UID Facebook ici
+    const ADMIN_ID = "100065927401614"; // ← Mets ton UID Facebook ici
     const threadID = event.threadID;
     const senderID = event.senderID;
 
