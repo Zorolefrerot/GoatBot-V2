@@ -27,44 +27,44 @@ module.exports = {
 
     const cmd = args[0];
     const name = args[1];
-    const value = parseInt(args[2]);
-
-    if (["add", "set"].includes(cmd) && senderID !== ADMIN_ID)
+    const value = parseInt(args[2]); if (["add", "set"].includes(cmd)        senderID !== ADMIN_ID)
       return message.reply("⛔ Seul l’administrateur du bot peut modifier les scores.");
 
-    switch (cmd) {
-      case "add":if (!name || isNaN(value)) return message.reply(`❗ Utilisation : prefixrang add [nom] [score]`);
+    switch (cmd) 
+      case "add":
+        if (!name || isNaN(value)) return message.reply(`❗ Utilisation :{prefix}rang add [nom] [score]`);
         data[threadID][name] = (data[threadID][name] || 0) + value;
-        break;
+        fs.writeFileSync(path, JSON.stringify(data, null, 2));
+        return message.reply(`✅ name a maintenant{data[threadID][name]} pts.`);
 
       case "set":
-        if (!name || isNaN(value)) return message.reply(`❗ Utilisation :{prefix}rang set [nom] [score]`);
+        if (!name || isNaN(value)) return message.reply(`❗ Utilisation : prefixrang set [nom] [score]`);
         data[threadID][name] = value;
-        break;
+        fs.writeFileSync(path, JSON.stringify(data, null, 2));
+        return message.reply(`✅ Score de{name} mis à jour à value pts.`);
 
       case "position":
-        if (!name) return message.reply(`❗ Utilisation : prefixrang position [nom]`);
+        if (!name) return message.reply(`❗ Utilisation :{prefix}rang position [nom]`);
         const classement = Object.entries(data[threadID]).sort((a, b) => b[1] - a[1]);
         const pos = classement.findIndex(([n]) => n.toLowerCase() === name.toLowerCase());
-        if (pos === -1) return message.reply(`🔍{name} n’est pas encore enregistré.`);
-        return message.reply(`📌 Position de name :🏅 Rang : #{pos + 1}\n📊 Score : classement[pos][1] pts`);
+        if (pos === -1) return message.reply(`🔍 name n’est pas encore enregistré.`);
+        return message.reply(
+          `📌 Position de{name} :\n🏅 Rang : #pos + 1📊 Score :{classement[pos][1]} pts`);
 
       case "top":
         const sorted = Object.entries(data[threadID]).sort((a, b) => b[1] - a[1]);
         if (sorted.length === 0) return message.reply("📭 Aucun joueur encore enregistré.");
         const list = sorted.map(([n, s], i) =>
-          `#{i + 1}️⃣  n —{s} pts`).join("\n");
-        return message.reply("🏆 Classement du groupe :\n\n" + list);
+          `#i + 1️⃣{n} — s pts`).join("");
+        return message.reply(`🏆 Classement du groupe :{list}`);
 
       default:
-        return message.reply(`📚 Commandes disponibles :- prefixrang add [nom] [score] (admin)
+        return message.reply(`📚 Commandes disponibles :
+- prefixrang add [nom] [score] (admin)
 -{prefix}rang set [nom] [score] (admin)
 - prefixrang position [nom]
 -{prefix}rang top`);
     }
-
-    fs.writeFileSync(path, JSON.stringify(data, null, 2));
-    message.reply("✅ Score mis à jour.");
   }
 };
  
