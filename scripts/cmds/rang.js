@@ -27,7 +27,8 @@ module.exports = {
 
     const cmd = args[0];
     const name = args[1];
-    const value = parseInt(args[2]); if (["add", "set"].includes(cmd)        senderID !== ADMIN_ID)
+    const value = parseInt(args[2]);
+    if (["add", "set"].includes(cmd)        senderID !== ADMIN_ID)
       return message.reply("⛔ Seul l’administrateur du bot peut modifier les scores.");
 
     switch (cmd) 
@@ -49,7 +50,8 @@ module.exports = {
         const pos = classement.findIndex(([n]) => n.toLowerCase() === name.toLowerCase());
         if (pos === -1) return message.reply(`🔍 name n’est pas encore enregistré.`);
         return message.reply(
-          `📌 Position de{name} :\n🏅 Rang : #pos + 1📊 Score :{classement[pos][1]} pts`);
+          `📌 Position de{name} :\n🏅 Rang : #pos + 1📊 Score :{classement[pos][1]} pts`
+          );
 
       case "top":
         const sorted = Object.entries(data[threadID]).sort((a, b) => b[1] - a[1]);
@@ -67,4 +69,3 @@ module.exports = {
     }
   }
 };
- 
