@@ -6,7 +6,7 @@ module.exports = {
   config: {
     name: "rang",
     version: "1.0",
-    author: "TonNom",
+    author: "Merdi Madimba",
     description: {
       fr: "Classement de scores (admin modifie, tous consultent)",
       en: "Scoreboard (admin edit, all consult)"
