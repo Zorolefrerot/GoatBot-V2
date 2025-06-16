@@ -4,7 +4,7 @@ const path = __dirname + "/scoreData.json";
 
 module.exports = {
   config: {
-    name: "scores",
+    name: "score",
     version: "1.0",
     author: "Merdi Madimba",
     description: {
