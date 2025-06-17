@@ -1,88 +1,41 @@
-// 📁 flag.js — Commande Quiz Drapeaux pour GoatBot Messenger
+const fs = require("fs-extra");
 
-const fs = require("fs");
+module.exports = { config: { name: "flag", version: "1.1", author: "Merdi Madimba", countDown: 5, role: 0, shortDescription: "Quiz drapeaux", longDescription: "Lance un quiz de reconnaissance des drapeaux avec classement final", category: "game", guide: "{pn} [facile|difficile]" },
 
-let quizInProgress = false; let currentQuiz = null;
+onStart: async function ({ message, event, args, usersData, commandName, api }) { const levelInput = args[0]?.toLowerCase(); const levels = ["facile", "difficile"];
 
-const flags = { facile: [ { emoji: "🇫🇷", answer: "france" }, { emoji: "🇧🇪", answer: "belgique" }, { emoji: "🇨🇦", answer: "canada" }, { emoji: "🇺🇸", answer: "usa" }, { emoji: "🇨🇩", answer: "rdc" }, { emoji: "🇬🇧", answer: "royaume-uni" }, { emoji: "🇮🇹", answer: "italie" }, { emoji: "🇩🇪", answer: "allemagne" }, { emoji: "🇪🇸", answer: "espagne" }, { emoji: "🇯🇵", answer: "japon" }, { emoji: "🇨🇳", answer: "chine" }, { emoji: "🇰🇷", answer: "corée du sud" }, { emoji: "🇲🇽", answer: "mexique" }, { emoji: "🇧🇷", answer: "brésil" }, { emoji: "🇦🇷", answer: "argentine" }, { emoji: "🇵🇹", answer: "portugal" }, { emoji: "🇳🇬", answer: "nigeria" }, { emoji: "🇿🇦", answer: "afrique du sud" }, { emoji: "🇮🇳", answer: "inde" }, { emoji: "🇹🇷", answer: "turquie" }, { emoji: "🇷🇺", answer: "russie" }, { emoji: "🇦🇺", answer: "australie" }, { emoji: "🇸🇳", answer: "sénégal" }, { emoji: "🇲🇦", answer: "maroc" }, { emoji: "🇪🇬", answer: "egypte" }, { emoji: "🇵🇰", answer: "pakistan" }, { emoji: "🇮🇩", answer: "indonésie" }, { emoji: "🇻🇳", answer: "vietnam" }, { emoji: "🇵🇭", answer: "philippines" }, { emoji: "🇸🇪", answer: "suède" }, { emoji: "🇳🇴", answer: "norvège" }, { emoji: "🇫🇮", answer: "finlande" }, { emoji: "🇩🇰", answer: "danemark" }, { emoji: "🇵🇱", answer: "pologne" }, { emoji: "🇨🇭", answer: "suisse" }, { emoji: "🇦🇹", answer: "autriche" }, { emoji: "🇳🇱", answer: "pays-bas" }, { emoji: "🇬🇷", answer: "grèce" }, { emoji: "🇮🇪", answer: "irlande" }, { emoji: "🇧🇬", answer: "bulgarie" }, { emoji: "🇭🇺", answer: "hongrie" }, { emoji: "🇨🇿", answer: "tchéquie" }, { emoji: "🇸🇰", answer: "slovaquie" }, { emoji: "🇷🇴", answer: "roumanie" }, { emoji: "🇭🇷", answer: "croatie" }, { emoji: "🇷🇸", answer: "serbie" }, { emoji: "🇧🇦", answer: "bosnie" }, { emoji: "🇸🇮", answer: "slovénie" }, { emoji: "🇺🇦", answer: "ukraine" } ], difficile: [ { emoji: "🇧🇹", answer: "bhoutan" }, { emoji: "🇲🇭", answer: "îles marshall" }, { emoji: "🇱🇸", answer: "lesotho" }, { emoji: "🇰🇲", answer: "comores" }, { emoji: "🇸🇿", answer: "eswatini" }, { emoji: "🇬🇶", answer: "guinée équatoriale" }, { emoji: "🇨🇫", answer: "république centrafricaine" }, { emoji: "🇪🇷", answer: "érythrée" }, { emoji: "🇹🇱", answer: "timor oriental" }, { emoji: "🇸🇹", answer: "sao tomé-et-principe" }, { emoji: "🇲🇶", answer: "martinique" }, { emoji: "🇬🇫", answer: "guyane française" }, { emoji: "🇻🇨", answer: "saint-vincent-et-les-grenadines" }, { emoji: "🇰🇳", answer: "saint-christophe-et-niévès" }, { emoji: "🇲🇸", answer: "montserrat" }, { emoji: "🇱🇨", answer: "sainte-lucie" }, { emoji: "🇦🇬", answer: "antigua-et-barbuda" }, { emoji: "🇩🇲", answer: "dominique" }, { emoji: "🇧🇧", answer: "barbade" }, { emoji: "🇬🇩", answer: "grenade" }, { emoji: "🇧🇿", answer: "belize" }, { emoji: "🇹🇻", answer: "tuvalu" }, { emoji: "🇳🇷", answer: "nauru" }, { emoji: "🇼🇸", answer: "samoa" }, { emoji: "🇰🇮", answer: "kiribati" }, { emoji: "🇵🇼", answer: "palaos" }, { emoji: "🇫🇲", answer: "micronésie" }, { emoji: "🇸🇧", answer: "îles salomon" }, { emoji: "🇻🇺", answer: "vanuatu" }, { emoji: "🇹🇴", answer: "tonga" }, { emoji: "🇲🇵", answer: "îles mariannes du nord" }, { emoji: "🇲🇫", answer: "saint-martin" }, { emoji: "🇧🇱", answer: "saint-barthélemy" }, { emoji: "🇵🇲", answer: "saint-pierre-et-miquelon" }, { emoji: "🇬🇵", answer: "guadeloupe" }, { emoji: "🇷🇪", answer: "la réunion" }, { emoji: "🇾🇹", answer: "mayotte" }, { emoji: "🇲🇬", answer: "madagascar" }, { emoji: "🇲🇿", answer: "mozambique" }, { emoji: "🇲🇼", answer: "malawi" }, { emoji: "🇹🇿", answer: "tanzanie" }, { emoji: "🇷🇼", answer: "rwanda" }, { emoji: "🇧🇮", answer: "burundi" }, { emoji: "🇸🇴", answer: "somalie" }, { emoji: "🇸🇱", answer: "sierra leone" }, { emoji: "🇱🇷", answer: "libéria" }, { emoji: "🇨🇻", answer: "cap-vert" }, { emoji: "🇬🇲", answer: "gambie" }, { emoji: "🇸🇨", answer: "seychelles" } ] };
+if (!levelInput || !levels.includes(levelInput)) {
+  return message.reply("🧠 Tu dois spécifier un niveau de difficulté. Exemple :\n› flag facile\n› flag difficile\n\nOu tape simplement `flag` pour recommencer.");
+}
 
-module.exports = { config: { name: "flag", version: "1.0", author: "Merdi Madimba", role: 0, shortDescription: "Quiz sur les drapeaux", longDescription: "Un quiz interactif où tu dois deviner le pays à partir du drapeau !", category: "🎮 Jeux", guide: "{p}flag" },
+const level = levelInput;
 
-onStart: async function ({ message, event, usersData, args, api }) { if (quizInProgress) return message.reply("⏳ Un quiz est déjà en cours ! Attends qu’il se termine.");
+const questionCounts = [5, 10, 20, 30];
 
-quizInProgress = true;
-const senderID = event.senderID;
-const threadID = event.threadID;
+const listener = async ({ event: eventCount, message: msgCount }) => {
+  const count = parseInt(msgCount.body);
+  if (!questionCounts.includes(count)) {
+    return message.reply("❌ Nombre invalide. Choisis entre : 5 | 10 | 20 | 30");
+  }
 
-const ask = (text) => new Promise((resolve) => {
-  api.sendMessage(text, threadID, (err, info) => {
-    const listener = ({ body, senderID: id }) => {
-      if (id === senderID) {
-        api.removeListener("message", listener);
-        resolve(body.toLowerCase());
-      }
-    };
-    api.listen(listener);
+  global.GoatBot.onReply.delete(event.threadID);
+  await startQuiz(level, count, event.threadID, message, api);
+};
+
+message.reply(`📊 Combien de questions veux-tu pour le niveau ${level.toUpperCase()} ?\nChoisis parmi : 5 | 10 | 20 | 30`, (err, info) => {
+  global.GoatBot.onReply.set(info.messageID, {
+    commandName,
+    messageID: info.messageID,
+    author: event.senderID,
+    type: "getCount",
+    callback: listener
   });
 });
 
-const level = await ask("Quel niveau veux-tu ? ✨\n- facile\n- difficile");
-if (!flags[level]) return message.reply("❌ Niveau invalide. Commande annulée.");
-
-const nbStr = await ask("Combien de questions ? \n- 5\n- 10\n- 20\n- 30");
-const total = parseInt(nbStr);
-if (![5, 10, 20, 30].includes(total)) return message.reply("❌ Nombre invalide. Commande annulée.");
-
-const quizSet = [...flags[level]].sort(() => Math.random() - 0.5).slice(0, total);
-const scores = {};
-
-for (let i = 0; i < quizSet.length; i++) {
-  const q = quizSet[i];
-  api.sendMessage(`🌍 Question ${i + 1}/${total} : Quel pays correspond à ce drapeau ? ${q.emoji}`, threadID);
-
-  const response = await new Promise((resolve) => {
-    let taken = false;
-    const timeout = setTimeout(() => {
-      if (!taken) {
-        resolve(null);
-        api.sendMessage("❌ Stop. Personne n’a take. Nxt Q", threadID);
-      }
-    }, 10000);
-
-    const listener = ({ body, senderID: id, threadID: tID, messageID }) => {
-      if (tID !== threadID || taken) return;
-      if (body.toLowerCase() === q.answer) {
-        taken = true;
-        clearTimeout(timeout);
-        api.removeListener("message", listener);
-        api.setMessageReaction("✅", messageID, () => {}, true);
-        resolve(id);
-      }
-    };
-    api.listen(listener);
-  });
-
-  if (response) {
-    scores[response] = (scores[response] || 0) + 1;
-  }
-}
-
-// Classement final
-const final = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-let board = "🏁 Résultat du Quiz Drapeau :\n\n";
-for (let [id, pts] of final) {
-  const name = (await usersData.getName(id)) || id;
-  board += `@${name} → ${pts} point(s)\n`;
-}
-if (final.length > 0) {
-  const winner = (await usersData.getName(final[0][0])) || final[0][0];
-  board += `\n🏆 Gagnant : @${winner}`;
-} else {
-  board += "Aucun gagnant 😢";
-}
-
-message.reply({ body: board, mentions: final.map(([id]) => ({ id, tag: "@" + (usersData.getName(id) || id) })) });
-quizInProgress = false;
-
 } };
 
+const easyFlags = [ { emoji: "🇫🇷", answer: "France" }, { emoji: "🇧🇪", answer: "Belgique" }, { emoji: "🇨🇩", answer: "RDC" }, { emoji: "🇯🇵", answer: "Japon" }, { emoji: "🇺🇸", answer: "États-Unis" }, { emoji: "🇮🇹", answer: "Italie" }, { emoji: "🇨🇳", answer: "Chine" }, { emoji: "🇷🇺", answer: "Russie" }, { emoji: "🇨🇦", answer: "Canada" }, { emoji: "🇧🇷", answer: "Brésil" }, { emoji: "🇬🇧", answer: "Royaume-Uni" }, { emoji: "🇩🇪", answer: "Allemagne" }, { emoji: "🇪🇸", answer: "Espagne" }, { emoji: "🇲🇽", answer: "Mexique" }, { emoji: "🇦🇷", answer: "Argentine" }, { emoji: "🇳🇬", answer: "Nigéria" }, { emoji: "🇰🇪", answer: "Kenya" }, { emoji: "🇿🇦", answer: "Afrique du Sud" }, { emoji: "🇪🇬", answer: "Égypte" }, { emoji: "🇲🇦", answer: "Maroc" }, { emoji: "🇸🇳", answer: "Sénégal" }, { emoji: "🇹🇳", answer: "Tunisie" }, { emoji: "🇬🇭", answer: "Ghana" }, { emoji: "🇪🇹", answer: "Éthiopie" }, { emoji: "🇸🇩", answer: "Soudan" }, { emoji: "🇲🇱", answer: "Mali" }, { emoji: "🇳🇪", answer: "Niger" }, { emoji: "🇨🇲", answer: "Cameroun" }, { emoji: "🇹🇬", answer: "Togo" }, { emoji: "🇧🇯", answer: "Bénin" }, { emoji: "🇺🇬", answer: "Ouganda" }, { emoji: "🇨🇮", answer: "Côte d'Ivoire" }, { emoji: "🇷🇼", answer: "Rwanda" }, { emoji: "🇧🇫", answer: "Burkina Faso" }, { emoji: "🇧🇮", answer: "Burundi" }, { emoji: "🇸🇴", answer: "Somalie" }, { emoji: "🇹🇿", answer: "Tanzanie" }, { emoji: "🇲🇿", answer: "Mozambique" }, { emoji: "🇦🇴", answer: "Angola" }, { emoji: "🇲🇬", answer: "Madagascar" }, { emoji: "🇿🇲", answer: "Zambie" }, { emoji: "🇲🇼", answer: "Malawi" }, { emoji: "🇱🇷", answer: "Libéria" }, { emoji: "🇱🇸", answer: "Lesotho" }, { emoji: "🇱🇾", answer: "Libye" }, { emoji: "🇩🇯", answer: "Djibouti" }, { emoji: "🇬🇶", answer: "Guinée équatoriale" }, { emoji: "🇨🇬", answer: "Congo" }, { emoji: "🇬🇦", answer: "Gabon" }, { emoji: "🇸🇱", answer: "Sierra Leone" } ];
+
+const hardFlags = [ { emoji: "🇹🇱", answer: "Timor oriental" }, { emoji: "🇲🇭", answer: "Îles Marshall" }, { emoji: "🇰🇮", answer: "Kiribati" }, { emoji: "🇵🇼", answer: "Palaos" }, { emoji: "🇧🇿", answer: "Belize" }, { emoji: "🇬🇾", answer: "Guyana" }, { emoji: "🇸🇷", answer: "Suriname" }, { emoji: "🇦🇬", answer: "Antigua-et-Barbuda" }, { emoji: "🇧🇧", answer: "Barbade" }, { emoji: "🇻🇨", answer: "Saint-Vincent-et-les-Grenadines" }, { emoji: "🇩🇲", answer: "Dominique" }, { emoji: "🇬🇩", answer: "Grenade" }, { emoji: "🇰🇳", answer: "Saint-Christophe-et-Niévès" }, { emoji: "🇱🇨", answer: "Sainte-Lucie" }, { emoji: "🇲🇻", answer: "Maldives" }, { emoji: "🇧🇹", answer: "Bhoutan" }, { emoji: "🇲🇳", answer: "Mongolie" }, { emoji: "🇳🇷", answer: "Nauru" }, { emoji: "🇸🇧", answer: "Îles Salomon" }, { emoji: "🇻🇺", answer: "Vanuatu" }, { emoji: "🇼🇸", answer: "Samoa" }, { emoji: "🇹🇴", answer: "Tonga" }, { emoji: "🇫🇯", answer: "Fidji" }, { emoji: "🇹🇻", answer: "Tuvalu" }, { emoji: "🇸🇨", answer: "Seychelles" }, { emoji: "🇰🇲", answer: "Comores" }, { emoji: "🇲🇺", answer: "Maurice" }, { emoji: "🇧🇮", answer: "Burundi" }, { emoji: "🇪🇷", answer: "Érythrée" }, { emoji: "🇸🇴", answer: "Somalie" }, { emoji: "🇬🇼", answer: "Guinée-Bissau" }, { emoji: "🇹🇬", answer: "Togo" }, { emoji: "🇸🇹", answer: "Sao Tomé-et-Principe" }, { emoji: "🇲🇶", answer: "Martinique" }, { emoji: "🇵🇫", answer: "Polynésie française" }, { emoji: "🇬🇫", answer: "Guyane française" }, { emoji: "🇨🇽", answer: "Île Christmas" }, { emoji: "🇦🇸", answer: "Samoa américaines" }, { emoji: "🇧🇲", answer: "Bermudes" }, { emoji: "🇬🇬", answer: "Guernesey" }, { emoji: "🇯🇪", answer: "Jersey" }, { emoji: "🇲🇴", answer: "Macao" }, { emoji: "🇬🇮", answer: "Gibraltar" }, { emoji: "🇬🇱", answer: "Groenland" }, { emoji: "🇦🇮", answer: "Anguilla" }, { emoji: "🇨🇼", answer: "Curaçao" }, { emoji: "🇧🇶", answer: "Pays-Bas caribéens" }, { emoji: "🇰🇾", answer: "Îles Caïmans" }, { emoji: "🇲🇵", answer: "Îles Mariannes du Nord" } ];
+
+    
