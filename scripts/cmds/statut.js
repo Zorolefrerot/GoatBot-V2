@@ -1,75 +1,61 @@
-const fs = require("fs");
-const path = __dirname + "/leaderboard.json";
+ const fs = require("fs");
+const path = require("path");
+
+// Chemin vers le fichier de leaderboard
+const filePath = path.join(__dirname, "data", "leaderboard.json");
 
 module.exports = {
   config: {
     name: "statut",
     version: "1.0",
-    author: "Merdi",
-    role: 0,
-    shortDescription: "Voir ton statut",
-    longDescription: "Affiche ton nom, tes points et ton rang selon ton score",
+    author: "Merdi Madimba",
+    shortDescription: "Voir ton statut dans le classement",
+    longDescription: "Affiche le score et le rang d’un utilisateur depuis le leaderboard",
     category: "📊 Utilitaire",
     guide: {
-      en: "{p}statut <ton_nom>"
+      en: "{p}statut <nom>"
     }
   },
 
   onStart: async function ({ message, args }) {
-    if (args.length === 0) return message.reply("❗Tu dois entrer ton nom : {p}statut <ton_nom>");
+    if (!fs.existsSync(filePath)) return message.reply("❌ Aucun leaderboard trouvé.");
 
-    const username = args.join(" ");
-    let data = {};
+    const data = JSON.parse(fs.readFileSync(filePath));
+    const nom = args.join(" ");
 
-    if (fs.existsSync(path)) {
-      data = JSON.parse(fs.readFileSync(path));
-    }
+    if (!nom || !data[nom]) return message.reply("❌ Ce nom n'est pas enregistré dans le leaderboard.");
 
-    const points = data[username];
-    if (points === undefined) {
-      return message.reply(`🙁 ${username} n'est pas enregistré dans le tableau de score.`);
-    }
+    const score = data[nom];
+    let rang = "🔘 Aucun rang";
 
-    // Déterminer le rang selon les points
-    const getRank = (pts) => {
-      const ranges = [
-        [10, 100, "⚰️LES DÉCHETS DE LA SOCIÉTÉ 🚬"],
-        [110, 400, "🔞🚮LES WOOBI 🏳️‍🌈"],
-        [410, 600, "🤡LES AVORTONS💩"],
-        [610, 1200, "🗣️LES INTERPRÈTES DE LEWIS ET CLARK🤝"],
-        [1210, 1800, "🇻🇦LES SAGES DU VATICAN📜"],
-        [1810, 2400, "🧠LES PHILOSOPHES HANDICAPÉ 🦉"],
-        [2410, 3000, "🤔LES THÉORICIENS DES IDÉES 💡"],
-        [3010, 3600, "👨‍🎨LES HOMMES DE LA RENAISSANCE 🔬"],
-        [3610, 4200, "🍎LES THÉORICIENS DE LA RELATIVITÉ 🕢"],
-        [4210, 4800, "🧙‍♂️LES ENCHANTEURS DE LA LÉGENDE ARTHURIENNE 🔮"],
-        [4810, 5400, "🍎LES PÈRES DE LA PHYSIQUE CLASSIQUE 🤯"],
-        [5410, 6000, "🙏LES MISSIONNAIRES EXPLORATEURS D'AFRIQUE 🦁"],
-        [6010, 6600, "🗺️LES NAVIGATEURS DU GLOBE🌍"],
-        [6610, 7200, "⚓LES AMIRAUX CHINOIS 🇨🇳"],
-        [7210, 7800, "🌃LES MAÎTRES DES TROUS NOIRS⚫"],
-        [7810, 8400, "⚓LES AMIRAUX DE LA MER OCÉANE 🌊"],
-        [8410, 9000, "🧠LES PROPHÈTES DU SURHOMME 🚀"],
-        [9010, 10600, "⚔️LES CORSAIRES DE LA REINE 👑"],
-        [10610, 12600, "🤝 PHILANTHROPE ❤️"],
-        [12610, 14600, "👨‍🌾 PIONNIER DE PONTYPANDY🛤️"],
-        [14610, 16600, "✊ ABOLITIONNISTE ⛓️"],
-        [16610, 18600, "🎨 MÉCÈNE 💰"],
-        [18610, 20600, "🕊️ FONDATEUR D'ORDRE RELIGIEUX📕"],
-        [20610, 22600, "✍️REFORMATEUR RELIGIEUX✝️"],
-        [22610, 24600, "🏰 SEIGNEUR FEODAL🌾"],
-        [24610, 26600, "🛡️ CHEF DE GUERRE TRIBAL🏹"]
-      ];
+    // Définir le rang selon les points
+    if (score >= 10 && score <= 100) rang = "⚰️LES DÉCHETS DE LA SOCIÉTÉ 🚬";
+    else if (score >= 110 && score <= 400) rang = "🔞🚮LES WOOBI 🏳️‍🌈";
+    else if (score >= 410 && score <= 600) rang = "🤡LES AVORTONS💩";
+    else if (score >= 610 && score <= 1200) rang = "🗣️LES INTERPRÈTES DE LEWIS ET CLARK🤝";
+    else if (score >= 1210 && score <= 1800) rang = "🇻🇦LES SAGES DU VATICAN📜";
+    else if (score >= 1810 && score <= 2400) rang = "🧠LES PHILOSOPHES HANDICAPÉ 🦉";
+    else if (score >= 2410 && score <= 3000) rang = "🤔LES THÉORICIENS DES IDÉES 💡";
+    else if (score >= 3010 && score <= 3600) rang = "👨‍🎨LES HOMMES DE LA RENAISSANCE 🔬";
+    else if (score >= 3610 && score <= 4200) rang = "🍎LES THÉORICIENS DE LA RELATIVITÉ 🕢";
+    else if (score >= 4210 && score <= 4800) rang = "🧙‍♂️LES ENCHANTEURS DE LA LÉGENDE ARTHURIENNE 🔮";
+    else if (score >= 4810 && score <= 5400) rang = "🍎LES PÈRES DE LA PHYSIQUE CLASSIQUE 🤯";
+    else if (score >= 5410 && score <= 6000) rang = "🙏LES MISSIONNAIRES EXPLORATEURS D'AFRIQUE 🦁";
+    else if (score >= 6010 && score <= 6600) rang = "🗺️LES NAVIGATEURS DU GLOBE🌍";
+    else if (score >= 6610 && score <= 7200) rang = "⚓LES AMIRAUX CHINOIS 🇨🇳";
+    else if (score >= 7210 && score <= 7800) rang = "🌃LES MAÎTRES DES TROUS NOIRS⚫";
+    else if (score >= 7810 && score <= 8400) rang = "⚓LES AMIRAUX DE LA MER OCÉANE 🌊";
+    else if (score >= 8410 && score <= 9000) rang = "🧠LES PROPHÈTES DU SURHOMME 🚀";
+    else if (score >= 9010 && score <= 10600) rang = "⚔️LES CORSAIRES DE LA REINE 👑";
+    else if (score >= 10610 && score <= 12600) rang = "🤝 PHILANTHROPE ❤️";
+    else if (score >= 12610 && score <= 14600) rang = "👨‍🌾 PIONNIER DE PONTYPANDY🛤️";
+    else if (score >= 14610 && score <= 16600) rang = "✊ ABOLITIONNISTE ⛓️";
+    else if (score >= 16610 && score <= 18600) rang = "🎨 MÉCÈNE 💰";
+    else if (score >= 18610 && score <= 20600) rang = "🕊️ FONDATEUR D'ORDRE RELIGIEUX📕";
+    else if (score >= 20610 && score <= 22600) rang = "✍️REFORMATEUR RELIGIEUX✝️";
+    else if (score >= 22610 && score <= 24600) rang = "🏰 SEIGNEUR FEODAL🌾";
+    else if (score >= 24610 && score <= 26600) rang = "🛡️ CHEF DE GUERRE TRIBAL🏹";
 
-      for (const [min, max, rank] of ranges) {
-        if (pts >= min && pts <= max) return rank;
-      }
-      return "🚫 Rang inconnu (hors catégorie)";
-    };
-
-    const rank = getRank(points);
-
-    const replyMsg = `👤 Nom : ${username}\n🏅 Points : ${points}\n🎖️ Rang : ${rank}`;
-    return message.reply(replyMsg);
+    return message.reply(`👤 Nom : ${nom}\n📊 Points : ${score}\n🎖️ Rang : ${rang}`);
   }
 };
