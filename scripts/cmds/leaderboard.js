@@ -1,15 +1,17 @@
-const fs = require("fs");
+ const fs = require("fs");
 const path = require("path");
-const filePath = path.join(__dirname, "../data/leaderboard.json");
+
+// Chemin vers le fichier JSON dans le dossier "data"
+const dataDir = path.join(__dirname, "data");
+const filePath = path.join(dataDir, "leaderboard.json");
 
 module.exports = {
   config: {
     name: "leaderboard",
-    version: "1.2",
+    version: "2.0",
     author: "Merdi Madimba",
-    role: 0,
-    shortDescription: "Affiche ou modifie les scores des joueurs",
-    longDescription: "Utilisé pour afficher le classement ou modifier les points (admin uniquement)",
+    shortDescription: "Gère un tableau de scores",
+    longDescription: "Ajoute, modifie ou affiche les scores des utilisateurs dans un leaderboard",
     category: "📊 Utilitaire",
     guide: {
       en: "{p}leaderboard\n{p}leaderboard add <nom> <points>\n{p}leaderboard set <nom> <nouveaux_points>"
@@ -17,57 +19,51 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, event }) {
-    const adminID = "100065927401614"; // 🔒 Remplace ceci par TON VRAI ID Facebook
+    const senderID = event.senderID;
+    const adminID = "100065927401614"; // Remplace ici si tu veux restreindre les modifications
 
-    // Charger ou initialiser le fichier
+    // Création du dossier s’il n'existe pas
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+
+    // Lecture ou initialisation du fichier JSON
     let data = {};
     if (fs.existsSync(filePath)) {
-      try {
-        data = JSON.parse(fs.readFileSync(filePath));
-      } catch (e) {
-        return message.reply("❌ Erreur en lisant les scores enregistrés.");
-      }
+      data = JSON.parse(fs.readFileSync(filePath));
     }
 
-    const [action, ...rest] = args;
+    const [action, name, point] = args;
 
-    // ➤ Affichage du classement
     if (!action) {
-      if (Object.keys(data).length === 0) return message.reply("📭 Aucun score enregistré.");
+      // Affichage du leaderboard trié
+      if (Object.keys(data).length === 0) return message.reply("📭 Aucun score enregistré pour le moment.");
+
       const sorted = Object.entries(data).sort((a, b) => b[1] - a[1]);
       let msg = "🏆 | 𝗧𝗔𝗕𝗟𝗘𝗔𝗨 𝗗𝗘 𝗦𝗖𝗢𝗥𝗘\n\n";
-      sorted.forEach(([name, points], i) => {
+      sorted.forEach(([nom, score], i) => {
         const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : "🎯";
-        msg += `${medal} ${name}: ${points} pts\n`;
+        msg += `${medal} ${nom}: ${score} pts\n`;
       });
       return message.reply(msg);
     }
 
-    // ➤ Vérification admin
-    if (event.senderID !== adminID) {
-      return message.reply("❌ Tu n'es pas autorisé à modifier les scores.");
-    }
-
-    // ➤ Traitement add/set
-    const name = rest.slice(0, -1).join(" ");
-    const point = parseInt(rest[rest.length - 1]);
-
-    if (!name || isNaN(point)) {
-      return message.reply("⚠️ Utilisation : leaderboard add/set <nom> <points>");
+    if (senderID !== adminID) {
+      return message.reply("❌ Tu n'es pas autorisé à modifier le tableau de score.");
     }
 
     if (action === "add") {
-      data[name] = (data[name] || 0) + point;
+      if (!name || isNaN(point)) return message.reply("⚠️ Utilisation: leaderboard add <nom> <points>");
+      data[name] = (data[name] || 0) + parseInt(point);
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-      return message.reply(`✅ ${name} a reçu +${point} points.`);
+      return message.reply(`✅ ${name} a été ajouté avec ${point} points.`);
     }
 
     if (action === "set") {
-      data[name] = point;
+      if (!name || isNaN(point)) return message.reply("⚠️ Utilisation: leaderboard set <nom> <nouveaux_points>");
+      data[name] = parseInt(point);
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-      return message.reply(`✏️ Les points de ${name} ont été mis à jour à ${point}.`);
+      return message.reply(`✏️ Points de ${name} modifiés à ${point}.`);
     }
 
-    return message.reply("❓ Action inconnue. Utilise : leaderboard, leaderboard add <nom> <points> ou leaderboard set <nom> <points>");
+    return message.reply("❓ Action inconnue.");
   }
 };
