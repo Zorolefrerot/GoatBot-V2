@@ -1,4 +1,4 @@
-/cmd install quizz.js const questions = [
+ const questions = [
   { question: "Quelle est la capitale de la France ?", answer: "paris" },
   { question: "Combien y a-t-il de continents sur Terre ?", answer: "7" },
   { question: "Qui a peint La Joconde ?", answer: "léonard de vinci" },
