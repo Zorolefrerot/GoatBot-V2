@@ -1,4 +1,4 @@
- let isActive = false;
+let isActive = false;
 let modoID = null;
 let modoName = "";
 let scoreboard = {};
