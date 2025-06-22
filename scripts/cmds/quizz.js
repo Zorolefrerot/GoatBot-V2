@@ -3,7 +3,7 @@
   { "question": "Comment appelle-t-on l’outil pour creuser la terre ?", "answer": "pelle" },
   { "question": "Quel est l’instrument pour mesurer des distances longues ?", "answer": "mètre ruban" },
   { "question": "Quel outil est utilisé pour aplanir du ciment ?", "answer": "truelle" },
-  { "question": "Quel outil est utilisé pour enfoncer un clou ?", "answer": "marteau" }
+  { "question": "Quel outil est utilisé pour enfoncer un clou ?", "answer": "marteau" },
 
   { "question": "Quel instrument permet d’observer les cellules ?", "answer": "microscope" },
   { "question": "Comment s'appelle une lame en verre utilisée en biologie ?", "answer": "lame" },
