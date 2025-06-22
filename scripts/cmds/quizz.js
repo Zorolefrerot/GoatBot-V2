@@ -9,7 +9,7 @@
   { "question": "Comment s'appelle une lame en verre utilisée en biologie ?", "answer": "lame" },
   { "question": "Quel outil sert à prélever un petit échantillon biologique ?", "answer": "pipette" },
   { "question": "Quel est le nom du récipient de culture des bactéries ?", "answer": "boîte de petri" },
-  { "question": "Quel est l’outil utilisé pour disséquer ?", "answer": "scalpel" }
+  { "question": "Quel est l’outil utilisé pour disséquer ?", "answer": "scalpel" },
 
   { "question": "Quel matériau est principalement utilisé dans les fondations ?", "answer": "béton" },
   { "question": "Quel outil sert à mesurer l’horizontalité ?", "answer": "niveau" },
@@ -17,7 +17,7 @@
   { "question": "Quel est le nom du plan vu de dessus dans un bâtiment ?", "answer": "plan de masse" },
   { "question": "Quel est le nom de la machine qui soulève des charges sur un chantier ?", "answer": "grue" },
   { "question": "Quel est le principal outil pour scier du bois ?", "answer": "scie" },
-  { "question": "Comment appelle-t-on le revêtement supérieur d’un bâtiment ?", "answer": "toiture" }
+  { "question": "Comment appelle-t-on le revêtement supérieur d’un bâtiment ?", "answer": "toiture" },
 
   { "question": "Quelle est la planète la plus proche du Soleil ?", "answer": "mercure" },
   { "question": "Quel est le nom de notre galaxie ?", "answer": "voie lactée" },
@@ -25,13 +25,13 @@
   { "question": "Combien de planètes compte le système solaire ?", "answer": "8" },
   { "question": "Quel est le nom du télescope spatial célèbre lancé en 1990 ?", "answer": "hubble" },
   { "question": "Quelle planète est connue pour ses anneaux ?", "answer": "saturne" },
-  { "question": "Quel corps céleste est une boule de glace et de poussière ?", "answer": "comète" }
+  { "question": "Quel corps céleste est une boule de glace et de poussière ?", "answer": "comète" },
 
   { "question": "Quel est le nom du récipient conique utilisé en laboratoire ?", "answer": "erlenmeyer" },
   { "question": "Quel instrument mesure le pH d’une solution ?", "answer": "ph-mètre" },
   { "question": "Quel tube est utilisé pour chauffer les substances ?", "answer": "tube à essai" },
   { "question": "Quel objet sert à mesurer un volume précis ?", "answer": "pipette" },
-  { "question": "Quel matériau est utilisé pour chauffer une substance ?", "answer": "bec bunsen" }
+  { "question": "Quel matériau est utilisé pour chauffer une substance ?", "answer": "bec bunsen" },
 
   { "question": "Quelle est la dérivée de x² ?", "answer": "2x" },
   { "question": "Quel est le nom du théorème utilisé pour les triangles rectangles ?", "answer": "pythagore" },
@@ -39,7 +39,7 @@
   { "question": "Quel est le symbole de l'infini ?", "answer": "∞" },
   { "question": "Combien de degrés a un triangle équilatéral ?", "answer": "180" },
   { "question": "Quelle est la racine carrée de 144 ?", "answer": "12" },
-  { "question": "Comment appelle-t-on le résultat d'une multiplication ?", "answer": "produit" }
+  { "question": "Comment appelle-t-on le résultat d'une multiplication ?", "answer": "produit" },
 
   { "question": "Quel est le langage utilisé pour créer une page web ?", "answer": "html" },
   { "question": "Quel est le système d’exploitation créé par Linus Torvalds ?", "answer": "linux" },
@@ -47,7 +47,7 @@
   { "question": "Quel protocole est utilisé pour sécuriser un site web ?", "answer": "https" },
   { "question": "Comment appelle-t-on une base de données relationnelle très populaire ?", "answer": "mysql" },
   { "question": "Quel composant exécute les instructions dans un ordinateur ?", "answer": "processeur" },
-  { "question": "Quel est le nom du système de gestion de versions le plus utilisé ?", "answer": "git" }
+  { "question": "Quel est le nom du système de gestion de versions le plus utilisé ?", "answer": "git" },
 
   { "question": "Quel est le nom de l’unité de mesure de l’inductance ?", "answer": "henry" },
   { "question": "Quel physicien a formulé la loi de la gravitation universelle ?", "answer": "newton" },
@@ -55,7 +55,7 @@
   { "question": "Quel type d'onde est utilisé dans un micro-ondes ?", "answer": "micro-onde" },
   { "question": "Quel est le nom du champ qui entoure une charge électrique ?", "answer": "champ électrique" },
   { "question": "Quelle est la formule de l’énergie cinétique ?", "answer": "1/2mv²" },
-  { "question": "Quelle particule subatomique a une charge négative ?", "answer": "électron" }
+  { "question": "Quelle particule subatomique a une charge négative ?", "answer": "électron" },
 
   { question: "Qui est le protagoniste de My Hero Academia ?", answer: "izuku" },
   { question: "Qui est le protagoniste de Naruto Shippuden ?", answer: "naruto" },
@@ -86,7 +86,7 @@
   { question: "Qui est le protagoniste de Soul Eater ?", answer: "maka" },
   { question: "Qui est le protagoniste de The Promised Neverland ?", answer: "emma" },
   { question: "Qui est le protagoniste de Re:Zero ?", answer: "subaru" },
-  { question: "Qui est le protagoniste de Erased ?", answer: "satoru" }
+  { question: "Qui est le protagoniste de Erased ?", answer: "satoru" },
 
   { question: "Quel grand festival de musique rock a réuni green day et nirvana en 2025 ?", answer: "fireaid" },
   { question: "Quel album de franz ferdinand est sorti en janvier 2025 ?", answer: "the human fear" },
@@ -141,7 +141,7 @@
   { question: "Quel pays a mis en place un fonds climatique de 2 milliards pour l’afrique en 2024 ?", answer: "banque africaine de développement" },
   { question: "Qui a été élu président du mexique 2024 ?", answer: "claudia sheinbaum" },
   { question: "Quel pays auto a tenu une réunion sur l’armement g20 en 2024 ?", answer: "indonésie" },
-  { question: "Quel pays a ajouté le temple hoysaleswara au patrimoine mondial 2024 ?", answer: "inde" }
+  { question: "Quel pays a ajouté le temple hoysaleswara au patrimoine mondial 2024 ?", answer: "inde" },
 
   { question: "Qui a construit une arche pour survivre au déluge ?", answer: "noé" },
   { question: "Qui a reçu les dix commandements sur le mont Sinaï ?", answer: "moïse" },
@@ -172,7 +172,7 @@
   { question: "Quelle mer Moïse a-t-il traversée avec les israélites ?", answer: "mer rouge" },
   { question: "Quel disciple était surnommé le jumeau ?", answer: "thomas" },
   { question: "Quel était le métier de Jésus ?", answer: "charpentier" },
-  { question: "Combien de personnes sont entrées dans l’arche ?", answer: "8" }
+  { question: "Combien de personnes sont entrées dans l’arche ?", answer: "8" },
 
   { question: "Quel est le nom du personnage principal dans The Legend of Zelda ?", answer: "link" },
   { question: "Quel jeu a pour protagoniste un plombier rouge ?", answer: "mario" },
@@ -203,7 +203,7 @@
   { question: "Quel jeu de tir a popularisé le mode battle royale avec des véhicules ?", answer: "pubg" },
   { question: "Quel jeu de football a été renommé en EA FC ?", answer: "fifa" },
   { question: "Quel jeu raconte l’histoire de Ellie et Joel ?", answer: "the last of us" },
-  { question: "Quel jeu de puzzle utilise des blocs qui tombent du haut ?", answer: "tetris" }
+  { question: "Quel jeu de puzzle utilise des blocs qui tombent du haut ?", answer: "tetris" },
 
   
   { question: "Je suis toujours devant toi, mais tu ne peux jamais m’atteindre. Qui suis-je ?", answer: "l’avenir" },
@@ -254,7 +254,7 @@
   { question: "Je vis dans la tête mais je ne suis pas vivant. Qui suis-je ?", answer: "l’idée" },
   { question: "Je peux voler sans ailes et courir sans jambes. Qui suis-je ?", answer: "le temps" },
   { question: "On me remplit pour que je puisse vider. Qui suis-je ?", answer: "le seau" },
-  { question: "Je disparais dès qu’on me nomme. Qui suis-je ?", answer: "le silence" }
+  { question: "Je disparais dès qu’on me nomme. Qui suis-je ?", answer: "le silence" },
 
   { question: "🇯🇲 Ce drapeau appartient à quel pays ?", answer: "jamaïque" },
   { question: "🇳🇿 Ce drapeau appartient à quel pays ?", answer: "nouvelle-zélande" },
@@ -285,7 +285,7 @@
   { question: "🇳🇪 Ce drapeau appartient à quel pays ?", answer: "niger" },
   { question: "🇹🇩 Ce drapeau appartient à quel pays ?", answer: "tchad" },
   { question: "🇨🇬 Ce drapeau appartient à quel pays ?", answer: "république du congo" },
-  { question: "🇰🇵 Ce drapeau appartient à quel pays ?", answer: "corée du nord" }
+  { question: "🇰🇵 Ce drapeau appartient à quel pays ?", answer: "corée du nord" },
   { question: "Quel mathématicien grec a formulé le théorème de l’hypoténuse ?", answer: "pythagore" },
   { question: "Quel physicien est considéré comme le père de la mécanique quantique ?", answer: "max planck" },
   { question: "Qui a écrit *le capital* ?", answer: "karl marx" },
@@ -365,7 +365,7 @@
   { question: "Quelle femme a reçu un prix nobel en premier ?", answer: "marie curie" },
   { question: "Quel pays est surnommé la terre du milieu ?", answer: "chine" },
   { question: "Qui a écrit *critique de la raison pure* ?", answer: "kant" },
-  { question: "Quel est l’autre nom de la voie digestive ?", answer: "tube digestif" }
+  { question: "Quel est l’autre nom de la voie digestive ?", answer: "tube digestif" },
 
 
   { question: "Quel est le point le plus bas sur terre ?", answer: "mer Morte" },
