@@ -802,9 +802,11 @@
                         { question: "Quel est ce pays 🇨🇳?", answer: "chine" },
                           { question: "Quel est ce pays 🇪🇬 ?", answer: "egypte" },
                             { question: "Quel est ce pays 🇬🇷 ?", answer: "grèce" },
-                              { question: "Quel est ce pays 🇲🇬 ?", answer: "madagascar" }
+                              { question: "Quel est ce pays 🇲🇬 ?", answer: "madagascar" },
+     { question: "Qui est mon créateur  ?", answer: "merdi" }
 
 ];
+
 
 const activeSessions = {};
 
