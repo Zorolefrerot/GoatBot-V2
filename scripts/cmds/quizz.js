@@ -1,23 +1,4 @@
  const questions = [
-  { "question": "Quel outil est utilisé pour visser ?", "answer": "tournevis" },
-  { "question": "Comment appelle-t-on l’outil pour creuser la terre ?", "answer": "pelle" },
-  { "question": "Quel est l’instrument pour mesurer des distances longues ?", "answer": "mètre ruban" },
-  { "question": "Quel outil est utilisé pour aplanir du ciment ?", "answer": "truelle" },
-  { "question": "Quel outil est utilisé pour enfoncer un clou ?", "answer": "marteau" },
-
-  { "question": "Quel instrument permet d’observer les cellules ?", "answer": "microscope" },
-  { "question": "Comment s'appelle une lame en verre utilisée en biologie ?", "answer": "lame" },
-  { "question": "Quel outil sert à prélever un petit échantillon biologique ?", "answer": "pipette" },
-  { "question": "Quel est le nom du récipient de culture des bactéries ?", "answer": "boîte de petri" },
-  { "question": "Quel est l’outil utilisé pour disséquer ?", "answer": "scalpel" },
-
-  { "question": "Quel matériau est principalement utilisé dans les fondations ?", "answer": "béton" },
-  { "question": "Quel outil sert à mesurer l’horizontalité ?", "answer": "niveau" },
-  { "question": "Comment appelle-t-on les murs porteurs en béton ?", "answer": "murs porteurs" },
-  { "question": "Quel est le nom du plan vu de dessus dans un bâtiment ?", "answer": "plan de masse" },
-  { "question": "Quel est le nom de la machine qui soulève des charges sur un chantier ?", "answer": "grue" },
-  { "question": "Quel est le principal outil pour scier du bois ?", "answer": "scie" },
-  { "question": "Comment appelle-t-on le revêtement supérieur d’un bâtiment ?", "answer": "toiture" },
 
   { "question": "Quelle est la planète la plus proche du Soleil ?", "answer": "mercure" },
   { "question": "Quel est le nom de notre galaxie ?", "answer": "voie lactée" },
