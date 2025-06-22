@@ -1,4 +1,62 @@
  const questions = [
+  { "question": "Quel outil est utilisé pour visser ?", "answer": "tournevis" },
+  { "question": "Comment appelle-t-on l’outil pour creuser la terre ?", "answer": "pelle" },
+  { "question": "Quel est l’instrument pour mesurer des distances longues ?", "answer": "mètre ruban" },
+  { "question": "Quel outil est utilisé pour aplanir du ciment ?", "answer": "truelle" },
+  { "question": "Quel outil est utilisé pour enfoncer un clou ?", "answer": "marteau" }
+
+  { "question": "Quel instrument permet d’observer les cellules ?", "answer": "microscope" },
+  { "question": "Comment s'appelle une lame en verre utilisée en biologie ?", "answer": "lame" },
+  { "question": "Quel outil sert à prélever un petit échantillon biologique ?", "answer": "pipette" },
+  { "question": "Quel est le nom du récipient de culture des bactéries ?", "answer": "boîte de petri" },
+  { "question": "Quel est l’outil utilisé pour disséquer ?", "answer": "scalpel" }
+
+  { "question": "Quel matériau est principalement utilisé dans les fondations ?", "answer": "béton" },
+  { "question": "Quel outil sert à mesurer l’horizontalité ?", "answer": "niveau" },
+  { "question": "Comment appelle-t-on les murs porteurs en béton ?", "answer": "murs porteurs" },
+  { "question": "Quel est le nom du plan vu de dessus dans un bâtiment ?", "answer": "plan de masse" },
+  { "question": "Quel est le nom de la machine qui soulève des charges sur un chantier ?", "answer": "grue" },
+  { "question": "Quel est le principal outil pour scier du bois ?", "answer": "scie" },
+  { "question": "Comment appelle-t-on le revêtement supérieur d’un bâtiment ?", "answer": "toiture" }
+
+  { "question": "Quelle est la planète la plus proche du Soleil ?", "answer": "mercure" },
+  { "question": "Quel est le nom de notre galaxie ?", "answer": "voie lactée" },
+  { "question": "Quel est le satellite naturel de la Terre ?", "answer": "lune" },
+  { "question": "Combien de planètes compte le système solaire ?", "answer": "8" },
+  { "question": "Quel est le nom du télescope spatial célèbre lancé en 1990 ?", "answer": "hubble" },
+  { "question": "Quelle planète est connue pour ses anneaux ?", "answer": "saturne" },
+  { "question": "Quel corps céleste est une boule de glace et de poussière ?", "answer": "comète" }
+
+  { "question": "Quel est le nom du récipient conique utilisé en laboratoire ?", "answer": "erlenmeyer" },
+  { "question": "Quel instrument mesure le pH d’une solution ?", "answer": "ph-mètre" },
+  { "question": "Quel tube est utilisé pour chauffer les substances ?", "answer": "tube à essai" },
+  { "question": "Quel objet sert à mesurer un volume précis ?", "answer": "pipette" },
+  { "question": "Quel matériau est utilisé pour chauffer une substance ?", "answer": "bec bunsen" }
+
+  { "question": "Quelle est la dérivée de x² ?", "answer": "2x" },
+  { "question": "Quel est le nom du théorème utilisé pour les triangles rectangles ?", "answer": "pythagore" },
+  { "question": "Combien de côtés a un dodécagone ?", "answer": "12" },
+  { "question": "Quel est le symbole de l'infini ?", "answer": "∞" },
+  { "question": "Combien de degrés a un triangle équilatéral ?", "answer": "180" },
+  { "question": "Quelle est la racine carrée de 144 ?", "answer": "12" },
+  { "question": "Comment appelle-t-on le résultat d'une multiplication ?", "answer": "produit" }
+
+  { "question": "Quel est le langage utilisé pour créer une page web ?", "answer": "html" },
+  { "question": "Quel est le système d’exploitation créé par Linus Torvalds ?", "answer": "linux" },
+  { "question": "Quel langage est souvent utilisé pour le machine learning ?", "answer": "python" },
+  { "question": "Quel protocole est utilisé pour sécuriser un site web ?", "answer": "https" },
+  { "question": "Comment appelle-t-on une base de données relationnelle très populaire ?", "answer": "mysql" },
+  { "question": "Quel composant exécute les instructions dans un ordinateur ?", "answer": "processeur" },
+  { "question": "Quel est le nom du système de gestion de versions le plus utilisé ?", "answer": "git" }
+
+  { "question": "Quel est le nom de l’unité de mesure de l’inductance ?", "answer": "henry" },
+  { "question": "Quel physicien a formulé la loi de la gravitation universelle ?", "answer": "newton" },
+  { "question": "Quel phénomène explique la couleur bleue du ciel ?", "answer": "diffusion" },
+  { "question": "Quel type d'onde est utilisé dans un micro-ondes ?", "answer": "micro-onde" },
+  { "question": "Quel est le nom du champ qui entoure une charge électrique ?", "answer": "champ électrique" },
+  { "question": "Quelle est la formule de l’énergie cinétique ?", "answer": "1/2mv²" },
+  { "question": "Quelle particule subatomique a une charge négative ?", "answer": "électron" }
+
   { question: "Qui est le protagoniste de My Hero Academia ?", answer: "izuku" },
   { question: "Qui est le protagoniste de Naruto Shippuden ?", answer: "naruto" },
   { question: "Qui est le protagoniste de L'Attaque des Titans ?", answer: "eren" },
