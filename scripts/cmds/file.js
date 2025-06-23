@@ -1,4 +1,3 @@
-📄 Code de la commande "file":
 
 const fs = require("fs");
 const path = require("path");
