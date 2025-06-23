@@ -794,7 +794,7 @@ const activeSessions = {};
 module.exports = {
   config: {
     name: "quizz",
-    role: "0",
+    role: "2",
     author: "Merdi Madimba",
     version: "1.0",
     description: "Quiz culture générale avec score",
