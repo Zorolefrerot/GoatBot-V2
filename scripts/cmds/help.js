@@ -16,7 +16,7 @@ module.exports = {
 		version: "1.21",
 		author: "NTKhang",
 		countDown: 5,
-		role: 0,
+		role: 2,
 		description: {
 			vi: "Xem cách sử dụng của các lệnh",
 			en: "View command usage"
