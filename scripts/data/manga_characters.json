@@ -1,0 +1,82 @@
+[
+  {
+    "name": "naruto",
+    "image": "https://ibb.co/example-naruto"
+  },
+  {
+    "name": "sasuke",
+    "image": "https://ibb.co/example-sasuke"
+  },
+  {
+    "name": "sakura",
+    "image": "https://ibb.co/example-sakura"
+  },
+  {
+    "name": "kakashi",
+    "image": "https://ibb.co/example-kakashi"
+  },
+  {
+    "name": "itachi",
+    "image": "https://ibb.co/example-itachi"
+  },
+  {
+    "name": "obito",
+    "image": "https://ibb.co/example-obito"
+  },
+  {
+    "name": "minato",
+    "image": "https://ibb.co/example-minato"
+  },
+  {
+    "name": "hinata",
+    "image": "https://ibb.co/example-hinata"
+  },
+  {
+    "name": "jiraiya",
+    "image": "https://ibb.co/example-jiraiya"
+  },
+  {
+    "name": "madara",
+    "image": "https://ibb.co/example-madara"
+  },
+  {
+    "name": "hashirama",
+    "image": "https://ibb.co/example-hashirama"
+  },
+  {
+    "name": "tobirama",
+    "image": "https://ibb.co/example-tobirama"
+  },
+  {
+    "name": "gaara",
+    "image": "https://ibb.co/example-gaara"
+  },
+  {
+    "name": "pain",
+    "image": "https://ibb.co/example-pain"
+  },
+  {
+    "name": "konan",
+    "image": "https://ibb.co/example-konan"
+  },
+  {
+    "name": "deidara",
+    "image": "https://ibb.co/example-deidara"
+  },
+  {
+    "name": "kisame",
+    "image": "https://ibb.co/example-kisame"
+  },
+  {
+    "name": "shikamaru",
+    "image": "https://ibb.co/example-shikamaru"
+  },
+  {
+    "name": "neji",
+    "image": "https://ibb.co/example-neji"
+  },
+  {
+    "name": "rocklee",
+    "image": "https://ibb.co/example-rocklee"
+  }
+]
