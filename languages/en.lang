@@ -89,17 +89,17 @@ handlerCheckData.cantCreateThread=Groups with id '%1' cannot be written to the d
 handlerCheckData.cantCreateUser=Users with id '%1' cannot be written to the database!
 
 # bot/handler/handlerEvents.js
-handlerEvents.userBanned=You have been banned from using the bot\n» Reason: %1\n» Time: %2\n» User ID: %3
-handlerEvents.threadBanned=This group has been banned from using the bot\n» Reason: %1\n» Time: %2\n» Thread ID: %3
-handlerEvents.onlyAdminBox=This group is currently enabled only group administrators can use the bot
-handlerEvents.onlyAdminBot=❌ | Currently only bot's admin can use bot
-handlerEvents.commandNotFound=Command "%1" does not exist, type %2help to see all available commands
-handlerEvents.commandNotFound2=The command you are using does not exist, type %1help to see all available commands
+handlerEvents.userBanned=🚫𝖳𝗎 𝗇𝖾 𝗉𝖾𝗎𝗑 𝗉𝗅𝗎𝗌 𝗎𝗍𝗂𝗅𝗂𝗌𝖾𝗋 𝗅𝖾 𝖻𝗈𝗍 𝖼𝖺𝗋 𝗈̂ 𝗀𝗋𝖺𝗇𝖽 𝖬𝖾𝗋𝖽𝗂👑 𝗍'𝖺𝗌 𝖻𝖺𝗇𝗇𝗂\n» ♻️𝖱𝖺𝗂𝗌𝗈𝗇: %1\n» 🕓𝖧𝖾𝗎𝗋𝖾: %2\n» 👥U𝗍𝗂𝗅𝗂𝗌𝖺𝗍𝖾𝗎𝗋 ID: %3
+handlerEvents.threadBanned=𝖠𝗅𝗅𝖾𝗓 𝗌𝗎𝗉𝗉𝗅𝗂𝖾𝗋 𝗆𝗈𝗇 𝖺𝖽𝗆𝗂𝗇𝗂𝗌𝗍𝗋𝖺𝗍𝖾𝗎𝗋 𝖽𝖾 𝗆'𝖺𝖼𝗍𝗂𝗏𝖾𝗋 𝖽𝖺𝗇𝗌 𝖼𝖾 𝗀𝗋𝗈𝗎𝗉𝖾🥱\n» ♻️𝖱𝖺𝗂𝗌𝗈𝗇: %1\n» 🕓𝖧𝖾𝗎𝗋𝖾: %2\n» 🫂𝖦𝗋𝗈𝗎𝗉𝖾 ID: %3
+handlerEvents.onlyAdminBox=❌𝗦𝘁𝗼𝗽. 𝖫𝖾𝗌 𝖿𝖺𝗂𝖻𝗅𝖾𝗌 𝗇'𝗈𝗇𝗍 𝗉𝗅𝗎𝗌 𝗅𝖾 𝖽𝗋𝗈𝗂𝗍 𝖽𝖾 𝗆'𝗂𝗍𝗎𝗅𝗂𝗌𝖾𝗋, 𝗌𝖾𝗎𝗅𝗆𝖾𝗇𝗍𝗌 𝗅𝖾𝗌 𝖺𝖽𝗆𝗂𝗇
+handlerEvents.onlyAdminBot=❌ | 𝖬𝖽𝗋 𝗍𝖺𝗂𝗌 𝗍𝗈𝗂 𝗎𝗇 𝗉𝖾𝗎, 𝗍𝗎 𝖽𝖾́𝗋𝖺𝗇𝗀𝖾 𝗌𝖾𝗎𝗅 𝗠𝗲𝗿𝗱𝗶 𝗠𝗮𝗱𝗶𝗺𝗯𝗮 𝖯𝖾𝗎𝗑 𝗆'𝗎𝗍𝗂𝗅𝗂𝗌𝖾𝗋🖕
+handlerEvents.commandNotFound=Command "%1" 𝗖𝗲𝘁𝘁𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝗲 𝗻'𝗲𝘅𝗶𝘀𝘁𝗲 𝗽𝗮𝘀, 𝘁𝗮𝗽𝗲 %2help 𝗮𝗳𝗶𝗻 𝗱𝗲 𝗰𝗼𝗺𝗽𝗿𝗲𝗻𝗱𝗿𝗲 𝗹𝗲 𝗯𝗼𝗻 𝗳𝗼𝗻𝗰𝘁𝗶𝗼𝗻𝗻𝗲𝗺𝗲𝗻𝘁
+handlerEvents.commandNotFound2=𝗖𝗵𝗲𝗿 𝘂𝘁𝗶𝗹𝗶𝘀𝗮𝘁𝗲𝘂𝗿, 𝗹𝗮 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝗲 𝗾𝘂𝗲 𝘁𝘂 𝗮𝘀 𝗹𝗮𝗻𝗰𝗲́ 𝗻'𝗲𝘅𝗶𝘀𝘁𝗲 𝗽𝗮𝘀 😹, 𝘁𝗮𝗽𝗲 %1option 𝗽𝗼𝘂𝗿 𝘃𝗼𝗶𝗿 𝗺𝗼𝗻 𝗺𝗲𝗻𝘂
 handlerEvents.commandSyntaxError=The command you are using is wrong syntax, please type %1help %2 to see the details of how to use this command
-handlerEvents.onlyAdmin=❌ | Only group administrators can use the command "%1"
-handlerEvents.onlyAdminToUseOnReply=❌ | Only group administrators can use the reply function of the command "%1"
-handlerEvents.onlyAdminToUseOnReaction=❌ | Only group administrators can use the reaction function of the command "%1"
-handlerEvents.onlyAdminBot2=❌ | Only bot's admin can use the command "%1"
+handlerEvents.onlyAdmin=❌ | 𝗜𝗠𝗕𝗘𝗖𝗜𝗟𝗘 𝗦𝗘𝗨𝗟 𝗠𝗘𝗥𝗗𝗜 𝗠𝗔𝗗𝗜𝗠𝗕𝗔 𝗤𝗨𝗜 𝗣𝗘𝗨𝗫 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗥 𝗟𝗔 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗘🖕 "%1"
+handlerEvents.onlyAdminToUseOnReply=❌ | 𝗦𝗲𝘂𝗹 𝗹𝗲𝘀 𝗮𝗱𝗺𝗶𝗻𝗶𝘀𝘁𝗿𝗮𝘁𝗲𝘂𝗿𝘀 𝗱𝘂 𝗴𝗿𝗼𝘂𝗽𝗲 𝗼𝘂𝗯 𝗺𝗲𝗿𝗱𝗶 𝗾𝘂𝗶 𝗽𝗲𝘂𝘃𝗲𝗻𝘁 𝗿𝗲𝗮𝗴𝗶𝗿 𝗼𝘂 𝗿𝗲𝗽𝗼𝗻𝗱𝗿𝗲 𝗮 𝗹𝗮 𝗰𝗺𝗱 "%1" , 𝘁𝗼𝗶 𝘃𝘁𝗳𝗳
+handlerEvents.onlyAdminToUseOnReaction=❌ | 𝗦𝗲𝘂𝗹 𝗹'𝗮𝗱𝗺𝗶𝗻𝗶𝘀𝘁𝗿𝗮𝘁𝗲𝘂𝗿 𝗱𝘂 𝗴𝗿𝗼𝘂𝗽𝗲 𝗾𝘂𝗶 𝗽𝗲𝘂𝘅 𝗿𝗲𝗮𝗴𝗶𝗿 𝗼𝘂 𝗿𝗲𝗽𝗼𝗻𝗱𝗿𝗲 𝗮 𝗰̧𝗮 🖕 "%1"
+handlerEvents.onlyAdminBot2=❌ | 𝗧𝗼𝗻 𝗰𝘂𝗹 𝘄𝗲𝘀𝗵. 𝗖𝗼𝗺𝗺𝗲𝗻𝘁 𝗼𝘀𝗲 𝘁𝘂 𝗲𝘀𝘀𝗮𝘆𝗲𝗿 𝗱𝗲 𝘁𝗿𝗮𝗵𝗶𝗿 𝗠𝗲𝗿𝗱𝗶❌ "%1"
 handlerEvents.onlyAdminBot2ToUseOnReply=❌ | Only bot's admin can use the reply function of the command "%1"
 handlerEvents.onlyAdminBot2ToUseOnReaction=❌ | Only bot's admin can use the reaction function of the command "%1"
 handlerEvents.waitingForCommand=⏱ You are in the waiting time to use this command, please come back after %1s
