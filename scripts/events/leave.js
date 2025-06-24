@@ -23,9 +23,9 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			leaveType1: "left",
-			leaveType2: "was kicked from",
-			defaultLeaveMessage: "{userName} {type} the group"
+			leaveType1: "𝗤𝘂𝗶𝘁𝘁𝗲́",
+			leaveType2: "𝗲́𝘁𝗲́ 𝗯𝗮𝗻𝗻𝗶𝘀 𝗱𝗲",
+			defaultLeaveMessage: "{userName} 𝗮̀ {type} 𝗹𝗮 𝘀𝗼𝘂𝗹 𝘀𝗼𝗰𝗶𝗲𝘁𝘆. 𝗗𝗲́𝘀𝗼𝗹𝗲́ 𝗱𝗲 𝘁𝗲 𝗹𝗲 𝗱𝗶𝗿𝗲, 𝗺𝗮𝗶𝘀 𝘁𝘂 𝘀𝗲𝗿𝘃𝗮𝗶𝘁 𝗮 𝗿𝗶𝗲𝗻😇✝️ \n𝗧𝗲𝗹 𝗲́𝘁𝗮𝗶𝘁 𝗹𝗮 𝘃𝗼𝗹𝗼𝗻𝘁𝗲́ 𝗱𝘂 𝗰𝗮𝗽𝗶𝘁𝗮𝗶𝗻𝗲 𝗱𝗲 𝗹𝗮 13𝗲𝗺 𝗱𝗶𝘃𝗶𝘀𝗶𝗼𝗻: 𝗠𝗲𝗿𝗱𝗶 𝗠𝗮𝗱𝗶𝗺𝗯𝗮🙇👑 "
 		}
 	},
 
