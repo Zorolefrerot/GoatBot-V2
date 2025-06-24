@@ -27,9 +27,9 @@ module.exports = {
 			session3: "afternoon",
 			session4: "evening",
 			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
-			multiple1: "you",
-			multiple2: "you guys",
-			defaultWelcomeMessage: `👋𝖲𝖺𝗅𝗎𝗍 {userName}, 𝘔𝘰𝘪 𝘤𝘦𝘴𝘵 𝘐𝘥𝘳𝘦𝘮 𝘭𝘦 𝘣𝘰𝘵 𝘥𝘦 𝘮𝘦𝘳𝘥𝘪.\n💫𝖡𝗂𝖾𝗇𝗏𝖾𝗇𝗎𝖾 {multiple} 𝖽𝖺𝗇𝗌 𝗇𝗈𝗍𝗋𝖾 𝗆𝖾𝗋𝗏𝖾𝗂𝗅𝗅𝖾𝗎𝗑 𝗀𝗋𝗈𝗎𝗉𝖾 : {boxName}\n𝖭𝗈𝗎𝗌 𝗍'𝖺𝖼𝖼𝗎𝖾𝗂𝗅𝗅𝗈𝗇𝗌 𝖺 𝖻𝗋𝖺𝗌 𝗈𝗎𝗏𝖾𝗋𝗍🤲\n𝘉𝘰𝘯𝘯𝘦 {session} 😊`
+			multiple1: "à toi",
+			multiple2: "à toi",
+			defaultWelcomeMessage: `👋𝖲𝖺𝗅𝗎𝗍 {userName}\n 📌𝘔𝘰𝘪 𝘤𝘦𝘴𝘵 𝘐𝘥𝘳𝘦𝘮 𝘭𝘦 𝘣𝘰𝘵 𝘥𝘦 𝘮𝘦𝘳𝘥𝘪.\n📌𝖡𝗂𝖾𝗇𝗏𝖾𝗇𝗎𝖾 {multiple} 𝖽𝖺𝗇𝗌 𝗇𝗈𝗍𝗋𝖾 𝗆𝖾𝗋𝗏𝖾𝗂𝗅𝗅𝖾𝗎𝗑 𝗀𝗋𝗈𝗎𝗉𝖾 : {boxName}\n📌𝖭𝗈𝗎𝗌 𝗍'𝖺𝖼𝖼𝗎𝖾𝗂𝗅𝗅𝗈𝗇𝗌 𝖺 𝖻𝗋𝖺𝗌 𝗈𝗎𝗏𝖾𝗋𝗍🤲\n𝘉𝘰𝘯𝘯𝘦 {session} 😊`
 		}
 	},
 
