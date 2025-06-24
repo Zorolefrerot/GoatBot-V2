@@ -12,11 +12,11 @@ module.exports = {
 
   onStart: async function ({ api, event }) {
     const farewellMessages = [
-      "C'était un plaisir d’être ici, à la prochaine ! 👋",
+      "Ô grand Merdi je respecte votre décision 👑🙇",
       "Je quitte le navire. Bonne chance à tous ! ⚓",
       "Mission terminée. À bientôt ! 🫡",
-      "Le bot s’en va, mais n'oubliez pas de boire de l’eau 💧",
-      "Tchao tchao les amis, prenez soin de vous 😎"
+      "Popopo je supporte pas ces béninois😹😹, je me casse💢 ",
+      "Je m'en vais, vous êtes tellement nul ici 🙄"
     ];
 
     const randomMsg = farewellMessages[Math.floor(Math.random() * farewellMessages.length)];
