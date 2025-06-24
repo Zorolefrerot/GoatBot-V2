@@ -6,93 +6,87 @@ const FILE_PATH = path.join(__dirname, "../../storage/horloge_reminders.json");
 module.exports = {
   config: {
     name: "horloge",
-    aliases: [],
-    version: "1.0",
+    version: "2.2",
     author: "Merdi Madimba",
     role: 0,
-    description: "Créer un rappel programmé pour une heure spécifique",
+    description: "Créer un rappel à une heure précise (GMT)",
     category: "utilitaire",
     guide: {
-      fr: "Utilisation : !horloge 20H00 [message de rappel]",
+      fr: "!horloge 20:00 aller au travail"
     }
   },
 
-  onStart: async function ({ args, message, event, usersData, threadsData, role }) {
-    const timeRegex = /^(\d{1,2})h(\d{2})$/i;
-    const input = args.join(" ");
-    const match = input.match(/^(\d{1,2}h\d{2})\s*(.+)$/i);
+  onStart: async function ({ message, event, args, api }) {
+    if (args.length < 2)
+      return message.reply("❌ Format invalide.\n\n✅ Exemple : `!horloge 20:00 aller au travail`");
 
-    if (!match) return message.reply("❌ Format invalide.\nExemple correct : `!horloge 18H00 [aller au rendez-vous]`");
+    const timeArg = args[0];
+    const regex = /^([01]?[0-9]|2[0-3]):([0-5][0-9])$/;
+    if (!regex.test(timeArg)) return message.reply("⏰ Heure invalide. Format : HH:MM (ex: 18:30)");
 
-    const [_, hourText, reminder] = match;
-    const [hour, minute] = hourText.toLowerCase().split("h").map(Number);
-
-    if (hour > 23 || minute > 59)
-      return message.reply("❌ L’heure est invalide.");
-
+    const [hour, minute] = timeArg.split(":").map(Number);
     const now = new Date();
-    const targetTime = new Date();
-    targetTime.setUTCHours(hour);
-    targetTime.setUTCMinutes(minute);
-    targetTime.setUTCSeconds(0);
-    targetTime.setUTCMilliseconds(0);
+    const targetTime = new Date(Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
+      hour,
+      minute,
+      0
+    ));
 
-    const isTomorrow = targetTime <= now;
-    if (isTomorrow) targetTime.setUTCDate(now.getUTCDate() + 1);
+    if (targetTime <= now) targetTime.setUTCDate(targetTime.getUTCDate() + 1);
 
-    // Chargement et écriture
+    const reminderText = args.slice(1).join(" ");
+    const userID = event.senderID;
+    const threadID = event.threadID;
+
+    // ✅ Obtenir le nom de l'utilisateur via l'API
+    const userInfo = await api.getUserInfo(userID);
+    const userName = userInfo[userID]?.name || `UID: ${userID}`;
+
+    const newReminder = {
+      userID,
+      userName,
+      threadID,
+      reminder: reminderText,
+      time: targetTime.getTime()
+    };
+
     let data = [];
     if (fs.existsSync(FILE_PATH)) {
       data = JSON.parse(fs.readFileSync(FILE_PATH));
     }
 
-    data.push({
-      threadID: event.threadID,
-      userID: event.senderID,
-      userName: await usersData.getName(event.senderID),
-      time: targetTime.toISOString(),
-      createdAt: now.toISOString(),
-      reminder
-    });
-
+    data.push(newReminder);
     fs.writeFileSync(FILE_PATH, JSON.stringify(data, null, 2));
-    return message.reply(`⏰ Rappel programmé pour **${hour.toString().padStart(2, '0')}H${minute.toString().padStart(2, '0')}** (GMT).\n📌 Message : "${reminder}"`);
+
+    return message.reply(`✅ Rappel enregistré pour **${timeArg} GMT** : "${reminderText}"`);
   },
 
-  onLoad: async function () {
-    if (!fs.existsSync(FILE_PATH)) {
-      fs.ensureFileSync(FILE_PATH);
-      fs.writeFileSync(FILE_PATH, "[]");
-    }
-
+  onLoad: async ({ api }) => {
     setInterval(() => {
-      let data = JSON.parse(fs.readFileSync(FILE_PATH));
-      const now = new Date();
+      const now = Date.now();
+      if (!fs.existsSync(FILE_PATH)) return;
 
-      const toSend = data.filter(item => {
-        const target = new Date(item.time);
-        return target.getUTCHours() === now.getUTCHours() &&
-               target.getUTCMinutes() === now.getUTCMinutes() &&
-               target.getUTCDate() === now.getUTCDate() &&
-               target.getUTCMonth() === now.getUTCMonth() &&
-               target.getUTCFullYear() === now.getUTCFullYear();
-      });
+      const data = JSON.parse(fs.readFileSync(FILE_PATH));
+      const keep = [];
 
-      data = data.filter(item => {
-        const target = new Date(item.time);
-        return target > now;
-      });
+      for (const reminder of data) {
+        if (now >= reminder.time) {
+          const date = new Date(reminder.time);
+          const hour = String(date.getUTCHours()).padStart(2, "0");
+          const minute = String(date.getUTCMinutes()).padStart(2, "0");
 
-      fs.writeFileSync(FILE_PATH, JSON.stringify(data, null, 2));
+          const msg = `⏰ **Rappel automatique !**\n\n📝 ${reminder.reminder}\n👤 ${reminder.userName} (${reminder.userID})\n🕒 Heure programmée : ${hour}:${minute} GMT`;
 
-      for (const reminder of toSend) {
-        const timeCreated = new Date(reminder.createdAt).toISOString().slice(11, 16);
-        const timeNow = now.toISOString().slice(11, 16);
-        global.GoatBot.api.sendMessage(
-          `🔔 **Rappel !**\n👤 Utilisateur : ${reminder.userName} (${reminder.userID})\n🕰️ Rappel mis à : ${timeCreated} (GMT)\n⏱️ Heure actuelle : ${timeNow} (GMT)\n📨 Message : ${reminder.reminder}`,
-          reminder.threadID
-        );
+          api.sendMessage(msg, reminder.threadID);
+        } else {
+          keep.push(reminder);
+        }
       }
-    }, 60 * 1000); // vérifie toutes les minutes
+
+      fs.writeFileSync(FILE_PATH, JSON.stringify(keep, null, 2));
+    }, 60 * 1000); // Vérifie chaque minute
   }
 };
