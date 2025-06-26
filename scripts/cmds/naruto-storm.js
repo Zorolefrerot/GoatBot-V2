@@ -1,4 +1,4 @@
-/cmd install naruto-storm.js const characters = [
+const characters = [
   {
     name: "𝖭𝖺𝗋𝗎𝗍𝗈",
     power: 50,
