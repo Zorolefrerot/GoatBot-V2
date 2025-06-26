@@ -278,7 +278,7 @@ gameState[threadID] = {
 
 return message.reply({
   body: `⚡ Bienvenue dans NARUTO-STORM ! \nEnvoyez !start pour commencer le duel.`,
-  attachment: await global.utils.getStreamFromURL("https://ibb.co/PZ3z4W8j.png")
+  attachment: await global.utils.getStreamFromURL("https://ibb.co/PZ3z4W8j")
 });
 
 },
