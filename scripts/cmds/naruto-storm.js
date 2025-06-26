@@ -1,256 +1,255 @@
-
-const characters = [
+/cmd install naruto-storm.js const characters = [
   {
-    name: "Naruto",
+    name: "𝖭𝖺𝗋𝗎𝗍𝗈",
     power: 50,
-    b: "Rasengan",
-    x: "Multi Clones + Rasenshuriken"
+    basic: "Rasengan",
+    ultimate: "𝗠𝘂𝗹𝘁𝗶𝗰𝗹𝗼𝗻𝗲𝘀 + 𝗥𝗮𝘀𝗲𝗻𝗴𝗮𝗻 𝗚𝗲𝗮𝗻𝘁"
   },
   {
-    name: "Naruto (Ermite)",
+    name: "𝖭𝖺𝗋𝗎𝗍𝗈 (Ermite)",
     power: 60,
-    b: "Rasengan Géant",
-    x: "Mode Ermite + Fûton Rasen Shuriken"
+    basic: "𝗥𝗮𝘀𝗲𝗻𝗴𝗮𝗻 𝗚𝗲𝗮𝗻𝘁",
+    ultimate: "𝗠𝗼𝗱𝗲.𝗲𝗿𝗺𝗶𝘁𝗲 + 𝗙𝘂𝘁𝗼𝗻 𝗥𝗮𝘀𝗲𝗻𝘀𝗵𝘂𝗿𝗶𝗸𝗲𝗻"
   },
   {
-    name: "Naruto (Rikudo)",
+    name: "𝘕𝘢𝘳𝘶𝘵𝘰 (Rikudo)",
     power: 70,
-    b: "Orbe Truth Seeker",
-    x: "Bijuu Mode RasenShuriken"
+    basic: "𝗢𝗿𝗯𝗲 𝗧𝗿𝘂𝘁𝗵 𝗦𝗲𝗲𝗸𝗲𝗿",
+    ultimate: "𝗕𝗶𝗷𝘂𝘂 𝗺𝗼𝗱𝗲 𝗥𝗮𝘀𝗲𝗻𝘀𝗵𝘂𝗿𝗶𝗸𝗲𝗻"
   },
   {
-    name: "Sasuke",
-    power: 55,
-    b: "Chidori",
-    x: "Kirin"
+    name: "𝖲𝖺𝗌𝗎𝗄𝖾",
+    power: 60,
+    basic: "𝗖𝗵𝗶𝗱𝗼𝗿𝗶",
+    ultimate: "𝗞𝗶𝗿𝗶𝗻"
   },
   {
-    name: "Sasuke (Taka)",
+    name: "𝖲𝖺𝗌𝗎𝗄𝖾 (Taka)",
     power: 65,
-    b: "Chidori Nagashi",
-    x: "Susano'o"
+    basic: "𝗖𝗵𝗶𝗱𝗼𝗿𝗶 𝗡𝗮𝗴𝗮𝘀𝗵𝗶",
+    ultimate: "𝗦𝘂𝘀𝗮𝗻𝗼'𝗼"
   },
   {
-    name: "Sasuke (Rinnegan)",
+    name: "𝖲𝖺𝗌𝗎𝗄𝖾 (Rinnegan)",
     power: 70,
-    b: "Amaterasu",
-    x: "Indra's Arrow"
+    basic: "𝗔𝗺𝗮𝘁𝗲𝗿𝗮𝘀𝘂",
+    ultimate: "𝗜𝗻𝗱𝗿𝗮'𝘀 𝗮𝗿𝗿𝗼𝘄"
   },
   {
-    name: "Kakashi",
+    name: "𝖪𝖺𝗄𝖺𝗌𝗁𝗂",
     power: 60,
-    b: "Raikiri",
-    x: "Kamui"
+    basic: "𝗥𝗮𝗶𝗸𝗶𝗿𝗶",
+    ultimate: "𝗞𝗮𝗺𝘂𝗶"
   },
   {
-    name: "Minato",
-    power: 65,
-    b: "Hiraishin Rasengan",
-    x: "Mode Kyubi + Technique du dieu volant"
+    name: "𝖬𝗂𝗇𝖺𝗍𝗈",
+    power: 80,
+    basic: "𝗛𝗶𝗿𝗮𝗶𝘀𝗵𝗶𝗯 𝗥𝗮𝘀𝗲𝗻𝗴𝗮𝗻",
+    ultimate: "𝗠𝗼𝗱𝗲 𝗞𝘆𝘂𝘂𝗯𝗶 + 𝗛𝗶𝗿𝗮𝗶𝘀𝗵𝗶𝗻 𝗝𝗶𝗸𝗸𝘂 𝗷𝗶𝗽𝗽𝘂 𝘀𝗲𝗻𝗽𝗼 𝗿𝗲𝗻𝗼𝗱𝗮𝗻 𝘇𝗲𝗿𝗼𝘀𝗵𝗶𝗸𝗶"
   },
   {
-    name: "Hashirama",
+    name: "𝖧𝖺𝗌𝗁𝗂𝗋𝖺𝗆𝖺",
     power: 70,
-    b: "Forêt Naissante",
-    x: "Art Sennin - Mille Mains"
+    basic: "𝗙𝗼𝗿𝗲𝘁 𝗻𝗮𝗶𝘀𝘀𝗮𝗻𝘁𝗲",
+    ultimate: "𝗔𝗿𝘁 𝗦𝗲𝗻𝗶𝗻-𝗠𝗶𝗹𝗹𝗲𝘀 𝗺𝗮𝗶𝗻𝘀"
   },
   {
-    name: "Tobirama",
+    name: "𝖳𝗈𝖻𝗂𝗋𝖺𝗆𝖺",
     power: 60,
-    b: "Suiton - Mur d'eau",
-    x: "Edo Tensei"
+    basic: "𝗦𝘂𝗶𝘁𝗼𝗻 : 𝗟𝗲 𝗱𝗿𝗮𝗴𝗼𝗻 𝗲𝗹𝗲𝗺𝗲𝗻𝘁𝗮𝗶𝗿𝗲 𝗮 𝗾𝘂𝗲𝘂𝗲",
+    ultimate: "𝗘𝗱𝗼 𝘁𝗲𝗻𝘀𝗲𝗶"
   },
   {
-    name: "Tsunade",
+    name: "𝘛𝘴𝘶𝘯𝘢𝘥𝘦",
     power: 60,
-    b: "Coup Surpuissant",
-    x: "Sceau - Byakugô"
+    basic: "𝗖𝗼𝘂𝗽 𝘀𝘂𝗿𝗽𝘂𝗶𝘀𝘀𝗮𝗻𝘁",
+    ultimate: "𝗦𝗰𝗲𝗮𝘂 𝗕𝘆𝗮𝗸𝘂𝗴𝗼"
   },
   {
-    name: "Hiruzen",
+    name: "𝖧𝗂𝗋𝗎𝗓𝖾𝗇",
     power: 65,
-    b: "Techniques des 5 éléments",
-    x: "Shinigami Seal"
+    basic: "𝗧𝗲𝗰𝗵𝗻𝗶𝗾𝘂𝗲 𝗱𝗲𝘀 5 𝗲𝗹𝗲𝗺𝗲𝗻𝘁𝘀",
+    ultimate: "𝗦𝗵𝗶𝗻𝗶𝗴𝗮𝗺𝗶 𝗦𝗲𝗮𝗹"
   },
   {
-    name: "Pain (Tendo)",
+    name: "𝖯𝖺𝗂𝗇 (Tendo)",
     power: 68,
-    b: "Shinra Tensei",
-    x: "Chibaku Tensei"
+    basic: "𝗦𝗵𝗶𝗻𝗿𝗮 𝗧𝗲𝗻𝘀𝗲𝗶",
+    ultimate: "𝗖𝗵𝗶𝗯𝗮𝗸𝘂 𝗧𝗲𝗻𝘀𝗲𝗶"
   },
   {
-    name: "Konan",
+    name: "𝖪𝗈𝗇𝖺𝗇",
     power: 55,
-    b: "Danse de Papier",
-    x: "Mer de papiers explosifs"
+    basic: "𝗗𝗮𝗻𝘀𝗲 𝗱𝗲 𝗽𝗮𝗽𝗶𝗲𝗿",
+    ultimate: "𝗠𝗲𝗿 𝗱𝗲𝘀 𝗽𝗮𝗽𝗶𝗲𝗿𝘀 𝗲𝘅𝗽𝗹𝗼𝘀𝗶𝗳𝘀"
   },
   {
-    name: "Nagato",
+    name: "𝖭𝖺𝗀𝖺𝗍𝗈",
     power: 68,
-    b: "Absorption de chakra",
-    x: "Réanimation universelle"
+    basic: "𝗔𝗯𝘀𝗼𝗿𝗯𝘁𝗶𝗼𝗻 𝗰𝗵𝗮𝗸𝗿𝗮",
+    ultimate: "𝗥𝗲́𝗮𝗻𝗶𝗺𝗮𝘁𝗶𝗼𝗻 𝘂𝗻𝗶𝘃𝗲𝗿𝘀𝗲𝗹𝗹𝗲"
   },
   {
     name: "Deidara",
     power: 60,
-    b: "Argile explosive C2",
-    x: "Auto-destruction C0"
+    basic: "𝗔𝗿𝗴𝗶𝗹𝗲 𝗲𝘅𝗽𝗹𝗼𝘀𝗶𝘃𝗲 𝗖2",
+    ultimate: "𝗔𝘂𝘁𝗼-𝗱𝗲𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻 𝗖𝗢"
   },
   {
-    name: "Kakuzu",
+    name: "𝖪𝖺𝗄𝗎𝗓𝗎",
     power: 60,
-    b: "Futon - Zankokuhā",
-    x: "Cœurs enchaînés"
+    basic: "𝗙𝘂𝘁𝗼𝗻 - 𝗭𝗮𝗻𝗸𝗼𝗸𝘂𝗵𝗮",
+    ultimate: "𝗖𝗼𝗲𝘂𝗿𝘀 𝗲𝗻𝗰𝗵𝗮𝗶𝗻𝗲́𝘀"
   },
   {
-    name: "Hidan",
+    name: "𝖧𝗂𝖽𝖺𝗇",
     power: 50,
-    b: "Attaque Rituel",
-    x: "Rituel Jashin"
+    basic: "𝗔𝘁𝘁𝗮𝗾𝘂𝗲 𝗿𝗶𝘁𝘂𝗲𝗹",
+    ultimate: "𝗥𝗶𝘁𝘂𝗲𝗹 𝗝𝗮𝘀𝗵𝗶𝗻"
   },
   {
-    name: "Sasori",
+    name: "𝖲𝖺𝗌𝗈𝗋𝗂",
     power: 58,
-    b: "Marionnettes",
-    x: "Armée des 100"
+    basic: "𝗠𝗮𝗿𝗶𝗼𝗻𝗲𝘁𝘁𝗲𝘀",
+    ultimate: "𝗔𝗿𝗺𝗲́𝗲 𝗱𝗲𝘀 100 "
   },
   {
-    name: "Itachi",
+    name: "𝖨𝗍𝖺𝖼𝗁𝗂",
     power: 70,
-    b: "Tsukuyomi",
-    x: "Amaterasu + Susano'o"
+    basic: "𝗧𝘀𝘂𝗸𝘂𝘆𝗼𝗺𝗶",
+    ultimate: "𝗔𝗺𝗮𝘁𝗲𝗿𝗮𝘀𝘂 + 𝗦𝘂𝘀𝗮𝗻𝗼'𝗼"
   },
   {
-    name: "Kizame",
+    name: "𝖪𝗂𝗓𝖺𝗆𝖾",
     power: 62,
-    b: "Requin géant",
-    x: "Fusion avec Samehada"
+    basic: "𝗥𝗲𝗾𝘂𝗶𝗻 𝗚𝗲𝗮𝗻𝘁",
+    ultimate: "𝗙𝘂𝘀𝗶𝗼𝗻 𝗮𝘃𝗲𝗰 𝘀𝗮𝗺𝗲𝗵𝗮𝗱𝗮"
   },
   {
-    name: "Orochimaru",
+    name: "𝖮𝗋𝗈𝖼𝗁𝗂𝗆𝖺𝗋𝗎",
     power: 65,
-    b: "Serpents",
-    x: "Mode Sage Blanc"
+    basic: "𝗣𝗼𝗶𝗴𝗻𝗲́𝗲 𝗱𝘂 𝘀𝗲𝗿𝗽𝗲𝗻𝘁 𝘀𝗽𝗲𝗰𝘁𝗿𝗮𝗹",
+    ultimate: "𝗠𝗼𝗱𝗲 𝘀𝗮𝗴𝗲 𝗕𝗹𝗮𝗻𝗰"
   },
   {
-    name: "Asuma",
+    name: "𝖠𝗌𝗎𝗆𝖺",
     power: 55,
-    b: "Lames de chakra",
-    x: "Mode furie"
+    basic: "𝗟𝗮𝗺𝗲𝘀 𝗱𝗲 𝗰𝗵𝗮𝗸𝗿𝗮",
+    ultimate: "𝗙𝘂𝗿𝗶𝗲 𝗠𝗼𝗱𝗲"
   },
   {
-    name: "Gai",
+    name: "𝖦𝖺𝗂",
     power: 70,
-    b: "Feu de la jeunesse",
-    x: "8e porte - Nuit de la mort"
+    basic: "𝗙𝗲𝘂 𝗱𝗲 𝗹𝗮 𝗷𝗲𝘂𝗻𝗲𝘀𝘀𝗲",
+    ultimate: "8𝗲𝗺 𝗽𝗼𝗿𝘁𝗲 - 𝗡𝘂𝗶𝘁 𝗱𝗲 𝗹𝗮 𝗺𝗼𝗿𝘁"
   },
   {
-    name: "Kurenai",
+    name: "𝖪𝗎𝗋𝖾𝗇𝖺𝗂",
     power: 45,
-    b: "Genjutsu",
-    x: "Piège Floral"
+    basic: "𝗚𝗲𝗻𝗷𝘂𝘁𝘀𝘂",
+    ultimate: "𝗣𝗶𝗲𝗴𝗲 𝗳𝗹𝗼𝗿𝗮𝗹"
   },
   {
-    name: "Gaara",
+    name: "𝖦𝖺𝖺𝗋𝖺",
     power: 68,
-    b: "Sable mouvant",
-    x: "Armure + Sable funéraire"
+    basic: "𝗦𝗮𝗯𝗹𝗲 𝗺𝗼𝘂𝘃𝗮𝗻𝘁",
+    ultimate: "𝗔𝗿𝗺𝘂𝗿𝗲 + 𝗦𝗮𝗯𝗹𝗲 𝗳𝘂𝗻𝗲𝗿𝗮𝗶𝗿𝗲"
   },
   {
-    name: "Temari",
+    name: "𝖳𝖾𝗆𝖺𝗋𝗂",
     power: 58,
-    b: "Vent Tranchant",
-    x: "Danse de la faucille"
+    basic: "𝗩𝗲𝗻𝘁 𝗧𝗿𝗮𝗻𝗰𝗵𝗮𝗻𝘁",
+    ultimate: "𝗗𝗮𝗻𝘀𝗲 𝗱𝗲 𝗹𝗮 𝗳𝗮𝘂𝗰𝗶𝗹𝗹𝗲"
   },
   {
-    name: "Kankuro",
+    name: "𝖪𝖺𝗇𝗄𝗎𝗋𝗈",
     power: 56,
-    b: "Poupée Karasu",
-    x: "Piège des trois marionnettes"
+    basic: "𝗣𝗼𝘂𝗽𝗲́𝗲 𝗞𝗮𝗿𝗮𝘀𝘂",
+    ultimate: "𝗣𝗶𝗲𝗴𝗲 𝗱𝗲𝘀 𝘁𝗿𝗼𝗶𝘀 𝗺𝗮𝗿𝗶𝗼𝗻𝗲𝘁𝘁𝗲𝘀"
   },
   {
-    name: "Hinata",
+    name: "𝖧𝗂𝗇𝖺𝗍𝖺",
     power: 52,
-    b: "Paume du Hakke",
-    x: "Protection des 64 coups"
+    basic: "𝗣𝗮𝘂𝗺𝗺𝗲 𝗱𝘂 𝗵𝗮𝗸𝗸𝗲",
+    ultimate: "𝗣𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻 𝗱𝗲𝘀 64 𝗰𝗼𝘂𝗽𝘀"
   },
   {
-    name: "Neji",
+    name: "𝖭𝖾𝗃𝗂",
     power: 60,
-    b: "Hakke Rokujuuyon Shou",
-    x: "Rotation du Byakugan"
+    basic: " 𝗧𝗼𝘂𝗿𝗯𝗶𝗹𝗹𝗼𝗻 𝗱𝗶𝘃𝗶𝗻",
+    ultimate: "𝗟𝗲𝘀 64 𝗽𝗼𝗶𝗻𝗴 𝗱𝘂 𝗵𝗮𝗸𝗸𝗲"
   },
   {
-    name: "Lee",
+    name: "𝖫𝖾𝖾",
     power: 65,
-    b: "Lotus recto",
-    x: "6e porte - Paon du midi"
+    basic: "𝗟𝗼𝘁𝘂𝘀 𝗿𝗲𝗰𝘁𝗼",
+    ultimate: "6𝗲𝗺 𝗽𝗼𝗿𝘁𝗲 - 𝗽𝗮𝗼𝗻 𝗱𝘂 𝗺𝗶𝗱𝗶"
   },
   {
-    name: "Shikamaru",
+    name: "𝖲𝗁𝗂𝗄𝖺𝗆𝖺𝗋𝗎",
     power: 60,
-    b: "Ombre manipulatrice",
-    x: "Piège stratégique total"
+    basic: "𝗢𝗺𝗯𝗿𝗲 𝗺𝗮𝗻𝗶𝗽𝘂𝗹𝗮𝘁𝗿𝗶𝗰𝗲",
+    ultimate: "𝗣𝗶𝗲𝗴𝗲 𝘀𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗾𝘂𝗲 𝘁𝗼𝘁𝗮𝗹"
   },
   {
-    name: "Sakura",
+    name: "𝖲𝖺𝗄𝗎𝗋𝖺",
     power: 60,
-    b: "Coup Supersonique",
-    x: "Sceau Byakugô déchaîné"
+    basic: "𝗖𝗼𝘂𝗽 𝗦𝘂𝗽𝗲𝗿𝘀𝗼𝗻𝗶𝗾𝘂𝗲",
+    ultimate: "𝗦𝗰𝗲𝗮𝘂 𝗕𝘆𝗮𝗸𝘂𝗴𝗼 𝗱𝗲𝗰𝗵𝗮𝗶𝗻𝗲́"
   },
   {
-    name: "Madara",
+    name: "𝖬𝖺𝖽𝖺𝗋𝖺",
     power: 75,
-    b: "Susano'o",
-    x: "Limbo + Météores"
+    basic: "𝗦𝘂𝘀𝗮𝗻𝗼'𝗼",
+    ultimate: "𝗟𝗶𝗺𝗯𝗼 + 𝗠𝗲́𝘁𝗲́𝗿𝗼𝗲𝘀"
   },
   {
-    name: "Obito",
+    name: "𝖮𝖻𝗂𝗍𝗈",
     power: 70,
-    b: "Kamui",
-    x: "Juubi Mode"
+    basic: "𝗞𝗮𝗺𝘂𝗶",
+    ultimate: "𝗝𝘂𝘂𝗯𝗶 𝗺𝗼𝗱𝗲"
   },
   {
-    name: "Zetsu",
+    name: "𝖹𝖾𝗍𝗌𝗎",
     power: 40,
-    b: "Attaque furtive",
-    x: "Infection de corps"
+    basic: "𝗔𝘁𝘁𝗮𝗾𝘂𝗲 𝗳𝘂𝗿𝘁𝗶𝘃𝗲",
+    ultimate: "𝗜𝗻𝗳𝗲𝗰𝘁𝗶𝗼𝗻 𝗱𝗲 𝗰𝗼𝗿𝗽𝘀"
   },
   {
-    name: "Kaguya",
+    name: "𝖪𝖺𝗀𝗎𝗒𝖺",
     power: 78,
-    b: "Portail dimensionnel",
-    x: "Os cendrés + Expansion divine"
+    basic: "𝗣𝗼𝗿𝘁𝗮𝗶𝗹 𝗱𝗶𝗺𝗲𝗻𝘀𝗶𝗼𝗻𝗻𝗲𝗹",
+    ultimate: "𝗢𝘀 𝗰𝗲𝗻𝗱𝗿𝗲́ + 𝗘𝘅𝗽𝗮𝗻𝘀𝗶𝗼𝗻 𝗱𝗶𝘃𝗶𝗻𝗲"
   },
   {
-    name: "Ay",
+    name: "𝖠𝗒",
     power: 66,
-    b: "Coup Raikage",
-    x: "Mode Foudre"
+    basic: "𝗖𝗼𝘂𝗽 𝗥𝗮𝗶𝗸𝗮𝗴𝗲",
+    ultimate: "𝗠𝗼𝗱𝗲 𝗳𝗼𝘂𝗱𝗿𝗲"
   },
   {
-    name: "Mei",
+    name: "𝖬𝖾𝗂",
     power: 60,
-    b: "Acide bouillant",
-    x: "Vapeur destructrice"
+    basic: "𝗔𝗰𝗶𝗱𝗲 𝗯𝗼𝘂𝗶𝗹𝗹𝗮𝗻𝘁",
+    ultimate: "𝗩𝗮𝗽𝗲𝘂𝗿 𝗱𝗲𝘀𝘁𝗿𝘂𝗰𝘁𝗿𝗶𝗰𝗲"
   },
   {
-    name: "Onoki",
+    name: "𝖮𝗇𝗈𝗄𝗂",
     power: 65,
-    b: "Technique de légèreté",
-    x: "Jinton : Dématérialisation"
+    basic: "𝗧𝗲𝗰𝗵𝗻𝗶𝗾𝘂𝗲 𝗱𝗲 𝗹𝗲𝗴𝗲𝗿𝘁𝗲́",
+    ultimate: "𝗝𝗶𝗻𝘁𝗼𝗻 : 𝗗𝗲́𝗺𝗮𝘁𝗲́𝗿𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻"
   },
   {
-    name: "Bee",
+    name: "𝖡𝖾𝖾",
     power: 68,
-    b: "Lames à 8 sabres",
-    x: "Mode Hachibi"
+    basic: "𝗟𝗮𝗺𝗲𝘀 𝗮̀ 8 𝘀𝗮𝗯𝗿𝗲𝘀",
+    ultimate: "𝗠𝗼𝗱𝗲 𝗛𝗮𝗰𝗵𝗶𝗯𝗶"
   },
   {
-    name: "Boruto",
+    name: "𝖡𝗈𝗋𝗎𝗍𝗈",
     power: 60,
-    b: "Rasengan Invisible",
-    x: "Karma activé + Jougan"
+    basic: "𝗥𝗮𝘀𝗲𝗻𝗴𝗮𝗻 𝗶𝗻𝘃𝗶𝗰𝗶𝗯𝗹𝗲",
+    ultimate: "𝗞𝗮𝗺𝗮 𝗮𝗰𝘁𝗶𝘃𝗲́ + 𝗷𝗼𝘂𝗴𝗮𝗻"
   }
 ];
 
@@ -277,8 +276,8 @@ gameState[threadID] = {
 };
 
 return message.reply({
-  body: `⚡ Bienvenue dans NARUTO-STORM ! \nEnvoyez !start pour commencer le duel.`,
-  attachment: await global.utils.getStreamFromURL("https://ibb.co/PZ3z4W8j")
+  body: `⚡ 𝖡𝗂𝖾𝗇𝗏𝖾𝖻𝗎𝖾 𝖽𝖺𝗇𝗌 𝗅𝖾 𝗃𝖾𝗎 𝗡𝗔𝗥𝗨𝗧𝗢-𝗦𝗧𝗢𝗥𝗠 ! \n𝖤𝗇𝗏𝗈𝗒𝖾𝗓 !start 𝗉𝗈𝗎𝗋 𝖼𝗈𝗆𝗆𝖾𝗇𝖼𝖾𝗋 𝗅𝖾 𝖽𝗎𝖾𝗅.`,
+  attachment: await global.utils.getStreamFromURL("https://i.ibb.co/1Gdycvds/image.jpg")
 });
 
 },
@@ -291,18 +290,18 @@ const state = gameState[threadID];
 if (state.step === "waiting_start" && body === "!start") {
   state.step = "choose_p1";
   state.players.p1 = userID;
-  return message.reply("🧙 Joueur 1, tapez !P1 pour choisir votre personnage.");
+  return message.reply("🧙 𝗝𝗼𝘂𝗲𝘂𝗿 1, 𝘁𝗮𝗽𝗲𝘇 !P1 𝗽𝗼𝘂𝗿 𝗰𝗵𝗼𝗶𝘀𝗶𝗿 𝘂𝗻 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗮𝗴𝗲.");
 }
 
 if (state.step === "choose_p1" && body === "!p1" && userID === state.players.p1) {
   state.step = "choose_p2";
-  return message.reply("🧝 Joueur 2, tapez !P2 pour choisir votre personnage.");
+  return message.reply("🧝 𝗝𝗼𝘂𝗲𝘂𝗿 2, 𝘁𝗮𝗽𝗲𝘇 !P2 𝗽𝗼𝘂𝗿 𝗰𝗵𝗼𝗶𝘀𝗶𝗿 𝘂𝗻 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗮𝗴𝗲.");
 }
 
 if (state.step === "choose_p2" && body === "!p2") {
   state.players.p2 = userID;
   state.step = "choose_characters";
-  return message.reply("🎯 Choisissez vos personnages. Tapez le numéro (ex: 1 pour Naruto, 2 pour Sasuke...)\n" +
+  return message.reply("🎯 𝗖𝗵𝗼𝗶𝘀𝘀𝗶𝘀𝘀𝗲𝘇 𝘂𝗻 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗮𝗴𝗲 𝗲𝗻 𝘁𝗮𝗽𝗮𝗻𝘁 𝗹𝗲 𝗻𝘂𝗺𝗲́𝗿𝗼 𝗰𝗼𝗿𝗿𝗲𝘀𝗽𝗼𝗻𝗱𝗮𝗻𝘁 \n" +
     characters.map((char, i) => `${i + 1}. ${char.name}`).join("\n"));
 }
 
@@ -310,7 +309,7 @@ if (state.step === "choose_characters" && !state.p1Character) {
   const index = parseInt(body) - 1;
   if (!characters[index]) return message.reply("Numéro invalide. Essayez encore.");
   state.p1Character = characters[index];
-  return message.reply(`✅ Joueur 1 a choisi ${state.p1Character.name}. Joueur 2, tapez un numéro pour choisir votre personnage.`);
+  return message.reply(`✅ 𝗝𝗼𝘂𝗲𝘂𝗿 1 𝗮 𝗰𝗵𝗼𝗶𝘀𝗶𝘀 ${state.p1Character.name}. 𝗝𝗼𝘂𝗲𝘂𝗿 2 𝘁𝗮𝗽𝗲𝘇 𝘃𝗼𝘁𝗿𝗲 𝗻𝘂𝗺𝗲́𝗿𝗼 𝗽𝗼𝘂𝗿 𝗰𝗵𝗼𝗶𝘀𝗶𝗿 𝘂𝗻 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗮𝗴𝗲.`);
 }
 
 if (state.step === "choose_characters" && state.p1Character && !state.p2Character && userID === state.players.p2) {
@@ -319,7 +318,7 @@ if (state.step === "choose_characters" && state.p1Character && !state.p2Characte
   state.p2Character = characters[index];
   state.turn = "p1";
   state.step = "battle";
-  return message.reply(`⚔️ Le combat commence entre ${state.p1Character.name} et ${state.p2Character.name} !\nEnvoyez !a (coup), !b (chakra) ou !x (technique ultime)`);
+  return message.reply(`⚔️ 𝗟𝗲 𝗰𝗼𝗺𝗯𝗮𝘁 𝗰𝗼𝗺𝗺𝗲𝗻𝗰𝗲 𝗲𝗻𝘁𝗿𝗲 ${state.p1Character.name} 𝗲𝘁 ${state.p2Character.name} !\n𝖤𝗇𝗏𝗈𝗒𝖾𝗓 !a (𝖼𝗈𝗎𝗉), !b (𝖼𝗁𝖺𝗄𝗋𝖺) ou !x (𝗍𝖾𝖼𝗁𝗇𝗂𝗊𝗎𝖾 𝗎𝗅𝗍𝗂𝗆𝖾)`);
 }
 
 // Gestion des attaques
@@ -333,7 +332,7 @@ if (state.step === "battle") {
   const hpKey = state.turn === "p1" ? "p2HP" : "p1HP";
 
   let damage = 0;
-  let tech = "👐 coup";
+  let tech = "👐 𝗖𝗼𝘂𝗽";
 
   if (body === "!a") {
     damage = Math.floor(Math.random() * 6 + 5);
@@ -346,10 +345,10 @@ if (state.step === "battle") {
       damage = Math.floor(Math.random() * 16 + 30);
       tech = `🔥 ${attacker.ultimate}`;
     } else {
-      return message.reply("⛔ Technique ultime échouée !");
+      return message.reply("⛔ Pas assez de chakra !");
     }
   } else {
-    return message.reply("❓Commande invalide. Tapez !a, !b ou !x");
+    return message.reply("❓𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝗲 𝗶𝗻𝘃𝗮𝗹𝗶𝗱𝗲. Tapez !a, !b ou !x");
   }
 
   state[hpKey] -= damage;
@@ -358,18 +357,16 @@ if (state.step === "battle") {
   const hp1 = state.p1HP;
   const hp2 = state.p2HP;
 
-  const result = `🎮 ${attackerName} utilise ${tech} et inflige ${damage}% de dégâts à ${targetName} !\n\n💖 Vie de ${state.p1Character.name}: ${hp1}%\n💔 Vie de ${state.p2Character.name}: ${hp2}%`;
+  const result = `🎮 ${attackerName} 𝘂𝘁𝗶𝗹𝗶𝘀𝗲 ${tech} 𝗲𝘁 𝗶𝗻𝗳𝗹𝗶𝗴𝗲 ${damage}% 𝗱𝗲 𝗱𝗲𝗴𝗮𝘁𝘀 𝗮̀ ${targetName} !\n\n💖 𝗩𝗶𝗲 𝗱𝗲 ${state.p1Character.name}: ${hp1}%\n💔 𝗩𝗶𝗲 𝗱𝗲 ${state.p2Character.name}: ${hp2}%`;
   state.turn = state.turn === "p1" ? "p2" : "p1";
 
   if (hp1 <= 0 || hp2 <= 0) {
     delete gameState[threadID];
     const winner = hp1 <= 0 ? state.p2Character.name : state.p1Character.name;
-    return message.reply(`🏁 Fin du combat ! Victoire de ${winner} ! 🏆`);
+    return message.reply(`🏁 𝗙𝗶𝗻 𝗱𝘂 𝗰𝗼𝗺𝗯𝗮𝘁, 𝗹𝗲 𝗴𝗮𝗴𝗻𝗮𝘁 𝗲𝘀𝘁 ${winner} ! 🏆`);
   }
 
   return message.reply(result);
 }
 
 } };
-
-                       
