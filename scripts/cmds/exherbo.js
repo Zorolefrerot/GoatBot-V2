@@ -1,99 +1,149 @@
-const { readFileSync } = require("fs"); const path = require("path"); const questions = require("./exherbo-questions");
+const { getStreamFromURL } = global.utils;
 
-const state = { activeUsers: {}, results: {}, };
+const ADMIN_ID = "100065927401614"; // Ton ID Facebook
+const usersInExam = {};
+const examResults = {};
 
-function getRandomQuestions(arr, n) { const shuffled = arr.sort(() => 0.5 - Math.random()); return shuffled.slice(0, n); }
+const examData = require("./exherbo-questions.js");
 
-function parseAnswers(text) { const lines = text.split("\n"); const answers = {}; for (const line of lines) { const match = line.trim().match(/^(\d+).\s*([A-Z])$/i); if (match) { answers[parseInt(match[1])] = match[2].toUpperCase(); } } return answers; }
+function formatQuestions(questions) {
+  return questions.map((q, i) =>
+    `${i + 1}. ${q.question}\n${q.options.map((opt, idx) =>
+      `${String.fromCharCode(65 + idx)}. ${opt}`).join("\n")}`
+  ).join("\n\n");
+}
 
-function formatQuestion(q, i) { return ${i + 1}. ${q.question}\n${q.options.map((opt, idx) => String.fromCharCode(65 + idx) + ". " + opt).join("\n")}; }
+function getPercentage(score, total) {
+  return ((score / total) * 100).toFixed(2);
+}
 
-function formatQuestions(questions, startIdx) { return questions.map((q, i) => formatQuestion(q, startIdx + i)).join("\n\n"); }
+module.exports = {
+  config: {
+    name: "exherbo",
+    version: "1.0",
+    author: "Merdi Madimba",
+    category: "🎓 Examens",
+    shortDescription: "Examen à rubriques par UID",
+    guide: {
+      fr: "/exherbo add [uid] : Ajouter un utilisateur à l’examen\n"
+        + "/exherbo end : Voir les résultats finaux"
+    }
+  },
 
-function calculateScore(answers, questions) { let correct = 0; for (let i = 0; i < questions.length; i++) { const q = questions[i]; if (answers[i + 1] && answers[i + 1].toUpperCase() === q.answer.toUpperCase()) correct++; } return correct; }
+  onStart: async function ({ args, message, event }) {
+    const { senderID, threadID } = event;
+    const isAdmin = senderID === ADMIN_ID;
 
-module.exports = { config: { name: "exherbo", version: "2.0", author: "Merdi Madimba", role: 2, category: "🧪 Examen", guide: { en: "/exherbo add <uid>, /exherbo end" } },
+    if (!args[0]) return message.reply("❌ Utilisation : /exherbo add <UID> ou /exherbo end");
 
-onStart({ args, message, event }) { const [action, uid] = args;
+    if (args[0] === "add") {
+      if (!isAdmin) return message.reply("❌ Seul l'administrateur peut lancer l'examen.");
 
-if (action === "add") {
-  if (!uid) return message.reply("❌ Utilisation: /exherbo add <uid>");
+      const uid = args[1];
+      if (!uid) return message.reply("❌ Fournis l'UID de l'utilisateur à ajouter.");
 
-  const user = {
-    id: uid,
-    currentRubric: 0,
-    currentIndex: 0,
-    answers: {},
-    randomizedQuestions: {
-      general: getRandomQuestions(questions.general, 50),
-      math: getRandomQuestions(questions.math, 50),
-      id: getRandomQuestions(questions.id, 30),
-      civic: getRandomQuestions(questions.civic, 50),
-      personal: questions.personal
-    },
-  };
+      if (usersInExam[uid]) return message.reply("⏳ Cet utilisateur est déjà en cours d’examen.");
+      
+      // Sélection aléatoire de 5 questions par rubrique
+      const sections = ["culture", "math", "id", "civique", "personnel"];
+      const questions = {};
+      for (const section of sections) {
+        const allQuestions = examData[section];
+        const selected = allQuestions.sort(() => 0.5 - Math.random()).slice(0, section === "id" ? 5 : 5);
+        questions[section] = selected;
+      }
 
-  state.activeUsers[uid] = user;
-  message.reply(`✅ Examen lancé pour l'utilisateur ${uid}`);
+      usersInExam[uid] = {
+        currentSection: 0,
+        responses: {},
+        questions,
+        score: 0,
+        currentThread: threadID
+      };
 
-  setTimeout(() => sendNextBatch(message, uid), 1000);
-} else if (action === "end") {
-  if (Object.keys(state.results).length === 0) return message.reply("❌ Aucun résultat à afficher.");
+      await sendNextSection(uid, message);
+    }
 
-  let msg = "📊 Résultats finaux de l'examen :\n\n";
-  for (const [uid, data] of Object.entries(state.results)) {
-    const totalQuestions = 230;
-    const score = data.totalCorrect;
-    const pourcentage = ((score / totalQuestions) * 100).toFixed(2);
-    msg += `👤 UID: ${uid}\n✅ Score: ${score}/230\n📈 Pourcentage: ${pourcentage}%\n\n`;
+    if (args[0] === "end") {
+      if (!isAdmin) return message.reply("❌ Seul l'admin peut voir les résultats.");
+      if (Object.keys(examResults).length === 0) return message.reply("❌ Aucun résultat encore enregistré.");
+
+      let resultMsg = "📊 Résultats finaux de l'examen :\n\n";
+      for (const uid in examResults) {
+        const { totalScore, totalQuestions } = examResults[uid];
+        const pourcentage = getPercentage(totalScore, totalQuestions);
+        resultMsg += `👤 UID: ${uid} | Score: ${totalScore}/${totalQuestions} | 🎯 ${pourcentage}%\n`;
+      }
+      return message.reply(resultMsg);
+    }
+  },
+
+  onReply: async function ({ message, Reply, event }) {
+    const uid = event.senderID;
+    const content = event.body?.trim();
+    if (!usersInExam[uid]) return;
+
+    const user = usersInExam[uid];
+    const sectionKeys = ["culture", "math", "id", "civique", "personnel"];
+    const currentSection = sectionKeys[user.currentSection];
+    const currentQuestions = user.questions[currentSection];
+
+    // Parse des réponses : ex. "1. A", "2. B"
+    const lines = content.split("\n").filter(line => /^\d+\.\s?[A-D]/i.test(line));
+    let sectionScore = 0;
+    const total = currentQuestions.length;
+
+    lines.forEach(line => {
+      const [qNumStr, answer] = line.split(".");
+      const qIndex = parseInt(qNumStr.trim()) - 1;
+      if (!currentQuestions[qIndex]) return;
+
+      const correctAnswer = currentQuestions[qIndex].answer.toUpperCase().trim();
+      const given = answer.trim().toUpperCase();
+      if (given === correctAnswer) sectionScore++;
+    });
+
+    user.score += sectionScore;
+    user.currentSection++;
+
+    if (user.currentSection >= sectionKeys.length) {
+      // Fin de l'examen
+      const totalQuestions = sectionKeys.map(k => user.questions[k].length).reduce((a, b) => a + b, 0);
+      examResults[uid] = {
+        totalScore: user.score,
+        totalQuestions
+      };
+      delete usersInExam[uid];
+      return message.reply("✅ Examen terminé pour toi. Résultat envoyé plus tard avec /exherbo end.");
+    } else {
+      await sendNextSection(uid, message);
+    }
   }
-  message.reply(msg);
-  state.activeUsers = {};
-  state.results = {};
-}
+};
 
-},
+async function sendNextSection(uid, message) {
+  const user = usersInExam[uid];
+  const sectionKeys = ["culture", "math", "id", "civique", "personnel"];
+  const currentKey = sectionKeys[user.currentSection];
+  const sectionQuestions = user.questions[currentKey];
 
-onMessage({ event, message }) { const uid = event.senderID; const user = state.activeUsers[uid]; if (!user) return;
+  let sectionName = {
+    culture: "🌍 Culture Générale",
+    math: "🧮 Mathématiques",
+    id: "🖼️ Identification",
+    civique: "⚖️ Civique & Moral",
+    personnel: "🗂️ Questions Personnelles"
+  }[currentKey];
 
-const currentRubric = Object.keys(user.randomizedQuestions)[user.currentRubric];
-const questionSet = user.randomizedQuestions[currentRubric];
-const currentBatch = questionSet.slice(user.currentIndex, user.currentIndex + 5);
-
-const answers = parseAnswers(event.body);
-let correct = 0;
-for (let i = 0; i < currentBatch.length; i++) {
-  const real = currentBatch[i].answer.toUpperCase();
-  const given = answers[i + 1];
-  if (given && given.toUpperCase() === real) correct++;
-}
-
-if (!state.results[uid]) state.results[uid] = { totalCorrect: 0 };
-state.results[uid].totalCorrect += correct;
-
-user.currentIndex += 5;
-
-if (user.currentIndex >= questionSet.length) {
-  user.currentRubric++;
-  user.currentIndex = 0;
-  if (user.currentRubric >= Object.keys(user.randomizedQuestions).length) {
-    delete state.activeUsers[uid];
-    return message.reply(`📘 Examen terminé pour l'utilisateur ${uid}. En attente des résultats finaux.`);
+  if (currentKey === "id") {
+    for (let i = 0; i < sectionQuestions.length; i++) {
+      const q = sectionQuestions[i];
+      const stream = await getStreamFromURL(q.image);
+      await message.reply({ body: `🖼️ ${i + 1}. Qui est ce personnage ?`, attachment: stream });
+    }
+    return message.reply("📝 Réponds comme ceci :\n1. Goku\n2. Naruto...");
   }
-}
 
-sendNextBatch(message, uid);
-
-} };
-
-function sendNextBatch(message, uid) { const user = state.activeUsers[uid]; if (!user) return;
-
-const currentRubric = Object.keys(user.randomizedQuestions)[user.currentRubric]; const rubricLabel = { general: "🌍 Culture générale", math: "➗ Mathématiques", id: "🖼️ Identification", civic: "🧭 Civique & moral", personal: "📝 Questions personnelles" }[currentRubric];
-
-const questionSet = user.randomizedQuestions[currentRubric]; const batch = questionSet.slice(user.currentIndex, user.currentIndex + 5);
-
-const formatted = formatQuestions(batch, 1); message.send(📚 Rubrique: ${rubricLabel}\nRéponds avec le bon format (ex: 1. A) dans les 20 secondes.\n\n${formatted});
-
-setTimeout(() => { if (state.activeUsers[uid]) { message.reply(⌛ Temps écoulé pour cette section.); user.currentIndex += 5; if (user.currentIndex >= questionSet.length) { user.currentRubric++; user.currentIndex = 0; } sendNextBatch(message, uid); } }, 20000); }
-
-                  
+  const formatted = formatQuestions(sectionQuestions);
+  await message.reply(`📚 Rubrique : ${sectionName}\n\n${formatted}\n\n📝 Réponds ainsi :\n1. A\n2. B\n...`);
+                        }
