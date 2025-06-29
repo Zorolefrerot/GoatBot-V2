@@ -230,6 +230,211 @@ module.exports = {
     { question: "Résoudre 3x - 2 = 10", options: ["A. 4", "B. 3", "C. 5", "D. 6"], answer: "C" },
     { question: "Combien de faces possède un dodécaèdre ?", options: ["A. 10", "B. 12", "C. 14", "D. 20"], answer: "B" },
     // ... 45 autres questions similaires
+    
+  {
+    question: "Quelle est la dérivée de ln(x² + 1) ?",
+    options: [
+      "A. 2x / (x² + 1)",
+      "B. ln(x² + 1)",
+      "C. 1 / (x² + 1)",
+      "D. x / (x² + 1)"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Résolvez l'équation : ∫(1 / (x² + 4)) dx",
+    options: [
+      "A. (1/2) arctan(x/2) + C",
+      "B. arctan(2x) + C",
+      "C. ln|x² + 4| + C",
+      "D. x / (x² + 4) + C"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Le produit scalaire de deux vecteurs perpendiculaires vaut :",
+    options: [
+      "A. Leur norme",
+      "B. 0",
+      "C. Leur produit vectoriel",
+      "D. 1"
+    ],
+    answer: "B"
+  },
+  {
+    question: "Si f(x) = e^(2x), alors f''(x) =",
+    options: [
+      "A. 4e^(2x)",
+      "B. 2e^(2x)",
+      "C. e^(2x)",
+      "D. 8e^(2x)"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Quelle est la limite de (sin x)/x lorsque x tend vers 0 ?",
+    options: [
+      "A. 0",
+      "B. ∞",
+      "C. 1",
+      "D. -1"
+    ],
+    answer: "C"
+  },
+  {
+    question: "Quel est le résultat de : ∑ (k=1 à ∞) 1/k² ?",
+    options: [
+      "A. π² / 6",
+      "B. ln(2)",
+      "C. π / 4",
+      "D. 2"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Quel est le déterminant de la matrice [[1, 2], [3, 4]] ?",
+    options: [
+      "A. 10",
+      "B. -2",
+      "C. -5",
+      "D. 2"
+    ],
+    answer: "C"
+  },
+  {
+    question: "Soit f(x) = x³ - 6x² + 9x. Quel est le minimum local ?",
+    options: [
+      "A. x = 0",
+      "B. x = 3",
+      "C. x = 1",
+      "D. x = 2"
+    ],
+    answer: "B"
+  },
+  {
+    question: "Quel est le volume d'une sphère de rayon r ?",
+    options: [
+      "A. (4/3)πr²",
+      "B. 2πr³",
+      "C. (4/3)πr³",
+      "D. πr³"
+    ],
+    answer: "C"
+  },
+  {
+    question: "Le rang de la matrice nulle 3x3 est :",
+    options: [
+      "A. 3",
+      "B. 1",
+      "C. 0",
+      "D. 2"
+    ],
+    answer: "C"
+  },
+
+  // Ajoute 35 autres questions similaires
+  {
+    question: "Quel est le résultat de : ∫ x ln(x) dx ?",
+    options: [
+      "A. x² ln(x)/2 - x²/4 + C",
+      "B. x ln(x) - x + C",
+      "C. ln(x)²/2 + C",
+      "D. x² ln(x) + C"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Quel est le développement de (a + b)^3 ?",
+    options: [
+      "A. a³ + 3a²b + 3ab² + b³",
+      "B. a³ + ab + b³",
+      "C. a² + 2ab + b²",
+      "D. a³ + 2a²b + 2ab² + b³"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Quel est le discriminant de l'équation x² - 4x + 4 ?",
+    options: [
+      "A. 0",
+      "B. 4",
+      "C. 16",
+      "D. -4"
+    ],
+    answer: "A"
+  },
+  {
+    question: "L'intégrale de e^x dx est :",
+    options: [
+      "A. e^x + C",
+      "B. x e^x + C",
+      "C. ln(x) + C",
+      "D. e^(x²) + C"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Quel est le résultat de ln(e^3) ?",
+    options: [
+      "A. 1",
+      "B. 3",
+      "C. ln(3)",
+      "D. e³"
+    ],
+    answer: "B"
+  },
+  {
+    question: "Soit A = [[1, 2], [3, 4]]. Quelle est la trace de A ?",
+    options: [
+      "A. 5",
+      "B. 10",
+      "C. 0",
+      "D. 6"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Résolvez lim (x→∞) (3x² + 2x)/(x² - x)",
+    options: [
+      "A. 3",
+      "B. ∞",
+      "C. 0",
+      "D. 1"
+    ],
+    answer: "A"
+  },
+  {
+    question: "Quelle est la dérivée de f(x) = x / (x+1) ?",
+    options: [
+      "A. 1 / (x + 1)²",
+      "B. 1 / x²",
+      "C. -1 / (x + 1)²",
+      "D. x² / (x + 1)²"
+    ],
+    answer: "A"
+  },
+  {
+    question: "La somme des racines de x² - 5x + 6 est :",
+    options: [
+      "A. 6",
+      "B. 5",
+      "C. -5",
+      "D. 0"
+    ],
+    answer: "B"
+  },
+  {
+    question: "Résolvez : ∫ x / sqrt(x² + 1) dx",
+    options: [
+      "A. sqrt(x² + 1) + C",
+      "B. ln(x² + 1) + C",
+      "C. arcsin(x) + C",
+      "D. x sqrt(x² + 1) + C"
+    ],
+    answer: "A"
+  }
+
+  // Tu peux ajouter les 25 autres avec ce format selon le besoin.
   ],
 
   id: [
