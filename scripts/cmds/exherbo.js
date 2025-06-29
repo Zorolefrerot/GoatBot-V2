@@ -96,4 +96,4 @@ const formatted = formatQuestions(batch, 1); message.send(📚 Rubrique: ${rubri
 
 setTimeout(() => { if (state.activeUsers[uid]) { message.reply(⌛ Temps écoulé pour cette section.); user.currentIndex += 5; if (user.currentIndex >= questionSet.length) { user.currentRubric++; user.currentIndex = 0; } sendNextBatch(message, uid); } }, 20000); }
 
-                                                                                              
+                  
