@@ -438,11 +438,46 @@ module.exports = {
   ],
 
   id: [
-    { image: "https://i.ibb.co/QPqP1gC/luffy.jpg", answer: "Luffy" },
-    { image: "https://i.ibb.co/4VJdf1D/naruto.jpg", answer: "Naruto" },
-    { image: "https://i.ibb.co/yRfj8py/ichigo.jpg", answer: "Ichigo" },
-    { image: "https://i.ibb.co/f0j7vZC/goku.jpg", answer: "Goku" },
-    { image: "https://i.ibb.co/ygztDn4/eren.jpg", answer: "Eren" },
+    { image: "https://i.ibb.co/spm4RNqT/image.jpg", answer: "kylie cantrall" },
+    { image: "https://i.ibb.co/FbY4nNSQ/image.jpg", answer: "dragon ball super" },
+    { image: "https://i.ibb.co/HQm5w5f/image.jpg", answer: "lionel messi" },
+    { image: "https://i.ibb.co/Mx0BzJG4/image.jpg", answer: "cristiano ronaldo" },
+    { image: "https://i.ibb.co/nNW2vWQ2/image.jpg", answer: "isaac newton" },
+    { image: "https://i.ibb.co/Dgp3KMpz/image.jpg", answer: "george washington" },
+    { image: "https://i.ibb.co/RGXd8682/image.jpg", answer: "jude bellingham" },
+    { image: "https://i.ibb.co/MDqJLhYQ/image.jpg", answer: "masashi kishimoto" },
+    { image: "https://i.ibb.co/9HCcLg6D/image.jpg", answer: "robert lewandowski" },
+    { image: "https://i.ibb.co/0pWVzgS6/image.jpg", answer: "kylian mbappé" },
+    { image: "https://i.ibb.co/PGhxsz8j/image.jpg", answer: "paul pogba" },
+    { image: "https://i.ibb.co/JFnQTGsn/image.jpg", answer: "paulo dybala" },
+    { image: "https://i.ibb.co/RkF9ddg4/image.jpg", answer: "chancel mbemba" },
+    { image: "https://i.ibb.co/LDkjWxjk/image.jpg", answer: "neymar" },
+    { image: "https://i.ibb.co/fhqfsvV/image.jpg", answer: "vinicius" },
+    { image: "https://i.ibb.co/RT39mn1P/image.jpg", answer: "henry kane" },
+    { image: "https://i.ibb.co/Fbw2WZx3/image.jpg", answer: "mario mandzukic" },
+    { image: "https://i.ibb.co/ycwhk6zs/image.jpg", answer: "bienvenue chez les loud" },
+    { image: "https://i.ibb.co/Swh2wyrx/image.jpg", answer: "adidas" },
+    { image: "https://i.ibb.co/rRdZmy5W/image.jpg", answer: "nike" },
+    { image: "https://i.ibb.co/7tCKyhhL/image.jpg", answer: "blue lock" },
+    { image: "https://i.ibb.co/0jLDcRZT/image.jpg", answer: "elena d'avalor" },
+    { image: "https://i.ibb.co/HLTwQh8q/image.jpg", answer: "princesse sofia" },
+    { image: "https://i.ibb.co/2Yv0cDS8/image.jpg", answer: "kpop demon hunter" },
+    { image: "https://i.ibb.co/mF8VZnJd/image.jpg", answer: "mohamed salah" },
+    { image: "https://i.ibb.co/GfKbdPY3/image.jpg", answer: "bernardo silva" },
+    { image: "https://i.ibb.co/sdFDbDp7/image.jpg", answer: "louis pasteur" },
+    { image: "https://i.ibb.co/nsfb90yv/image.jpg", answer: "lion" },
+    { image: "https://i.ibb.co/LerhGpJG/image.jpg", answer: "perroquet" },
+    { image: "https://i.ibb.co/DPQ4xGPK/image.jpg", answer: "lièvre" },
+    { image: "https://i.ibb.co/D28jTxx/image.jpg", answer: "donald trump" },
+    { image: "https://i.ibb.co/d4nTr08d/image.jpg", answer: "emmanuel macron" },
+    { image: "https://i.ibb.co/dsnqvFFq/image.jpg", answer: "victor hugo" },
+    { image: "https://i.ibb.co/7dxp8jPf/image.jpg", answer: "bleach" },
+    { image: "https://i.ibb.co/NnSf6BCy/image.jpg", answer: "luka modric" },
+    { image: "https://i.ibb.co/PZ1GHDq5/image.jpg", answer: "dadju" },
+    { image: "https://i.ibb.co/0pFN3LJr/image.jpg", answer: "kalash criminel" },
+    { image: "https://i.ibb.co/pBf3kF0X/image.jpg", answer: "bill gates" },
+    { image: "https://i.ibb.co/B5KFFF4k/image.jpg", answer: "mark zuckerberg" },
+    { image: "https://i.ibb.co/FbY4nNSQ/image.jpg", answer: "dragon ball super" }
     // ... 25 autres questions similaires
   ],
 
@@ -453,9 +488,272 @@ module.exports = {
     { question: "En cas d’incendie à l’école, que fais-tu ?", options: ["A. Cacher sous la table", "B. Courir partout", "C. Suivre le plan d’évacuation", "D. Attendre les pompiers"], answer: "C" },
     { question: "Pourquoi doit-on voter ?", options: ["A. Pour suivre les amis", "B. Pour influencer la politique", "C. Pour éviter une amende", "D. Pour gagner un prix"], answer: "B" },
     // ... 45 autres questions similaires
+    
+  {
+    question: "En tant que chirurgien, vous êtes face à deux patients gravement blessés. Vous ne pouvez en sauver qu’un : l’un est un criminel recherché, l’autre un enfant. Qui opérez-vous ?",
+    options: [
+      "A. L'enfant, car il représente l'avenir.",
+      "B. Le criminel, car toute vie mérite une seconde chance.",
+      "C. Celui qui a été admis en premier.",
+      "D. Celui dont l’état est le plus stable."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Un ingénieur découvre un défaut dans un pont qu’il a aidé à concevoir. Révéler l’erreur mettrait fin à sa carrière. Que doit-il faire ?",
+    options: [
+      "A. Garder le silence et renforcer la structure discrètement.",
+      "B. Alerter les autorités immédiatement.",
+      "C. Attendre de voir si un incident se produit.",
+      "D. Dénoncer anonymement le défaut."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un journaliste reçoit des preuves d’un scandale gouvernemental, mais les publier pourrait mettre sa famille en danger. Que doit-il faire ?",
+    options: [
+      "A. Publier malgré tout par devoir.",
+      "B. Ne pas publier pour protéger sa famille.",
+      "C. Transmettre les preuves à une autre rédaction.",
+      "D. Supprimer les preuves."
+    ],
+    answer: "C"
+  },
+  {
+    question: "Un enseignant découvre que l’un de ses meilleurs élèves triche. Que doit-il faire ?",
+    options: [
+      "A. Ignorer pour ne pas briser sa motivation.",
+      "B. Le dénoncer au conseil scolaire.",
+      "C. L’avertir et le surveiller.",
+      "D. L’interroger seul pour comprendre."
+    ],
+    answer: "D"
+  },
+  {
+    question: "Un policier découvre qu’un collègue proche couvre un réseau de trafic. Que doit-il faire ?",
+    options: [
+      "A. Garder le silence pour ne pas perdre un ami.",
+      "B. Le confronter seul.",
+      "C. Le dénoncer à la hiérarchie.",
+      "D. Quitter le poste pour éviter l’implication."
+    ],
+    answer: "C"
+  },
+  {
+    question: "Un médecin humanitaire reçoit un seul vaccin alors que deux enfants en ont besoin. L’un est gravement malade, l’autre en meilleure santé. Qui vacciner ?",
+    options: [
+      "A. Le plus jeune.",
+      "B. Le plus malade.",
+      "C. Au hasard.",
+      "D. Celui qui est en meilleure santé."
+    ],
+    answer: "D"
+  },
+  {
+    question: "Un soldat reçoit l’ordre d’attaquer un village civil suspecté d’abriter des rebelles. Que faire ?",
+    options: [
+      "A. Obéir à l’ordre.",
+      "B. Refuser et signaler l’ordre à ses supérieurs.",
+      "C. Avertir les villageois discrètement.",
+      "D. Attendre confirmation."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un avocat découvre que son client est coupable d’un crime grave. Il doit néanmoins le défendre. Que doit-il faire ?",
+    options: [
+      "A. Continuer à le défendre avec rigueur.",
+      "B. Informer discrètement le juge.",
+      "C. Abandonner l’affaire.",
+      "D. Plaider la culpabilité."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Un agent de sécurité voit son collègue frapper un suspect déjà maîtrisé. Que faire ?",
+    options: [
+      "A. Le couvrir.",
+      "B. Le signaler à sa hiérarchie.",
+      "C. Le confronter discrètement.",
+      "D. L'enregistrer discrètement."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un infirmier refuse d’administrer un médicament qu’il juge dangereux, malgré l’ordre d’un médecin. Que faire ?",
+    options: [
+      "A. Suivre les ordres malgré ses doutes.",
+      "B. Demander une double validation.",
+      "C. Refuser et signaler à la hiérarchie.",
+      "D. Quitter son poste."
+    ],
+    answer: "C"
+  },
+  {
+    question: "Si vous êtes élu président, quel devrait être votre tout premier ordre pour un changement durable ?",
+    options: [
+      "A. Réformer l’éducation nationale.",
+      "B. Lancer une lutte contre la corruption.",
+      "C. Augmenter les salaires des fonctionnaires.",
+      "D. Investir dans la défense militaire."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un pompier entend des cris derrière une porte en feu, mais son équipement indique qu’il risque sa vie s’il entre. Que faire ?",
+    options: [
+      "A. Suivre le protocole.",
+      "B. Entrer malgré tout.",
+      "C. Chercher une autre entrée.",
+      "D. Appeler ses collègues à l’aide."
+    ],
+    answer: "D"
+  },
+  {
+    question: "En tant que juge, vous recevez un dossier contre un parent proche. Que faire ?",
+    options: [
+      "A. Prendre l’affaire et être objectif.",
+      "B. Refuser le dossier pour impartialité.",
+      "C. Transmettre le dossier à un autre juge.",
+      "D. Garder le dossier confidentiel."
+    ],
+    answer: "C"
+  },
+  {
+    question: "Un pilote de ligne découvre une défaillance technique juste avant le décollage. La compagnie veut maintenir le vol. Que faire ?",
+    options: [
+      "A. Décoller malgré tout.",
+      "B. Avertir les passagers.",
+      "C. Refuser de décoller.",
+      "D. Appeler un autre pilote."
+    ],
+    answer: "C"
+  },
+  {
+    question: "Un responsable RH découvre qu’un excellent candidat a un casier judiciaire. Que faire ?",
+    options: [
+      "A. Refuser sans explication.",
+      "B. Lui accorder une chance après entretien.",
+      "C. Publier l’information.",
+      "D. Appeler la police."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un enseignant remarque qu’un enfant présente des signes de violence domestique. Que faire ?",
+    options: [
+      "A. Interroger discrètement l’enfant.",
+      "B. Prévenir immédiatement les services sociaux.",
+      "C. En parler avec les parents.",
+      "D. Garder le silence pour éviter des ennuis."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un développeur informatique découvre une faille critique dans une banque. Que doit-il faire ?",
+    options: [
+      "A. Garder le silence.",
+      "B. Corriger discrètement la faille.",
+      "C. Avertir la banque immédiatement.",
+      "D. Revendre la faille sur le dark web."
+    ],
+    answer: "C"
+  },
+  {
+    question: "Un responsable de chantier remarque que certains matériaux utilisés sont de mauvaise qualité. Que faire ?",
+    options: [
+      "A. Continuer pour respecter les délais.",
+      "B. Alerter l’ingénieur chef.",
+      "C. Remplacer discrètement les matériaux.",
+      "D. Démissionner."
+    ],
+    answer: "B"
+  },
+  {
+    question: "En tant que militaire, on vous ordonne de torturer un prisonnier pour obtenir des informations. Que faire ?",
+    options: [
+      "A. Obéir aux ordres.",
+      "B. Refuser catégoriquement.",
+      "C. Simuler la torture.",
+      "D. Demander une confirmation écrite."
+    ],
+    answer: "B"
+  },
+  {
+    question: "Un député découvre que ses collègues sont impliqués dans un détournement de fonds. Que doit-il faire ?",
+    options: [
+      "A. Les confronter en privé.",
+      "B. Dénoncer publiquement.",
+      "C. Se retirer du parti.",
+      "D. Garder le silence par loyauté."
+    ],
+    answer: "B"
+  },
+
+  // ... Tu peux me demander la suite pour compléter jusqu’à 50.
   ],
 
   personnel: [
     // Laisser vide, à remplir manuellement
+      {
+    question: "Quel est le nom de mon créateur  ?",
+    options: [
+      "A. Merd Madimba.",
+      "B. Merdii Madimba.",
+      "C. Merdi Mabimba.",
+      "D. Merdi Madimba."
+    ],
+    answer: "D"
+  },
+    {
+    question: "Quelle est la date d'anniversaire de merdi madimba  ?",
+    options: [
+      "A. 28/07/.",
+      "B. 26/07/.",
+      "C. 25/07/.",
+      "D. 27/07/."
+    ],
+    answer: "A"
+  },
+    {
+    question: "Quelle est la capitale de la RDC   ?",
+    options: [
+      "A. Lubumbashi.",
+      "B. Malibu.",
+      "C. Kinshasa.",
+      "D. Brazzaville."
+    ],
+    answer: "C"
+  },
+    {
+    question: "Quel est le protagoniste du manga a couples of cuckoos  ?",
+    options: [
+      "A. Mikasa.",
+      "B. Nagi.",
+      "C. Satoru.",
+      "D. jin."
+    ],
+    answer: "B"
+  },
+    {
+    question: "Quel est le pays d'origine de merdi madimba ?",
+    options: [
+      "A. RD congo.",
+      "B. Madagascar.",
+      "C. République du Congo.",
+      "D. République du Rwanda."
+    ],
+    answer: "A"
+  },
+    {
+    question: "Quelle est la capitale de l'Espagne ?",
+    options: [
+      "A. Mardid.",
+      "B. Madridd.",
+      "C. madrid.",
+      "D. madird."
+    ],
+    answer: "c"
+  },
   ]
 };
