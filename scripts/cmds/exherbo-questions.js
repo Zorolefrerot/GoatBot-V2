@@ -599,4 +599,249 @@ module.exports = {
     ],
     answer: "B"
   },
+  {
+    question: "En tant qu’enseignant, un élève vient te confier qu’il est victime de violences chez lui. Que fais-tu en priorité ?",
+    options: [
+      "A. J'en parle au directeur de l’école.",
+      "B. J’attends de voir s’il m’en reparle.",
+      "C. J'appelle directement ses parents.",
+      "D. Je garde cela pour moi afin de ne pas lui créer d'ennuis."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Si tu es médecin et un patient refuse un traitement vital, que dois-tu faire ?",
+    options: [
+      "A. Respecter sa décision après explication.",
+      "B. Forcer le traitement.",
+      "C. Appeler la police.",
+      "D. Mentir pour le convaincre."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Un collègue détourne discrètement du matériel dans une administration. Que dois-tu faire ?",
+    options: [
+      "A. En parler à un supérieur hiérarchique.",
+      "B. L’ignorer, ce n’est pas ton affaire.",
+      "C. L’aider à cacher les preuves.",
+      "D. Le dénoncer anonymement sur les réseaux sociaux."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Si tu es président d’un pays, que fais-tu en priorité pour protéger la population ?",
+    options: [
+      "A. Renforcer l’éducation et la santé.",
+      "B. Augmenter ton salaire.",
+      "C. Réduire l’opposition politique.",
+      "D. Investir dans des défilés militaires."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Lors d’un incendie dans un hôpital, quel est ton premier devoir en tant qu’infirmier ?",
+    options: [
+      "A. Aider à évacuer les patients.",
+      "B. Sauver ton matériel de travail.",
+      "C. Filmer la scène pour prévenir.",
+      "D. Sauver en priorité tes amis."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Un de tes camarades triche à un examen important. Que fais-tu ?",
+    options: [
+      "A. Tu informes discrètement l’examinateur.",
+      "B. Tu triches aussi pour équilibrer.",
+      "C. Tu ne dis rien par solidarité.",
+      "D. Tu le dénonces publiquement."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Si un malade fait une crise d’épilepsie devant toi, que dois-tu faire ?",
+    options: [
+      "A. Protéger sa tête et appeler les secours.",
+      "B. Lui faire boire de l’eau.",
+      "C. Le secouer pour qu’il se réveille.",
+      "D. Fuir par peur d’être accusé."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es maire et des ordures s'accumulent dans un quartier. Quelle est ta première action ?",
+    options: [
+      "A. Envoyer une équipe de nettoyage.",
+      "B. Accuser les habitants publiquement.",
+      "C. Interdire l’accès au quartier.",
+      "D. Ignorer la situation."
+    ],
+    answer: "A"
+  },
+  {
+    question: "En tant qu’enseignant, tu remarques qu’un élève est souvent isolé et triste. Quelle est ta réaction ?",
+    options: [
+      "A. L’écouter discrètement et alerter si nécessaire.",
+      "B. L’exclure pour éviter des problèmes.",
+      "C. L’humilier pour qu’il s’intègre.",
+      "D. Le forcer à participer aux activités."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Un citoyen te demande de l’aide en pleine rue, que fais-tu ?",
+    options: [
+      "A. Tu t’arrêtes pour l’écouter et voir s’il est en danger.",
+      "B. Tu ignores, trop pressé.",
+      "C. Tu filmes et postes sur les réseaux.",
+      "D. Tu l’interroges avant toute chose."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es juge et un accusé reconnaît ses fautes en pleurant. Que fais-tu ?",
+    options: [
+      "A. Tu juges selon la loi et non l’émotion.",
+      "B. Tu réduis sa peine sans dossier.",
+      "C. Tu l'ignores complètement.",
+      "D. Tu le libères pour sa sincérité."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es chauffeur de bus et un passager fait un malaise. Quelle est ta priorité ?",
+    options: [
+      "A. T'arrêter et appeler les secours.",
+      "B. Continuer le trajet.",
+      "C. Demander aux autres de l’aider.",
+      "D. Le faire descendre."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es témoin d’une injustice envers une personne âgée. Que fais-tu ?",
+    options: [
+      "A. Tu t’interposes ou appelles les secours.",
+      "B. Tu fuis.",
+      "C. Tu rigoles de la situation.",
+      "D. Tu filmes sans agir."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Un enfant demande de l’aide pour retrouver ses parents. Tu…",
+    options: [
+      "A. L’accompagnes jusqu’à un agent de sécurité.",
+      "B. Tu l’interroges puis le laisses.",
+      "C. Tu l’ignores.",
+      "D. Tu lui demandes de t’emmener chez lui."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es ministre de la santé et une pandémie arrive. Que fais-tu en premier ?",
+    options: [
+      "A. Informer la population et distribuer des consignes.",
+      "B. Garder le silence pour éviter la panique.",
+      "C. Démissionner.",
+      "D. Fermer tous les hôpitaux."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu vois une personne faire un malaise dans un lieu public, tu…",
+    options: [
+      "A. Appelles les secours et t’assures qu’elle est en sécurité.",
+      "B. Continues ton chemin.",
+      "C. Attends que d’autres réagissent.",
+      "D. Prends une photo."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es chef d’une entreprise et découvre une fraude interne, tu…",
+    options: [
+      "A. Lances une enquête et suspend les responsables.",
+      "B. Caches pour éviter un scandale.",
+      "C. Licencies tout le service.",
+      "D. Démissionnes pour fuir la crise."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Une élève tombe en pleurs après un harcèlement. Tu es prof, tu…",
+    options: [
+      "A. La protèges et déclenches une procédure.",
+      "B. Tu fais comme si tu n’avais rien vu.",
+      "C. Tu la punis pour avoir pleuré.",
+      "D. Tu lui dis de se débrouiller seule."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es policier et on te propose un pot-de-vin, tu…",
+    options: [
+      "A. Refuses et en fais rapport.",
+      "B. Acceptes en secret.",
+      "C. Négocies un plus gros montant.",
+      "D. Ignorés le geste."
+    ],
+    answer: "A"
+  },
+  {
+    question: "Tu es dans un bus, une femme enceinte entre et il n'y a plus de siège…",
+    options: [
+      "A. Tu te lèves et lui proposes ta place.",
+      "B. Tu fais semblant de dormir.",
+      "C. Tu attends qu’un autre se lève.",
+      "D. Tu ignores."
+    ],
+    answer: "A"
+  }
+],
+    personelle: [
+  {
+    question: "Quel héros du manga blue lock ?",
+    options: ["A. isagi", "B. Goku", "C. Luffy", "D. Ichigo"],
+    answer: "A"
+  },
+  {
+    question: "Quel est le plat préféré des italiens ?",
+    options: ["A. Ramen", "B. saucisse", "C. Poulet braisé", "D. pizza"],
+    answer: "D"
+  },
+  {
+    question: "Qui est mon créateur  ?",
+    options: ["A. Mikami", "B. Heikichi", "C. Merdi", "D. Eckson"],
+    answer: "C"
+  },
+  {
+    question: "Quel pays a pour capitale tokyo?",
+    options: ["A. Japon", "B. France", "C. USA", "D. Brésil"],
+    answer: "A"
+  }
+      {
+    question: "Quelle est la date d'anniversaire de merdi?",
+    options: ["A. 27/07/", "B. 28/07/", "C. 29/07/", "D. 30/07/"],
+    answer: "B"
+}
+{
+    question: "Qui est pilier de l'amour dans demon slayer ?",
+    options: ["A. Sakonji", "B. Mitisuri", "C. Mitsuiri", "D. Mitsuri"],
+    answer: "D"
+}
+{
+    question: "Quel est le pays d'origine fe merdi ?",
+    options: ["A. RD Congo", "B. République du Rwanda", "C. République du Congo", "D. République du Bénin"],
+    answer: "A"
+}
+{
+    question: "Qui est le protagoniste du manga a couples cuckoos ?",
+    options: ["A. Satoru", "B. Shin", "C. Nagi", "D. Van"],
+    answer: "C"
+}
+    
+    ]
+    };
   
