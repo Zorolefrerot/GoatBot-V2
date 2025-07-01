@@ -832,7 +832,7 @@ module.exports = {
     answer: "D"
 },
 {
-    question: "Quel est le pays d'origine fe merdi ?",
+    question: "Quel est le pays d'origine de merdi ?",
     options: ["A. RD Congo", "B. République du Rwanda", "C. République du Congo", "D. République du Bénin"],
     answer: "A"
 },
@@ -847,7 +847,7 @@ module.exports = {
     answer: "C"
 },
       {
-    question: "Qui a le bankai nommé"Konjiki Ashisogijizo" dans le manga bleach ?",
+    question: "Qui a le bankai nommé Konjiki Ashisogijizo dans le manga bleach ?",
     options: ["A. Kyoraku", "B. Mayuri", "C. Shinji", "D. Soi Fon"],
     answer: "B"
 },
@@ -858,7 +858,7 @@ module.exports = {
 },
       
       {
-    question: "Dans quel pays trouve t-on un état nommé "Ohio" ?",
+    question: "Dans quel pays trouve t-on un état nommé Ohio ?",
     options: ["A. Guatemala", "B. Usa", "C. Haïti", "D. Canada"],
     answer: "B"
 },
