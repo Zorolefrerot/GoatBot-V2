@@ -820,27 +820,27 @@ module.exports = {
     question: "Quel pays a pour capitale tokyo?",
     options: ["A. Japon", "B. France", "C. USA", "D. Brésil"],
     answer: "A"
-  }
+  },
       {
     question: "Quelle est la date d'anniversaire de merdi?",
     options: ["A. 27/07/", "B. 28/07/", "C. 29/07/", "D. 30/07/"],
     answer: "B"
-}
+},
 {
     question: "Qui est pilier de l'amour dans demon slayer ?",
     options: ["A. Sakonji", "B. Mitisuri", "C. Mitsuiri", "D. Mitsuri"],
     answer: "D"
-}
+},
 {
     question: "Quel est le pays d'origine fe merdi ?",
     options: ["A. RD Congo", "B. République du Rwanda", "C. République du Congo", "D. République du Bénin"],
     answer: "A"
-}
+},
 {
     question: "Qui est le protagoniste du manga a couples cuckoos ?",
     options: ["A. Satoru", "B. Shin", "C. Nagi", "D. Van"],
     answer: "C"
-}
+},
     
     ]
     };
