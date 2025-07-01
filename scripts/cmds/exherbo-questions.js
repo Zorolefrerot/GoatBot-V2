@@ -800,7 +800,7 @@ module.exports = {
     answer: "A"
   }
 ],
-    personelle: [
+    personnelle: [
   {
     question: "Quel héros du manga blue lock ?",
     options: ["A. isagi", "B. Goku", "C. Luffy", "D. Ichigo"],
