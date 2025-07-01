@@ -841,6 +841,57 @@ module.exports = {
     options: ["A. Satoru", "B. Shin", "C. Nagi", "D. Van"],
     answer: "C"
 },
+      {
+    question: "Quelle est la capitale du togo ?",
+    options: ["A. Ancrage", "B. Lommé", "C. Lomé", "D. Vannes"],
+    answer: "C"
+},
+      {
+    question: "Qui a le bankai nommé"Konjiki Ashisogijizo" dans le manga bleach ?",
+    options: ["A. Kyoraku", "B. Mayuri", "C. Shinji", "D. Soi Fon"],
+    answer: "B"
+},
+      {
+    question: "Combien des degrés a un angle droit ?",
+    options: ["A. 95°", "B. 37°", "C. 60°", "D. 90°"],
+    answer: "D"
+},
+      
+      {
+    question: "Dans quel pays trouve t-on un état nommé "Ohio" ?",
+    options: ["A. Guatemala", "B. Usa", "C. Haïti", "D. Canada"],
+    answer: "B"
+},
+      
+      {
+    question: "Quelle est la date de l'indépendance dea RDC ?",
+    options: ["A. 1/07/1960", "B. 28/06/1960", "C. 30/06/1960", "D. Aucune bonne réponse"],
+    answer: "C"
+},
+      
+      {
+    question: "Qui est l'hôte que ishiiki choisit, après son combat contre naruto et sasuke ?",
+    options: ["A. Sasuke", "B. Kawaki", "C. Himawari", "D. Code"],
+    answer: "D"
+},
+      
+      {
+    question: "Qui sont les parents de Obed dans le livre de Ruth ?",
+    options: ["A. Abraham et Ruth", "B. Boaz et Ruth", "C. Elimelek et Ruth", "D. Gomor et Ruth"],
+    answer: "B"
+},
+      
+      {
+    question: "Quel est le résultat de 0×0?",
+    options: ["A. 0.0", "B. 00", "C. 0", "D. 0°"],
+    answer: "D"
+},
+      
+      {
+    question: "Que veux dire Moon ?",
+    options: ["A. Luune", "B. Lunee", "C. Lunne", "D. Lune"],
+    answer: "D"
+},
     
     ]
     };
