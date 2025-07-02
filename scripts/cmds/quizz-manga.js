@@ -560,7 +560,7 @@ const questions = [
   { question: "quelle est l’arme favorite d’olivier ?\n🎌Fullmetal Alchemist Brotherhood🎌", answer: "épée" },
   { question: "comment hohenheim devient immortel ?\n🎌Fullmetal Alchemist Brotherhood🎌", answer: "il absorbe des âmes" },
   { question: "que symbolise la porte de la vérité ?\n🎌Fullmetal Alchemist Brotherhood🎌", answer: "la connaissance absolue" },
-      [
+      
   { question: "quel est le vrai nom de saitama ?\n🎌One Punch Man🎌", answer: "saitama" },
   { question: "quel est le héros de classe s qui utilise un katana ?\n🎌One Punch Man🎌", answer: "atomic samurai" },
   { question: "quel est le rang de genos dans la classe s au début ?\n🎌One Punch Man🎌", answer: "14" },
