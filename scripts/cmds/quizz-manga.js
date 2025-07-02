@@ -1425,13 +1425,6 @@ const questions = [
   { question: "quelle émotion pousse gabimaru à survivre ?\n🎌hell's paradise🎌", answer: "l'amour" },
   { question: "quelle est la plus grande qualité des vrais survivants ?\n🎌hell's paradise🎌", answer: "l’adaptabilité" },
   { question: "que symbolise l’enfer dans hell’s paradise ?\n🎌hell's paradise🎌", answer: "la lutte intérieure pour vivre" }
-
-
-
-
-
-
-
 ];
 
 const activeSessions = {};
