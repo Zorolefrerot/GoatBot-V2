@@ -1,4 +1,1009 @@
 const questions = [
+  {
+    question: "Qui est le premier humain à combattre dans le tournoi Ragnarok ? 🎌valkyrie apocalypse🎌",
+    answer: "lu bu"
+  },
+  {
+    question: "Quel est le dieu nordique qui affronte Adam dans le tournoi ? 🎌valkyrie apocalypse🎌",
+    answer: "zeus"
+  },
+  {
+    question: "Quel est le surnom d’Adam dans le manga ? 🎌valkyrie apocalypse🎌",
+    answer: "le père de l'humanité"
+  },
+  {
+    question: "Quel est le nom de la valkyrie qui accompagne Lu Bu ? 🎌valkyrie apocalypse🎌",
+    answer: "randgrid"
+  },
+  {
+    question: "Qui gagne le combat entre Zeus et Adam ? 🎌valkyrie apocalypse🎌",
+    answer: "zeus"
+  },
+  {
+    question: "Quel personnage est connu comme le plus fort des humains ? 🎌valkyrie apocalypse🎌",
+    answer: "lu bu"
+  },
+  {
+    question: "Comment s'appelle la chef des valkyries ? 🎌valkyrie apocalypse🎌",
+    answer: "brunhilde"
+  },
+  {
+    question: "Combien de combats sont prévus dans le tournoi Ragnarok ? 🎌valkyrie apocalypse🎌",
+    answer: "13"
+  },
+  {
+    question: "Quel est le frère de Brunhilde ? 🎌valkyrie apocalypse🎌",
+    answer: "göll"
+  },
+  {
+    question: "Quel est le métier de Jack l'Éventreur dans son combat ? 🎌valkyrie apocalypse🎌",
+    answer: "tueur en série"
+  },
+  {
+    question: "Quel dieu combat Jack l'Éventreur ? 🎌valkyrie apocalypse🎌",
+    answer: "heracles"
+  },
+  {
+    question: "Qui est le dieu nordique à l’œil unique ? 🎌valkyrie apocalypse🎌",
+    answer: "odin"
+  },
+  {
+    question: "Qui est connu comme le plus grand sumo dans le manga ? 🎌valkyrie apocalypse🎌",
+    answer: "raiden tameemon"
+  },
+  {
+    question: "Quel dieu hindou combat Shiva dans le manga ? 🎌valkyrie apocalypse🎌",
+    answer: "rudra"
+  },
+  {
+    question: "Qui gagne le combat entre Shiva et Raiden ? 🎌valkyrie apocalypse🎌",
+    answer: "shiva"
+  },
+  {
+    question: "Quel héros grec combat dans le tournoi ? 🎌valkyrie apocalypse🎌",
+    answer: "heracles"
+  },
+  {
+    question: "Quel personnage humain utilise des illusions dans son combat ? 🎌valkyrie apocalypse🎌",
+    answer: "jack l'éventreur"
+  },
+  {
+    question: "Qui est le dieu du tonnerre nordique ? 🎌valkyrie apocalypse🎌",
+    answer: "thor"
+  },
+  {
+    question: "Qui combat Thor au premier tour ? 🎌valkyrie apocalypse🎌",
+    answer: "lu bu"
+  },
+  {
+    question: "Comment se nomme l'arme de Thor ? 🎌valkyrie apocalypse🎌",
+    answer: "mjolnir"
+  },
+  {
+    question: "Quel humain combat Zeus ? 🎌valkyrie apocalypse🎌",
+    answer: "adam"
+  },
+  {
+    question: "Quel philosophe grec est un arbitre dans le tournoi ? 🎌valkyrie apocalypse🎌",
+    answer: "socrate"
+  },
+  {
+    question: "Qui est le dieu de la guerre grec dans le manga ? 🎌valkyrie apocalypse🎌",
+    answer: "ares"
+  },
+  {
+    question: "Quel est le combat où un humain gagne pour la première fois ? 🎌valkyrie apocalypse🎌",
+    answer: "kojiro vs poseidon"
+  },
+  {
+    question: "Quel est le surnom de Kojiro Sasaki ? 🎌valkyrie apocalypse🎌",
+    answer: "le plus grand perdant de l'histoire"
+  },
+  {
+    question: "Quel dieu grec combat Kojiro Sasaki ? 🎌valkyrie apocalypse🎌",
+    answer: "poseidon"
+  },
+  {
+    question: "Qui gagne le combat entre Kojiro Sasaki et Poseidon ? 🎌valkyrie apocalypse🎌",
+    answer: "kojiro sasaki"
+  },
+  {
+    question: "Quel est le style de combat de Raiden ? 🎌valkyrie apocalypse🎌",
+    answer: "sumo"
+  },
+  {
+    question: "Quel dieu a été élu président du conseil des dieux ? 🎌valkyrie apocalypse🎌",
+    answer: "zeus"
+  },
+  {
+    question: "Quel humain est représenté avec un chapeau haut-de-forme ? 🎌valkyrie apocalypse🎌",
+    answer: "jack l'éventreur"
+  },
+  {
+    question: "Quel dieu possède douze armes dans le manga ? 🎌valkyrie apocalypse🎌",
+    answer: "buddha"
+  },
+  {
+    question: "Qui est le premier personnage à changer de camp pendant le tournoi ? 🎌valkyrie apocalypse🎌",
+    answer: "buddha"
+  },
+  {
+    question: "Quel dieu veut exterminer tous les humains dès le départ ? 🎌valkyrie apocalypse🎌",
+    answer: "zeus"
+  },
+  {
+    question: "Quel humain combat avec une technique d'escrime inédite ? 🎌valkyrie apocalypse🎌",
+    answer: "kojiro sasaki"
+  },
+  {
+    question: "Qui observe le tournoi avec deux corbeaux ? 🎌valkyrie apocalypse🎌",
+    answer: "odin"
+  },
+  {
+    question: "Qui est considéré comme le dieu le plus rapide ? 🎌valkyrie apocalypse🎌",
+    answer: "poseidon"
+  },
+  {
+    question: "Quel est le vrai nom de Jack l'Éventreur ? 🎌valkyrie apocalypse🎌",
+    answer: "inconnu"
+  },
+  {
+    question: "Quel est le rôle de Heimdall dans le tournoi ? 🎌valkyrie apocalypse🎌",
+    answer: "commentateur"
+  },
+  {
+    question: "Quelle valkyrie fusionne avec Adam ? 🎌valkyrie apocalypse🎌",
+    answer: "reginleif"
+  },
+  {
+    question: "Quel dieu possède plusieurs bras dans le combat contre Raiden ? 🎌valkyrie apocalypse🎌",
+    answer: "shiva"
+  },
+  {
+    question: "Quel personnage humain est basé sur un tueur réel ? 🎌valkyrie apocalypse🎌",
+    answer: "jack l'éventreur"
+  },
+  {
+    question: "Quel dieu a été dépeint comme enfant avant de grandir d'un coup ? 🎌valkyrie apocalypse🎌",
+    answer: "zeus"
+  },
+  {
+    question: "Qui gagne entre Heracles et Jack l'Éventreur ? 🎌valkyrie apocalypse🎌",
+    answer: "jack l'éventreur"
+  },
+  {
+    question: "Qui affronte Buddha dans le tournoi ? 🎌valkyrie apocalypse🎌",
+    answer: "zerofuku"
+  },
+  {
+    question: "Quel dieu représente la fusion des sept dieux du mal ? 🎌valkyrie apocalypse🎌",
+    answer: "zerofuku"
+  },
+  {
+    question: "Quel est le pouvoir spécial d’Adam pendant son combat ? 🎌valkyrie apocalypse🎌",
+    answer: "oeil divin"
+  },
+  {
+    question: "Qui est connu pour avoir défié les dieux en duel dans le passé ? 🎌valkyrie apocalypse🎌",
+    answer: "lu bu"
+  },
+  {
+    question: "Quel dieu est souvent en train de boire dans le manga ? 🎌valkyrie apocalypse🎌",
+    answer: "ares"
+  },
+  {
+    question: "Quel humain utilise un gant comme arme principale ? 🎌valkyrie apocalypse🎌",
+    answer: "jack l'éventreur"
+  },
+  {
+    question: "Quel dieu se bat torse nu avec un physique imposant ? 🎌valkyrie apocalypse🎌",
+    answer: "heracles"
+  },
+
+  {
+    question: "Quel est le prénom complet du personnage principal dans konosuba ? 🎌konosuba🎌",
+    answer: "kazuma satou"
+  },
+  {
+    question: "Quelle déesse envoie Kazuma dans le monde parallèle ? 🎌konosuba🎌",
+    answer: "aqua"
+  },
+  {
+    question: "Quel objet Kazuma choisit-il d’emmener avec lui dans le monde parallèle ? 🎌konosuba🎌",
+    answer: "aqua"
+  },
+  {
+    question: "Quel est le nom de la magicienne obsédée par les explosions ? 🎌konosuba🎌",
+    answer: "megumin"
+  },
+  {
+    question: "Quelle classe choisit Kazuma dans le nouveau monde ? 🎌konosuba🎌",
+    answer: "aventurier"
+  },
+  {
+    question: "Comment s’appelle la chevalière masochiste qui rejoint l’équipe ? 🎌konosuba🎌",
+    answer: "darkness"
+  },
+  {
+    question: "Quelle est la seule magie que Megumin utilise ? 🎌konosuba🎌",
+    answer: "explosion"
+  },
+  {
+    question: "Quel est le nom du roi démon que l’équipe combat indirectement ? 🎌konosuba🎌",
+    answer: "maou"
+  },
+  {
+    question: "Quel est le vrai nom de Darkness ? 🎌konosuba🎌",
+    answer: "lalatina dustiness ford"
+  },
+  {
+    question: "Quel est le nom de la ville où vivent Kazuma et ses amis ? 🎌konosuba🎌",
+    answer: "axel"
+  },
+  {
+    question: "Quel est le passe-temps favori d’Aqua ? 🎌konosuba🎌",
+    answer: "boire de l’alcool"
+  },
+  {
+    question: "Quel est le premier ennemi que Kazuma tue dans le nouveau monde ? 🎌konosuba🎌",
+    answer: "crapaud"
+  },
+  {
+    question: "Qui est la rivale autoproclamée de Megumin ? 🎌konosuba🎌",
+    answer: "yunyun"
+  },
+  {
+    question: "Quel type de sort Aqua utilise-t-elle principalement ? 🎌konosuba🎌",
+    answer: "magie sacrée"
+  },
+  {
+    question: "Quel est le niveau d’intelligence de Kazuma dans le monde parallèle ? 🎌konosuba🎌",
+    answer: "élevé"
+  },
+  {
+    question: "Comment s’appelle le voleur qui apparaît parfois dans la série ? 🎌konosuba🎌",
+    answer: "chris"
+  },
+  {
+    question: "Quel pouvoir Kazuma utilise souvent pour voler les sous-vêtements ? 🎌konosuba🎌",
+    answer: "vol"
+  },
+  {
+    question: "Quelle est la principale faiblesse de Megumin ? 🎌konosuba🎌",
+    answer: "elle s’évanouit après chaque sort"
+  },
+  {
+    question: "Quel est le genre de Kazuma dans le nouveau monde ? 🎌konosuba🎌",
+    answer: "homme"
+  },
+  {
+    question: "Quelle est la spécialité de Darkness ? 🎌konosuba🎌",
+    answer: "tank"
+  },
+  {
+    question: "Quel est le défaut principal de Darkness au combat ? 🎌konosuba🎌",
+    answer: "elle rate toujours ses attaques"
+  },
+  {
+    question: "Comment s’appelle la déesse amie de Chris ? 🎌konosuba🎌",
+    answer: "eris"
+  },
+  {
+    question: "Qui se cache derrière l’identité de la déesse Eris ? 🎌konosuba🎌",
+    answer: "chris"
+  },
+  {
+    question: "Quelle est la rumeur que répand Aqua sur Eris ? 🎌konosuba🎌",
+    answer: "elle utilise des faux seins"
+  },
+  {
+    question: "Comment Kazuma est-il mort au début de la série ? 🎌konosuba🎌",
+    answer: "crise cardiaque"
+  },
+  {
+    question: "Quel est le nom du général de l’armée du roi démon qui contrôle les morts ? 🎌konosuba🎌",
+    answer: "verdia"
+  },
+  {
+    question: "Quel objet précieux Kazuma revend au royaume pour une récompense ? 🎌konosuba🎌",
+    answer: "épée magique"
+  },
+  {
+    question: "Quel est le rêve d’Aqua ? 🎌konosuba🎌",
+    answer: "retourner au paradis"
+  },
+  {
+    question: "Quel genre de jeu est parodié dans konosuba ? 🎌konosuba🎌",
+    answer: "rpg"
+  },
+  {
+    question: "Qui est souvent recouverte de bave par les crapauds géants ? 🎌konosuba🎌",
+    answer: "aqua"
+  },
+  {
+    question: "Quel est le style d’humour principal dans konosuba ? 🎌konosuba🎌",
+    answer: "comédie absurde"
+  },
+  {
+    question: "Qui est la seule à refuser de changer de sorts malgré leur inefficacité ? 🎌konosuba🎌",
+    answer: "megumin"
+  },
+  {
+    question: "Quel est le rapport entre Aqua et la guilde des aventuriers ? 🎌konosuba🎌",
+    answer: "aucun"
+  },
+  {
+    question: "Comment Aqua purifie-t-elle les morts-vivants ? 🎌konosuba🎌",
+    answer: "eau sacrée"
+  },
+  {
+    question: "Qui possède un immense pouvoir magique mais peu de sens pratique ? 🎌konosuba🎌",
+    answer: "aqua"
+  },
+  {
+    question: "Quel sort Kazuma vole-t-il à Chris ? 🎌konosuba🎌",
+    answer: "vol"
+  },
+  {
+    question: "Quelle est la principale source d’argent de l’équipe ? 🎌konosuba🎌",
+    answer: "chasser des monstres"
+  },
+  {
+    question: "Quel animal Kazuma parvient-il à apprivoiser brièvement ? 🎌konosuba🎌",
+    answer: "chimère"
+  },
+  {
+    question: "Quel est le point faible de Megumin dans les donjons ? 🎌konosuba🎌",
+    answer: "elle ne peut pas bouger après avoir lancé son sort"
+  },
+  {
+    question: "Quel type de monstre attaque la ville d’Axel dans la saison 1 ? 🎌konosuba🎌",
+    answer: "crapaud géant"
+  },
+  {
+    question: "Que fait Kazuma pour sortir Aqua d’un temple maudit ? 🎌konosuba🎌",
+    answer: "il vend tous leurs biens"
+  },
+  {
+    question: "Pourquoi Kazuma est-il souvent emprisonné ? 🎌konosuba🎌",
+    answer: "il est soupçonné de trahison ou vol"
+  },
+  {
+    question: "Quel est le souhait d’Aqua en allant dans le nouveau monde ? 🎌konosuba🎌",
+    answer: "revenir rapidement au paradis"
+  },
+  {
+    question: "Quel personnage féminin est issue d'une famille noble ? 🎌konosuba🎌",
+    answer: "darkness"
+  },
+  {
+    question: "Qui adore souffrir et se sacrifier pour ses alliés ? 🎌konosuba🎌",
+    answer: "darkness"
+  },
+  {
+    question: "Quel est le nom de la guilde d’aventuriers dans konosuba ? 🎌konosuba🎌",
+    answer: "guilde d’axel"
+  },
+  {
+    question: "Quel sort Kazuma utilise-t-il pour neutraliser ses ennemis discrètement ? 🎌konosuba🎌",
+    answer: "fuite"
+  },
+  {
+    question: "Que veut dire konosuba en version longue ? 🎌konosuba🎌",
+    answer: "kono subarashii sekai ni shukufuku wo"
+  },
+  {
+    question: "Quel est le comportement commun entre tous les membres de l’équipe ? 🎌konosuba🎌",
+    answer: "ils sont tous incompétents"
+  },
+
+  {
+    question: "Quel est le prénom du lycéen passionné par les extraterrestres dans dandadan ? 🎌dandadan🎌",
+    answer: "o karun"
+  },
+  {
+    question: "Comment s'appelle la fille principale fan de fantômes dans dandadan ? 🎌dandadan🎌",
+    answer: "ayase momo"
+  },
+  {
+    question: "Quel est le surnom que Momo donne à Karun ? 🎌dandadan🎌",
+    answer: "o karun"
+  },
+  {
+    question: "Quel est le nom du yōkai qui possède Karun ? 🎌dandadan🎌",
+    answer: "serpo"
+  },
+  {
+    question: "Quel objet permet à Karun d'utiliser des pouvoirs télékinétiques ? 🎌dandadan🎌",
+    answer: "son pénis"
+  },
+  {
+    question: "Comment Momo active ses pouvoirs spirituels ? 🎌dandadan🎌",
+    answer: "en invoquant turbo-granny"
+  },
+  {
+    question: "Quel est le nom du yōkai lubrique qui poursuit Karun au début ? 🎌dandadan🎌",
+    answer: "turbo-granny"
+  },
+  {
+    question: "Qui a élevé Momo après le départ de ses parents ? 🎌dandadan🎌",
+    answer: "sa grand-mère"
+  },
+  {
+    question: "Quel est le nom complet de la grand-mère de Momo ? 🎌dandadan🎌",
+    answer: "seiko ayase"
+  },
+  {
+    question: "Dans quel lieu Momo rencontre-t-elle pour la première fois un fantôme ? 🎌dandadan🎌",
+    answer: "hôpital abandonné"
+  },
+  {
+    question: "Quel est le pouvoir principal de Momo ? 🎌dandadan🎌",
+    answer: "télékinésie spirituelle"
+  },
+  {
+    question: "Quel personnage est souvent kidnappé par les extraterrestres ? 🎌dandadan🎌",
+    answer: "karun"
+  },
+  {
+    question: "Quel type d’êtres Momo refuse de croire au début ? 🎌dandadan🎌",
+    answer: "extraterrestres"
+  },
+  {
+    question: "Quel type d’êtres Karun refuse de croire au début ? 🎌dandadan🎌",
+    answer: "fantômes"
+  },
+  {
+    question: "Quel est le nom du garçon aux lunettes possédé par Serpo ? 🎌dandadan🎌",
+    answer: "karun"
+  },
+  {
+    question: "Quel est le lien entre Momo et Turbo-Granny après leur premier affrontement ? 🎌dandadan🎌",
+    answer: "fusion partielle"
+  },
+  {
+    question: "Comment s'appelle la camarade de classe populaire amie de Momo ? 🎌dandadan🎌",
+    answer: "aura"
+  },
+  {
+    question: "Quel est le nom de la divinité vengeresse rencontrée au lycée ? 🎌dandadan🎌",
+    answer: "acrobatic silkie"
+  },
+  {
+    question: "Quel est le style visuel particulier du manga dandadan ? 🎌dandadan🎌",
+    answer: "dynamique et détaillé"
+  },
+  {
+    question: "Quel est le thème principal de dandadan ? 🎌dandadan🎌",
+    answer: "surnaturel et science-fiction"
+  },
+  {
+    question: "Quel est le pouvoir utilisé par Karun après sa possession ? 🎌dandadan🎌",
+    answer: "télékinésie"
+  },
+  {
+    question: "Comment Momo aide Karun à reprendre sa forme humaine ? 🎌dandadan🎌",
+    answer: "en canalisant l’énergie spirituelle"
+  },
+  {
+    question: "Quel est le genre principal du manga dandadan ? 🎌dandadan🎌",
+    answer: "action comédie"
+  },
+  {
+    question: "Quelle partie du corps de Karun disparaît souvent dans le manga ? 🎌dandadan🎌",
+    answer: "son pénis"
+  },
+  {
+    question: "Quelle créature extraterrestre transforme Karun ? 🎌dandadan🎌",
+    answer: "serpo"
+  },
+  {
+    question: "Quel est le trait de caractère le plus fort de Momo ? 🎌dandadan🎌",
+    answer: "impulsivité"
+  },
+  {
+    question: "Quel type d’entité est Turbo-Granny ? 🎌dandadan🎌",
+    answer: "yōkai"
+  },
+  {
+    question: "Quel est le but principal des extraterrestres dans dandadan ? 🎌dandadan🎌",
+    answer: "expérimenter sur les humains"
+  },
+  {
+    question: "Quel est le lien affectif entre Karun et Momo ? 🎌dandadan🎌",
+    answer: "ils ont un crush mutuel"
+  },
+  {
+    question: "Quel est l'élément déclencheur de l'histoire ? 🎌dandadan🎌",
+    answer: "pari entre momo et karun"
+  },
+  {
+    question: "Quel est le surnom de Karun utilisé par Momo ? 🎌dandadan🎌",
+    answer: "o karun"
+  },
+  {
+    question: "Quel est le nom du mangaka de dandadan ? 🎌dandadan🎌",
+    answer: "yukinobu tatsu"
+  },
+  {
+    question: "Dans quelle revue est publié dandadan ? 🎌dandadan🎌",
+    answer: "shonen jump plus"
+  },
+  {
+    question: "Quel est le style de narration utilisé dans dandadan ? 🎌dandadan🎌",
+    answer: "rapide et visuel"
+  },
+  {
+    question: "Quel est l'objet fétiche de Turbo-Granny ? 🎌dandadan🎌",
+    answer: "toilettes"
+  },
+  {
+    question: "Quel est le nom du yokai habillé en justaucorps ? 🎌dandadan🎌",
+    answer: "acrobatic silkie"
+  },
+  {
+    question: "Quelle partie du corps grandit anormalement à Karun dans un combat ? 🎌dandadan🎌",
+    answer: "son cou"
+  },
+  {
+    question: "Quel est le pouvoir de fusion entre Momo et Turbo-Granny ? 🎌dandadan🎌",
+    answer: "force spirituelle accrue"
+  },
+  {
+    question: "Comment Momo réagit-elle face à des aliens nus ? 🎌dandadan🎌",
+    answer: "elle les attaque sans gêne"
+  },
+  {
+    question: "Quel est l’élément comique souvent présent dans dandadan ? 🎌dandadan🎌",
+    answer: "nudité embarrassante"
+  },
+  {
+    question: "Quel type d’être Momo déteste le plus ? 🎌dandadan🎌",
+    answer: "extraterrestres"
+  },
+  {
+    question: "Comment Karun retrouve ses pouvoirs quand il les perd ? 🎌dandadan🎌",
+    answer: "grâce à ses émotions"
+  },
+  {
+    question: "Quel yokai menace Momo dans les toilettes publiques ? 🎌dandadan🎌",
+    answer: "turbo-granny"
+  },
+  {
+    question: "Quel personnage protège toujours Momo même en danger ? 🎌dandadan🎌",
+    answer: "karun"
+  },
+  {
+    question: "Quel être spirituel aide parfois Momo sans qu'elle le sache ? 🎌dandadan🎌",
+    answer: "sa grand-mère"
+  },
+  {
+    question: "Quel pouvoir Karun utilise-t-il pour léviter ? 🎌dandadan🎌",
+    answer: "énergie télékinétique"
+  },
+  {
+    question: "Quel objet les extraterrestres utilisent pour capturer les humains ? 🎌dandadan🎌",
+    answer: "lumière tracteur"
+  },
+  {
+    question: "Pourquoi Karun est-il souvent en difficulté à l’école ? 🎌dandadan🎌",
+    answer: "il est victime d’intimidation"
+  },
+  {
+    question: "Comment s’appelle le phénomène où les yokais apparaissent autour de Momo ? 🎌dandadan🎌",
+    answer: "manifestation spirituelle"
+  },
+  {
+    question: "Quelle est la source d’énergie des attaques de Karun ? 🎌dandadan🎌",
+    answer: "force mentale"
+  },
+
+  {
+    question: "Quel est le prénom du chasseur de dragons de feu dans fairy tail ? 🎌fairy tail🎌",
+    answer: "natsu"
+  },
+  {
+    question: "Comment s'appelle la constellationniste de l'équipe principale ? 🎌fairy tail🎌",
+    answer: "lucy"
+  },
+  {
+    question: "Quel est le nom du chat bleu qui accompagne Natsu ? 🎌fairy tail🎌",
+    answer: "happy"
+  },
+  {
+    question: "Quelle est la magie utilisée par Erza ? 🎌fairy tail🎌",
+    answer: "requip"
+  },
+  {
+    question: "Quel est le surnom d'Erza dans la guilde ? 🎌fairy tail🎌",
+    answer: "titania"
+  },
+  {
+    question: "Qui est le maître de la guilde Fairy Tail au début de la série ? 🎌fairy tail🎌",
+    answer: "makarov"
+  },
+  {
+    question: "Comment s'appelle le frère de Natsu ? 🎌fairy tail🎌",
+    answer: "zeref"
+  },
+  {
+    question: "Quel membre de Fairy Tail utilise la magie de glace ? 🎌fairy tail🎌",
+    answer: "gray"
+  },
+  {
+    question: "Quel est le nom de la guilde rivale dirigée par José ? 🎌fairy tail🎌",
+    answer: "phantom lord"
+  },
+  {
+    question: "Quel esprit céleste est souvent invoqué par Lucy pour faire des blagues ? 🎌fairy tail🎌",
+    answer: "plue"
+  },
+  {
+    question: "Quel est le nom de la guilde noire fondée par Zeref ? 🎌fairy tail🎌",
+    answer: "tartaros"
+  },
+  {
+    question: "Comment s'appelle le dragon adoptif de Natsu ? 🎌fairy tail🎌",
+    answer: "ignir"
+  },
+  {
+    question: "Quelle guilde forme une alliance avec Fairy Tail contre Oracion Seis ? 🎌fairy tail🎌",
+    answer: "blue pegasus"
+  },
+  {
+    question: "Quel personnage est surnommé le salamander ? 🎌fairy tail🎌",
+    answer: "natsu"
+  },
+  {
+    question: "Quelle est la particularité de Wendy Marvell ? 🎌fairy tail🎌",
+    answer: "chasseuse de dragons célestes"
+  },
+  {
+    question: "Quel est le prénom du chat qui accompagne Wendy ? 🎌fairy tail🎌",
+    answer: "carla"
+  },
+  {
+    question: "Comment s'appelle le tournoi entre les guildes de Fiore ? 🎌fairy tail🎌",
+    answer: "grandes jeux magiques"
+  },
+  {
+    question: "Quelle magie utilise Laxus ? 🎌fairy tail🎌",
+    answer: "foudre"
+  },
+  {
+    question: "Qui est le père de Laxus ? 🎌fairy tail🎌",
+    answer: "ivan dreyar"
+  },
+  {
+    question: "Quel est le nom du royaume où se déroulent les grands jeux magiques ? 🎌fairy tail🎌",
+    answer: "crocus"
+  },
+  {
+    question: "Comment s'appelle la version future de Lucy ? 🎌fairy tail🎌",
+    answer: "lucy du futur"
+  },
+  {
+    question: "Qui est l'esprit du zodiaque le plus puissant de Lucy ? 🎌fairy tail🎌",
+    answer: "leo"
+  },
+  {
+    question: "Quel est le nom de l'équipe formée par Natsu, Lucy, Happy, Gray et Erza ? 🎌fairy tail🎌",
+    answer: "équipe natsu"
+  },
+  {
+    question: "Quel est le nom du sort interdit utilisé par Zeref ? 🎌fairy tail🎌",
+    answer: "ankseram"
+  },
+  {
+    question: "Quel est le nom de la petite fille immortelle liée à Zeref ? 🎌fairy tail🎌",
+    answer: "mavis"
+  },
+  {
+    question: "Quelle est la magie de Gajeel ? 🎌fairy tail🎌",
+    answer: "acier"
+  },
+  {
+    question: "Quel est le nom de l'organisation dont fait partie Jellal ? 🎌fairy tail🎌",
+    answer: "crime sorcière"
+  },
+  {
+    question: "Quel est le lien entre Erza et Jellal ? 🎌fairy tail🎌",
+    answer: "amis d’enfance"
+  },
+  {
+    question: "Quelle est la première guilde que Lucy tente de rejoindre ? 🎌fairy tail🎌",
+    answer: "fairy tail"
+  },
+  {
+    question: "Quel est le nom du livre que recherche Zeref ? 🎌fairy tail🎌",
+    answer: "livre d'e.n.d"
+  },
+  {
+    question: "Qui est e.n.d selon la révélation de Zeref ? 🎌fairy tail🎌",
+    answer: "natsu"
+  },
+  {
+    question: "Quelle est la véritable identité de Mystogan ? 🎌fairy tail🎌",
+    answer: "jellal de edolas"
+  },
+  {
+    question: "Quel royaume parallèle existe dans Fairy Tail ? 🎌fairy tail🎌",
+    answer: "edolas"
+  },
+  {
+    question: "Quel est le nom de la mère d’Erza ? 🎌fairy tail🎌",
+    answer: "iren"
+  },
+  {
+    question: "Quelle est la magie utilisée par Mirajane ? 🎌fairy tail🎌",
+    answer: "take over"
+  },
+  {
+    question: "Quel est le nom de la sœur cadette de Mirajane ? 🎌fairy tail🎌",
+    answer: "lisanna"
+  },
+  {
+    question: "Comment s’appelle l’animal que Gray invoque parfois ? 🎌fairy tail🎌",
+    answer: "lyon n'invoque pas d'animal"
+  },
+  {
+    question: "Quelle habitude vestimentaire a Gray ? 🎌fairy tail🎌",
+    answer: "se déshabiller"
+  },
+  {
+    question: "Quelle est la capacité spéciale de Cana Alberona ? 🎌fairy tail🎌",
+    answer: "cartomancie"
+  },
+  {
+    question: "Quel est le nom du chat de Gajeel ? 🎌fairy tail🎌",
+    answer: "panther lily"
+  },
+  {
+    question: "Quel est le nom du royaume où vivent les exceeds ? 🎌fairy tail🎌",
+    answer: "extalia"
+  },
+  {
+    question: "Quelle est la mission de classe S que Natsu prend sans autorisation ? 🎌fairy tail🎌",
+    answer: "île de galuna"
+  },
+  {
+    question: "Qui est la première personne à recevoir les sentiments de Mavis ? 🎌fairy tail🎌",
+    answer: "zeref"
+  },
+  {
+    question: "Quel est le nom du démon créé par Zeref et redouté dans l’histoire ? 🎌fairy tail🎌",
+    answer: "e.n.d"
+  },
+  {
+    question: "Quel est le nom du tournoi où Fairy Tail revient après 7 ans ? 🎌fairy tail🎌",
+    answer: "grands jeux magiques"
+  },
+  {
+    question: "Quel événement fait disparaître l’équipe de Natsu pendant 7 ans ? 🎌fairy tail🎌",
+    answer: "tenrôjima"
+  },
+  {
+    question: "Comment s'appelle l’arène où ont lieu les grands jeux magiques ? 🎌fairy tail🎌",
+    answer: "domus flau"
+  },
+  {
+    question: "Quel personnage sacrifie sa vie pour sceller acnologia ? 🎌fairy tail🎌",
+    answer: "mavis"
+  },
+  {
+    question: "Quel est le dragon noir de l’apocalypse ? 🎌fairy tail🎌",
+    answer: "acnologia"
+  },
+  {
+    question: "Quel est le lien entre Acnologia et les dragons ? 🎌fairy tail🎌",
+    answer: "ancien chasseur de dragons"
+  },
+  {
+    question: "Quel est le dernier sort de groupe utilisé contre Zeref ? 🎌fairy tail🎌",
+    answer: "fairy sphere"
+  },
+
+  {
+    question: "Quel est le prénom de Sakamoto dans sakamoto days ? 🎌sakamoto days🎌",
+    answer: "tarou"
+  },
+  {
+    question: "Quel était l'ancien métier de Sakamoto avant d'ouvrir sa boutique ? 🎌sakamoto days🎌",
+    answer: "tueur à gages"
+  },
+  {
+    question: "Quel est le nom de la supérette de Sakamoto ? 🎌sakamoto days🎌",
+    answer: "konbini sakamoto"
+  },
+  {
+    question: "Quel est l’élément comique récurrent lié à Sakamoto ? 🎌sakamoto days🎌",
+    answer: "il grossit ou maigrit selon les situations"
+  },
+  {
+    question: "Comment s'appelle la fille de Sakamoto ? 🎌sakamoto days🎌",
+    answer: "hana"
+  },
+  {
+    question: "Quel personnage peut lire dans les pensées ? 🎌sakamoto days🎌",
+    answer: "shin"
+  },
+  {
+    question: "Quel ancien rival devient assistant dans la boutique ? 🎌sakamoto days🎌",
+    answer: "shin"
+  },
+  {
+    question: "Quelle promesse Sakamoto a-t-il faite à sa femme ? 🎌sakamoto days🎌",
+    answer: "ne plus tuer"
+  },
+  {
+    question: "Quel est le nom de l'organisation d'assassins dans sakamoto days ? 🎌sakamoto days🎌",
+    answer: "jcc"
+  },
+  {
+    question: "Quel accessoire Shin porte-t-il toujours ? 🎌sakamoto days🎌",
+    answer: "casque audio"
+  },
+  {
+    question: "Quel est le prénom de la femme de Sakamoto ? 🎌sakamoto days🎌",
+    answer: "ayo"
+  },
+  {
+    question: "Qui est surnommé 'le tueur invisible' ? 🎌sakamoto days🎌",
+    answer: "lu xiaotang"
+  },
+  {
+    question: "Quel est le style de combat principal de Sakamoto ? 🎌sakamoto days🎌",
+    answer: "arts martiaux improvisés"
+  },
+  {
+    question: "Quel objet Sakamoto utilise-t-il souvent comme arme dans la boutique ? 🎌sakamoto days🎌",
+    answer: "articles de magasin"
+  },
+  {
+    question: "Quel est le trait physique marquant de Sakamoto jeune ? 🎌sakamoto days🎌",
+    answer: "il était mince"
+  },
+  {
+    question: "Qui est le scientifique excentrique allié de Sakamoto ? 🎌sakamoto days🎌",
+    answer: "lu"
+  },
+  {
+    question: "Quel est le prénom du tireur d'élite masqué ? 🎌sakamoto days🎌",
+    answer: "heisuke"
+  },
+  {
+    question: "Quel est le point faible de Shin en combat ? 🎌sakamoto days🎌",
+    answer: "il se fatigue vite"
+  },
+  {
+    question: "Quel est le principal obstacle pour Sakamoto dans sa vie paisible ? 🎌sakamoto days🎌",
+    answer: "les anciens assassins"
+  },
+  {
+    question: "Comment Sakamoto évite-t-il de tuer ses ennemis ? 🎌sakamoto days🎌",
+    answer: "il les assomme ou les neutralise"
+  },
+  {
+    question: "Quel est le nom du lycée pour assassins dans le manga ? 🎌sakamoto days🎌",
+    answer: "lycée jcc"
+  },
+  {
+    question: "Quel est le genre du manga sakamoto days ? 🎌sakamoto days🎌",
+    answer: "action comédie"
+  },
+  {
+    question: "Quel est le métier actuel de Sakamoto ? 🎌sakamoto days🎌",
+    answer: "gérant de supérette"
+  },
+  {
+    question: "Quel personnage a juré de tuer Sakamoto mais finit par l'aider ? 🎌sakamoto days🎌",
+    answer: "shin"
+  },
+  {
+    question: "Qui est l’élève top 1 de la jcc ciblé par l'organisation ? 🎌sakamoto days🎌",
+    answer: "akira"
+  },
+  {
+    question: "Quel est le nom du mangaka de sakamoto days ? 🎌sakamoto days🎌",
+    answer: "yuto suzuki"
+  },
+  {
+    question: "Quel est le slogan que Sakamoto respecte dans sa nouvelle vie ? 🎌sakamoto days🎌",
+    answer: "pas de morts"
+  },
+  {
+    question: "Qui est le maître des déguisements dans la team sakamoto ? 🎌sakamoto days🎌",
+    answer: "heisuke"
+  },
+  {
+    question: "Quel est le rôle de Lu dans la supérette ? 🎌sakamoto days🎌",
+    answer: "caissière"
+  },
+  {
+    question: "Quel est l’ancien classement de Sakamoto dans le monde des tueurs ? 🎌sakamoto days🎌",
+    answer: "numéro un"
+  },
+  {
+    question: "Quel est le surnom que les ennemis donnent à Sakamoto ? 🎌sakamoto days🎌",
+    answer: "le démon silencieux"
+  },
+  {
+    question: "Quelle arme Heisuke préfère-t-il utiliser ? 🎌sakamoto days🎌",
+    answer: "fusil de précision"
+  },
+  {
+    question: "Pourquoi Heisuke porte-t-il toujours un masque ? 🎌sakamoto days🎌",
+    answer: "il est timide"
+  },
+  {
+    question: "Quelle est la principale faiblesse de Lu ? 🎌sakamoto days🎌",
+    answer: "le manque de concentration"
+  },
+  {
+    question: "Quel est le point commun entre tous les membres de l’équipe Sakamoto ? 🎌sakamoto days🎌",
+    answer: "anciens assassins"
+  },
+  {
+    question: "Quel est l’ennemi principal recherché par la jcc ? 🎌sakamoto days🎌",
+    answer: "slur"
+  },
+  {
+    question: "Quel est le lien entre Slur et Sakamoto ? 🎌sakamoto days🎌",
+    answer: "ancien élève de la jcc"
+  },
+  {
+    question: "Comment Shin combat-il sans tuer ? 🎌sakamoto days🎌",
+    answer: "télépathie et réflexes"
+  },
+  {
+    question: "Quel est le secret que Sakamoto cache à sa femme ? 🎌sakamoto days🎌",
+    answer: "il recommence à se battre"
+  },
+  {
+    question: "Quel est le principal rival de Sakamoto dans l’histoire ? 🎌sakamoto days🎌",
+    answer: "slur"
+  },
+  {
+    question: "Quel événement a poussé Sakamoto à quitter le monde des assassins ? 🎌sakamoto days🎌",
+    answer: "il est tombé amoureux"
+  },
+  {
+    question: "Quel est le lien entre Sakamoto et Nagumo ? 🎌sakamoto days🎌",
+    answer: "anciens collègues"
+  },
+  {
+    question: "Quel est le signe que Sakamoto est redevenu sérieux au combat ? 🎌sakamoto days🎌",
+    answer: "il devient mince"
+  },
+  {
+    question: "Comment Lu aide-t-elle l’équipe en dehors du combat ? 🎌sakamoto days🎌",
+    answer: "cuisine et stratégie"
+  },
+  {
+    question: "Quel objet Shin utilise-t-il pour communiquer sans parler ? 🎌sakamoto days🎌",
+    answer: "télépathie"
+  },
+  {
+    question: "Qui s’occupe de la sécurité de la supérette ? 🎌sakamoto days🎌",
+    answer: "tout le monde"
+  },
+  {
+    question: "Quel genre d'humour trouve-t-on dans sakamoto days ? 🎌sakamoto days🎌",
+    answer: "absurde et physique"
+  },
+  {
+    question: "Quelle est la mission principale de Sakamoto dans la série ? 🎌sakamoto days🎌",
+    answer: "protéger sa famille"
+  },
+  {
+    question: "Pourquoi les anciens ennemis respectent encore Sakamoto ? 🎌sakamoto days🎌",
+    answer: "il était le plus fort"
+  },
+  {
+    question: "Quelle est l’une des règles de Sakamoto au combat ? 🎌sakamoto days🎌",
+    answer: "ne jamais tuer"
+  },
+
   { question: "qui est le professeur de yuji itadori ?\n🎌Jujutsu Kaisen🎌", answer: "satoru gojo" },
   { question: "quel est le nom du démon qui partage le corps de yuji ?\n🎌Jujutsu Kaisen🎌", answer: "ryomen sukuna" },
   { question: "quel est le lycée où sont formés les exorcistes ?\n🎌Jujutsu Kaisen🎌", answer: "lycée tokyo d'exorcisme" },
