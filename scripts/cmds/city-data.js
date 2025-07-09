@@ -1,5 +1,3 @@
-✅ La cmd "city-data" prêt à être affichée :
-
 module.exports = {
   "cities": {
     "61570839220831": {
