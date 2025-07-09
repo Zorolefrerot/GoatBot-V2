@@ -3,56 +3,64 @@ module.exports = {
     name: "cityadmin",
     version: "1.0",
     author: "Merdi Madimba",
-    description: "Permet à l'admin de supprimer les notifications ou une ville entière via l'UID du créateur.",
-    usage: "/cityadmin notif <uid> ou /cityadmin delete <uid>",
-    cooldown: 5
+    role: 2, // seul admin du bot
+    shortDescription: "Supprimer une ville ou ses notifications",
+    longDescription: "Permet à l’administrateur de supprimer une ville ou ses notifications avec l’UID du créateur.",
+    category: "city",
+    guide: {
+      fr: "/cityadmin clear <uid>\n/cityadmin delete <uid>"
+    }
   },
 
-  async onCall({ message, args }) {
+  onStart: async function ({ message, event, args }) {
     const fs = require("fs");
-    const path = __dirname + "/city.json";
+    const path = __dirname + "/city-data.json";
 
-    // Vérification admin
-    if (message.senderID !== global.GoatBot.config.ADMIN_UID) {
-      return message.reply("❌ | Cette commande est réservée à l'administrateur du bot.");
-    }
-
-    // Vérification des arguments
-    if (args.length !== 2 || !["notif", "delete"].includes(args[0])) {
-      return message.reply("❌ | Utilisation : /cityadmin notif <uid> ou /cityadmin delete <uid>");
-    }
-
-    const [action, uid] = args;
-
-    // Chargement du fichier
     if (!fs.existsSync(path)) {
-      return message.reply("❌ | Le fichier city.json est introuvable.");
+      return message.reply("📦 Aucun fichier de données 'city-data.json' trouvé.");
     }
 
-    let data = JSON.parse(fs.readFileSync(path, "utf-8"));
+    const data = JSON.parse(fs.readFileSync(path, "utf-8"));
+
+    const action = args[0];
+    const targetUID = args[1];
+
+    if (!["clear", "delete"].includes(action) || !targetUID) {
+      return message.reply("❌ Utilisation incorrecte.\n\nExemples :\n/cityadmin clear 1000000000000\n/cityadmin delete 1000000000000");
+    }
+
     let modified = false;
 
-    for (const cityName in data) {
-      const city = data[cityName];
-
-      if (city.owner === uid) {
-        if (action === "notif") {
-          city.notifications = [];
-          modified = true;
-        }
-
-        if (action === "delete") {
-          delete data[cityName];
+    if (action === "clear") {
+      for (const cityName in data) {
+        if (data[cityName].uid == targetUID) {
+          data[cityName].notifications = [];
           modified = true;
         }
       }
-    }
 
-    if (!modified) {
-      return message.reply(`❌ | Aucune ville trouvée avec l'UID : ${uid}`);
-    }
+      if (modified) {
+        fs.writeFileSync(path, JSON.stringify(data, null, 2), "utf-8");
+        return message.reply(`✅ Notifications effacées pour toutes les villes de l'UID ${targetUID}`);
+      } else {
+        return message.reply("⚠️ Aucune ville trouvée pour cet UID.");
+      }
 
-    fs.writeFileSync(path, JSON.stringify(data, null, 2));
-    return message.reply(`✅ | ${action === "notif" ? "Notifications effacées" : "Ville supprimée"} pour l'UID : ${uid}`);
+    } else if (action === "delete") {
+      let count = 0;
+      for (const cityName in data) {
+        if (data[cityName].uid == targetUID) {
+          delete data[cityName];
+          count++;
+        }
+      }
+
+      if (count > 0) {
+        fs.writeFileSync(path, JSON.stringify(data, null, 2), "utf-8");
+        return message.reply(`✅ ${count} ville(s) supprimée(s) appartenant à l'UID ${targetUID}`);
+      } else {
+        return message.reply("⚠️ Aucune ville trouvée pour cet UID.");
+      }
+    }
   }
 };
