@@ -10,7 +10,7 @@ const TEAMS = require(path.join(__dirname, 'fc25.json'));
 
 const INTRO_IMG = 'https://i.ibb.co/gZ6bWDjQ/image.jpg';   // <— change si besoin
 const HALF_MS   = 5 * 60 * 1000;                          // 5 minutes
-const MAX_GOALS = 3;
+const MAX_GOALS = 10;
 
 const SESS = new Map();                                   // sessions par thread
 
