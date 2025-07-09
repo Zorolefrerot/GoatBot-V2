@@ -14,10 +14,10 @@ module.exports = {
 
   onStart: async function ({ message, event, args }) {
     const fs = require("fs");
-    const path = __dirname + "/city-data.json";
+    const path = __dirname + "/city-data.js";
 
     if (!fs.existsSync(path)) {
-      return message.reply("📦 Aucun fichier de données 'city-data.json' trouvé.");
+      return message.reply("📦 Aucun fichier de données 'city-data.js' trouvé.");
     }
 
     const data = JSON.parse(fs.readFileSync(path, "utf-8"));
