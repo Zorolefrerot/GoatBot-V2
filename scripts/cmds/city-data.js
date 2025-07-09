@@ -1,3 +1,4 @@
+✅ La cmd "city-data" prêt à être affichée :
 
 module.exports = {
   "cities": {
@@ -6,13 +7,13 @@ module.exports = {
       "gold": 1624,
       "pop": 50,
       "lvl": 1,
-      "army": 7,
+      "army": 200,
       "b": {
         "house": 1,
         "farm": 1,
         "mine": 0,
         "factory": 0,
-        "bank": 7,
+        "bank": 200,
         "school": 0,
         "transport": 0,
         "barracks": 5
@@ -180,13 +181,13 @@ module.exports = {
       "gold": 7928,
       "pop": 20,
       "lvl": 1,
-      "army": 18,
+      "army": 167,
       "b": {
         "house": 3,
         "farm": 3,
         "mine": 3,
         "factory": 3,
-        "bank": 32,
+        "bank": 100,
         "school": 3,
         "transport": 3,
         "barracks": 11
@@ -207,6 +208,39 @@ module.exports = {
       "notif": [],
       "lastCollect": 1751914940616,
       "lastAttack": 1751914677843
+    },
+    "100065927401614": {
+      "name": "USA🇺🇸",
+      "gold": 2000,
+      "pop": 260,
+      "lvl": 1,
+      "army": 501,
+      "b": {
+        "house": 1,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 704,
+        "school": 0,
+        "transport": 0,
+        "barracks": 395
+      },
+      "res": {
+        "wood": 30,
+        "stone": 22,
+        "iron": 28,
+        "copper": 32,
+        "coal": 25,
+        "goldOre": 32
+      },
+      "produce": [
+        "stone",
+        "coal",
+        "iron"
+      ],
+      "notif": [],
+      "lastCollect": 0,
+      "lastAttack": 0
     }
   },
   "market": {
@@ -221,4 +255,4 @@ module.exports = {
     "lastUpdate": 1751904986422
   },
   "location": "/opt/render/project/src/scripts/cmds/city-data.js"
-  }
+        }
