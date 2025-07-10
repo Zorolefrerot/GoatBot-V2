@@ -2,36 +2,39 @@ module.exports = {
   "cities": {
     "61570839220831": {
       "name": "Emirats Arabes Unis",
-      "gold": 1624,
-      "pop": 50,
+      "gold": 3901506,
+      "pop": 570,
       "lvl": 1,
-      "army": 200,
+      "army": 1127,
       "b": {
-        "house": 1,
+        "house": 129,
         "farm": 1,
-        "mine": 0,
+        "mine": 61,
         "factory": 0,
-        "bank": 200,
-        "school": 0,
-        "transport": 0,
-        "barracks": 5
+        "bank": 1398,
+        "school": 18,
+        "transport": 22,
+        "barracks": 921
       },
       "res": {
-        "wood": 0,
-        "stone": 9,
-        "iron": 0,
-        "copper": 11,
-        "coal": 0,
-        "goldOre": 11
+        "wood": 3000,
+        "stone": 5475,
+        "iron": 5040,
+        "copper": 5449,
+        "coal": 5000,
+        "goldOre": 260462
       },
       "produce": [
         "copper",
         "goldOre",
         "stone"
       ],
-      "notif": [],
-      "lastCollect": 1751908558277,
-      "lastAttack": 1751908270907
+      "notif": [
+        "⚔️ 00x00078636ffrxv 𝗮 𝘃𝗼𝗹𝗲́ 79064$.",
+        "💸 00x00078636ffrxv t'a envoyé 80000$"
+      ],
+      "lastCollect": 1752131964423,
+      "lastAttack": 1752131131295
     },
     "61576596194735": {
       "name": "INCHEON",
@@ -68,10 +71,10 @@ module.exports = {
     },
     "100056763252164": {
       "name": "Shibuya",
-      "gold": 884,
+      "gold": 959,
       "pop": 50,
       "lvl": 1,
-      "army": 4,
+      "army": 1,
       "b": {
         "house": 1,
         "farm": 1,
@@ -83,10 +86,10 @@ module.exports = {
         "barracks": 4
       },
       "res": {
-        "wood": 24,
+        "wood": 25,
         "stone": 20,
-        "iron": 34,
-        "copper": 24,
+        "iron": 39,
+        "copper": 29,
         "coal": 30,
         "goldOre": 20
       },
@@ -95,13 +98,17 @@ module.exports = {
         "iron",
         "copper"
       ],
-      "notif": [],
-      "lastCollect": 1751907987954,
+      "notif": [
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 132$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 112$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 96$."
+      ],
+      "lastCollect": 1752113977448,
       "lastAttack": 0
     },
     "100081383771175": {
       "name": "wassoulou",
-      "gold": 787,
+      "gold": 569,
       "pop": 50,
       "lvl": 1,
       "army": 0,
@@ -129,14 +136,16 @@ module.exports = {
         "stone"
       ],
       "notif": [
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 138$."
+        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 138$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 118$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 100$."
       ],
       "lastCollect": 1751910116370,
       "lastAttack": 0
     },
     "100086576258820": {
       "name": "giuytebeibei",
-      "gold": 321,
+      "gold": 340,
       "pop": 75,
       "lvl": 1,
       "army": 0,
@@ -145,18 +154,18 @@ module.exports = {
         "farm": 1,
         "mine": 1,
         "factory": 0,
-        "bank": 11,
+        "bank": 676,
         "school": 1,
         "transport": 0,
         "barracks": 1
       },
       "res": {
-        "wood": 0,
-        "stone": 37,
+        "wood": 50,
+        "stone": 10098,
         "iron": 0,
-        "copper": 36,
-        "coal": 39,
-        "goldOre": 1
+        "copper": 117,
+        "coal": 99,
+        "goldOre": 101
       },
       "produce": [
         "coal",
@@ -164,22 +173,17 @@ module.exports = {
         "copper"
       ],
       "notif": [
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 126$.",
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 108$.",
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 91$.",
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 78$.",
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 66$.",
-        "⚔️ Dubaï 𝗮 𝘃𝗼𝗹𝗲́ 56$."
+        "💸 00x00078636ffrxv t'a envoyé 50000$"
       ],
-      "lastCollect": 1751913885351,
+      "lastCollect": 1752130614149,
       "lastAttack": 1751911938665
     },
     "61552538030584": {
       "name": "Dubaï",
-      "gold": 7928,
+      "gold": 15038,
       "pop": 20,
       "lvl": 1,
-      "army": 167,
+      "army": 148,
       "b": {
         "house": 3,
         "farm": 3,
@@ -209,26 +213,26 @@ module.exports = {
     },
     "100065927401614": {
       "name": "USA🇺🇸",
-      "gold": 2000,
-      "pop": 260,
-      "lvl": 1,
-      "army": 501,
+      "gold": 1282233,
+      "pop": 500,
+      "lvl": 5,
+      "army": 998,
       "b": {
-        "house": 1,
-        "farm": 1,
-        "mine": 0,
-        "factory": 0,
-        "bank": 704,
-        "school": 0,
-        "transport": 0,
-        "barracks": 395
+        "house": 450,
+        "farm": 103,
+        "mine": 58,
+        "factory": 66,
+        "bank": 1200,
+        "school": 17,
+        "transport": 79,
+        "barracks": 875
       },
       "res": {
         "wood": 30,
-        "stone": 22,
-        "iron": 28,
+        "stone": 29,
+        "iron": 38,
         "copper": 32,
-        "coal": 25,
+        "coal": 30,
         "goldOre": 32
       },
       "produce": [
@@ -237,20 +241,263 @@ module.exports = {
         "iron"
       ],
       "notif": [],
+      "lastCollect": 1752134492796,
+      "lastAttack": 0
+    },
+    "61569478262370": {
+      "name": "JuliusFAQIM",
+      "gold": 445,
+      "pop": 50,
+      "lvl": 1,
+      "army": 0,
+      "b": {
+        "house": 1,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 2,
+        "school": 0,
+        "transport": 0,
+        "barracks": 0
+      },
+      "res": {
+        "wood": 36,
+        "stone": 31,
+        "iron": 28,
+        "copper": 26,
+        "coal": 40,
+        "goldOre": 39
+      },
+      "produce": [
+        "iron",
+        "wood",
+        "stone"
+      ],
+      "notif": [
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 150$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 127$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 108$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 92$.",
+        "⚔️ Big Deal 𝗮 𝘃𝗼𝗹𝗲́ 78$."
+      ],
       "lastCollect": 0,
+      "lastAttack": 0
+    },
+    "61552171587570": {
+      "name": "00x00078636ffrxv",
+      "gold": 811772,
+      "pop": 740,
+      "lvl": 8,
+      "army": 1507,
+      "b": {
+        "house": 187,
+        "farm": 38,
+        "mine": 23,
+        "factory": 43,
+        "bank": 1632,
+        "school": 21,
+        "transport": 24,
+        "barracks": 1482
+      },
+      "res": {
+        "wood": 30000,
+        "stone": 60139,
+        "iron": 7041,
+        "copper": 6021,
+        "coal": 12598,
+        "goldOre": 415119
+      },
+      "produce": [
+        "stone",
+        "coal",
+        "goldOre"
+      ],
+      "notif": [],
+      "lastCollect": 1752132263130,
+      "lastAttack": 1752130600796
+    },
+    "61576339312635": {
+      "name": "Big Deal",
+      "gold": 1222,
+      "pop": 50,
+      "lvl": 1,
+      "army": 26,
+      "b": {
+        "house": 1,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 32,
+        "school": 0,
+        "transport": 0,
+        "barracks": 1
+      },
+      "res": {
+        "wood": 21,
+        "stone": 0,
+        "iron": 20,
+        "copper": 0,
+        "coal": 13,
+        "goldOre": 15
+      },
+      "produce": [
+        "goldOre",
+        "coal",
+        "wood"
+      ],
+      "notif": [
+        "⚔️ 00x00078636ffrxv 𝗮 𝘃𝗼𝗹𝗲́ 215$."
+      ],
+      "lastCollect": 1752113270573,
+      "lastAttack": 1752113281930
+    },
+    "61565365970756": {
+      "name": "Camelot",
+      "gold": 355020,
+      "pop": 15,
+      "lvl": 1,
+      "army": 29,
+      "b": {
+        "house": 6,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 143,
+        "school": 2,
+        "transport": 0,
+        "barracks": 28
+      },
+      "res": {
+        "wood": 142,
+        "stone": 500,
+        "iron": 51,
+        "copper": 151,
+        "coal": 103,
+        "goldOre": 1000
+      },
+      "produce": [
+        "copper",
+        "coal",
+        "wood"
+      ],
+      "notif": [],
+      "lastCollect": 1752132493318,
+      "lastAttack": 1752131417912
+    },
+    "61557218776219": {
+      "name": "mak's city",
+      "gold": 123,
+      "pop": 50,
+      "lvl": 1,
+      "army": 0,
+      "b": {
+        "house": 1,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 25,
+        "school": 0,
+        "transport": 0,
+        "barracks": 0
+      },
+      "res": {
+        "wood": 107,
+        "stone": 22,
+        "iron": 116,
+        "copper": 105,
+        "coal": 30,
+        "goldOre": 25
+      },
+      "produce": [
+        "copper",
+        "wood",
+        "iron"
+      ],
+      "notif": [
+        "⚔️ Camelot 𝗮 𝘃𝗼𝗹𝗲́ 12$."
+      ],
+      "lastCollect": 1752132422029,
+      "lastAttack": 0
+    },
+    "61577761119878": {
+      "name": "hentai land",
+      "gold": 2250,
+      "pop": 50,
+      "lvl": 1,
+      "army": 0,
+      "b": {
+        "house": 1,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 1,
+        "school": 0,
+        "transport": 0,
+        "barracks": 0
+      },
+      "res": {
+        "wood": 21,
+        "stone": 36,
+        "iron": 24,
+        "copper": 25,
+        "coal": 39,
+        "goldOre": 30
+      },
+      "produce": [
+        "iron",
+        "stone",
+        "goldOre"
+      ],
+      "notif": [
+        "⚔️ 00x00078636ffrxv 𝗮 𝘃𝗼𝗹𝗲́ 750$."
+      ],
+      "lastCollect": 0,
+      "lastAttack": 0
+    },
+    "61563382964913": {
+      "name": "Tokyo",
+      "gold": 1115,
+      "pop": 50,
+      "lvl": 1,
+      "army": 0,
+      "b": {
+        "house": 1,
+        "farm": 1,
+        "mine": 0,
+        "factory": 0,
+        "bank": 2,
+        "school": 0,
+        "transport": 0,
+        "barracks": 0
+      },
+      "res": {
+        "wood": 30,
+        "stone": 24,
+        "iron": 26,
+        "copper": 25,
+        "coal": 41,
+        "goldOre": 29
+      },
+      "produce": [
+        "coal",
+        "goldOre",
+        "iron"
+      ],
+      "notif": [],
+      "lastCollect": 1752132431930,
       "lastAttack": 0
     }
   },
   "market": {
     "prices": {
-      "wood": 5,
-      "stone": 10,
-      "iron": 18,
-      "copper": 20,
-      "coal": 10,
-      "goldOre": 37
+      "wood": 7,
+      "stone": 7,
+      "iron": 24,
+      "copper": 14,
+      "coal": 14,
+      "goldOre": 35
     },
-    "lastUpdate": 1751904986422
+    "lastUpdate": 1752110279154
   },
   "location": "/opt/render/project/src/scripts/cmds/city-data.js"
         }
