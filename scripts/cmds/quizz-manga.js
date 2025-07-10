@@ -1,4 +1,94 @@
 const questions = [
+  // Call of the Night
+  { question: "Quel est le prénom du lycéen insomniaque dans call of the night ? 🎌call of the night🎌", answer: "kou" },
+  { question: "Comment s'appelle la vampire principale dans call of the night ? 🎌call of the night🎌", answer: "nazuna" },
+  { question: "Que doit faire Kou pour devenir vampire ? 🎌call of the night🎌", answer: "tomber amoureux" },
+  { question: "Quel est le lien entre Nazuna et l’hôtel abandonné ? 🎌call of the night🎌", answer: "elle y vit" },
+  { question: "Comment Kou rencontre Nazuna ? 🎌call of the night🎌", answer: "en se promenant la nuit" },
+  { question: "Quel objet Nazuna vend-elle pour vivre ? 🎌call of the night🎌", answer: "sessions de sommeil" },
+  
+  // Ajin
+  { question: "Quel est le nom du lycéen devenu ajin après un accident ? 🎌ajin🎌", answer: "kei nagai" },
+  { question: "Comment s'appelle l’ajin rebelle et violent dans ajin ? 🎌ajin🎌", answer: "sato" },
+  { question: "Quel est le surnom de Sato ? 🎌ajin🎌", answer: "le chapeau" },
+  { question: "Quelle est la particularité des ajins ? 🎌ajin🎌", answer: "ils sont immortels" },
+  { question: "Comment appelle-t-on les entités noires invoquées par les ajins ? 🎌ajin🎌", answer: "ibm" },
+  { question: "Comment Kei découvre-t-il qu’il est un ajin ? 🎌ajin🎌", answer: "il se fait renverser par un camion" },
+  
+  // Blue Exorcist
+  { question: "Qui est le père biologique de Rin dans blue exorcist ? 🎌blue exorcist🎌", answer: "satan" },
+  { question: "Quel est le nom du frère jumeau de Rin ? 🎌blue exorcist🎌", answer: "yukio" },
+  { question: "Quel est le nom de l’école d’exorcisme que fréquente Rin ? 🎌blue exorcist🎌", answer: "l'académie de la croix vraie" },
+  { question: "Quel est l’arme principale de Rin ? 🎌blue exorcist🎌", answer: "katana kurikara" },
+  { question: "Quel est l’objectif de Rin ? 🎌blue exorcist🎌", answer: "vaincre satan" },
+  { question: "Quelle créature l'accompagne souvent ? 🎌blue exorcist🎌", answer: "kuro" },
+
+  // JoJo Battle Tendency
+  { question: "Quel est le prénom du JoJo de battle tendency ? 🎌jojo's bizarre adventure: battle tendency🎌", answer: "joseph" },
+  { question: "Quel est le nom du mentor de Joseph dans battle tendency ? 🎌jojo's bizarre adventure: battle tendency🎌", answer: "lisa lisa" },
+  { question: "Qui est l’antagoniste principal de battle tendency ? 🎌jojo's bizarre adventure: battle tendency🎌", answer: "kars" },
+  { question: "Quelle énergie spéciale Joseph utilise-t-il ? 🎌jojo's bizarre adventure: battle tendency🎌", answer: "hamon" },
+  { question: "Quel est le nom du combat légendaire contre les hommes du pilier ? 🎌jojo's bizarre adventure: battle tendency🎌", answer: "battle tendency" },
+
+  // Zom 100
+  { question: "Quel est le nom du héros principal dans zom 100 ? 🎌zom 100🎌", answer: "akira tendo" },
+  { question: "Quel événement permet à Akira de se libérer de son travail ? 🎌zom 100🎌", answer: "apocalypse zombie" },
+  { question: "Quel est le but d’Akira après l’apocalypse ? 🎌zom 100🎌", answer: "compléter sa bucket list" },
+  { question: "Quel métier Akira faisait-il avant l’apocalypse ? 🎌zom 100🎌", answer: "employé de bureau" },
+  { question: "Quel est l’objet que Akira veut absolument essayer après l’apocalypse ? 🎌zom 100🎌", answer: "plongée sous-marine" },
+
+  // Rising of the Shield Hero
+  { question: "Quel est le nom du héros au bouclier ? 🎌rising of the shield hero🎌", answer: "naofumi" },
+  { question: "Quel est le prénom de la jeune fille semi-humaine qui accompagne Naofumi ? 🎌rising of the shield hero🎌", answer: "raphtalia" },
+  { question: "Quel royaume invoque les héros ? 🎌rising of the shield hero🎌", answer: "melromarc" },
+  { question: "Quel objet Naofumi reçoit-il comme arme principale ? 🎌rising of the shield hero🎌", answer: "bouclier" },
+  { question: "Pourquoi Naofumi est-il rejeté au début ? 🎌rising of the shield hero🎌", answer: "faux viol" },
+
+  // Ninja Kamui
+  { question: "Quel est le métier passé du héros dans ninja kamui ? 🎌ninja kamui🎌", answer: "ninja assassin" },
+  { question: "Pourquoi le héros de ninja kamui se venge ? 🎌ninja kamui🎌", answer: "sa famille a été tuée" },
+  { question: "Quel genre de technique ninja est utilisée par Kamui ? 🎌ninja kamui🎌", answer: "ninjutsu moderne" },
+  { question: "Quel est le style visuel de ninja kamui ? 🎌ninja kamui🎌", answer: "ultra violent et cinématographique" },
+
+  // Parasyte
+  { question: "Quel est le prénom du héros dans parasyte ? 🎌parasyte🎌", answer: "shinichi" },
+  { question: "Comment s'appelle le parasite dans sa main ? 🎌parasyte🎌", answer: "migi" },
+  { question: "Où migi devait-il s'implanter à l’origine ? 🎌parasyte🎌", answer: "cerveau" },
+  { question: "Pourquoi Shinichi conserve-t-il sa conscience ? 🎌parasyte🎌", answer: "migi a raté son implantation" },
+
+  // Tokyo Ghoul
+  { question: "Quel est le prénom du héros dans tokyo ghoul ? 🎌tokyo ghoul🎌", answer: "kaneki" },
+  { question: "Quel type de créature devient Kaneki ? 🎌tokyo ghoul🎌", answer: "ghoul" },
+  { question: "Quel organe est greffé à Kaneki ? 🎌tokyo ghoul🎌", answer: "organe de ghoul" },
+  { question: "Quel est le café fréquenté par les ghouls ? 🎌tokyo ghoul🎌", answer: "anteiku" },
+
+  // Noragami
+  { question: "Quel est le nom du dieu sans sanctuaire dans noragami ? 🎌noragami🎌", answer: "yato" },
+  { question: "Comment s'appelle l'humaine liée à Yato ? 🎌noragami🎌", answer: "hiyori" },
+  { question: "Quel est le nom de l'arme de Yato ? 🎌noragami🎌", answer: "yukine" },
+
+  // Devilman Crybaby
+  { question: "Qui est l’ami d’enfance d’Akira dans devilman crybaby ? 🎌devilman crybaby🎌", answer: "ryo" },
+  { question: "Quel démon fusionne avec Akira ? 🎌devilman crybaby🎌", answer: "amon" },
+  { question: "Quel est le thème central de devilman ? 🎌devilman crybaby🎌", answer: "humanité vs monstruosité" },
+
+  // Re:Zero
+  { question: "Quel est le prénom du héros de re:zero ? 🎌re:zero🎌", answer: "subaru" },
+  { question: "Quelle capacité possède Subaru ? 🎌re:zero🎌", answer: "retour par la mort" },
+  { question: "Comment s'appelle la demi-elfe qu'il aime ? 🎌re:zero🎌", answer: "emilia" },
+
+  // Elfen Lied
+  { question: "Quel est le nom de la diclonius principale dans elfen lied ? 🎌elfen lied🎌", answer: "lucy" },
+  { question: "Quel est le nom des bras invisibles dans elfen lied ? 🎌elfen lied🎌", answer: "vecteurs" },
+
+  // Deadman Wonderland
+  { question: "Comment s'appelle le héros accusé à tort dans deadman wonderland ? 🎌deadman wonderland🎌", answer: "ganta" },
+  { question: "Quelle capacité Ganta découvre-t-il ? 🎌deadman wonderland🎌", answer: "branche du péché" },
+
+  // No Game No Life
+  { question: "Comment s'appelle le duo principal dans no game no life ? 🎌no game no life🎌", answer: "sora et shiro" },
+  { question: "Dans quel monde sont-ils transportés ? 🎌no game no life🎌", answer: "disboard" },
+
   {
     question: "Qui est le premier humain à combattre dans le tournoi Ragnarok ? 🎌valkyrie apocalypse🎌",
     answer: "lu bu"
