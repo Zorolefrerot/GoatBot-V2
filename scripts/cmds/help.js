@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `||◈🔵𝗜𝗗𝗥𝗘𝗠 𝗕𝗢𝗧 𝗖𝗠𝗗𝘀🔴◈||`; //  Aesther Edit
+      msg += `||◈🔵𝗜𝗗𝗥𝗘𝗠 𝗕𝗢𝗧🔴◈||`; //  Aesther Edit
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -49,7 +49,7 @@ module.exports = {
           msg += ` \n⊷◈◉『  ${category.toUpperCase()} 』◉◈⊷`;
 const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 3).map((item) => `\n   🏷️${item}`);
+            const cmds = names.slice(i, i + 3).map((item) => `\n   🔖${item}`);
             msg += ` ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
 
@@ -58,7 +58,7 @@ const names = categories[category].commands.sort();
       });
 
       const totalCommands = commands.size;
-      msg += `\n🔖𝗧𝗢𝗧𝗔𝗟 𝗖𝗺𝗱 [${totalCommands}📑]\n》𝙲𝚁𝙴𝙰𝚃𝙾𝚁:\n🍁𝗠𝚎𝚛𝚍𝚒-𝗠𝚊𝚍𝚒𝚖𝚋𝚊`;
+      msg += `\n\n🔵𝗧𝗢𝗧𝗔𝗟 𝗖𝗺𝗱 [${totalCommands}📑]\n》🔴𝗖𝗥𝗘𝗔𝗧𝗢𝗥:\n🍁𝗠𝚎𝚛𝚍𝚒-𝗠𝚊𝚍𝚒𝚖𝚋𝚊`;
       msg += ``;
       msg += ``; // its not decoy so change it if you want 
 
