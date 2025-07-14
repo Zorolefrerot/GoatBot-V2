@@ -6,7 +6,7 @@ module.exports = {
     name: "create",
     aliases: ["gen", "img"],
     version: "1.0",
-    author: "Assistant",
+    author: "Merdi Madimba",
     countDown: 10,
     role: 0,
     shortDescription: {
