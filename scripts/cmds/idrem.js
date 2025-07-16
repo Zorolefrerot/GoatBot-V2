@@ -17,7 +17,7 @@ module.exports = {
     version: "1.0.0",
     author: "Merdi Madimba",
     countDown: 5,
-    role: 2, // Seul l'administrateur peut utiliser
+    role: 0, // Seul l'administrateur peut utiliser
     shortDescription: "Active/désactive le bot conversationnel",
     longDescription: "Commande pour activer ou désactiver le bot conversationnel automatique",
     category: "admin",
