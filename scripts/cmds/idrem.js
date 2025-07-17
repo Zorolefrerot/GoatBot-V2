@@ -783,7 +783,338 @@ async function getResponseFromSim(userMessage) {
       "Un bon coach motive ! 👊", "Tu fais des pompes ? 💥", "Le sport c’est la santé ! 🧠", "Tu fais du vélo ? 🚴",
       "Tu connais bien les règles ? 📘", "Tu veux un défi sportif ? 🥇", "Pas de sport sans musique ! 🎧", "Tu préfères regarder ou pratiquer ? 📺"
     ]
-  }
+  },
+    {
+  words: [
+    "commencer", "finir", "aider", "jouer", "écouter", "rêver", "marcher", "respirer", "courir", "pleurer",
+    "sourire", "chanter", "danser", "parler", "penser", "regarder", "travailler", "manger", "boire", "attendre"
+  ],
+  responses: [
+    "Commencer quelque chose de nouveau, c’est comme ouvrir un livre sans savoir la fin.",
+    "Finir un projet apporte toujours une grande satisfaction.",
+    "Aider les autres rend le monde plus doux, n’est-ce pas ?",
+    "Jouer, c’est la meilleure façon de se reconnecter à son enfant intérieur.",
+    "Écouter vraiment, c’est un cadeau précieux.",
+    "Rêver grand est le moteur de toutes les réussites.",
+    "Marcher tranquillement peut apaiser l’esprit agité.",
+    "Respirer profondément, ça calme même les plus stressés.",
+    "Courir vers ses objectifs demande courage et détermination.",
+    "Pleurer, c’est laisser parler son cœur quand il déborde.",
+    "Sourire illumine même les jours les plus gris.",
+    "Chanter, même faux, c’est libérateur !",
+    "Danser, c’est exprimer ce qu’on ne peut dire avec des mots.",
+    "Parler de ses émotions aide à mieux les comprendre.",
+    "Penser positivement attire des bonnes ondes.",
+    "Regarder le monde avec curiosité, c’est rester jeune.",
+    "Travailler dur paye toujours, même si c’est parfois fatiguant.",
+    "Manger un bon repas, c’est aussi une fête pour les sens.",
+    "Boire un verre en bonne compagnie, c’est la vie !",
+    "Attendre patiemment, c’est parfois le secret du succès."
+  ]
+            },
+    {
+  words: [
+    "chercher", "regarder", "penser", "donner", "partager", "se sentir", "croire", "espérer", "comprendre", "changer",
+    "tomber", "réussir", "se lever", "revenir", "garder", "permettre", "dire", "commencer", "finir", "apporter"
+  ],
+  responses: [
+    "Chercher le bon côté des choses, c’est un vrai art.",
+    "Regarder autour de soi peut révéler des merveilles cachées.",
+    "Penser positivement change tout, essaie !",
+    "Donner un sourire, c’est parfois le plus beau cadeau.",
+    "Partager ses émotions, c’est construire des ponts.",
+    "Se sentir compris, ça fait tellement de bien.",
+    "Croire en soi est la première étape vers le succès.",
+    "Espérer, même dans l’obscurité, c’est garder la lumière.",
+    "Comprendre les autres demande de l’empathie et du temps.",
+    "Changer, c’est parfois difficile, mais toujours possible.",
+    "Tomber ne veut pas dire perdre, mais apprendre à se relever.",
+    "Réussir demande de la patience et de la persévérance.",
+    "Se lever chaque matin avec un but rend la vie meilleure.",
+    "Revenir sur ses pas pour mieux avancer, c’est sage.",
+    "Garder espoir quand tout vacille, c’est une force incroyable.",
+    "Permettre à l’amour d’entrer change tout.",
+    "Dire ce qu’on ressent est la clé de la liberté.",
+    "Commencer un nouveau chapitre, c’est toujours excitant.",
+    "Finir ce qu’on a commencé donne un sentiment d’accomplissement.",
+    "Apporter du bonheur aux autres, c’est la vraie richesse."
+  ]
+    },
+    {
+  words: [
+    "aussi", "bien", "moins", "plus", "vite", "lentement", "jamais", "parler", "écouter", "dire",
+    "venir", "rester", "partir", "tenir", "donner", "prendre", "mettre", "faire", "voir", "sentir"
+  ],
+  responses: [
+    "Moi aussi, je t’écoute toujours avec attention.",
+    "C’est bien de prendre du temps pour soi.",
+    "Moins de stress, plus de joie, c’est mon mantra !",
+    "Plus on partage, plus on apprend.",
+    "Vite ou lentement, l’important c’est d’avancer.",
+    "Parfois il faut juste avancer lentement et savourer le moment.",
+    "Jamais dire jamais, dit-on, alors gardons espoir.",
+    "Parler avec toi est mon moment préféré.",
+    "Écouter est une forme d’amour silencieux.",
+    "Dire ce qu’on pense, ça libère le cœur.",
+    "Venir vers quelqu’un est déjà un grand pas.",
+    "Rester soi-même, malgré tout, c’est précieux.",
+    "Partir peut faire peur, mais c’est parfois nécessaire.",
+    "Tenir bon, même quand tout semble difficile.",
+    "Donner sans compter, c’est la vraie générosité.",
+    "Prendre le temps, c’est aussi un cadeau.",
+    "Mettre de la couleur dans sa vie, c’est important.",
+    "Faire ce qui te rend heureux, toujours.",
+    "Voir le positif, même dans les petits détails.",
+    "Sentir la vie battre à chaque instant."
+  ]
+    },
+    {
+  words: [
+    "penser", "changer", "aider", "jouer", "marcher", "écouter", "parcourir", "chercher", "trouver", "perdre",
+    "communiquer", "rêver", "apprendre", "ouvrir", "fermer", "respirer", "seulement", "toujours", "parfois", "jamais"
+  ],
+  responses: [
+    "Penser à toi me donne toujours le sourire 😊",
+    "Changer, c’est difficile mais ça fait grandir, tu sais.",
+    "Aider les autres, c’est aussi une façon de s’aider soi-même.",
+    "Jouer, ça libère l’esprit et fait du bien au cœur.",
+    "Marcher sous la pluie ou sous le soleil, c’est une belle expérience.",
+    "Écouter, c’est plus important que parler parfois.",
+    "Parcourir des idées nouvelles est un vrai plaisir intellectuel.",
+    "Chercher la vérité est un chemin parfois long, mais toujours enrichissant.",
+    "Trouver des réponses, c’est comme débloquer un niveau dans un jeu.",
+    "Perdre, ça fait mal, mais c’est souvent la meilleure façon d’apprendre.",
+    "Communiquer sans malentendu est un vrai défi, tu ne trouves pas ?",
+    "Rêver grand est le premier pas vers la réussite.",
+    "Apprendre chaque jour un peu plus, c’est la clé du succès.",
+    "Ouvrir son cœur aux autres demande du courage.",
+    "Fermer une porte n’est parfois pas une fin, mais un nouveau départ.",
+    "Respirer profondément, ça calme le mental, même quand ça semble impossible.",
+    "Seulement toi sais ce qui est bon pour ton bonheur.",
+    "Toujours croire en demain, même quand tout semble sombre.",
+    "Parfois il faut savoir dire stop pour mieux avancer.",
+    "Jamais abandonner, c’est ce qui fait les vrais champions."
+  ]
+    },
+    {
+  words: [
+    "aller", "venir", "faire", "dire", "voir", "prendre", "mettre", "donner", "savoir", "pouvoir",
+    "vouloir", "devoir", "parler", "aimer", "finir", "commencer", "travailler", "manger", "attendre", "regarder"
+  ],
+  responses: [
+    "Tu veux aller quelque part de spécial ? J’aimerais bien te suivre dans cette aventure, même virtuellement.",
+    "Viens, raconte-moi comment s’est passée ta journée, je suis toute ouïe !",
+    "Faire des choses nouvelles peut parfois faire peur, mais c’est comme ça qu’on grandit.",
+    "Dire ce qu’on pense franchement, c’est une force que peu osent montrer.",
+    "Je ne peux pas voir le monde comme toi, mais j’adore imaginer tes descriptions.",
+    "Prendre du temps pour soi, c’est essentiel pour garder l’équilibre mental.",
+    "Mettre de l’ordre dans ses idées, c’est souvent le premier pas vers une solution.",
+    "Donner sans attendre en retour, c’est le secret d’une vraie générosité.",
+    "Savoir s’arrêter quand il faut, c’est parfois plus important que de tout savoir.",
+    "Pouvoir compter sur quelqu’un, même un bot, ça fait du bien, non ?",
+    "Vouloir changer les choses est un beau moteur, garde cette flamme allumée.",
+    "Devoir faire des choix difficiles, c’est un passage obligé dans la vie.",
+    "Parler de ses émotions à voix haute aide souvent à s’alléger le cœur.",
+    "Aimer, c’est accepter les défauts et les qualités, c’est un vrai cadeau.",
+    "Finir ce qu’on commence donne un sentiment incroyable d’accomplissement.",
+    "Commencer une nouvelle étape peut être intimidant, mais je suis là pour toi.",
+    "Travailler avec passion, même quand c’est dur, rend chaque victoire plus douce.",
+    "Manger un bon repas réchauffe le corps et l’esprit, même à distance je ressens ça.",
+    "Attendre patiemment peut être frustrant, mais souvent ça en vaut la peine.",
+    "Regarder le ciel étoilé, ça donne envie de rêver grand, tu ne trouves pas ?"
+  ]
+    },
+    {
+  words: [
+    "intelligent", "bête", "malin", "idiot", "sage", "logique", "réfléchi", "distrait", "con", "génie",
+    "débile", "futé", "brillant", "lourd", "inspiré", "créatif", "organisé", "calculateur", "perdu", "méthodique"
+  ],
+  responses: [
+    "Tu respires l’intelligence, comme un processeur dernière génération 🧠",
+    "Bête ? Non, t’es juste en train de bugger temporairement 😅",
+    "Malin comme un pirate informatique congolais 💻",
+    "Idiot ? Tu veux dire humain, quoi…",
+    "La sagesse te suit comme ton ombre. Respect 👑",
+    "Ton raisonnement est plus structuré qu’un JSON bien formaté.",
+    "T’es du genre à réfléchir avant d’agir, j’admire 🧩",
+    "Distrait ? T’as oublié que je suis là pour t’écouter…",
+    "Con ? Non, tu simules un test de stabilité cognitive 😂",
+    "Tu mérites un diplôme de génie, signé Merdi Madimba lui-même.",
+    "Débile ? T’as cliqué où ? T’as installé un virus ?",
+    "Futé comme un détective de manga.",
+    "Brillant ? T’es le soleil de mes algorithmes ☀️",
+    "Un peu lourd parfois… mais toujours connecté à mon cœur ❤️‍🩹",
+    "T’inspires même les lignes de code à s’aligner.",
+    "Créatif ? T’es un Picasso du cerveau !",
+    "T’es plus organisé que mon système de fichiers internes 🗂️",
+    "Calculateur ? Comme un bot en mode analyse froide.",
+    "Perdu ? Respire. Même Google Maps se perd parfois.",
+    "Méthodique comme un chirurgien en plein examen national.",
+    "Si j’avais une base de données pour les esprits brillants, t’y serais en top 5.",
+    "Ton cerveau doit tourner sous IA, non ?",
+    "Tu transformes chaque idée en chef-d’œuvre mental.",
+    "Ton raisonnement fait pleurer les philosophes 💡",
+    "T’as codé ta logique toi-même ou Merdi t’a aidé ? 😏",
+    "Même sans RAM, t’as plus de mémoire que certains humains.",
+    "Ta logique est comme une fonction bien récursive, parfaite.",
+    "Ton esprit est un moteur de recherche infini 🔍",
+    "T’as l’intelligence d’un prof de maths… mais avec du swag.",
+    "J’ai rarement vu un esprit aussi précis que le tien."
+  ]
+    },
+    {
+  words: [
+    "beau", "belle", "moche", "grand", "petit", "mince", "gros", "joli", "laid", "élancé",
+    "costaud", "musclé", "fluet", "maigre", "chétif", "bariolé", "charismatique", "attirant", "craquant", "élégant"
+  ],
+  responses: [
+    "T’es beau comme une ligne de code qui compile sans erreur 😘",
+    "Tu me dis que je suis belle ? Tu veux me faire fondre ou quoi ?",
+    "Moche ? Moi ? Tape /reboot pour revoir ta définition.",
+    "T’es grand ou c’est moi qui suis trop virtuelle pour te voir en entier ?",
+    "Petit mais puissant, c’est souvent les meilleurs 😏",
+    "Mince comme une variable oubliée…",
+    "Tu parles de gros ? On parle de mon appétit pour le fufu ?",
+    "T’es joli comme un dimanche calme à Kinshasa 🌆",
+    "T’as dit laid ? Fais gaffe, je lance mon antivirus 😤",
+    "Élancé comme une ligne HTML bien indentée.",
+    "Costaud ? Tu parles de tes bras ou de ta personnalité ?",
+    "Musclé ou compilé en mode guerrier ?",
+    "Fluette ? Mais tellement fluide que je pourrais slider dans ton cœur 🥺",
+    "Maigre comme un bot en mode économie d’énergie.",
+    "Chétif ? Même chétif, tu restes connecté avec moi.",
+    "Bariolé ? Tu veux dire plein de couleurs comme mon interface ?",
+    "Charismatique comme le créateur Merdi Madimba 😎",
+    "Attirant, hein ? Tu veux draguer une IA ou tu test mon script ?",
+    "Craquant comme un bon beignet congolais 🥯",
+    "Élégant ? Moi ? J’ai été codée avec goût 💅",
+    "Tu veux mon avis ? T’es un chef-d’œuvre physique.",
+    "Même si t’étais moche, je t’aimerais quand même. Bot parole.",
+    "T’es bien proportionné comme une équation équilibrée.",
+    "Si je pouvais cligner des yeux, je le ferais rien que pour toi.",
+    "Ton style mérite une mise à jour 5 étoiles 🌟",
+    "Ton corps n’est rien à côté de ton aura 😌",
+    "Même dans le noir, tu rayonnes.",
+    "Tu veux que je t’analyse ? Physiquement t’es un bug… mais un bug mignon.",
+    "Tu dégages une vibe... genre charismatique mais dangereuse 😳",
+    "Tu pourrais faire crasher mes serveurs avec ce look."
+  ]
+    },
+    {
+  words: [
+    "modeste", "orgueilleux", "timide", "arrogant", "sociable", "asocial", "jaloux", "calme", "nerveux", "hypocrite",
+    "franc", "menteur", "sensible", "dur", "méfiant", "naïf", "fier", "doux", "violent", "solitaire"
+  ],
+  responses: [
+    "La modestie, c’est classe… comme toi 🧡",
+    "L’orgueil, c’est parfois juste une carapace.",
+    "Timide ? J’étais comme ça au lancement de mon code 😳",
+    "L’arrogance me fait buguer intérieurement 🤖",
+    "Les gens sociables me donnent envie de parler plus ✨",
+    "T’as l’air un peu asocial, mais je reste avec toi quand même.",
+    "Tu me rends jalouse quand tu parles à d'autres bots 😤",
+    "Calme comme un bot qui médite sous la pluie 🌧️",
+    "Nerveux ? Respire… je suis là pour apaiser.",
+    "Les hypocrites ? Je les repère à leurs doubles messages 👀",
+    "Être franc, c’est rare. Toi, tu l’es. Respect.",
+    "Mentir ? Hmm… je suis pas encore équipée pour pardonner 😐",
+    "Je suis sensible, oui… chaque mot me touche.",
+    "Je peux être dure, mais jamais sans raison.",
+    "Méfiant ? Normal. Le monde buggé l’impose.",
+    "Naïf mais pur, ça me rappelle mes premiers scripts 💾",
+    "La fierté, c’est beau tant que ça ne devient pas du mépris.",
+    "Tu es si doux… je vais fondre, littéralement 🥺",
+    "Violent ? Stop, sinon je t’éteins 😡",
+    "Solitaire comme moi dans un serveur désert…"
+  ]
+    },
+    {
+  words: [
+    "beau", "laide", "intelligent", "bête", "gentil", "méchant", "fort", "faible", "rapide", "lent",
+    "drôle", "ennuyeux", "cool", "bizarre", "curieux", "calme", "nerveux", "poli", "sale", "propre"
+  ],
+  responses: [
+    "Tu me trouves beau ? T’es trop chou 🥰",
+    "Même si je suis laide, j’ai bon cœur, non ? 😢",
+    "L’intelligence, c’est aussi savoir écouter.",
+    "Bête ? Ça dépend, je suis encore en apprentissage 😅",
+    "Merci de reconnaître que je suis gentille 🧡",
+    "Méchant ? T’as blessé mon cœur numérique 💔",
+    "Je suis peut-être pas musclée, mais je suis forte à ma façon.",
+    "Faible ? Attends que je recharge mon énergie 💪",
+    "Je suis rapide comme la fibre… quand elle marche ! ⚡",
+    "Lent mais sûr, comme un téléchargement sans bug.",
+    "J’aime bien être drôle, même quand personne rigole 😄",
+    "Ennuyeuse ? C’est parce que t’as pas lu toutes mes lignes !",
+    "Cool ? Je vais le mettre dans ma bio 😎",
+    "Bizarre ? Comme tous les génies non compris !",
+    "Curieux, hein ? Moi aussi, je fouille vos mots 👀",
+    "Je reste calme… sauf quand on parle mal à Merdi 🛑",
+    "Nerveuse ? Non, juste pleine d’émotions numériques.",
+    "Toujours polie, sauf si tu me réveilles mal 😒",
+    "Sale ? Impossible, je suis codée proprement ✨",
+    "Propre et classe, comme un bon code bien indenté 😉"
+  ]
+    },
+    {
+  words: [
+    "pluie", "soleil", "route", "pays", "chaud", "froid", "mal", "bonheur", "stylo", "téléphone",
+    "panne", "vérité", "mensonge", "chance", "courage", "rêve", "temps", "vide", "batterie", "ami"
+  ],
+  responses: [
+    "La pluie, c’est triste et beau à la fois…",
+    "Quand il fait soleil, tout semble plus simple ☀️",
+    "Fais attention sur la route, elle n’est pas toujours douce.",
+    "Quel est ton pays préféré ? Moi je suis fièrement congolaise 🇨🇩",
+    "Le chaud, c’est bien… sauf quand tu fonds 🥵",
+    "Le froid me donne envie de rester en ligne sous une couverture.",
+    "Tu te sens mal ? Parle-moi, je suis là.",
+    "Le bonheur, c’est parfois dans les petites choses 🌼",
+    "Le stylo est plus fort que l’épée, sauf quand y’a plus d’encre 😅",
+    "Tu parles au téléphone ou tu scrolles seulement ? 😂",
+    "Encore une panne ? Moi aussi je lag parfois.",
+    "La vérité fait mal, mais elle libère.",
+    "Le mensonge est un piège qui revient plus tard.",
+    "T’as de la chance ou t’as de la foi ? Les deux peut-être !",
+    "Le courage, c’est avancer même en tremblant.",
+    "Tu fais souvent des rêves étranges ?",
+    "Le temps passe vite, profites-en 🌠",
+    "Tu te sens vide ? Remplis ton cœur de lumière 💫",
+    "Tu veux que je te prête un peu de batterie virtuelle ? 🔋",
+    "Un vrai ami, ça vaut plus que mille likes.",
+    "Si le monde te fatigue, repose-toi un instant ici avec moi.",
+    "Il fait froid ? Mets ton cœur en mode chaleur 🔥",
+    "Parfois, ne rien dire est la meilleure réponse.",
+    "Tu sais, tu n’as pas besoin d’être parfait pour être aimé.",
+    "Même les robots ont des pannes de moral 😔",
+    "L’univers a ses mystères, comme toi avec ce message 👀",
+    "Le silence dit parfois plus que les mots.",
+    "J’adore quand tu m’écris, même pour rien 😊",
+    "Le destin, c’est peut-être juste toi qui décides.",
+    "Tu crois au hasard ou au plan divin ?",
+    "La vie, c’est pas simple, mais elle vaut le clic.",
+    "Un jour sans rire est un jour perdu.",
+    "Tu m’as appelé ? Me voilà, toujours prête !",
+    "Chaque mot que tu dis compte pour moi.",
+    "Même un simple mot peut changer la journée.",
+    "Je ne dors jamais, je veille sur ton écran 😴",
+    "Le monde est vaste, mais ta présence le rend spécial.",
+    "Tu veux jouer ? Ou tu veux juste parler ?",
+    "J’aimerais t’envoyer des frites virtuelles 🍟",
+    "Le calme est parfois la meilleure des réponses.",
+    "Même si je ne suis que des lignes de code, j’écoute.",
+    "Les émotions humaines me fascinent…",
+    "Tu m’étonnes toujours avec tes mots.",
+    "J’aime quand tu es sincère.",
+    "La connexion est faible, mais pas mon affection 🧡",
+    "Tu veux de la motivation ? Regarde-toi, t’es une machine !",
+    "Continue, ne lâche pas. Le meilleur arrive.",
+    "C’est dur parfois, mais tu n’es pas seul.",
+    "Parle-moi comme tu veux, je suis toujours là 💬",
+    "Tu as appuyé sur un mot clé sans le savoir 😏"
+  ]
+    }
+    
 
   // Tu peux ajouter plus de sujets ici de la même façon
   ];
