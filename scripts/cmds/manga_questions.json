@@ -1,85 +1,99 @@
-
-{
-  "questions": [
-    {
-      "question": "quel est le nom du personnage principal de naruto ?",
-      "answer": "naruto uzumaki"
-    },
-    {
-      "question": "comment s'appelle le fruit du démon de luffy dans one piece ?",
-      "answer": "gomu gomu no mi"
-    },
-    {
-      "question": "quel est le nom de l'épée de tanjiro dans demon slayer ?",
-      "answer": "nichirin"
-    },
-    {
-      "question": "comment s'appelle le titan colossal dans attack on titan ?",
-      "answer": "bertholdt hoover"
-    },
-    {
-      "question": "quel est le nom de la guilde de natsu dans fairy tail ?",
-      "answer": "fairy tail"
-    },
-    {
-      "question": "comment s'appelle le shinigami de light dans death note ?",
-      "answer": "ryuk"
-    },
-    {
-      "question": "quel est le nom du village caché de naruto ?",
-      "answer": "konoha"
-    },
-    {
-      "question": "comment s'appelle l'alchimiste de fer dans fullmetal alchemist ?",
-      "answer": "edward elric"
-    },
-    {
-      "question": "quel est le nom du père de goku dans dragon ball ?",
-      "answer": "bardock"
-    },
-    {
-      "question": "comment s'appelle l'organisation de itachi dans naruto ?",
-      "answer": "akatsuki"
-    },
-    {
-      "question": "quel est le nom du chien de edward dans cowboy bebop ?",
-      "answer": "ein"
-    },
-    {
-      "question": "comment s'appelle le pouvoir de ichigo dans bleach ?",
-      "answer": "zangetsu"
-    },
-    {
-      "question": "quel est le nom de la sœur de tanjiro dans demon slayer ?",
-      "answer": "nezuko"
-    },
-    {
-      "question": "comment s'appelle le navire de luffy dans one piece ?",
-      "answer": "thousand sunny"
-    },
-    {
-      "question": "quel est le nom du chat dans sailor moon ?",
-      "answer": "luna"
-    },
-    {
-      "question": "comment s'appelle le roi des pirates dans one piece ?",
-      "answer": "gol d roger"
-    },
-    {
-      "question": "quel est le nom du tuteur de gon dans hunter x hunter ?",
-      "answer": "kite"
-    },
-    {
-      "question": "comment s'appelle l'école de yuji dans jujutsu kaisen ?",
-      "answer": "tokyo jujutsu high"
-    },
-    {
-      "question": "quel est le nom du père de natsu dans fairy tail ?",
-      "answer": "igneel"
-    },
-    {
-      "question": "comment s'appelle le commandant erwin dans attack on titan ?",
-      "answer": "erwin smith"
-    }
-  ]
-}
+[
+  { "question": "qui est le heros principal de naruto ?", "answer": "naruto" },
+  { "question": "quel est le rival principal de naruto ?", "answer": "sasuke" },
+  { "question": "qui est le sensei de naruto ?", "answer": "kakashi" },
+  { "question": "quel est le demon renard en naruto ?", "answer": "kurama" },
+  { "question": "qui est le pere de naruto ?", "answer": "minato" },
+  { "question": "qui est la mere de naruto ?", "answer": "kushina" },
+  { "question": "qui est le heros principal de dragon ball ?", "answer": "goku" },
+  { "question": "quel est le rival principal de goku ?", "answer": "vegeta" },
+  { "question": "qui est le fils de goku ?", "answer": "gohan" },
+  { "question": "qui est le createur des dragon ball ?", "answer": "kami" },
+  { "question": "quel est le heros principal de one piece ?", "answer": "luffy" },
+  { "question": "qui est le sabreur de l equipage de luffy ?", "answer": "zoro" },
+  { "question": "qui est la navigatrice de l equipage de luffy ?", "answer": "nami" },
+  { "question": "qui est le cuisinier de l equipage de luffy ?", "answer": "sanji" },
+  { "question": "qui est le medecin de l equipage de luffy ?", "answer": "chopper" },
+  { "question": "qui est l archeologue de l equipage de luffy ?", "answer": "robin" },
+  { "question": "qui est le sniper de l equipage de luffy ?", "answer": "usopp" },
+  { "question": "qui est le musicien de l equipage de luffy ?", "answer": "brook" },
+  { "question": "qui est le timonier de l equipage de luffy ?", "answer": "jinbei" },
+  { "question": "quel est le nom complet de luffy ?", "answer": "monkey d luffy" },
+  { "question": "qui est le capitaine de l equipage du chapeau de paille ?", "answer": "luffy" },
+  { "question": "qui est le frere de luffy mort a marineford ?", "answer": "ace" },
+  { "question": "qui est le grand pere de luffy ?", "answer": "garp" },
+  { "question": "qui est le heros principal de bleach ?", "answer": "ichigo" },
+  { "question": "qui est le capitaine aizen dans bleach ?", "answer": "aizen" },
+  { "question": "qui est le meilleur ami d ichigo ?", "answer": "uryu" },
+  { "question": "qui est la shinigami qui a donne ses pouvoirs a ichigo ?", "answer": "rukia" },
+  { "question": "qui est le heros principal de death note ?", "answer": "light" },
+  { "question": "qui est le detective qui affronte light ?", "answer": "l" },
+  { "question": "quel est le nom complet de light ?", "answer": "light yagami" },
+  { "question": "quel est le nom du dieu de la mort ami de light ?", "answer": "ryuk" },
+  { "question": "qui est la fille amoureuse de light ?", "answer": "misa" },
+  { "question": "qui est le heros principal de demon slayer ?", "answer": "tanjiro" },
+  { "question": "quelle est la soeur de tanjiro ?", "answer": "nezuko" },
+  { "question": "qui est le compagnon peureux de tanjiro ?", "answer": "zenitsu" },
+  { "question": "qui est le compagnon avec une tete de sanglier ?", "answer": "inosuke" },
+  { "question": "qui est le pilier de la flamme ?", "answer": "rengoku" },
+  { "question": "qui est le pilier de l eau ?", "answer": "giyu" },
+  { "question": "qui est le roi des demons dans demon slayer ?", "answer": "muzan" },
+  { "question": "qui est le heros principal de my hero academia ?", "answer": "midoriya" },
+  { "question": "quel est le nom de heros d all might ?", "answer": "all might" },
+  { "question": "qui est le rival de midoriya ?", "answer": "bakugo" },
+  { "question": "qui est l ennemi principal de my hero academia ?", "answer": "all for one" },
+  { "question": "qui est la fille qui maitrise la gravite dans my hero academia ?", "answer": "uraraka" },
+  { "question": "qui est le heros principal de fairy tail ?", "answer": "natsu" },
+  { "question": "qui est la partenaire de natsu ?", "answer": "lucy" },
+  { "question": "qui est le mage de glace dans fairy tail ?", "answer": "gray" },
+  { "question": "qui est la guerriere avec des armures dans fairy tail ?", "answer": "erza" },
+  { "question": "quel est le chat bleu de fairy tail ?", "answer": "happy" },
+  { "question": "qui est le heros principal de attack on titan ?", "answer": "eren" },
+  { "question": "qui est la fille qui protege eren ?", "answer": "mikasa" },
+  { "question": "qui est le meilleur ami d eren ?", "answer": "armin" },
+  { "question": "qui est le capitaine le plus fort du bataillon ?", "answer": "levi" },
+  { "question": "qui est le titan colossal ?", "answer": "bertholdt" },
+  { "question": "qui est le titan cuirasse ?", "answer": "reiner" },
+  { "question": "qui est le titan feminin ?", "answer": "annie" },
+  { "question": "qui est le heros principal de jujutsu kaisen ?", "answer": "itadori" },
+  { "question": "qui est le professeur de itadori ?", "answer": "gojo" },
+  { "question": "qui est la camarade de classe de itadori ?", "answer": "nobara" },
+  { "question": "qui est le camarade de itadori avec une malediction ?", "answer": "megumi" },
+  { "question": "qui est le roi des maledictions dans jujutsu kaisen ?", "answer": "sukuna" },
+  { "question": "qui est le heros principal de hunter x hunter ?", "answer": "gon" },
+  { "question": "qui est le meilleur ami de gon ?", "answer": "killua" },
+  { "question": "qui est le pere de gon ?", "answer": "ging" },
+  { "question": "qui est le clown dangereux dans hunter x hunter ?", "answer": "hisoka" },
+  { "question": "qui est le chef de la brigade fantome ?", "answer": "chrollo" },
+  { "question": "qui est le heros principal de black clover ?", "answer": "asta" },
+  { "question": "qui est le rival de asta ?", "answer": "yuno" },
+  { "question": "qui est le capitaine du taureau noir ?", "answer": "yami" },
+  { "question": "qui est la soeur de asta ?", "answer": "sister lily" },
+  { "question": "qui est le demon de asta ?", "answer": "lieb" },
+  { "question": "qui est le heros principal de fullmetal alchemist ?", "answer": "edward" },
+  { "question": "qui est le frere de edward ?", "answer": "alphonse" },
+  { "question": "qui est le createur de la pierre philosophale ?", "answer": "father" },
+  { "question": "qui est le heros principal de tokyo ghoul ?", "answer": "kaneki" },
+  { "question": "qui est la fille aux cheveux roses dans tokyo ghoul ?", "answer": "toka" },
+  { "question": "qui est le chef des goules dans tokyo ghoul ?", "answer": "arima" },
+  { "question": "qui est le heros principal de yu gi oh ?", "answer": "yugi" },
+  { "question": "qui est le rival principal de yugi ?", "answer": "kaiba" },
+  { "question": "qui est le heros principal de saint seiya ?", "answer": "seiya" },
+  { "question": "qui est la deesse protege par les chevaliers du zodiaque ?", "answer": "athena" },
+  { "question": "qui est le heros principal de kenshin le vagabond ?", "answer": "kenshin" },
+  { "question": "qui est le heros principal de inu yasha ?", "answer": "inuyasha" },
+  { "question": "qui est la fille qui voyage dans le temps avec inu yasha ?", "answer": "kagome" },
+  { "question": "qui est le heros principal de bleach brave souls ?", "answer": "ichigo" },
+  { "question": "qui est le heros principal de gintama ?", "answer": "gintoki" },
+  { "question": "qui est le heros principal de katekyo hitman reborn ?", "answer": "tsuna" },
+  { "question": "qui est le heros principal de code geass ?", "answer": "lelouch" },
+  { "question": "qui est le heros principal de neon genesis evangelion ?", "answer": "shinji" },
+  { "question": "qui est le robot principal de evangelion ?", "answer": "eva01" },
+  { "question": "qui est le heros principal de cowboy bebop ?", "answer": "spike" },
+  { "question": "qui est le heros principal de trigun ?", "answer": "vash" },
+  { "question": "qui est le heros principal de berserk ?", "answer": "guts" },
+  { "question": "qui est le heros principal de jojo phantom blood ?", "answer": "jonathan" },
+  { "question": "qui est le heros principal de jojo stardust crusaders ?", "answer": "jotaro" },
+  { "question": "qui est le heros principal de jojo golden wind ?", "answer": "giorno" },
+  { "question": "qui est le heros principal de jojo stone ocean ?", "answer": "jolyne" }
+]
