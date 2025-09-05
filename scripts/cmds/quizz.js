@@ -2,338 +2,331 @@
 const fs = require('fs');
 const path = require('path');
 
+// Variables globales pour gérer l'état du quiz
+const activeQuizzes = new Map();
+
 module.exports = {
   config: {
     name: "quizz",
     version: "1.0",
-    author: "Merdi Madimba",
+    author: "MERDI MADIMBA",
     countDown: 5,
-    role: 1, // Seuls les admins peuvent lancer
-    shortDescription: {
-      vi: "Jeu de quiz",
-      en: "Quiz game"
-    },
-    longDescription: {
-      vi: "Jeu de quiz avec différentes catégories",
-      en: "Quiz game with different categories"
-    },
+    role: 0, // Seul admin peut lancer
+    shortDescription: "Système de quiz interactif",
+    longDescription: "Quiz avec duels et questions générales",
     category: "game",
-    guide: {
-      vi: "{pn}",
-      en: "{pn}"
-    }
+    guide: "{pn} pour lancer un quiz"
   },
 
-  langs: {
-    vi: {
-      // Textes en vietnamien si nécessaire
-    },
-    en: {
-      chooseCategory: "🎮 **QUIZ GAME** 🎮\n\n📚 Choisissez une catégorie :\n\n🌸 **manga** - Questions sur les mangas/animes\n🧠 **culture** - Culture générale\n\n💬 Répondez avec le nom de la catégorie",
-      chooseMode: "🎯 **MODE DE JEU** 🎯\n\n⚔️ **duel** - Combat entre 2 joueurs\n🌟 **general** - Quiz ouvert à tous\n\n💬 Répondez avec le mode choisi",
-      enterUIDs: "👥 **DUEL MODE** 👥\n\n🎯 Entrez les UID des deux duellistes\nFormat: uid1 uid2\n\n📝 Exemple: 123456789 987654321",
-      chooseQuestions: "🔢 **NOMBRE DE QUESTIONS** 🔢\n\n📊 Choisissez le nombre de questions :\n\n🎯 **10** questions\n🎯 **20** questions\n🎯 **30** questions\n🎯 **50** questions\n\n💬 Répondez avec le nombre",
-      gameInProgress: "⚠️ **QUIZ DÉJÀ EN COURS** ⚠️\n\n🎮 Un quiz est déjà actif dans ce groupe!\n⏰ Veuillez attendre qu'il se termine.",
-      invalidCategory: "❌ **CATÉGORIE INVALIDE** ❌\n\n📚 Catégories disponibles :\n• manga\n• culture",
-      invalidMode: "❌ **MODE INVALIDE** ❌\n\n🎯 Modes disponibles :\n• duel\n• general",
-      invalidUIDs: "❌ **UID INVALIDES** ❌\n\n📝 Format correct : uid1 uid2\n💡 Exemple : 123456789 987654321",
-      invalidQuestions: "❌ **NOMBRE INVALIDE** ❌\n\n🔢 Nombres autorisés : 10, 20, 30, 50",
-      timeUp: "⏰ **TEMPS ÉCOULÉ** ⏰\n\n❌ Personne n'a répondu à temps!\n✅ **Réponse correcte :** {answer}",
-      correctAnswer: "🎉 **BONNE RÉPONSE !** 🎉\n\n👤 **{name}** a trouvé la bonne réponse !\n💎 **+10 points**",
-      finalScores: "🏆 **RÉSULTATS FINAUX** 🏆\n\n{scores}\n\n🥇 **VAINQUEUR : {winner}**\n💎 **Score final : {score} points**",
-      noScores: "😅 **AUCUN POINT** 😅\n\nPersonne n'a réussi à répondre correctement!\n🤔 Il faut réviser un peu plus..."
-    }
-  },
-
-  onStart: async function ({ message, event, getLang, usersData }) {
+  onStart: async function ({ message, event, api }) {
     const threadID = event.threadID;
     
-    // Vérifier si un quiz est déjà en cours
-    if (global.quizSessions && global.quizSessions[threadID]) {
-      return message.reply(getLang("gameInProgress"));
+    // Vérifier si un quiz est déjà actif dans ce groupe
+    if (activeQuizzes.has(threadID)) {
+      return message.reply("❌ Un quiz est déjà en cours dans ce groupe !");
     }
 
-    // Initialiser le stockage des sessions si nécessaire
-    if (!global.quizSessions) {
-      global.quizSessions = {};
-    }
-
-    // Créer une nouvelle session
-    global.quizSessions[threadID] = {
-      step: 'category',
-      host: event.senderID,
-      category: null,
-      mode: null,
-      players: null,
-      questionCount: null,
+    // Initialiser le quiz
+    const quizData = {
+      threadID: threadID,
+      adminID: event.senderID,
+      state: 'category',
       currentQuestion: 0,
-      scores: {},
+      scores: new Map(),
       questions: [],
-      currentTimeout: null
+      timer: null,
+      isDuel: false,
+      duelists: []
     };
 
-    message.reply(getLang("chooseCategory"), (err, info) => {
-      if (err) return;
-      
-      global.GoatBot.onReply.set(info.messageID, {
-        commandName: 'quizz',
-        messageID: info.messageID,
-        author: event.senderID,
-        step: 'category'
-      });
-    });
+    activeQuizzes.set(threadID, quizData);
+
+    const categoryMessage = `🎯 **QUIZ INTERACTIF** 🎯
+
+Choisissez votre rubrique :
+📚 **manga** - Questions sur les mangas
+🧠 **culture générale** - Questions de culture générale
+
+Répondez avec le nom de la rubrique que vous voulez !`;
+
+    const info = await message.reply(categoryMessage);
+    
+    // Gérer le timeout de sélection
+    setTimeout(() => {
+      if (activeQuizzes.has(threadID) && activeQuizzes.get(threadID).state === 'category') {
+        activeQuizzes.delete(threadID);
+        api.sendMessage("⏰ Temps écoulé pour choisir la rubrique. Quiz annulé.", threadID);
+      }
+    }, 30000);
   },
 
-  onReply: async function ({ message, event, Reply, getLang, usersData }) {
+  onReply: async function ({ message, Reply, event, api }) {
     const threadID = event.threadID;
-    const userID = event.senderID;
-    const session = global.quizSessions[threadID];
-    const userReply = event.body.toLowerCase().trim();
+    const quizData = activeQuizzes.get(threadID);
+    
+    if (!quizData) return;
 
-    if (!session) return;
+    const userInput = event.body.toLowerCase().trim();
 
-    // Si ce n'est pas l'hôte qui répond aux étapes de configuration
-    if (['category', 'mode', 'uids', 'questions'].includes(session.step) && userID !== session.host) {
-      return;
-    }
-
-    switch (session.step) {
+    switch (quizData.state) {
       case 'category':
-        if (!['manga', 'culture'].includes(userReply)) {
-          return message.reply(getLang("invalidCategory"));
-        }
-        
-        session.category = userReply;
-        session.step = 'mode';
-        
-        message.reply(getLang("chooseMode"), (err, info) => {
-          if (err) return;
-          
-          global.GoatBot.onReply.set(info.messageID, {
-            commandName: 'quizz',
-            messageID: info.messageID,
-            author: event.senderID,
-            step: 'mode'
-          });
-        });
+        await this.handleCategorySelection(userInput, quizData, message, event, api);
         break;
-
       case 'mode':
-        if (!['duel', 'general'].includes(userReply)) {
-          return message.reply(getLang("invalidMode"));
-        }
-        
-        session.mode = userReply;
-        
-        if (userReply === 'duel') {
-          session.step = 'uids';
-          message.reply(getLang("enterUIDs"), (err, info) => {
-            if (err) return;
-            
-            global.GoatBot.onReply.set(info.messageID, {
-              commandName: 'quizz',
-              messageID: info.messageID,
-              author: event.senderID,
-              step: 'uids'
-            });
-          });
-        } else {
-          session.step = 'questions';
-          message.reply(getLang("chooseQuestions"), (err, info) => {
-            if (err) return;
-            
-            global.GoatBot.onReply.set(info.messageID, {
-              commandName: 'quizz',
-              messageID: info.messageID,
-              author: event.senderID,
-              step: 'questions'
-            });
-          });
-        }
+        await this.handleModeSelection(userInput, quizData, message, event, api);
         break;
-
-      case 'uids':
-        const uids = event.body.trim().split(' ');
-        if (uids.length !== 2) {
-          return message.reply(getLang("invalidUIDs"));
-        }
-        
-        session.players = uids;
-        session.step = 'questions';
-        
-        message.reply(getLang("chooseQuestions"), (err, info) => {
-          if (err) return;
-          
-          global.GoatBot.onReply.set(info.messageID, {
-            commandName: 'quizz',
-            messageID: info.messageID,
-            author: event.senderID,
-            step: 'questions'
-          });
-        });
+      case 'duelists':
+        await this.handleDuelistSelection(userInput, quizData, message, event, api);
         break;
-
-      case 'questions':
-        const count = parseInt(userReply);
-        if (![10, 20, 30, 50].includes(count)) {
-          return message.reply(getLang("invalidQuestions"));
-        }
-        
-        session.questionCount = count;
-        await this.loadQuestions(session);
-        await this.startQuiz(session, message, getLang, usersData);
+      case 'questionCount':
+        await this.handleQuestionCount(userInput, quizData, message, event, api);
         break;
-
-      case 'quiz':
-        await this.handleAnswer(session, userID, event.body.trim(), message, getLang, usersData);
+      case 'answering':
+        await this.handleAnswer(userInput, quizData, message, event, api);
         break;
     }
   },
 
-  loadQuestions: async function (session) {
-    const fileName = session.category === 'manga' ? 'questions_manga.json' : 'questions_culture.json';
-    const filePath = path.join(__dirname, fileName);
+  async handleCategorySelection(userInput, quizData, message, event, api) {
+    if (event.senderID !== quizData.adminID) return;
+
+    if (!['manga', 'culture générale'].includes(userInput)) {
+      return message.reply("❌ Veuillez choisir entre 'manga' ou 'culture générale'");
+    }
+
+    quizData.category = userInput;
+    quizData.state = 'mode';
+
+    const modeMessage = `✅ Rubrique **${userInput}** sélectionnée !
+
+Choisissez le mode de jeu :
+⚔️ **duel** - Quiz entre deux joueurs spécifiques
+🌍 **général** - Quiz ouvert à tous
+
+Répondez avec 'duel' ou 'général' !`;
+
+    message.reply(modeMessage);
+  },
+
+  async handleModeSelection(userInput, quizData, message, event, api) {
+    if (event.senderID !== quizData.adminID) return;
+
+    if (!['duel', 'général'].includes(userInput)) {
+      return message.reply("❌ Veuillez choisir entre 'duel' ou 'général'");
+    }
+
+    if (userInput === 'duel') {
+      quizData.isDuel = true;
+      quizData.state = 'duelists';
+      message.reply("⚔️ Mode duel sélectionné !\n\nVeuillez mentionner les deux participants du duel (ex: @user1 @user2)");
+    } else {
+      quizData.isDuel = false;
+      quizData.state = 'questionCount';
+      message.reply("🌍 Mode général sélectionné !\n\nChoisissez le nombre de questions : 10, 20, 30 ou 50");
+    }
+  },
+
+  async handleDuelistSelection(userInput, quizData, message, event, api) {
+    if (event.senderID !== quizData.adminID) return;
+
+    const mentions = Object.keys(event.mentions || {});
+    if (mentions.length !== 2) {
+      return message.reply("❌ Vous devez mentionner exactement 2 participants pour le duel !");
+    }
+
+    quizData.duelists = mentions;
+    quizData.state = 'questionCount';
+    
+    const duelist1 = event.mentions[mentions[0]];
+    const duelist2 = event.mentions[mentions[1]];
+    
+    message.reply(`⚔️ Duelistes sélectionnés :\n• ${duelist1}\n• ${duelist2}\n\nChoisissez le nombre de questions : 10, 20, 30 ou 50`);
+  },
+
+  async handleQuestionCount(userInput, quizData, message, event, api) {
+    if (event.senderID !== quizData.adminID) return;
+
+    const count = parseInt(userInput);
+    if (![10, 20, 30, 50].includes(count)) {
+      return message.reply("❌ Veuillez choisir 10, 20, 30 ou 50 questions");
+    }
+
+    quizData.questionCount = count;
+    await this.loadQuestions(quizData);
+    await this.startQuiz(quizData, message, api);
+  },
+
+  async loadQuestions(quizData) {
+    const fileName = quizData.category === 'manga' ? 'manga_questions.json' : 'culture_generale_questions.json';
     
     try {
-      const data = fs.readFileSync(filePath, 'utf8');
-      const allQuestions = JSON.parse(data);
+      const data = fs.readFileSync(fileName, 'utf8');
+      const questionsData = JSON.parse(data);
       
-      // Mélanger et prendre le nombre de questions demandé
-      const shuffled = allQuestions.sort(() => 0.5 - Math.random());
-      session.questions = shuffled.slice(0, session.questionCount);
+      // Mélanger et sélectionner le bon nombre de questions
+      const shuffled = questionsData.questions.sort(() => 0.5 - Math.random());
+      quizData.questions = shuffled.slice(0, quizData.questionCount);
     } catch (error) {
       console.error('Erreur lors du chargement des questions:', error);
-      session.questions = [];
+      quizData.questions = [];
     }
   },
 
-  startQuiz: async function (session, message, getLang, usersData) {
-    session.step = 'quiz';
-    session.currentQuestion = 0;
-    await this.askQuestion(session, message, getLang, usersData);
+  async startQuiz(quizData, message, api) {
+    quizData.state = 'answering';
+    quizData.currentQuestion = 0;
+
+    const startMessage = `🎉 **QUIZ LANCÉ !** 🎉
+
+📚 Rubrique: ${quizData.category}
+${quizData.isDuel ? '⚔️ Mode: Duel' : '🌍 Mode: Général'}
+📊 Questions: ${quizData.questionCount}
+⏱️ Temps par question: 10 secondes
+
+${quizData.isDuel ? '👥 Participants: Seuls les duelistes peuvent répondre' : '👥 Participants: Tout le monde peut répondre'}
+
+Le quiz commence dans 3 secondes...`;
+
+    await message.reply(startMessage);
+    
+    setTimeout(() => {
+      this.askNextQuestion(quizData, api);
+    }, 3000);
   },
 
-  askQuestion: async function (session, message, getLang, usersData) {
-    if (session.currentQuestion >= session.questions.length) {
-      await this.endQuiz(session, message, getLang, usersData);
-      return;
+  async askNextQuestion(quizData, api) {
+    if (quizData.currentQuestion >= quizData.questions.length) {
+      return this.endQuiz(quizData, api);
     }
 
-    const question = session.questions[session.currentQuestion];
-    const questionNumber = session.currentQuestion + 1;
-    const totalQuestions = session.questions.length;
+    const question = quizData.questions[quizData.currentQuestion];
+    quizData.waitingForAnswer = true;
+    quizData.correctAnswer = question.answer;
 
-    const questionText = `🎯 **QUESTION ${questionNumber}/${totalQuestions}** 🎯\n\n❓ **${question.question}**\n\n⏰ **Temps : 10 secondes**\n💡 Répondez directement dans le chat !`;
+    const questionMessage = `❓ **Question ${quizData.currentQuestion + 1}/${quizData.questionCount}**
 
-    message.reply(questionText, (err, info) => {
-      if (err) return;
-      
-      global.GoatBot.onReply.set(info.messageID, {
-        commandName: 'quizz',
-        messageID: info.messageID,
-        author: session.host,
-        step: 'quiz'
-      });
+${question.question}
 
-      // Timer de 10 secondes
-      session.currentTimeout = setTimeout(async () => {
-        await this.timeUp(session, message, getLang);
-      }, 10000);
-    });
-  },
+⏱️ Vous avez 10 secondes pour répondre !`;
 
-  handleAnswer: async function (session, userID, answer, message, getLang, usersData) {
-    // Vérifier si c'est un mode duel et si l'utilisateur est autorisé
-    if (session.mode === 'duel' && !session.players.includes(userID)) {
-      return;
-    }
+    api.sendMessage(questionMessage, quizData.threadID);
 
-    const correctAnswer = session.questions[session.currentQuestion].answer.toLowerCase();
-    const userAnswer = answer.toLowerCase();
-
-    if (userAnswer === correctAnswer) {
-      // Annuler le timeout
-      if (session.currentTimeout) {
-        clearTimeout(session.currentTimeout);
-        session.currentTimeout = null;
-      }
-
-      // Ajouter des points
-      if (!session.scores[userID]) {
-        session.scores[userID] = { name: '', points: 0 };
-      }
-      session.scores[userID].points += 10;
-      
-      // Récupérer le nom de l'utilisateur
-      try {
-        const userData = await usersData.get(userID);
-        session.scores[userID].name = userData.name;
-      } catch (error) {
-        session.scores[userID].name = 'Utilisateur';
-      }
-
-      // Afficher le tableau des scores
-      const scoreTable = await this.generateScoreTable(session, usersData);
-      const correctMsg = getLang("correctAnswer").replace("{name}", session.scores[userID].name);
-      
-      message.reply(`${correctMsg}\n\n${scoreTable}`, async () => {
-        // Attendre 2 secondes puis passer à la question suivante
-        setTimeout(async () => {
-          session.currentQuestion++;
-          await this.askQuestion(session, message, getLang, usersData);
+    // Timer de 10 secondes
+    quizData.timer = setTimeout(() => {
+      if (quizData.waitingForAnswer) {
+        quizData.waitingForAnswer = false;
+        api.sendMessage(`⏰ **Temps écoulé !**\n\n✅ La bonne réponse était: **${question.answer}**`, quizData.threadID);
+        
+        setTimeout(() => {
+          quizData.currentQuestion++;
+          this.askNextQuestion(quizData, api);
         }, 2000);
-      });
-    }
+      }
+    }, 10000);
   },
 
-  timeUp: async function (session, message, getLang) {
-    const correctAnswer = session.questions[session.currentQuestion].answer;
-    const timeUpMsg = getLang("timeUp").replace("{answer}", correctAnswer);
-    
-    message.reply(timeUpMsg, async () => {
-      // Attendre 2 secondes puis passer à la question suivante
-      setTimeout(async () => {
-        session.currentQuestion++;
-        await this.askQuestion(session, message, getLang, require('global').usersData);
-      }, 2000);
-    });
-  },
+  async handleAnswer(userInput, quizData, message, event, api) {
+    if (!quizData.waitingForAnswer) return;
 
-  generateScoreTable: async function (session, usersData) {
-    const scores = Object.entries(session.scores)
-      .sort(([,a], [,b]) => b.points - a.points);
-
-    if (scores.length === 0) return "";
-
-    let table = "🏆 **TABLEAU DES SCORES** 🏆\n\n";
-    
-    for (let i = 0; i < scores.length; i++) {
-      const [userID, data] = scores[i];
-      const rank = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : "🏅";
-      table += `${rank} **${data.name}** - ${data.points} points\n`;
+    // Vérifier si c'est un duel et si la personne peut répondre
+    if (quizData.isDuel && !quizData.duelists.includes(event.senderID)) {
+      return;
     }
 
-    return table;
-  },
+    // Vérifier la réponse
+    if (userInput === quizData.correctAnswer) {
+      quizData.waitingForAnswer = false;
+      clearTimeout(quizData.timer);
 
-  endQuiz: async function (session, message, getLang, usersData) {
-    const scores = Object.entries(session.scores)
-      .sort(([,a], [,b]) => b.points - a.points);
+      // Ajouter points
+      const currentScore = quizData.scores.get(event.senderID) || 0;
+      quizData.scores.set(event.senderID, currentScore + 10);
 
-    if (scores.length === 0) {
-      message.reply(getLang("noScores"));
-    } else {
-      const winner = scores[0][1];
-      const scoreTable = await this.generateScoreTable(session, usersData);
-      const finalMsg = getLang("finalScores")
-        .replace("{scores}", scoreTable)
-        .replace("{winner}", winner.name)
-        .replace("{score}", winner.points);
+      // Créer le tableau des scores
+      const scoreBoard = await this.createScoreBoard(quizData, event, api);
       
-      message.reply(finalMsg);
-    }
+      const correctMessage = `🎉 **Bonne réponse !** 🎉
 
-    // Nettoyer la session
-    delete global.quizSessions[message.threadID || session.threadID];
+${event.senderName} gagne 10 points !
+
+📊 **TABLEAU DES SCORES:**
+${scoreBoard}`;
+
+      api.sendMessage(correctMessage, quizData.threadID);
+
+      setTimeout(() => {
+        quizData.currentQuestion++;
+        this.askNextQuestion(quizData, api);
+      }, 3000);
+    }
+  },
+
+  async createScoreBoard(quizData, event, api) {
+    let scoreText = "";
+    const sortedScores = [...quizData.scores.entries()].sort((a, b) => b[1] - a[1]);
+    
+    for (let i = 0; i < sortedScores.length; i++) {
+      const [userID, score] = sortedScores[i];
+      let userName = "Utilisateur";
+      
+      try {
+        const userInfo = await api.getUserInfo(userID);
+        userName = userInfo[userID].name;
+      } catch (error) {
+        console.error('Erreur récupération nom:', error);
+      }
+      
+      const position = i + 1;
+      const medal = position === 1 ? "🥇" : position === 2 ? "🥈" : position === 3 ? "🥉" : "🏅";
+      
+      scoreText += `${medal} ${userName}: ${score} pts\n`;
+    }
+    
+    return scoreText || "Aucun point pour le moment";
+  },
+
+  async endQuiz(quizData, api) {
+    const sortedScores = [...quizData.scores.entries()].sort((a, b) => b[1] - a[1]);
+    
+    let finalMessage = `🏆 **QUIZ TERMINÉ !** 🏆\n\n📊 **CLASSEMENT FINAL:**\n`;
+    
+    if (sortedScores.length === 0) {
+      finalMessage += "Aucun point n'a été marqué ! 😅";
+    } else {
+      for (let i = 0; i < sortedScores.length; i++) {
+        const [userID, score] = sortedScores[i];
+        let userName = "Utilisateur";
+        
+        try {
+          const userInfo = await api.getUserInfo(userID);
+          userName = userInfo[userID].name;
+        } catch (error) {
+          console.error('Erreur récupération nom:', error);
+        }
+        
+        const position = i + 1;
+        const medal = position === 1 ? "🥇" : position === 2 ? "🥈" : position === 3 ? "🥉" : "🏅";
+        
+        finalMessage += `${medal} ${position}. ${userName}: ${score} pts\n`;
+      }
+      
+      if (sortedScores.length > 0) {
+        try {
+          const winnerInfo = await api.getUserInfo(sortedScores[0][0]);
+          const winnerName = winnerInfo[sortedScores[0][0]].name;
+          finalMessage += `\n🎉 **Félicitations ${winnerName} !** 🎉\nVous êtes le vainqueur avec ${sortedScores[0][1]} points !`;
+        } catch (error) {
+          finalMessage += `\n🎉 **Félicitations au vainqueur !** 🎉`;
+        }
+      }
+    }
+    
+    finalMessage += `\n\n📚 Rubrique: ${quizData.category}\n🎯 Questions: ${quizData.questionCount}\n${quizData.isDuel ? '⚔️ Mode: Duel' : '🌍 Mode: Général'}`;
+    
+    api.sendMessage(finalMessage, quizData.threadID);
+    
+    // Nettoyer
+    activeQuizzes.delete(quizData.threadID);
   }
 };
+    
