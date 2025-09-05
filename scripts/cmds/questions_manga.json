@@ -1,0 +1,85 @@
+
+{
+  "questions": [
+    {
+      "question": "quel est le nom du personnage principal de naruto ?",
+      "answer": "naruto uzumaki"
+    },
+    {
+      "question": "comment s'appelle le fruit du démon de luffy dans one piece ?",
+      "answer": "gomu gomu no mi"
+    },
+    {
+      "question": "quel est le nom de l'épée de tanjiro dans demon slayer ?",
+      "answer": "nichirin"
+    },
+    {
+      "question": "comment s'appelle le titan colossal dans attack on titan ?",
+      "answer": "bertholdt hoover"
+    },
+    {
+      "question": "quel est le nom de la guilde de natsu dans fairy tail ?",
+      "answer": "fairy tail"
+    },
+    {
+      "question": "comment s'appelle le shinigami de light dans death note ?",
+      "answer": "ryuk"
+    },
+    {
+      "question": "quel est le nom du village caché de naruto ?",
+      "answer": "konoha"
+    },
+    {
+      "question": "comment s'appelle l'alchimiste de fer dans fullmetal alchemist ?",
+      "answer": "edward elric"
+    },
+    {
+      "question": "quel est le nom du père de goku dans dragon ball ?",
+      "answer": "bardock"
+    },
+    {
+      "question": "comment s'appelle l'organisation de itachi dans naruto ?",
+      "answer": "akatsuki"
+    },
+    {
+      "question": "quel est le nom du chien de edward dans cowboy bebop ?",
+      "answer": "ein"
+    },
+    {
+      "question": "comment s'appelle le pouvoir de ichigo dans bleach ?",
+      "answer": "zangetsu"
+    },
+    {
+      "question": "quel est le nom de la sœur de tanjiro dans demon slayer ?",
+      "answer": "nezuko"
+    },
+    {
+      "question": "comment s'appelle le navire de luffy dans one piece ?",
+      "answer": "thousand sunny"
+    },
+    {
+      "question": "quel est le nom du chat dans sailor moon ?",
+      "answer": "luna"
+    },
+    {
+      "question": "comment s'appelle le roi des pirates dans one piece ?",
+      "answer": "gol d roger"
+    },
+    {
+      "question": "quel est le nom du tuteur de gon dans hunter x hunter ?",
+      "answer": "kite"
+    },
+    {
+      "question": "comment s'appelle l'école de yuji dans jujutsu kaisen ?",
+      "answer": "tokyo jujutsu high"
+    },
+    {
+      "question": "quel est le nom du père de natsu dans fairy tail ?",
+      "answer": "igneel"
+    },
+    {
+      "question": "comment s'appelle le commandant erwin dans attack on titan ?",
+      "answer": "erwin smith"
+    }
+  ]
+}
