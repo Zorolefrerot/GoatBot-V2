@@ -17,8 +17,7 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "100065927401614",
-    ""
+    "100065927401614"
   ],
   "whiteListMode": {
     "enable": false,
@@ -34,18 +33,18 @@
     "autoRefreshThreadInfoFirstTime": true,
     "notes": "(1) type selects 'json' or 'sqlite' or 'mongodb'. If you choose mongodb, enter uri connect mongodb in the uriMongodb section, instructions to get uri connect mongodb at: https://youtu.be/z1f9urHW5xY. I recommend using 'mongodb' or 'sqlite', json is not recommended because it is not stable. (2) when you set autoSyncWhenStart to true, the bot will automatically synchronize the data in the database when starting the bot, this will make the bot start slower. (3) when you set autoRefreshThreadInfoFirstTime to true, the bot will automatically refresh the thread information when get first message from the thread since starting the bot"
   },
-  "timeZone": "Asia/Dhaka",
+  "timeZone": "Asia/Ho_Chi_Minh",
   "credentials": {
     "gmailAccount": {
-      "email": "romeobot555@gmail.com",
-      "clientId": "695328982889-v1t85ej9aq1fvv0n4alp7rcbea9gkgvf.apps.googleusercontent.com",
-      "clientSecret": "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",
-      "refreshToken": "1//04EyH1gbNUVv5CgYIARAAGAQSNwF-L9IrqcPCQD2QsuhCQ2XprHCTMrTnVPI6WvT9i73nnoi4XqfAD0_yDoGW_gtWUdIeVtANzao",
+      "email": "daemondeslassshinmon@gmail.com",
+      "clientId": "987698237742-1pb9m47r0clpscdipfm3sh19o8mffgjv.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04tTbQ4nQ52oTCgYIARAAGAQSNwF-L9IrhkpXGPToLXEmFnyAoXUQFyyuOyt-PUBkUXJLVqeul9lFCnYXC_XgVXmn2u28P9nZ_7E",
       "apiKey": ""
     },
     "gRecaptcha": {
-      "siteKey": "6Lff7Y0mAAAAALiv3IBkCCOfCdEsN-lK-jtR5FCm",
-      "secretKey": "6Lff7Y0mAAAAAGQr8dO3lqDJVhTi8Q-tpLLy2kGo"
+      "siteKey": "6Lc9QN4oAAAAAFJ-mhrDEwkzoh1bdE9vcahSvd_I",
+      "secretKey": "6Lc9QN4oAAAAAHmTFXnTCETQtfuaBtqwnnNYDZgl"
     }
   },
   "dashBoard": {
@@ -54,7 +53,7 @@
     "port": 3001
   },
   "serverUptime": {
-    "enable": false,
+    "enable": true,
     "port": 3001,
     "socket": {
       "enable": true,
@@ -63,12 +62,12 @@
     }
   },
   "autoRestart": {
-    "time": null,
+    "time": 0,
     "notes": "you can set time is interval with milisecond or cron time, example: 1000, 10000, 60000, 3600000, 86400000, 0 0 * * *,... docs: https://www.npmjs.com/package/node-cron. If you set time is 0 or false or null, the bot will not auto restart"
   },
   "autoUptime": {
     "enable": false,
-    "timeInterval": 180,
+    "timeInterval": 300000,
     "url": "",
     "notes": "the value of timeInterval is seconds, url is the url you want to send the request to (automatically detected for hosting glitch or replit)"
   },
@@ -136,7 +135,7 @@
     "selfListen": false,
     "selfListenEvent": true,
     "autoMarkDelivery": false,
-    "autoReconnect": false,
+    "autoReconnect": true,
     "notes": "Document here: https://github.com/ntkhang03/fb-chat-api/blob/master/DOCS.md#apisetoptionsoptions "
   }
 }
