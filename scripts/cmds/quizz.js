@@ -2,331 +2,413 @@
 const fs = require('fs');
 const path = require('path');
 
-// Variables globales pour gérer l'état du quiz
-const activeQuizzes = new Map();
-
 module.exports = {
   config: {
     name: "quizz",
+    aliases: [],
     version: "1.0",
-    author: "MERDI MADIMBA",
+    author: "Madimba Merdi",
     countDown: 5,
-    role: 0, // Seul admin peut lancer
-    shortDescription: "Système de quiz interactif",
-    longDescription: "Quiz avec duels et questions générales",
+    role: 0, // Seuls les admins peuvent lancer la commande
+    shortDescription: {
+      en: "Quiz game with manga and general culture questions"
+    },
+    longDescription: {
+      en: "Quiz game with categories and duel/general modes"
+    },
     category: "game",
-    guide: "{pn} pour lancer un quiz"
+    guide: {
+      en: "{pn} - Start a quiz game"
+    }
   },
 
-  onStart: async function ({ message, event, api }) {
+  onStart: async function ({ message, event, threadsData, usersData, api }) {
     const threadID = event.threadID;
-    
-    // Vérifier si un quiz est déjà actif dans ce groupe
-    if (activeQuizzes.has(threadID)) {
+    const senderID = event.senderID;
+
+    // Vérifier si un quiz est déjà en cours
+    const threadData = await threadsData.get(threadID);
+    if (threadData.quizActive) {
       return message.reply("❌ Un quiz est déjà en cours dans ce groupe !");
     }
 
-    // Initialiser le quiz
-    const quizData = {
-      threadID: threadID,
-      adminID: event.senderID,
-      state: 'category',
-      currentQuestion: 0,
-      scores: new Map(),
-      questions: [],
-      timer: null,
-      isDuel: false,
-      duelists: []
-    };
+    // Marquer le quiz comme actif
+    threadData.quizActive = true;
+    await threadsData.set(threadID, threadData);
 
-    activeQuizzes.set(threadID, quizData);
+    // Demander la rubrique
+    const categoryMsg = await message.reply({
+      body: "🎯 **QUIZ GAME** 🎯\n\n📚 Choisissez une rubrique :\n\n1️⃣ Manga\n2️⃣ Culture Générale\n\n⏰ Répondez avec 1 ou 2"
+    });
 
-    const categoryMessage = `🎯 **QUIZ INTERACTIF** 🎯
+    global.GoatBot.onReply.set(categoryMsg.messageID, {
+      commandName: "quizz",
+      messageID: categoryMsg.messageID,
+      author: senderID,
+      step: "category",
+      threadID: threadID
+    });
 
-Choisissez votre rubrique :
-📚 **manga** - Questions sur les mangas
-🧠 **culture générale** - Questions de culture générale
-
-Répondez avec le nom de la rubrique que vous voulez !`;
-
-    const info = await message.reply(categoryMessage);
-    
-    // Gérer le timeout de sélection
+    // Auto-delete après 30 secondes
     setTimeout(() => {
-      if (activeQuizzes.has(threadID) && activeQuizzes.get(threadID).state === 'category') {
-        activeQuizzes.delete(threadID);
-        api.sendMessage("⏰ Temps écoulé pour choisir la rubrique. Quiz annulé.", threadID);
+      if (global.GoatBot.onReply.has(categoryMsg.messageID)) {
+        api.unsendMessage(categoryMsg.messageID);
+        global.GoatBot.onReply.delete(categoryMsg.messageID);
+        threadData.quizActive = false;
+        threadsData.set(threadID, threadData);
       }
     }, 30000);
   },
 
-  onReply: async function ({ message, Reply, event, api }) {
-    const threadID = event.threadID;
-    const quizData = activeQuizzes.get(threadID);
-    
-    if (!quizData) return;
+  onReply: async function ({ message, Reply, event, api, usersData, threadsData }) {
+    const { author, messageID, step, threadID } = Reply;
 
-    const userInput = event.body.toLowerCase().trim();
-
-    switch (quizData.state) {
-      case 'category':
-        await this.handleCategorySelection(userInput, quizData, message, event, api);
-        break;
-      case 'mode':
-        await this.handleModeSelection(userInput, quizData, message, event, api);
-        break;
-      case 'duelists':
-        await this.handleDuelistSelection(userInput, quizData, message, event, api);
-        break;
-      case 'questionCount':
-        await this.handleQuestionCount(userInput, quizData, message, event, api);
-        break;
-      case 'answering':
-        await this.handleAnswer(userInput, quizData, message, event, api);
-        break;
-    }
-  },
-
-  async handleCategorySelection(userInput, quizData, message, event, api) {
-    if (event.senderID !== quizData.adminID) return;
-
-    if (!['manga', 'culture générale'].includes(userInput)) {
-      return message.reply("❌ Veuillez choisir entre 'manga' ou 'culture générale'");
+    // Seul celui qui a lancé la commande peut configurer
+    if (step !== "quiz" && author !== event.senderID) {
+      return message.reply("❌ Seul celui qui a lancé le quiz peut le configurer !");
     }
 
-    quizData.category = userInput;
-    quizData.state = 'mode';
+    const threadData = await threadsData.get(threadID);
 
-    const modeMessage = `✅ Rubrique **${userInput}** sélectionnée !
-
-Choisissez le mode de jeu :
-⚔️ **duel** - Quiz entre deux joueurs spécifiques
-🌍 **général** - Quiz ouvert à tous
-
-Répondez avec 'duel' ou 'général' !`;
-
-    message.reply(modeMessage);
-  },
-
-  async handleModeSelection(userInput, quizData, message, event, api) {
-    if (event.senderID !== quizData.adminID) return;
-
-    if (!['duel', 'général'].includes(userInput)) {
-      return message.reply("❌ Veuillez choisir entre 'duel' ou 'général'");
-    }
-
-    if (userInput === 'duel') {
-      quizData.isDuel = true;
-      quizData.state = 'duelists';
-      message.reply("⚔️ Mode duel sélectionné !\n\nVeuillez mentionner les deux participants du duel (ex: @user1 @user2)");
-    } else {
-      quizData.isDuel = false;
-      quizData.state = 'questionCount';
-      message.reply("🌍 Mode général sélectionné !\n\nChoisissez le nombre de questions : 10, 20, 30 ou 50");
-    }
-  },
-
-  async handleDuelistSelection(userInput, quizData, message, event, api) {
-    if (event.senderID !== quizData.adminID) return;
-
-    const mentions = Object.keys(event.mentions || {});
-    if (mentions.length !== 2) {
-      return message.reply("❌ Vous devez mentionner exactement 2 participants pour le duel !");
-    }
-
-    quizData.duelists = mentions;
-    quizData.state = 'questionCount';
-    
-    const duelist1 = event.mentions[mentions[0]];
-    const duelist2 = event.mentions[mentions[1]];
-    
-    message.reply(`⚔️ Duelistes sélectionnés :\n• ${duelist1}\n• ${duelist2}\n\nChoisissez le nombre de questions : 10, 20, 30 ou 50`);
-  },
-
-  async handleQuestionCount(userInput, quizData, message, event, api) {
-    if (event.senderID !== quizData.adminID) return;
-
-    const count = parseInt(userInput);
-    if (![10, 20, 30, 50].includes(count)) {
-      return message.reply("❌ Veuillez choisir 10, 20, 30 ou 50 questions");
-    }
-
-    quizData.questionCount = count;
-    await this.loadQuestions(quizData);
-    await this.startQuiz(quizData, message, api);
-  },
-
-  async loadQuestions(quizData) {
-    const fileName = quizData.category === 'manga' ? 'manga_questions.json' : 'culture_generale_questions.json';
-    
     try {
-      const data = fs.readFileSync(fileName, 'utf8');
-      const questionsData = JSON.parse(data);
-      
-      // Mélanger et sélectionner le bon nombre de questions
-      const shuffled = questionsData.questions.sort(() => 0.5 - Math.random());
-      quizData.questions = shuffled.slice(0, quizData.questionCount);
+      if (step === "category") {
+        const choice = event.body.trim();
+        if (!["1", "2"].includes(choice)) {
+          return message.reply("❌ Veuillez répondre avec 1 ou 2 !");
+        }
+
+        const category = choice === "1" ? "manga" : "culture_generale";
+        
+        // Supprimer le message précédent
+        api.unsendMessage(messageID);
+        global.GoatBot.onReply.delete(messageID);
+
+        // Demander le type de quiz
+        const typeMsg = await message.reply({
+          body: "🎮 **TYPE DE QUIZ** 🎮\n\n⚔️ Choisissez le mode :\n\n1️⃣ Duel (2 joueurs)\n2️⃣ Quiz Général (tout le monde)\n\n⏰ Répondez avec 1 ou 2"
+        });
+
+        global.GoatBot.onReply.set(typeMsg.messageID, {
+          commandName: "quizz",
+          messageID: typeMsg.messageID,
+          author: author,
+          step: "type",
+          category: category,
+          threadID: threadID
+        });
+
+        setTimeout(() => {
+          if (global.GoatBot.onReply.has(typeMsg.messageID)) {
+            api.unsendMessage(typeMsg.messageID);
+            global.GoatBot.onReply.delete(typeMsg.messageID);
+            threadData.quizActive = false;
+            threadsData.set(threadID, threadData);
+          }
+        }, 30000);
+
+      } else if (step === "type") {
+        const choice = event.body.trim();
+        if (!["1", "2"].includes(choice)) {
+          return message.reply("❌ Veuillez répondre avec 1 ou 2 !");
+        }
+
+        const quizType = choice === "1" ? "duel" : "general";
+        
+        api.unsendMessage(messageID);
+        global.GoatBot.onReply.delete(messageID);
+
+        if (quizType === "duel") {
+          const duelMsg = await message.reply({
+            body: "⚔️ **MODE DUEL** ⚔️\n\n👥 Mentionnez les 2 duellistes :\n\nExemple: @user1 @user2\n\n⏰ Vous avez 30 secondes"
+          });
+
+          global.GoatBot.onReply.set(duelMsg.messageID, {
+            commandName: "quizz",
+            messageID: duelMsg.messageID,
+            author: author,
+            step: "duel_players",
+            category: Reply.category,
+            quizType: quizType,
+            threadID: threadID
+          });
+
+          setTimeout(() => {
+            if (global.GoatBot.onReply.has(duelMsg.messageID)) {
+              api.unsendMessage(duelMsg.messageID);
+              global.GoatBot.onReply.delete(duelMsg.messageID);
+              threadData.quizActive = false;
+              threadsData.set(threadID, threadData);
+            }
+          }, 30000);
+
+        } else {
+          const questionsMsg = await message.reply({
+            body: "📊 **NOMBRE DE QUESTIONS** 📊\n\n🔢 Choisissez le nombre de questions :\n\n1️⃣ 10 questions\n2️⃣ 20 questions\n3️⃣ 30 questions\n4️⃣ 50 questions\n\n⏰ Répondez avec 1, 2, 3 ou 4"
+          });
+
+          global.GoatBot.onReply.set(questionsMsg.messageID, {
+            commandName: "quizz",
+            messageID: questionsMsg.messageID,
+            author: author,
+            step: "questions_count",
+            category: Reply.category,
+            quizType: quizType,
+            threadID: threadID
+          });
+
+          setTimeout(() => {
+            if (global.GoatBot.onReply.has(questionsMsg.messageID)) {
+              api.unsendMessage(questionsMsg.messageID);
+              global.GoatBot.onReply.delete(questionsMsg.messageID);
+              threadData.quizActive = false;
+              threadsData.set(threadID, threadData);
+            }
+          }, 30000);
+        }
+
+      } else if (step === "duel_players") {
+        const mentions = Object.keys(event.mentions);
+        if (mentions.length !== 2) {
+          return message.reply("❌ Vous devez mentionner exactement 2 joueurs !");
+        }
+
+        api.unsendMessage(messageID);
+        global.GoatBot.onReply.delete(messageID);
+
+        const questionsMsg = await message.reply({
+          body: "📊 **NOMBRE DE QUESTIONS** 📊\n\n🔢 Combien de questions voulez-vous ?\n\n📝 Tapez un nombre (ex: 5, 10, 15...)\n\n⏰ Vous avez 30 secondes"
+        });
+
+        global.GoatBot.onReply.set(questionsMsg.messageID, {
+          commandName: "quizz",
+          messageID: questionsMsg.messageID,
+          author: author,
+          step: "duel_questions_count",
+          category: Reply.category,
+          quizType: Reply.quizType,
+          duelPlayers: mentions,
+          threadID: threadID
+        });
+
+        setTimeout(() => {
+          if (global.GoatBot.onReply.has(questionsMsg.messageID)) {
+            api.unsendMessage(questionsMsg.messageID);
+            global.GoatBot.onReply.delete(questionsMsg.messageID);
+            threadData.quizActive = false;
+            threadsData.set(threadID, threadData);
+          }
+        }, 30000);
+
+      } else if (step === "questions_count") {
+        const choice = event.body.trim();
+        if (!["1", "2", "3", "4"].includes(choice)) {
+          return message.reply("❌ Veuillez répondre avec 1, 2, 3 ou 4 !");
+        }
+
+        const questionCounts = { "1": 10, "2": 20, "3": 30, "4": 50 };
+        const questionCount = questionCounts[choice];
+
+        api.unsendMessage(messageID);
+        global.GoatBot.onReply.delete(messageID);
+
+        this.startQuiz(message, api, Reply.category, Reply.quizType, questionCount, null, threadData, threadsData, usersData);
+
+      } else if (step === "duel_questions_count") {
+        const questionCount = parseInt(event.body.trim());
+        if (isNaN(questionCount) || questionCount < 1 || questionCount > 100) {
+          return message.reply("❌ Veuillez entrer un nombre valide entre 1 et 100 !");
+        }
+
+        api.unsendMessage(messageID);
+        global.GoatBot.onReply.delete(messageID);
+
+        this.startQuiz(message, api, Reply.category, Reply.quizType, questionCount, Reply.duelPlayers, threadData, threadsData, usersData);
+
+      } else if (step === "quiz") {
+        this.handleAnswer(message, Reply, event, api, threadsData, usersData);
+      }
+
     } catch (error) {
-      console.error('Erreur lors du chargement des questions:', error);
-      quizData.questions = [];
+      console.error("Erreur dans onReply quizz:", error);
+      threadData.quizActive = false;
+      await threadsData.set(threadID, threadData);
+      global.GoatBot.onReply.delete(messageID);
     }
   },
 
-  async startQuiz(quizData, message, api) {
-    quizData.state = 'answering';
-    quizData.currentQuestion = 0;
+  startQuiz: async function (message, api, category, quizType, questionCount, duelPlayers, threadData, threadsData, usersData) {
+    try {
+      // Charger les questions
+      const questionsFile = category === "manga" ? "manga_questions.json" : "culture_generale_questions.json";
+      const questionsPath = path.join(__dirname, "..", "..", questionsFile);
+      
+      if (!fs.existsSync(questionsPath)) {
+        threadData.quizActive = false;
+        await threadsData.set(message.threadID, threadData);
+        return message.reply(`❌ Fichier de questions ${questionsFile} introuvable !`);
+      }
 
-    const startMessage = `🎉 **QUIZ LANCÉ !** 🎉
+      const questionsData = JSON.parse(fs.readFileSync(questionsPath, 'utf8'));
+      const allQuestions = questionsData.questions;
 
-📚 Rubrique: ${quizData.category}
-${quizData.isDuel ? '⚔️ Mode: Duel' : '🌍 Mode: Général'}
-📊 Questions: ${quizData.questionCount}
-⏱️ Temps par question: 10 secondes
+      if (!allQuestions || allQuestions.length === 0) {
+        threadData.quizActive = false;
+        await threadsData.set(message.threadID, threadData);
+        return message.reply("❌ Aucune question trouvée dans le fichier !");
+      }
 
-${quizData.isDuel ? '👥 Participants: Seuls les duelistes peuvent répondre' : '👥 Participants: Tout le monde peut répondre'}
+      // Mélanger et sélectionner les questions
+      const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+      const selectedQuestions = shuffled.slice(0, Math.min(questionCount, allQuestions.length));
 
-Le quiz commence dans 3 secondes...`;
+      // Initialiser le quiz
+      const quizData = {
+        questions: selectedQuestions,
+        currentQuestion: 0,
+        scores: {},
+        category: category,
+        quizType: quizType,
+        duelPlayers: duelPlayers,
+        threadID: message.threadID
+      };
 
-    await message.reply(startMessage);
-    
-    setTimeout(() => {
-      this.askNextQuestion(quizData, api);
-    }, 3000);
+      // Message de début
+      let startMsg = `🎯 **QUIZ ${category.toUpperCase().replace('_', ' ')}** 🎯\n\n`;
+      if (quizType === "duel") {
+        const player1Name = (await usersData.get(duelPlayers[0])).name;
+        const player2Name = (await usersData.get(duelPlayers[1])).name;
+        startMsg += `⚔️ **DUEL** ⚔️\n👤 ${player1Name} VS ${player2Name}\n\n`;
+      } else {
+        startMsg += `🌟 **QUIZ GÉNÉRAL** 🌟\n👥 Tout le monde peut participer !\n\n`;
+      }
+      startMsg += `📊 ${selectedQuestions.length} questions\n💰 10 points par bonne réponse\n⏰ 10 secondes par question\n\n🚀 Le quiz commence dans 3 secondes...`;
+
+      await message.reply(startMsg);
+
+      // Attendre 3 secondes puis commencer
+      setTimeout(() => {
+        this.askQuestion(message, api, quizData, threadsData, usersData);
+      }, 3000);
+
+    } catch (error) {
+      console.error("Erreur startQuiz:", error);
+      threadData.quizActive = false;
+      await threadsData.set(message.threadID, threadData);
+      message.reply("❌ Erreur lors du démarrage du quiz !");
+    }
   },
 
-  async askNextQuestion(quizData, api) {
+  askQuestion: async function (message, api, quizData, threadsData, usersData) {
     if (quizData.currentQuestion >= quizData.questions.length) {
-      return this.endQuiz(quizData, api);
+      return this.endQuiz(message, api, quizData, threadsData);
     }
 
     const question = quizData.questions[quizData.currentQuestion];
-    quizData.waitingForAnswer = true;
-    quizData.correctAnswer = question.answer;
+    const questionNum = quizData.currentQuestion + 1;
+    const totalQuestions = quizData.questions.length;
 
-    const questionMessage = `❓ **Question ${quizData.currentQuestion + 1}/${quizData.questionCount}**
+    const questionMsg = await message.reply({
+      body: `❓ **QUESTION ${questionNum}/${totalQuestions}** ❓\n\n${question.question}\n\n⏰ Vous avez 10 secondes pour répondre !`
+    });
 
-${question.question}
-
-⏱️ Vous avez 10 secondes pour répondre !`;
-
-    api.sendMessage(questionMessage, quizData.threadID);
+    global.GoatBot.onReply.set(questionMsg.messageID, {
+      commandName: "quizz",
+      messageID: questionMsg.messageID,
+      step: "quiz",
+      quizData: quizData,
+      correctAnswer: question.answer,
+      answered: false,
+      questionStartTime: Date.now()
+    });
 
     // Timer de 10 secondes
-    quizData.timer = setTimeout(() => {
-      if (quizData.waitingForAnswer) {
-        quizData.waitingForAnswer = false;
-        api.sendMessage(`⏰ **Temps écoulé !**\n\n✅ La bonne réponse était: **${question.answer}**`, quizData.threadID);
+    setTimeout(async () => {
+      const replyData = global.GoatBot.onReply.get(questionMsg.messageID);
+      if (replyData && !replyData.answered) {
+        global.GoatBot.onReply.delete(questionMsg.messageID);
+        
+        await message.reply(`⏰ **TEMPS ÉCOULÉ !** ⏰\n\n✅ La bonne réponse était : **${question.answer}**`);
+        
+        quizData.currentQuestion++;
         
         setTimeout(() => {
-          quizData.currentQuestion++;
-          this.askNextQuestion(quizData, api);
+          this.askQuestion(message, api, quizData, threadsData, usersData);
         }, 2000);
       }
     }, 10000);
   },
 
-  async handleAnswer(userInput, quizData, message, event, api) {
-    if (!quizData.waitingForAnswer) return;
+  handleAnswer: async function (message, Reply, event, api, threadsData, usersData) {
+    if (Reply.answered) return;
 
-    // Vérifier si c'est un duel et si la personne peut répondre
-    if (quizData.isDuel && !quizData.duelists.includes(event.senderID)) {
+    const { quizData, correctAnswer } = Reply;
+    const userAnswer = event.body.toLowerCase().trim();
+    const senderID = event.senderID;
+
+    // Vérifier si c'est un duel et si le joueur peut répondre
+    if (quizData.quizType === "duel" && !quizData.duelPlayers.includes(senderID)) {
       return;
     }
 
+    // Marquer comme répondu
+    Reply.answered = true;
+    global.GoatBot.onReply.delete(Reply.messageID);
+
     // Vérifier la réponse
-    if (userInput === quizData.correctAnswer) {
-      quizData.waitingForAnswer = false;
-      clearTimeout(quizData.timer);
-
-      // Ajouter points
-      const currentScore = quizData.scores.get(event.senderID) || 0;
-      quizData.scores.set(event.senderID, currentScore + 10);
-
-      // Créer le tableau des scores
-      const scoreBoard = await this.createScoreBoard(quizData, event, api);
-      
-      const correctMessage = `🎉 **Bonne réponse !** 🎉
-
-${event.senderName} gagne 10 points !
-
-📊 **TABLEAU DES SCORES:**
-${scoreBoard}`;
-
-      api.sendMessage(correctMessage, quizData.threadID);
-
-      setTimeout(() => {
-        quizData.currentQuestion++;
-        this.askNextQuestion(quizData, api);
-      }, 3000);
-    }
-  },
-
-  async createScoreBoard(quizData, event, api) {
-    let scoreText = "";
-    const sortedScores = [...quizData.scores.entries()].sort((a, b) => b[1] - a[1]);
-    
-    for (let i = 0; i < sortedScores.length; i++) {
-      const [userID, score] = sortedScores[i];
-      let userName = "Utilisateur";
-      
-      try {
-        const userInfo = await api.getUserInfo(userID);
-        userName = userInfo[userID].name;
-      } catch (error) {
-        console.error('Erreur récupération nom:', error);
+    if (userAnswer === correctAnswer.toLowerCase()) {
+      // Bonne réponse
+      if (!quizData.scores[senderID]) {
+        quizData.scores[senderID] = { points: 0, name: (await usersData.get(senderID)).name };
       }
-      
-      const position = i + 1;
-      const medal = position === 1 ? "🥇" : position === 2 ? "🥈" : position === 3 ? "🥉" : "🏅";
-      
-      scoreText += `${medal} ${userName}: ${score} pts\n`;
-    }
-    
-    return scoreText || "Aucun point pour le moment";
-  },
+      quizData.scores[senderID].points += 10;
 
-  async endQuiz(quizData, api) {
-    const sortedScores = [...quizData.scores.entries()].sort((a, b) => b[1] - a[1]);
-    
-    let finalMessage = `🏆 **QUIZ TERMINÉ !** 🏆\n\n📊 **CLASSEMENT FINAL:**\n`;
-    
-    if (sortedScores.length === 0) {
-      finalMessage += "Aucun point n'a été marqué ! 😅";
+      // Afficher le tableau des scores
+      let scoreBoard = `✅ **BONNE RÉPONSE !** ✅\n\n🏆 **TABLEAU DES SCORES** 🏆\n\n`;
+      const sortedScores = Object.entries(quizData.scores).sort((a, b) => b[1].points - a[1].points);
+      
+      sortedScores.forEach(([userID, data], index) => {
+        scoreBoard += `${index + 1}. ${data.name}: ${data.points} pts\n`;
+      });
+
+      await message.reply(scoreBoard);
     } else {
-      for (let i = 0; i < sortedScores.length; i++) {
-        const [userID, score] = sortedScores[i];
-        let userName = "Utilisateur";
-        
-        try {
-          const userInfo = await api.getUserInfo(userID);
-          userName = userInfo[userID].name;
-        } catch (error) {
-          console.error('Erreur récupération nom:', error);
-        }
-        
-        const position = i + 1;
-        const medal = position === 1 ? "🥇" : position === 2 ? "🥈" : position === 3 ? "🥉" : "🏅";
-        
-        finalMessage += `${medal} ${position}. ${userName}: ${score} pts\n`;
-      }
-      
-      if (sortedScores.length > 0) {
-        try {
-          const winnerInfo = await api.getUserInfo(sortedScores[0][0]);
-          const winnerName = winnerInfo[sortedScores[0][0]].name;
-          finalMessage += `\n🎉 **Félicitations ${winnerName} !** 🎉\nVous êtes le vainqueur avec ${sortedScores[0][1]} points !`;
-        } catch (error) {
-          finalMessage += `\n🎉 **Félicitations au vainqueur !** 🎉`;
-        }
-      }
+      await message.reply(`❌ **MAUVAISE RÉPONSE !** ❌\n\n✅ La bonne réponse était : **${correctAnswer}**`);
     }
-    
-    finalMessage += `\n\n📚 Rubrique: ${quizData.category}\n🎯 Questions: ${quizData.questionCount}\n${quizData.isDuel ? '⚔️ Mode: Duel' : '🌍 Mode: Général'}`;
-    
-    api.sendMessage(finalMessage, quizData.threadID);
-    
-    // Nettoyer
-    activeQuizzes.delete(quizData.threadID);
+
+    quizData.currentQuestion++;
+
+    // Passer à la question suivante après 2 secondes
+    setTimeout(() => {
+      this.askQuestion(message, api, quizData, threadsData, usersData);
+    }, 2000);
+  },
+
+  endQuiz: async function (message, api, quizData, threadsData) {
+    const threadData = await threadsData.get(quizData.threadID);
+    threadData.quizActive = false;
+    await threadsData.set(quizData.threadID, threadData);
+
+    if (Object.keys(quizData.scores).length === 0) {
+      return message.reply("🏁 **QUIZ TERMINÉ !** 🏁\n\n😔 Aucune bonne réponse... Essayez encore !");
+    }
+
+    const sortedScores = Object.entries(quizData.scores).sort((a, b) => b[1].points - a[1].points);
+    const winner = sortedScores[0];
+
+    let endMsg = `🏁 **QUIZ TERMINÉ !** 🏁\n\n`;
+    endMsg += `🥇 **VAINQUEUR : ${winner[1].name}** 🥇\n`;
+    endMsg += `🎯 Score : ${winner[1].points} points\n\n`;
+    endMsg += `📊 **CLASSEMENT FINAL** 📊\n\n`;
+
+    sortedScores.forEach(([userID, data], index) => {
+      const medals = ["🥇", "🥈", "🥉"];
+      const medal = medals[index] || "🏅";
+      endMsg += `${medal} ${data.name}: ${data.points} pts\n`;
+    });
+
+    endMsg += `\n🎊 Félicitations à tous les participants ! 🎊`;
+
+    await message.reply(endMsg);
   }
 };
-    
+        
