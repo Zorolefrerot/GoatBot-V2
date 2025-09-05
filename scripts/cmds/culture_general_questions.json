@@ -1,0 +1,85 @@
+
+{
+  "questions": [
+    {
+      "question": "quelle est la capitale de la france ?",
+      "answer": "paris"
+    },
+    {
+      "question": "en quelle année l'homme a-t-il marché sur la lune pour la première fois ?",
+      "answer": "1969"
+    },
+    {
+      "question": "quel est l'élément chimique dont le symbole est o ?",
+      "answer": "oxygène"
+    },
+    {
+      "question": "qui a peint la joconde ?",
+      "answer": "leonardo da vinci"
+    },
+    {
+      "question": "quel est le plus grand océan du monde ?",
+      "answer": "pacifique"
+    },
+    {
+      "question": "combien de continents y a-t-il sur terre ?",
+      "answer": "7"
+    },
+    {
+      "question": "quelle est la planète la plus proche du soleil ?",
+      "answer": "mercure"
+    },
+    {
+      "question": "qui a écrit roméo et juliette ?",
+      "answer": "william shakespeare"
+    },
+    {
+      "question": "quel est le plus petit pays du monde ?",
+      "answer": "vatican"
+    },
+    {
+      "question": "en quelle année la première guerre mondiale a-t-elle commencé ?",
+      "answer": "1914"
+    },
+    {
+      "question": "quel est l'animal le plus rapide du monde ?",
+      "answer": "guépard"
+    },
+    {
+      "question": "quelle est la monnaie du japon ?",
+      "answer": "yen"
+    },
+    {
+      "question": "combien de côtés a un hexagone ?",
+      "answer": "6"
+    },
+    {
+      "question": "quel est le plus haut sommet du monde ?",
+      "answer": "everest"
+    },
+    {
+      "question": "quelle est la langue la plus parlée au monde ?",
+      "answer": "chinois mandarin"
+    },
+    {
+      "question": "qui a inventé l'ampoule électrique ?",
+      "answer": "thomas edison"
+    },
+    {
+      "question": "quel est le plus grand désert du monde ?",
+      "answer": "sahara"
+    },
+    {
+      "question": "en quelle année le mur de berlin est-il tombé ?",
+      "answer": "1989"
+    },
+    {
+      "question": "quelle est la formule chimique de l'eau ?",
+      "answer": "h2o"
+    },
+    {
+      "question": "qui a composé la 9ème symphonie ?",
+      "answer": "beethoven"
+    }
+  ]
+}
