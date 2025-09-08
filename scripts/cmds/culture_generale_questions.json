@@ -544,7 +544,170 @@
   { 
     "question": "Q/ Qui a inventé le premier vaccin contre la rage ? \n\n🧪SCIENCE MÉDICALE🧪", 
     "answer": ["louis pasteur", "pasteur"] 
+  },
+  
+  { 
+    "question": "Q/ Quel joueur de football a marqué le premier but en Coupe du Monde 1930 ? ⚽SPORT⚽", 
+    "answer": ["lucien laurent", "laurent"] 
+  },
+  { 
+    "question": "Q/ Quel réalisateur italien a remporté la Palme d’Or pour 'La Dolce Vita' ? 🎬CINÉMA🎬", 
+    "answer": ["federico fellini", "fellini"] 
+  },
+  { 
+    "question": "Q/ Quel compositeur est connu pour ses 'Variations Goldberg' ? 🎶MUSIQUE🎶", 
+    "answer": ["johann sebastian bach", "bach"] 
+  },
+  { 
+    "question": "Q/ Quel est le plus petit os du corps humain ? 🧪SCIENCE🧪", 
+    "answer": ["étrier", "stapes"] 
+  },
+  { 
+    "question": "Q/ Quel astronaute soviétique fut le premier à effectuer une sortie dans l’espace ? 🚀ESPACE🚀", 
+    "answer": ["alexeï leonov", "leonov"] 
+  },
+  { 
+    "question": "Q/ Quel écrivain français a écrit 'La Reine Margot' ? 📚LITTÉRATURE📚", 
+    "answer": ["alexandre dumas", "dumas"] 
+  },
+  { 
+    "question": "Q/ Quel peintre espagnol a réalisé 'Le Jardin des délices' ? 🎨ART🎨", 
+    "answer": ["hiéronymus bosch", "bosch"] 
+  },
+  { 
+    "question": "Q/ Quel est le premier élément du tableau périodique ? 🔬CHIMIE🔬", 
+    "answer": ["hydrogène", "h"] 
+  },
+  { 
+    "question": "Q/ Quel film de Stanley Kubrick est adapté du roman 'Dr. Strangelove' ? 🎬CINÉMA🎬", 
+    "answer": ["dr. strangelove", "dr strangelove"] 
+  },
+  { 
+    "question": "Q/ Quel scientifique a mis en évidence la loi de la gravitation universelle ? 🧪SCIENCE🧪", 
+    "answer": ["isaac newton", "newton"] 
+  },
+  { 
+    "question": "Q/ Quel compositeur russe a écrit 'Le Lac des cygnes' ? 🎶MUSIQUE🎶", 
+    "answer": ["piotr ilitch tchaïkovski", "tchaïkovski"] 
+  },
+  { 
+    "question": "Q/ Quel pays a remporté le premier championnat du monde de hockey sur glace en 1920 ? ⚽SPORT⚽", 
+    "answer": ["canada", "canadien"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom de la sonde qui a étudié Pluton en 2015 ? 🚀ESPACE🚀", 
+    "answer": ["new horizons", "new horizon"] 
+  },
+  { 
+    "question": "Q/ Quel auteur britannique a écrit 'Le Monde perdu' sur les dinosaures ? 📚LITTÉRATURE📚", 
+    "answer": ["arthur conan doyle", "conan doyle"] 
+  },
+  { 
+    "question": "Q/ Quel peintre hollandais est connu pour ses 'Autoportraits' et 'La Ronde de nuit' ? 🎨ART🎨", 
+    "answer": ["rembrandt", "rembrandt van rijn"] 
+  },
+  { 
+    "question": "Q/ Quel est le plus grand satellite de Saturne ? 🚀ESPACE🚀", 
+    "answer": ["titan", "saturne titan"] 
+  },
+  { 
+    "question": "Q/ Quel film français de 1966 a été réalisé par Louis Malle et raconte la guerre en Algérie ? 🎬CINÉMA🎬", 
+    "answer": ["lacombe lucien", "lacombe"] 
+  },
+  { 
+    "question": "Q/ Quel musicien a composé 'Clair de Lune' ? 🎶MUSIQUE🎶", 
+    "answer": ["claude debussy", "debussy"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom de l’étoile la plus proche du Soleil après Proxima Centauri ? 🚀ESPACE🚀", 
+    "answer": ["alpha centauri a", "rigel kent"] 
+  },
+  { 
+    "question": "Q/ Quel joueur a été le premier ballon d’or africain en 1995 ? ⚽SPORT⚽", 
+    "answer": ["george weah", "weah"] 
+  },
+  
+  { 
+    "question": "Q/ Quelle plante médicinale utilisée par les Mayas servait à traiter les fièvres et douleurs ? \n\n🌿ETHNOBOTANIQUE🌿", 
+    "answer": ["quina", "cinchona"] 
+  },
+  { 
+    "question": "Q/ Quelle créature légendaire d’Australie est décrite comme un serpent géant vivant dans les rivières ? \n\n🐍CRYPTOZOOLOGIE🐍", 
+    "answer": ["bunyaroo", "serpent arc-en-ciel"] 
+  },
+  { 
+    "question": "Q/ Quel type de temple aztèque était construit en terrasses et destiné aux sacrifices ? \n\n🏛️ARCHITECTURE ANCIENNE🏛️", 
+    "answer": ["pyramide à degrés", "teocalli"] 
+  },
+  { 
+    "question": "Q/ Quelle sculpture africaine traditionnelle est utilisée dans les rites de fertilité ? \n\n🎨ART TRIBAL🎨", 
+    "answer": ["fetiche", "fétiche africain"] 
+  },
+  { 
+    "question": "Q/ Quel instrument ancien permettait de mesurer la pression atmosphérique avant le baromètre moderne ? \n\n🔬INSTRUMENTS SCIENTIFIQUES🔬", 
+    "answer": ["torricelli", "tube de torricelli"] 
+  },
+  { 
+    "question": "Q/ Quelle langue morte était parlée dans l’ancienne Mésopotamie ? \n\n🗣️LANGUES MORTES🗣️", 
+    "answer": ["sumérien", "akkadien"] 
+  },
+  { 
+    "question": "Q/ Quel peuple d’Afrique centrale est célèbre pour ses tambours cérémoniels géants ? \n\n🥁FOLKLORE AFRICAIN🥁", 
+    "answer": ["baka", "pygmées baka"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom du symbole gravé sur les pierres du site de Stonehenge ? \n\n📜ARCHÉOLOGIE MONDIALE📜", 
+    "answer": ["triskèle", "triskel"] 
+  },
+  { 
+    "question": "Q/ Quelle plante aquatique d’Asie est utilisée pour fabriquer des nattes et des toits traditionnels ? \n\n🌾ETHNOBOTANIQUE🌾", 
+    "answer": ["roseau", "papyrus"] 
+  },
+  { 
+    "question": "Q/ Quel animal mythique des îles Fidji est décrit comme un crocodile géant de mer ? \n\n🐊CRYPTOZOOLOGIE🐊", 
+    "answer": ["taniwha", "taniwa"] 
+  },
+  { 
+    "question": "Q/ Quelle civilisation précolombienne utilisait des cercles de pierre astronomiques au Pérou ? \n\n🔭ASTRONOMIE ANCIENNE🔭", 
+    "answer": ["inca", "civilisation inca"] 
+  },
+  { 
+    "question": "Q/ Quelle statue polynésienne géante garde l’île de Pâques ? \n\n🎨ART TRIBAL🎨", 
+    "answer": ["moaï", "moai"] 
+  },
+  { 
+    "question": "Q/ Quel appareil ancien utilisait des poids et contrepoids pour mesurer le temps avec précision ? \n\n⏳INSTRUMENTS ANCIENS⏳", 
+    "answer": ["horloge à balancier", "balance horloge"] 
+  },
+  { 
+    "question": "Q/ Quelle plante médicinale africaine est utilisée pour traiter la malaria ? \n\n🌿ETHNOBOTANIQUE🌿", 
+    "answer": ["quinquina", "cinchona"] 
+  },
+  { 
+    "question": "Q/ Quelle créature légendaire est censée protéger les villages dans le folklore japonais ? \n\n🌀FOLKLORE ASIATIQUE🌀", 
+    "answer": ["kappa", "河童"] 
+  },
+  { 
+    "question": "Q/ Quel instrument antique permettait de mesurer la hauteur des étoiles au-dessus de l’horizon ? \n\n🔭INSTRUMENTS SCIENTIFIQUES🔭", 
+    "answer": ["astrolabe", "astrolabe ancien"] 
+  },
+  { 
+    "question": "Q/ Quel peuple amérindien construisait des maisons en bois rondées et recouvertes de boue ? \n\n🏠ARCHITECTURE TRADITIONNELLE🏠", 
+    "answer": ["iroquois", "iroquoise"] 
+  },
+  { 
+    "question": "Q/ Quel métal était utilisé pour fabriquer les premières aiguilles d’acupuncture en Chine ? \n\n🧪MÉDECINE TRADITIONNELLE🧪", 
+    "answer": ["or", "acier"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom de l’artefact religieux utilisé dans les cérémonies vaudou haïtiennes ? \n\n📿RELIGIONS DU MONDE📿", 
+    "answer": ["poto mitan", "autel vaudou"] 
+  },
+  { 
+    "question": "Q/ Quelle langue ancienne est connue pour ses inscriptions sur les tablettes de l’île de Pâques ? \n\n🗣️LANGUES MORTES🗣️", 
+    "answer": ["rongorongo", "script rongorongo"] 
   }
+  
   
   ]
     
