@@ -301,7 +301,251 @@
   { "question": "Q/ Quelle est la capitale de la Lituanie ? 🌏CAPITAL PAYS🌏", "answer": ["vilnius", "vilna"] },
   { "question": "Q/ Quel chimiste a proposé le tableau périodique des éléments ? 🔬CHIMIE🔬", "answer": ["mendeleïev", "dmitri mendeleïev"] },
   { "question": "Q/ Quelle est la capitale de l’Estonie ? 🌏CAPITAL PAYS🌏", "answer": ["tallinn", "talin"] },
-  { "question": "Q/ Quel philosophe a écrit 'Le Contrat social' ? 🧠PHILOSOPHIE🧠", "answer": ["rousseau", "jean jacques rousseau"] }
+  { "question": "Q/ Quel philosophe a écrit 'Le Contrat social' ? 🧠PHILOSOPHIE🧠", "answer": ["rousseau", "jean jacques rousseau"] },
+  
+  { 
+    "question": "Q/ Quel médecin grec de l’Antiquité est surnommé le 'père de la médecine' ? \n\n🧪MÉDECINE ANTIQUE🧪", 
+    "answer": ["hippocrate", "hippocrates"] 
+  },
+  { 
+    "question": "Q/ Quelle civilisation a construit les lignes de Nazca visibles uniquement depuis le ciel ? \n\n🏺ARCHÉOLOGIE🏺", 
+    "answer": ["nazca", "civilisation nazca"] 
+  },
+  { 
+    "question": "Q/ Quel philosophe chinois est l’auteur du Tao Te King ? \n\n📜PHILOSOPHIE ORIENTALE📜", 
+    "answer": ["lao tseu", "laozi"] 
+  },
+  { 
+    "question": "Q/ Quelle est la plus grande mosquée d’Afrique, située en Côte d’Ivoire ? \n\n🏛️ARCHITECTURE RELIGIEUSE🏛️", 
+    "answer": ["mosquée de yamoussoukro", "grande mosquée de yamoussoukro"] 
+  },
+  { 
+    "question": "Q/ Quel est l’instrument de percussion ouest-africain en forme de calebasse recouverte de perles ? \n\n🥁MUSIQUE TRADITIONNELLE🥁", 
+    "answer": ["shekere", "chékeré"] 
+  },
+  { 
+    "question": "Q/ Quel peuple de l’Âge du fer en Europe est connu pour ses druides et ses oppida ? \n\n🏹CIVILISATIONS ANCIENNES🏹", 
+    "answer": ["celtes", "celte"] 
+  },
+  { 
+    "question": "Q/ Quelle est la montagne sacrée du Japon associée au shintoïsme ? \n\n⛰️SPIRITUALITÉ⛰️", 
+    "answer": ["fuji", "mont fuji"] 
+  },
+  { 
+    "question": "Q/ Quelle substance rare utilisée au Moyen Âge servait de pigment bleu très cher ? \n\n🎨ART ANCIEN🎨", 
+    "answer": ["lapis-lazuli", "ultramarine"] 
+  },
+  { 
+    "question": "Q/ Quel philosophe grec a enseigné Alexandre le Grand ? \n\n📚PHILOSOPHIE📚", 
+    "answer": ["aristote", "aristotle"] 
+  },
+  { 
+    "question": "Q/ Quel manuscrit irlandais du IXe siècle est célèbre pour ses enluminures chrétiennes ? \n\n📜MANUSCRITS📜", 
+    "answer": ["livre de kells", "book of kells"] 
+  },
+  { 
+    "question": "Q/ Quelle civilisation africaine a bâti la cité de Great Zimbabwe ? \n\n🏺HISTOIRE AFRICAINE🏺", 
+    "answer": ["royaume du zimbabwe", "civilisation zimbabwe"] 
+  },
+  { 
+    "question": "Q/ Quel philosophe indien a fondé le bouddhisme ? \n\n🧘RELIGIONS ASIATIQUES🧘", 
+    "answer": ["bouddha", "siddhartha gautama"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom du dieu égyptien à tête de faucon associé au soleil ? \n\n⚡MYTHOLOGIE ÉGYPTIENNE⚡", 
+    "answer": ["râ", "ra"] 
+  },
+  { 
+    "question": "Q/ Quel est l’édifice le plus haut construit par les Mayas à Tikal ? \n\n🏛️ARCHÉOLOGIE AMÉRIQUE🏛️", 
+    "answer": ["temple du grand jaguar", "temple i"] 
+  },
+  { 
+    "question": "Q/ Quelle pratique japonaise consiste à réparer la céramique cassée avec de l’or ? \n\n🎨ARTS TRADITIONNELS🎨", 
+    "answer": ["kintsugi", "kintsukuroi"] 
+  },
+  { 
+    "question": "Q/ Quelle légende nordique raconte la fin du monde et la bataille des dieux ? \n\n⚔️MYTHOLOGIE NORDIQUE⚔️", 
+    "answer": ["ragnarök", "ragnarok"] 
+  },
+  { 
+    "question": "Q/ Quelle science ancienne cherchait à transformer les métaux en or ? \n\n⚗️ALCHIMIE⚗️", 
+    "answer": ["alchimie", "alchemy"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom du plus ancien texte littéraire connu de l’humanité ? \n\n📚LITTÉRATURE ANCIENNE📚", 
+    "answer": ["épopée de gilgamesh", "gilgamesh"] 
+  },
+  { 
+    "question": "Q/ Quelle forteresse française fut prise le 14 juillet 1789 ? \n\n📜HISTOIRE FRANÇAISE📜", 
+    "answer": ["bastille", "prison de la bastille"] 
+  },
+  { 
+    "question": "Q/ Quel métal précieux était appelé 'larmes des dieux' dans l’Antiquité ? \n\n💎MINÉRAUX SACRÉS💎", 
+    "answer": ["ambre", "or jaune"] 
+  },
+  
+  { 
+    "question": "Q/ Quelle langue construite par Ludwik Zamenhof en 1887 visait à devenir universelle ? \n\n🌐LINGUISTIQUE🌐", 
+    "answer": ["espéranto", "esperanto"] 
+  },
+  { 
+    "question": "Q/ Quel explorateur chinois du XVe siècle a mené d’immenses expéditions maritimes avant Christophe Colomb ? \n\n🚢EXPLORATIONS🚢", 
+    "answer": ["zheng he", "cheng ho"] 
+  },
+  { 
+    "question": "Q/ Quelle pierre semi-précieuse verte était sacrée chez les Aztèques ? \n\n💎MINÉRAUX💎", 
+    "answer": ["jade", "pierre de jade"] 
+  },
+  { 
+    "question": "Q/ Quel est l’instrument de musique traditionnel japonais à cordes pincées ressemblant à une cithare ? \n\n🎶MUSIQUE MONDE🎶", 
+    "answer": ["koto", "琴"] 
+  },
+  { 
+    "question": "Q/ Dans quelle ville se trouvait la bibliothèque d’Alexandrie ? \n\n📜HISTOIRE DU SAVOIR📜", 
+    "answer": ["alexandrie", "alexandria"] 
+  },
+  { 
+    "question": "Q/ Quel manuscrit médiéval reste indéchiffré et intrigue toujours les cryptographes ? \n\n🔐CRYPTOGRAPHIE🔐", 
+    "answer": ["manuscrit voynich", "voynich"] 
+  },
+  { 
+    "question": "Q/ Quel rite funéraire consistait à déposer les morts dans des tours du silence chez les zoroastriens ? \n\n☀️RELIGIONS ANCIENNES☀️", 
+    "answer": ["dokhma", "tour du silence"] 
+  },
+  { 
+    "question": "Q/ Quel navigateur polynésien est considéré comme un maître des techniques de navigation sans instruments ? \n\n🌊NAVIGATION🌊", 
+    "answer": ["mau pialug", "pialug"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom de la première écriture utilisée en Mésopotamie ? \n\n📜ARCHÉOLOGIE📜", 
+    "answer": ["cunéiforme", "écriture cunéiforme"] 
+  },
+  { 
+    "question": "Q/ Quelle épice rare était surnommée 'l’or rouge' et sert aussi de colorant naturel ? \n\n🌶️GASTRONOMIE🌶️", 
+    "answer": ["safran", "cro­cus"] 
+  },
+  { 
+    "question": "Q/ Quel peuple nomade d’Asie centrale utilisait le cheval comme base de sa culture guerrière ? \n\n🏹ANTHROPOLOGIE🏹", 
+    "answer": ["scythes", "scythe"] 
+  },
+  { 
+    "question": "Q/ Quelle est la première civilisation connue d’Amérique du Sud, antérieure aux Incas ? \n\n🏺CIVILISATIONS ANCIENNES🏺", 
+    "answer": ["chavín", "chavin"] 
+  },
+  { 
+    "question": "Q/ Quelle technique indienne ancienne de méditation est décrite dans le Yoga Sutra de Patanjali ? \n\n🧘SPIRITUALITÉ🧘", 
+    "answer": ["dhyana", "méditation dhyana"] 
+  },
+  { 
+    "question": "Q/ Quel métal était utilisé pour fabriquer les miroirs en Chine antique ? \n\n⚒️TECHNOLOGIE ANTIQUE⚒️", 
+    "answer": ["bronze", "alliage de bronze"] 
+  },
+  { 
+    "question": "Q/ Quelle créature mythique amérindienne est souvent représentée comme un immense oiseau tonnerre ? \n\n⚡MYTHOLOGIES DU MONDE⚡", 
+    "answer": ["oiseau-tonnerre", "thunderbird"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom de l’alphabet créé pour écrire la langue arménienne au Ve siècle ? \n\n🔠ÉCRITURES🔠", 
+    "answer": ["alphabet arménien", "mesrop mashtots"] 
+  },
+  { 
+    "question": "Q/ Quelle civilisation précolombienne a édifié la cité de Tikal au Guatemala ? \n\n🏺ARCHÉOLOGIE AMÉRIQUE🏺", 
+    "answer": ["maya", "civilisation maya"] 
+  },
+  { 
+    "question": "Q/ Quelle étoile était utilisée par les Vikings pour naviguer ? \n\n🌟ASTRONOMIE HISTORIQUE🌟", 
+    "answer": ["étoile polaire", "polaris"] 
+  },
+  { 
+    "question": "Q/ Quel roi d’Afrique a dirigé l’empire du Mali au XIVe siècle et est considéré comme l’un des hommes les plus riches de l’histoire ? \n\n👑HISTOIRE AFRICAINE👑", 
+    "answer": ["mansa musa", "kankou moussa"] 
+  },
+  { 
+    "question": "Q/ Quelle tradition médicale chinoise utilise des aiguilles pour équilibrer l’énergie vitale ? \n\n🧪MÉDECINE TRADITIONNELLE🧪", 
+    "answer": ["acupuncture", "针灸"] 
+  },
+  
+  { 
+    "question": "Q/ Quel mathématicien indien du XXe siècle a révolutionné la théorie des nombres malgré une carrière très courte ? \n\n📐MATHÉMATIQUES📐", 
+    "answer": ["srinivasa ramanujan", "ramanujan"] 
+  },
+  { 
+    "question": "Q/ Quel métal précieux était extrait du fleuve Pactole selon la légende du roi Midas ? \n\n⚡MYTHOLOGIE⚡", 
+    "answer": ["or", "gold"] 
+  },
+  { 
+    "question": "Q/ Quelle est la seule capitale au monde située à cheval sur deux continents ? \n\n🌍GÉOGRAPHIE🌍", 
+    "answer": ["istanbul", "constantinople"] 
+  },
+  { 
+    "question": "Q/ Dans quelle langue est rédigée la plus ancienne épopée connue, celle de Gilgamesh ? \n\n📚LITTÉRATURE📚", 
+    "answer": ["sumérien", "akkadien"] 
+  },
+  { 
+    "question": "Q/ Quelle molécule de l’ADN est la base complémentaire de la cytosine ? \n\n🧬BIOLOGIE🧬", 
+    "answer": ["guanine", "g"] 
+  },
+  { 
+    "question": "Q/ Quel scientifique arabe du Xe siècle est surnommé le père de l’optique ? \n\n🔬HISTOIRE DES SCIENCES🔬", 
+    "answer": ["alhazen", "ibn al-haytham"] 
+  },
+  { 
+    "question": "Q/ Quel philosophe présocratique affirmait que 'tout s’écoule' (panta rhei) ? \n\n📚PHILOSOPHIE📚", 
+    "answer": ["héraclite", "heraclitus"] 
+  },
+  { 
+    "question": "Q/ Quelle reine nubienne a résisté aux Romains sous Auguste ? \n\n🏺HISTOIRE ANTIQUE🏺", 
+    "answer": ["candace", "kandake"] 
+  },
+  { 
+    "question": "Q/ Quel peintre flamand du XVe siècle est considéré comme l’inventeur de la peinture à l’huile ? \n\n🎨ART🎨", 
+    "answer": ["jan van eyck", "van eyck"] 
+  },
+  { 
+    "question": "Q/ Quel est le nom du satellite de Neptune découvert en 1846, quelques jours après la planète elle-même ? \n\n🚀ASTRONOMIE🚀", 
+    "answer": ["triton", "triton"] 
+  },
+  { 
+    "question": "Q/ Quelle est la capitale du Bhoutan, pays longtemps resté isolé ? \n\n🌏CAPITALES🌏", 
+    "answer": ["thimphou", "thimphu"] 
+  },
+  { 
+    "question": "Q/ Quel mathématicien grec a donné son nom à un fameux théorème sur les triangles rectangles ? \n\n📐MATHÉMATIQUES📐", 
+    "answer": ["pythagore", "pythagoras"] 
+  },
+  { 
+    "question": "Q/ Quelle écriture ancienne a été déchiffrée grâce à la pierre de Rosette ? \n\n📜ARCHÉOLOGIE📜", 
+    "answer": ["hiéroglyphes", "écriture égyptienne"] 
+  },
+  { 
+    "question": "Q/ Quel compositeur autrichien est surnommé 'le roi de la valse' ? \n\n🎶MUSIQUE🎶", 
+    "answer": ["johann strauss", "strauss fils"] 
+  },
+  { 
+    "question": "Q/ Quelle ville de la Route de la Soie était surnommée la 'perle de l’Orient' ? \n\n🌍HISTOIRE GÉO🌍", 
+    "answer": ["samarkand", "samarcande"] 
+  },
+  { 
+    "question": "Q/ Quelle déesse nordique est associée à l’amour et la guerre, et donne son nom au vendredi ? \n\n⚡MYTHOLOGIE⚡", 
+    "answer": ["freyja", "freya"] 
+  },
+  { 
+    "question": "Q/ Quel physicien a découvert le positron en 1932 ? \n\n🔬PHYSIQUE🔬", 
+    "answer": ["carl anderson", "anderson"] 
+  },
+  { 
+    "question": "Q/ Quelle civilisation mésoaméricaine a bâti la cité de Teotihuacan ? \n\n🏺CIVILISATIONS🏺", 
+    "answer": ["teotihuacans", "teotihuacain"] 
+  },
+  { 
+    "question": "Q/ Quel est le plus grand désert froid du monde ? \n\n🌍GÉOGRAPHIE🌍", 
+    "answer": ["antarctique", "antarctica"] 
+  },
+  { 
+    "question": "Q/ Qui a inventé le premier vaccin contre la rage ? \n\n🧪SCIENCE MÉDICALE🧪", 
+    "answer": ["louis pasteur", "pasteur"] 
+  }
+  
   ]
     
 
