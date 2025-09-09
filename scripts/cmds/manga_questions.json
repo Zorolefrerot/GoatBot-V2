@@ -18,5 +18,27 @@
   { "question": "Qui sauve Naruto lors de l’attaque du kyubi bébé ?", "answer": ["minato namikaze", "kushina uzumaki"], "manga": "🎌Naruto Shippuden🎌" },
   { "question": "Qui est le maître de Rock Lee ?", "answer": ["maito gai", "le maître vert"], "manga": "🎌Naruto Shippuden🎌" },
   { "question": "Quel est le nom du frère de Hinata ?", "answer": ["hyuuga hanabi", "petite sœur de hinata"], "manga": "🎌Naruto Shippuden🎌" },
-  { "question": "Quel est le nom de l’Akatsuki à la tête de Pain ?", "answer": ["nagato", "pain"], "manga": "🎌Naruto Shippuden🎌" }
+  { "question": "Quel est le nom de l’Akatsuki à la tête de Pain ?", "answer": ["nagato", "pain"], "manga": "🎌Naruto Shippuden🎌" },
+  
+  { "question": "Qui est le père de Goku ?", "answer": ["bardock", "sangoku senior"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui est le frère de Raditz ?", "answer": ["goku", "kakarot"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom de la transformation ultime de Goku contre Freezer ?", "answer": ["super saiyan", "ssj"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom complet de Vegeta ?", "answer": ["vegeta", "prince des saiyans"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui est le premier méchant à tuer Krillin ?", "answer": ["freezer", "freeza"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom de la technique de Goku pour vaincre Freezer ?", "answer": ["kamehameha", "genki dama"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui est le créateur des androids ?", "answer": ["dr gero", "le professeur gero"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui fusionne pour devenir Vegetto ?", "answer": ["goku et vegeta", "goku + vegeta"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom de l’attaque signature de Vegeta ?", "answer": ["final flash", "big bang attack"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui tue Cell ?", "answer": ["trunks du futur", "trunks"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom du père de Vegeta ?", "answer": ["roi vegeta", "king vegeta"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui est le maître de Krillin et Goku ?", "answer": ["maitre roshi", "tortue géniale"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom de la planète natale de Vegeta ?", "answer": ["planète vegeta", "vegeta"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel saiyan se transforme en super saiyan 2 contre Cell ?", "answer": ["gohan", "ado goku"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom de la technique qui détruit Namek ?", "answer": ["supernova", "death ball"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui est le roi de tous les Saiyans ?", "answer": ["roi vegeta", "king vegeta"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui absorbe Android 17 et 18 pour devenir parfait ?", "answer": ["cell", "perfect cell"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui est le dernier méchant de DBZ ?", "answer": ["majin boo", "boo"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Qui devient super saiyan 3 pour la première fois ?", "answer": ["goku", "kakarot"], "manga": "🎌Dragon Ball Z🎌" },
+  { "question": "Quel est le nom du maître de Vegeta lorsqu’il arrive sur Terre ?", "answer": ["maitre kaio", "king kai"], "manga": "🎌Dragon Ball Z🎌" }
+  
 ]
