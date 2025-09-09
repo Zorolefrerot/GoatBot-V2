@@ -1,99 +1,1229 @@
 [
-  { "question": "qui est le heros principal de naruto ?", "answer": "naruto" },
-  { "question": "quel est le rival principal de naruto ?", "answer": "sasuke" },
-  { "question": "qui est le sensei de naruto ?", "answer": "kakashi" },
-  { "question": "quel est le demon renard en naruto ?", "answer": "kurama" },
-  { "question": "qui est le pere de naruto ?", "answer": "minato" },
-  { "question": "qui est la mere de naruto ?", "answer": "kushina" },
-  { "question": "qui est le heros principal de dragon ball ?", "answer": "goku" },
-  { "question": "quel est le rival principal de goku ?", "answer": "vegeta" },
-  { "question": "qui est le fils de goku ?", "answer": "gohan" },
-  { "question": "qui est le createur des dragon ball ?", "answer": "kami" },
-  { "question": "quel est le heros principal de one piece ?", "answer": "luffy" },
-  { "question": "qui est le sabreur de l equipage de luffy ?", "answer": "zoro" },
-  { "question": "qui est la navigatrice de l equipage de luffy ?", "answer": "nami" },
-  { "question": "qui est le cuisinier de l equipage de luffy ?", "answer": "sanji" },
-  { "question": "qui est le medecin de l equipage de luffy ?", "answer": "chopper" },
-  { "question": "qui est l archeologue de l equipage de luffy ?", "answer": "robin" },
-  { "question": "qui est le sniper de l equipage de luffy ?", "answer": "usopp" },
-  { "question": "qui est le musicien de l equipage de luffy ?", "answer": "brook" },
-  { "question": "qui est le timonier de l equipage de luffy ?", "answer": "jinbei" },
-  { "question": "quel est le nom complet de luffy ?", "answer": "monkey d luffy" },
-  { "question": "qui est le capitaine de l equipage du chapeau de paille ?", "answer": "luffy" },
-  { "question": "qui est le frere de luffy mort a marineford ?", "answer": "ace" },
-  { "question": "qui est le grand pere de luffy ?", "answer": "garp" },
-  { "question": "qui est le heros principal de bleach ?", "answer": "ichigo" },
-  { "question": "qui est le capitaine aizen dans bleach ?", "answer": "aizen" },
-  { "question": "qui est le meilleur ami d ichigo ?", "answer": "uryu" },
-  { "question": "qui est la shinigami qui a donne ses pouvoirs a ichigo ?", "answer": "rukia" },
-  { "question": "qui est le heros principal de death note ?", "answer": "light" },
-  { "question": "qui est le detective qui affronte light ?", "answer": "l" },
-  { "question": "quel est le nom complet de light ?", "answer": "light yagami" },
-  { "question": "quel est le nom du dieu de la mort ami de light ?", "answer": "ryuk" },
-  { "question": "qui est la fille amoureuse de light ?", "answer": "misa" },
-  { "question": "qui est le heros principal de demon slayer ?", "answer": "tanjiro" },
-  { "question": "quelle est la soeur de tanjiro ?", "answer": "nezuko" },
-  { "question": "qui est le compagnon peureux de tanjiro ?", "answer": "zenitsu" },
-  { "question": "qui est le compagnon avec une tete de sanglier ?", "answer": "inosuke" },
-  { "question": "qui est le pilier de la flamme ?", "answer": "rengoku" },
-  { "question": "qui est le pilier de l eau ?", "answer": "giyu" },
-  { "question": "qui est le roi des demons dans demon slayer ?", "answer": "muzan" },
-  { "question": "qui est le heros principal de my hero academia ?", "answer": "midoriya" },
-  { "question": "quel est le nom de heros d all might ?", "answer": "all might" },
-  { "question": "qui est le rival de midoriya ?", "answer": "bakugo" },
-  { "question": "qui est l ennemi principal de my hero academia ?", "answer": "all for one" },
-  { "question": "qui est la fille qui maitrise la gravite dans my hero academia ?", "answer": "uraraka" },
-  { "question": "qui est le heros principal de fairy tail ?", "answer": "natsu" },
-  { "question": "qui est la partenaire de natsu ?", "answer": "lucy" },
-  { "question": "qui est le mage de glace dans fairy tail ?", "answer": "gray" },
-  { "question": "qui est la guerriere avec des armures dans fairy tail ?", "answer": "erza" },
-  { "question": "quel est le chat bleu de fairy tail ?", "answer": "happy" },
-  { "question": "qui est le heros principal de attack on titan ?", "answer": "eren" },
-  { "question": "qui est la fille qui protege eren ?", "answer": "mikasa" },
-  { "question": "qui est le meilleur ami d eren ?", "answer": "armin" },
-  { "question": "qui est le capitaine le plus fort du bataillon ?", "answer": "levi" },
-  { "question": "qui est le titan colossal ?", "answer": "bertholdt" },
-  { "question": "qui est le titan cuirasse ?", "answer": "reiner" },
-  { "question": "qui est le titan feminin ?", "answer": "annie" },
-  { "question": "qui est le heros principal de jujutsu kaisen ?", "answer": "itadori" },
-  { "question": "qui est le professeur de itadori ?", "answer": "gojo" },
-  { "question": "qui est la camarade de classe de itadori ?", "answer": "nobara" },
-  { "question": "qui est le camarade de itadori avec une malediction ?", "answer": "megumi" },
-  { "question": "qui est le roi des maledictions dans jujutsu kaisen ?", "answer": "sukuna" },
-  { "question": "qui est le heros principal de hunter x hunter ?", "answer": "gon" },
-  { "question": "qui est le meilleur ami de gon ?", "answer": "killua" },
-  { "question": "qui est le pere de gon ?", "answer": "ging" },
-  { "question": "qui est le clown dangereux dans hunter x hunter ?", "answer": "hisoka" },
-  { "question": "qui est le chef de la brigade fantome ?", "answer": "chrollo" },
-  { "question": "qui est le heros principal de black clover ?", "answer": "asta" },
-  { "question": "qui est le rival de asta ?", "answer": "yuno" },
-  { "question": "qui est le capitaine du taureau noir ?", "answer": "yami" },
-  { "question": "qui est la soeur de asta ?", "answer": "sister lily" },
-  { "question": "qui est le demon de asta ?", "answer": "lieb" },
-  { "question": "qui est le heros principal de fullmetal alchemist ?", "answer": "edward" },
-  { "question": "qui est le frere de edward ?", "answer": "alphonse" },
-  { "question": "qui est le createur de la pierre philosophale ?", "answer": "father" },
-  { "question": "qui est le heros principal de tokyo ghoul ?", "answer": "kaneki" },
-  { "question": "qui est la fille aux cheveux roses dans tokyo ghoul ?", "answer": "toka" },
-  { "question": "qui est le chef des goules dans tokyo ghoul ?", "answer": "arima" },
-  { "question": "qui est le heros principal de yu gi oh ?", "answer": "yugi" },
-  { "question": "qui est le rival principal de yugi ?", "answer": "kaiba" },
-  { "question": "qui est le heros principal de saint seiya ?", "answer": "seiya" },
-  { "question": "qui est la deesse protege par les chevaliers du zodiaque ?", "answer": "athena" },
-  { "question": "qui est le heros principal de kenshin le vagabond ?", "answer": "kenshin" },
-  { "question": "qui est le heros principal de inu yasha ?", "answer": "inuyasha" },
-  { "question": "qui est la fille qui voyage dans le temps avec inu yasha ?", "answer": "kagome" },
-  { "question": "qui est le heros principal de bleach brave souls ?", "answer": "ichigo" },
-  { "question": "qui est le heros principal de gintama ?", "answer": "gintoki" },
-  { "question": "qui est le heros principal de katekyo hitman reborn ?", "answer": "tsuna" },
-  { "question": "qui est le heros principal de code geass ?", "answer": "lelouch" },
-  { "question": "qui est le heros principal de neon genesis evangelion ?", "answer": "shinji" },
-  { "question": "qui est le robot principal de evangelion ?", "answer": "eva01" },
-  { "question": "qui est le heros principal de cowboy bebop ?", "answer": "spike" },
-  { "question": "qui est le heros principal de trigun ?", "answer": "vash" },
-  { "question": "qui est le heros principal de berserk ?", "answer": "guts" },
-  { "question": "qui est le heros principal de jojo phantom blood ?", "answer": "jonathan" },
-  { "question": "qui est le heros principal de jojo stardust crusaders ?", "answer": "jotaro" },
-  { "question": "qui est le heros principal de jojo golden wind ?", "answer": "giorno" },
-  { "question": "qui est le heros principal de jojo stone ocean ?", "answer": "jolyne" }
+  {"question": "Q/ Qui est le protagoniste principal ?", "answer": ["Yoichi Isagi", "Isagi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le coach principal ?", "answer": ["Jinpachi Ego", "Ego"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le meilleur attaquant ?", "answer": ["Rin Itoshi", "Itoshi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le rival de Yoichi ?", "answer": ["Rin Itoshi", "Itoshi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur rapide ?", "answer": ["Meguru Bachira", "Bachira"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur technique ?", "answer": ["Hyoma Chigiri", "Chigiri"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le stratège de l’équipe ?", "answer": ["Yoichi Isagi", "Isagi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le tireur puissant ?", "answer": ["Rensuke Kunigami", "Kunigami"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur imprévisible ?", "answer": ["Meguru Bachira", "Bachira"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le capitaine de l’équipe ?", "answer": ["Jinpachi Ego", "Ego"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le plus rapide ?", "answer": ["Chigiri", "Hyoma Chigiri"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur fort physiquement ?", "answer": ["Kunigami", "Rensuke Kunigami"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur habile ?", "answer": ["Bachira", "Meguru Bachira"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le coach exigeant ?", "answer": ["Jinpachi Ego", "Ego"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur qui réfléchit vite ?", "answer": ["Yoichi", "Isagi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le rival talentueux ?", "answer": ["Rin Itoshi", "Itoshi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur agile ?", "answer": ["Chigiri", "Hyoma Chigiri"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le tireur précis ?", "answer": ["Kunigami", "Rensuke Kunigami"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur imprévisible ?", "answer": ["Bachira", "Meguru Bachira"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le plus stratégique ?", "answer": ["Yoichi", "Isagi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur rapide et agile ?", "answer": ["Chigiri", "Hyoma Chigiri"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le leader exigeant ?", "answer": ["Jinpachi Ego", "Ego"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le tireur puissant ?", "answer": ["Kunigami", "Rensuke Kunigami"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur talentueux ?", "answer": ["Rin Itoshi", "Itoshi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur imprévisible ?", "answer": ["Bachira", "Meguru Bachira"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le protagoniste réfléchi ?", "answer": ["Yoichi", "Isagi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur rapide ?", "answer": ["Chigiri", "Hyoma Chigiri"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le tireur talentueux ?", "answer": ["Kunigami", "Rensuke Kunigami"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le rival principal ?", "answer": ["Rin Itoshi", "Itoshi"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le joueur imprévisible ?", "answer": ["Bachira", "Meguru Bachira"], "manga": "⚽ Blue Lock ⚽"},
+  {"question": "Q/ Qui est le coach exigeant ?", "answer": ["Jinpachi Ego", "Ego"], "manga": "⚽ Blue Lock ⚽"},
+  
+  {"question": "Q/ Qui est le protagoniste principal ?", "answer": ["Yuuichi Katagiri", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est l’amie proche de Yuuichi ?", "answer": ["Shiho Sawaragi", "Sawaragi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le manipulateur principal ?", "answer": ["Kokorogi", "Kokorogi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le rival intelligent ?", "answer": ["Tenji Mikasa", "Mikasa"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la membre stratège ?", "answer": ["Maria Mizuse", "Mizuse"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le joueur mystérieux ?", "answer": ["Shiho Sawaragi", "Sawaragi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le cerveau du groupe ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la victime manipulée ?", "answer": ["Maria", "Mizuse"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le plus stratégique ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le joueur psychopathe ?", "answer": ["Kokorogi", "Kokorogi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la fille loyale ?", "answer": ["Shiho", "Sawaragi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le maître du bluff ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le manipulateur d’argent ?", "answer": ["Kokorogi", "Kokorogi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le rival calculateur ?", "answer": ["Tenji", "Mikasa"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la fille forte mentalement ?", "answer": ["Maria", "Mizuse"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le joueur courageux ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la stratège discrète ?", "answer": ["Shiho", "Sawaragi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le maître de l’illusion ?", "answer": ["Kokorogi", "Kokorogi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le joueur traître ?", "answer": ["Tenji", "Mikasa"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la joueuse déterminée ?", "answer": ["Maria", "Mizuse"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le protagoniste courageux ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la fille loyale ?", "answer": ["Shiho", "Sawaragi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le cerveau manipulateur ?", "answer": ["Kokorogi", "Kokorogi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le joueur calculateur ?", "answer": ["Tenji", "Mikasa"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la joueuse intelligente ?", "answer": ["Maria", "Mizuse"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le héros stratégique ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la fille qui réfléchit vite ?", "answer": ["Shiho", "Sawaragi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le manipulateur principal ?", "answer": ["Kokorogi", "Kokorogi"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le rival malin ?", "answer": ["Tenji", "Mikasa"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est la joueuse forte mentalement ?", "answer": ["Maria", "Mizuse"], "manga": "💰 Tomodachi Game 💰"},
+  {"question": "Q/ Qui est le protagoniste intelligent ?", "answer": ["Yuuichi", "Katagiri"], "manga": "💰 Tomodachi Game 💰"},
+  
+  {"question": "Q/ Qui est le protagoniste principal ?", "answer": ["Tatsumi", "Tatsumi"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la tueuse experte ?", "answer": ["Akame", "Akame"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le leader de Night Raid ?", "answer": ["Najenda", "Najenda"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le prince corrompu ?", "answer": ["Bols", "Bols"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le membre drôle de Night Raid ?", "answer": ["Lubbock", "Lubbock"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui manie la Teigu de la vitesse ?", "answer": ["Sheele", "Sheele"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le méchant du manga ?", "answer": ["Esdeath", "Esdeath"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le soldat loyal ?", "answer": ["Susanoo", "Susanoo"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la membre experte en poison ?", "answer": ["Mine", "Mine"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le prince cruel ?", "answer": ["Bols", "Bols"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui manie la Teigu de l’acier ?", "answer": ["Akame", "Akame"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le chef tacticien ?", "answer": ["Najenda", "Najenda"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le frère de Kurome ?", "answer": ["Akame", "Akame"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la tueuse silencieuse ?", "answer": ["Sheele", "Sheele"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui a le pouvoir de glace ?", "answer": ["Esdeath", "Esdeath"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le membre loyal et rapide ?", "answer": ["Lubbock", "Lubbock"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la sniper de Night Raid ?", "answer": ["Mine", "Mine"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la méchante commandante ?", "answer": ["Esdeath", "Esdeath"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le mentor de Tatsumi ?", "answer": ["Najenda", "Najenda"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la sœur ennemie ?", "answer": ["Kurome", "Kurome"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui a la Teigu de la force ?", "answer": ["Akame", "Akame"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le membre comique ?", "answer": ["Lubbock", "Lubbock"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le personnage qui meurt tôt ?", "answer": ["Sheele", "Sheele"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la mage de glace ?", "answer": ["Esdeath", "Esdeath"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le plus courageux ?", "answer": ["Tatsumi", "Tatsumi"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le soldat tacticien ?", "answer": ["Najenda", "Najenda"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le méchant charismatique ?", "answer": ["Esdeath", "Esdeath"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est la sœur jumelle ennemie ?", "answer": ["Kurome", "Kurome"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est le sniper ?", "answer": ["Mine", "Mine"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui est l’exécuteur rapide ?", "answer": ["Lubbock", "Lubbock"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  {"question": "Q/ Qui a le rôle de mentor ?", "answer": ["Najenda", "Najenda"], "manga": "⚔️ Akame ga Kill ⚔️"},
+  
+  {"question": "Q/ Qui est le protagoniste principal ?", "answer": ["Rin Okumura", "Rin"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le frère jumeau de Rin ?", "answer": ["Yukio Okumura", "Yukio"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le père de Rin ?", "answer": ["Satan", "Satan"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le professeur principal ?", "answer": ["Shiro Fujimoto", "Fujimoto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est la sœur de Rin ?", "answer": ["Shiemi Moriyama", "Shiemi"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Quel est le pouvoir principal de Rin ?", "answer": ["Flammes bleues", "Blue Flames"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est l’exorciste de rang supérieur ?", "answer": ["Shiro Fujimoto", "Fujimoto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le rival de Rin ?", "answer": ["Ryuji Suguro", "Bon"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le professeur de combat ?", "answer": ["Izumo Kamiki", "Izumo"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le démon de Rin ?", "answer": ["Satan", "Satan"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le meilleur ami de Rin ?", "answer": ["Ryuji Suguro", "Bon"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est la fille avec pouvoir végétal ?", "answer": ["Shiemi Moriyama", "Shiemi"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le chef des exorcistes ?", "answer": ["Mephisto Pheles", "Mephisto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le démon qui manipule la glace ?", "answer": ["Amaimon", "Amaimon"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le mentor de Rin ?", "answer": ["Shiro Fujimoto", "Fujimoto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le directeur de l’académie ?", "answer": ["Mephisto Pheles", "Mephisto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le démon vert ?", "answer": ["Amaimon", "Amaimon"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le frère sérieux ?", "answer": ["Yukio", "Yukio Okumura"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le maître des exorcistes ?", "answer": ["Shiro Fujimoto", "Fujimoto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est l’étudiant le plus fort ?", "answer": ["Rin Okumura", "Rin"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est la fille timide ?", "answer": ["Shiemi", "Shiemi Moriyama"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le professeur manipulateur ?", "answer": ["Mephisto", "Mephisto Pheles"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le rival de Yukio ?", "answer": ["Rin", "Rin Okumura"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le démon bleu ?", "answer": ["Rin", "Rin Okumura"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le professeur strict ?", "answer": ["Shiro Fujimoto", "Fujimoto"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le directeur charismatique ?", "answer": ["Mephisto", "Mephisto Pheles"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le démon manipule feu ?", "answer": ["Rin", "Rin Okumura"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le frère protecteur ?", "answer": ["Yukio", "Yukio Okumura"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le héros aux flammes bleues ?", "answer": ["Rin", "Rin Okumura"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le démon vert de l’enfer ?", "answer": ["Amaimon", "Amaimon"], "manga": "🔵 Blue Exorcist 🔵"},
+  {"question": "Q/ Qui est le mentor des frères ?", "answer": ["Shiro Fujimoto", "Fujimoto"], "manga": "🔵 Blue Exorcist 🔵"},
+  
+  {"question": "Q/ Qui est le héros principal ?", "answer": ["Allen Walker", "Allen"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Quel est le pouvoir d’Allen ?", "answer": ["Innocence", "Innocence"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le mentor d’Allen ?", "answer": ["Kanda", "Kanda"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le rival d’Allen ?", "answer": ["Kanda", "Kanda Yuu"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le maître de l’Ordre ?", "answer": ["General Cross Marian", "Cross"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le meilleur ami d’Allen ?", "answer": ["Lenalee Lee", "Lenalee"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est l’exorciste féminin ?", "answer": ["Lenalee Lee", "Lenalee"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le scientifique fou ?", "answer": ["Lavi", "Lavi"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le bibliothécaire ?", "answer": ["Lavi", "Lavi Bookman"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Quel est l’ennemi principal ?", "answer": ["Millennium Earl", "Earl"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le frère d’Allen ?", "answer": ["Nea", "Nea D. Campbell"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le vampire ?", "answer": ["Tyki Mikk", "Tyki"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le ninja ?", "answer": ["Kanda", "Kanda Yuu"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est l’exorciste mystérieux ?", "answer": ["Komui", "Komui Lee"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le maître des Innocences ?", "answer": ["Cross Marian", "Cross"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le jeune exorciste ?", "answer": ["Allen", "Allen Walker"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le chef de l’Ordre ?", "answer": ["Komui", "Komui Lee"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le traître ?", "answer": ["Nea", "Nea D. Campbell"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le commandant des Black Order ?", "answer": ["Komui", "Komui Lee"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le rival principal ?", "answer": ["Kanda", "Kanda Yuu"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le démon millénaire ?", "answer": ["Millennium Earl", "Earl"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le petit garçon avec Innocence ?", "answer": ["Allen", "Allen Walker"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le jeune scientifique ?", "answer": ["Lavi", "Lavi Bookman"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est la fille avec Innocence ?", "answer": ["Lenalee", "Lenalee Lee"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est l’exorciste mystérieux ?", "answer": ["Cross Marian", "Cross"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le héros principal ?", "answer": ["Allen", "Allen Walker"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le meilleur ami de Lavi ?", "answer": ["Allen", "Allen Walker"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le méchant manipulateur ?", "answer": ["Tyki Mikk", "Tyki"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est l’exorciste des ténèbres ?", "answer": ["Kanda", "Kanda Yuu"], "manga": "✝️ D.Gray-man ✝️"},
+  {"question": "Q/ Qui est le maître de l’Ordre ?", "answer": ["Cross Marian", "Cross"], "manga": "✝️ D.Gray-man ✝️"},
+  
+  {"question": "Q/ Qui est le héros principal ?", "answer": ["Saitama", "One Punch Man"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le disciple de Saitama ?", "answer": ["Genos", "Genos"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Quelle est la particularité de Saitama ?", "answer": ["Un coup tue tout", "Super force"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le chef de l’Association des Héros ?", "answer": ["Agnes", "S-Class"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Quel est le nom du cyborg ?", "answer": ["Genos", "Genos"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros classe S ?", "answer": ["Bang", "Silver Fang"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le monstre mangeur d’hommes ?", "answer": ["Boros", "Boros"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Quelle est la couleur de costume de Saitama ?", "answer": ["Jaune", "Yellow"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros le plus fort de l’Association ?", "answer": ["Tatsumaki", "Tornado"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le rival comique de Saitama ?", "answer": ["Speed-o'-Sound Sonic", "Sonic"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Quel est le style de combat de Bang ?", "answer": ["Arts martiaux", "Martial arts"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est la petite héroïne psionique ?", "answer": ["Tatsumaki", "Tornado"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le monstre des déserts ?", "answer": ["Garou", "Garou"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le mentor de Genos ?", "answer": ["Saitama", "One Punch Man"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Quelle est la récompense pour les héros ?", "answer": ["Argent", "Prize"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui attaque Z-City ?", "answer": ["Boros", "Monsters"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros chauve ?", "answer": ["Saitama", "One Punch Man"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros qui utilise une lance ?", "answer": ["Metal Knight", "Metal Knight"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le plus jeune S-Class ?", "answer": ["Fubuki", "Fubuki"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros des ténèbres ?", "answer": ["Garou", "Garou"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le scientifique qui crée des cyborgs ?", "answer": ["Dr. Kuseno", "Kuseno"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros qui vole ?", "answer": ["Tornado", "Tatsumaki"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros avec épée ?", "answer": ["Genos", "Genos"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros qui parle peu ?", "answer": ["Saitama", "One Punch Man"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Quel héros est surnommé Silver Fang ?", "answer": ["Bang", "Bang"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui attaque la capitale des héros ?", "answer": ["Boros", "Monsters"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros avec cheveux verts ?", "answer": ["Tatsumaki", "Tornado"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le rival qui adore combattre ?", "answer": ["Garou", "Garou"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le héros de classe A ?", "answer": ["Mumen Rider", "Mumen Rider"], "manga": "👊 One Punch Man 👊"},
+  {"question": "Q/ Qui est le monstre qui domine l’armée de monstres ?", "answer": ["Boros", "Boros"], "manga": "👊 One Punch Man 👊"},
+  
+  {"question": "Q/ Qui est le protagoniste de Fullmetal Alchemist ?", "answer": ["Edward Elric", "Ed"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le frère d’Edward ?", "answer": ["Alphonse Elric", "Al"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Quelle est la profession d’Edward ?", "answer": ["Alchimiste d’État", "State Alchemist"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Quel est le but des frères Elric ?", "answer": ["Retrouver leur corps", "Récupérer leur corps"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le maître alchimiste ?", "answer": ["Izumi Curtis", "Izumi"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le colonel Roy Mustang ?", "answer": ["Flamme", "Colonel Mustang"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Quelle est la particularité d’Alphonse ?", "answer": ["Âme dans une armure", "Armure"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est Winry Rockbell ?", "answer": ["Mécanicienne", "Winry"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est Scar ?", "answer": ["Tueur de State Alchemists", "Scar"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Quel est le pouvoir de Roy Mustang ?", "answer": ["Flamme", "Fire"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le chimiste de l’armée ?", "answer": ["Alex Louis Armstrong", "Armstrong"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Quel est le frère aîné ?", "answer": ["Edward", "Ed"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est l’homunculus principal ?", "answer": ["Father", "Père"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est Lust ?", "answer": ["Homunculus", "Lust"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est Gluttony ?", "answer": ["Homunculus", "Gluttony"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est Envy ?", "answer": ["Homunculus", "Envy"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le mentor de Roy ?", "answer": ["Fuhrer Bradley", "Bradley"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le scientifique fou ?", "answer": ["Shou Tucker", "Tucker"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Quelle est la pierre philosophale ?", "answer": ["Objet puissant", "Philosopher’s Stone"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le bras droit d’Edward ?", "answer": ["Alphonse", "Al"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est la sœur de Winry ?", "answer": ["None", "Aucune"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le général de l’armée ?", "answer": ["Fuhrer Bradley", "Bradley"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le philosophe légendaire ?", "answer": ["Van Hohenheim", "Hohenheim"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le petit frère d’Edward ?", "answer": ["Alphonse", "Al"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le rival d’Edward ?", "answer": ["Roy Mustang", "Mustang"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le commandant de l’armée ?", "answer": ["Fuhrer Bradley", "Bradley"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le maître de l’alchimie ?", "answer": ["Izumi Curtis", "Izumi"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le dernier homunculus ?", "answer": ["Père", "Father"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui est le médecin de l’armée ?", "answer": ["None", "Aucun"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  {"question": "Q/ Qui aide les frères à récupérer leur corps ?", "answer": ["Winry", "Winry Rockbell"], "manga": "⚙️ Fullmetal Alchemist ⚙️"},
+  
+  {"question": "Q/ Qui est le protagoniste humain de Black Butler ?", "answer": ["Ciel Phantomhive", "Ciel"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le majordome démoniaque ?", "answer": ["Sebastian Michaelis", "Sebastian"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quelle est la profession de Ciel ?", "answer": ["Comte", "Noble"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le but de Sebastian ?", "answer": ["Protéger Ciel", "Servir Ciel"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est la sœur de Ciel ?", "answer": ["Aucune", "None"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le rival de Ciel ?", "answer": ["Undertaker", "Undertaker"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est la secrétaire de Ciel ?", "answer": ["Elizabeth Midford", "Lizzy"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le pouvoir de Sebastian ?", "answer": ["Démon", "Super strength"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le détective qui aide Ciel ?", "answer": ["Meister Grell", "Grell"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quelle est la marque de contrat de Ciel ?", "answer": ["Marque du démon", "Contract Seal"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est la famille ennemie de Ciel ?", "answer": ["Raimon", "None"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est la comtesse amie de Ciel ?", "answer": ["Elizabeth Midford", "Lizzy"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le shinigami principal ?", "answer": ["Grell Sutcliff", "Grell"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le majordome rival ?", "answer": ["Claude Faustus", "Claude"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le style de combat de Sebastian ?", "answer": ["Épée", "Armes blanches"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le mystérieux chirurgien ?", "answer": ["Undertaker", "Undertaker"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est la meilleure amie de Lizzy ?", "answer": ["Aucune", "None"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le rôle de Finnian ?", "answer": ["Jardinier", "Gardener"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le chef de la maison Phantomhive ?", "answer": ["Ciel", "Ciel Phantomhive"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le pouvoir spécial de Sebastian ?", "answer": ["Immortel", "Démon"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le membre scientifique de la maison ?", "answer": ["Snake", "Snake"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le coéquipier de Grell ?", "answer": ["William T. Spears", "Spears"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le type de contrat entre Ciel et Sebastian ?", "answer": ["Démoniaque", "Devil Contract"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le majordome de Claude ?", "answer": ["Ronald Knox", "Knox"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le scientifique fou ?", "answer": ["Snake", "Snake"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui a trahi Ciel dans la série ?", "answer": ["Claude", "Claude Faustus"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Quel est le style de combat de Grell ?", "answer": ["Faucille", "Scythe"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le majordome loyal ?", "answer": ["Sebastian", "Sebastian Michaelis"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est le père de Ciel ?", "answer": ["Vincent Phantomhive", "Vincent"], "manga": "🖤 Black Butler 🖤"},
+  {"question": "Q/ Qui est la maîtresse des arts du feu ?", "answer": ["Aucune", "None"], "manga": "🖤 Black Butler 🖤"},
+  
+  {"question": "Q/ Qui est le protagoniste de Chainsaw Man ?", "answer": ["Denji", "Chainsaw Man"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le partenaire démon de Denji ?", "answer": ["Pochita", "Chien-Démon"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est l’héroïne principale ?", "answer": ["Makima", "Makima-sama"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le collègue de Denji au Département Public de Sécurité ?", "answer": ["Aki Hayakawa", "Aki"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est Power ?", "answer": ["Fiélon démon", "Power"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le pouvoir de Denji ?", "answer": ["Chaînes", "Chainsaw"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le supérieur de Denji ?", "answer": ["Makima", "Commandante Makima"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le but de Makima ?", "answer": ["Contrôler Denji", "Pouvoir absolu"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le pouvoir de Aki ?", "answer": ["Démon de l’Epée", "Epée"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel démon possède Power ?", "answer": ["Blood Fiélon", "Démon du sang"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le rival de Denji ?", "answer": ["Kishibe", "Kishibe-sensei"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le surnom de Denji après sa transformation ?", "answer": ["Chainsaw Man", "Le Démon à tronçonneuse"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le chef de l’organisation de chasse aux démons ?", "answer": ["Makima", "Commandante Makima"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le pouvoir de Pochita ?", "answer": ["Fusion avec Denji", "Chainsaw Devil"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui tue le démon du sang ?", "answer": ["Denji", "Chainsaw Man"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le mentor de Denji ?", "answer": ["Kishibe", "Kishibe-sensei"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quelle arme utilise Denji ?", "answer": ["Tronçonneuse", "Chainsaw"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le vrai nom de Chainsaw Man ?", "answer": ["Denji", "Démon tronçonneuse"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le démon contrôlé par Makima ?", "answer": ["Le Gun Devil", "Gun Devil"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le meilleur ami de Denji ?", "answer": ["Aki", "Kishibe"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le démon du sang ?", "answer": ["Power", "Fiélon"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le démon du pistole ?", "answer": ["Gun Devil", "Gun"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est la première victime de Denji ?", "answer": ["Démon chien", "Fiélon chien"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui sauve Denji au début ?", "answer": ["Pochita", "Fiélon"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le collègue sérieux de Denji ?", "answer": ["Aki", "Hayakawa"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel est le but final de Denji ?", "answer": ["Vivre heureux", "Être libre"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Quel démon dévore la ville ?", "answer": ["Gun Devil", "Gun"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui manipule Denji avec ses émotions ?", "answer": ["Makima", "Commandante Makima"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le démon le plus puissant ?", "answer": ["Chainsaw Man", "Denji"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est le mentor du public de chasse aux démons ?", "answer": ["Kishibe", "Kishibe-sensei"], "manga": "🔪 Chainsaw Man 🔪"},
+  {"question": "Q/ Qui est la rivale de Power ?", "answer": ["None", "Aucun"], "manga": "🔪 Chainsaw Man 🔪"},
+  
+  {"question": "Q/ Qui est le protagoniste principal de Tokyo Revengers ?", "answer": ["Takemichi Hanagaki", "Takemichi"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le leader de Toman ?", "answer": ["Manjiro Sano", "Mikey"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le bras droit de Mikey ?", "answer": ["Ken Ryuguji", "Draken"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est l’ex de Takemichi ?", "answer": ["Hinata Tachibana", "Hina"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le but de Takemichi ?", "answer": ["Sauver Hina", "Changer le futur"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le chef de Moebius ?", "answer": ["Tetta Kisaki", "Kisaki"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Chifuyu Matsuno ?", "answer": ["Bras droit de Takemichi", "Membre de Toman"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le nom du gang rival de Toman ?", "answer": ["Valhalla", "Rival Gang"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le leader de Valhalla ?", "answer": ["Izana Kurokawa", "Izana"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le surnom de Takemichi ?", "answer": ["None", "Aucun"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le fondateur de Toman ?", "answer": ["Mikey", "Manjiro Sano"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui sauve Takemichi dans le passé ?", "answer": ["Naoto Tachibana", "Naoto"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le rêve de Mikey ?", "answer": ["Protéger Toman", "Aucune perte"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Emma Sano ?", "answer": ["Sœur de Mikey", "Emma"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Hakkai Shiba ?", "answer": ["Membre Toman", "Hakkai"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le pouvoir spécial de Takemichi ?", "answer": ["Voyage dans le temps", "Time Travel"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Shuji Hanma ?", "answer": ["Membre de Valhalla", "Hanma"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le chef de Tenjiku ?", "answer": ["Izana Kurokawa", "Izana"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Takashi Mitsuya ?", "answer": ["Capitaine Toman", "Mitsuya"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le chef de Moebius après Kisaki ?", "answer": ["Aucun", "None"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le nom complet de Draken ?", "answer": ["Ken Ryuguji", "Draken"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Takemichi quand il retourne dans le passé ?", "answer": ["Élève du collège", "Takemichi jeune"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est la première victime de Kisaki ?", "answer": ["Hina", "Hinata Tachibana"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le gang de Mikey avant Toman ?", "answer": ["Moebius", "Aucun"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Naoto Tachibana ?", "answer": ["Frère de Hina", "Naoto"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le but final de Takemichi ?", "answer": ["Changer le futur", "Sauver Hina"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le plus fort membre de Toman ?", "answer": ["Mikey", "Manjiro Sano"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Quel est le surnom de Hakkai Shiba ?", "answer": ["None", "Aucun"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est Takemichi face aux ennemis ?", "answer": ["Courageux", "Brave"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  {"question": "Q/ Qui est le rival de Mikey ?", "answer": ["Izana", "Izana Kurokawa"], "manga": "🏍️ Tokyo Revengers 🏍️"},
+  
+  {"question": "Q/ Qui est le protagoniste de Jujutsu Kaisen ?", "answer": ["Yuji Itadori"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quel est le nom de l’objet maudit que Yuji avale ?", "answer": ["Doigt de Sukuna"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est le professeur de Yuji ?", "answer": ["Satoru Gojo"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle technique utilise Gojo pour bloquer ?", "answer": ["Infinity"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Megumi Fushiguro ?", "answer": ["Élève de Jujutsu High"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle technique utilise Megumi ?", "answer": ["Shikigami"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Nobara Kugisaki ?", "answer": ["Élève de Jujutsu High"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle est la technique de Nobara ?", "answer": ["Technique du Marteau et Clou"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Sukuna ?", "answer": ["Roi des Malédictions"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est l’ami d’enfance de Yuji ?", "answer": ["Junpei"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quel est le nom du lycée Jujutsu ?", "answer": ["Tokyo Jujutsu High"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quel est le pouvoir de Sukuna ?", "answer": ["Malédiction suprême"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Mahito ?", "answer": ["Malédiction"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle technique utilise Mahito ?", "answer": ["Transfiguration"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est l’élève le plus fort après Gojo ?", "answer": ["Yuta Okkotsu"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quel est le type de pouvoir de Yuta ?", "answer": ["Malédiction"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est le chef de l’arc des malédictions ?", "answer": ["Suguru Geto"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est le petit frère de Yuji ?", "answer": ["Non mentionné"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quel est le nom complet de Gojo ?", "answer": ["Satoru Gojo"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est le professeur de première année ?", "answer": ["Satoru Gojo"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Toge Inumaki ?", "answer": ["Élève avec malédiction de parole"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle est la capacité de Toge ?", "answer": ["Curses de parole"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Maki Zenin ?", "answer": ["Élève sans pouvoir de malédiction"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle est la spécialité de Maki ?", "answer": ["Armes"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui est Panda ?", "answer": ["Créature artificielle"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Quelle est la capacité spéciale de Panda ?", "answer": ["Transformation et force"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  {"question": "Q/ Qui tue la plupart des malédictions dans Tokyo ?", "answer": ["Yuji et ses amis"], "manga": "🌀 Jujutsu Kaisen 🌀"},
+  
+  {"question": "Q/ Qui est le protagoniste de Black Clover ?", "answer": ["Asta"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le pouvoir magique d’Asta ?", "answer": ["Anti-magie"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le rival d’Asta ?", "answer": ["Yuno"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le nom de la guilde d’Asta ?", "answer": ["Black Bulls"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le capitaine des Black Bulls ?", "answer": ["Yami Sukehiro"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le type de magie de Yuno ?", "answer": ["Vent"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le roi sorcier ?", "answer": ["Wizard King"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est Noelle Silva ?", "answer": ["Membre des Black Bulls"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quelle magie utilise Noelle ?", "answer": ["Eau"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le vice-capitaine des Black Bulls ?", "answer": ["Charmy Pappitson"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le pouvoir de Luck Voltia ?", "answer": ["Foudre"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le membre silencieux mais puissant des Black Bulls ?", "answer": ["Magna Swing"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est Secre Swallowtail ?", "answer": ["Oiseau transformé en humaine"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quelle est la magie d’Asta lorsqu’il utilise son épée ?", "answer": ["Démonique"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le frère d’Asta ?", "answer": ["Inconnu"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le roi de Diamond Kingdom ?", "answer": ["Julius Novachrono"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est l’ennemi principal de l’arc Eye of Midnight Sun ?", "answer": ["Patolli"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est la reine des elfes ressuscitée ?", "answer": ["Licht"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le nom de la sœur de Yuno ?", "answer": ["Lys"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est l’ami de Magna et Luck ?", "answer": ["Finral Roulacase"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le pouvoir de Finral ?", "answer": ["Spatial"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le démon principal du premier arc ?", "answer": ["Liebe"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le mystérieux voleur de magie ?", "answer": ["Patolli"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quelle est la magie de Grey ?", "answer": ["Transformation"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est Yami Sukehiro ?", "answer": ["Capitaine des Black Bulls"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le nom de l’épée anti-magie d’Asta ?", "answer": ["Demon Slayer Sword"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est le capitaine du Crimson Lion ?", "answer": ["Fuegoleon Vermillion"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Qui est Vanessa ?", "answer": ["Membre des Black Bulls"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quelle est la magie de Vanessa ?", "answer": ["Fil Rouge"], "manga": "🌟 Black Clover 🌟"},
+  {"question": "Q/ Quel est le rêve d’Asta ?", "answer": ["Devenir Wizard King"], "manga": "🌟 Black Clover 🌟"},
+  
+  {
+    "question": "Q/ Quelle est la spécialité de Killua en tant qu’assassin ?",
+    "answer": ["Électricité", "Godspeed"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est le frère cadet de Kurapika ?",
+    "answer": ["Inconnu"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est le chef de l’examen Hunter ?",
+    "answer": ["Isaac Netero", "Netero"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le pouvoir spécial de Hisoka basé sur l’élasticité ?",
+    "answer": ["Bungee Gum"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom de l’île où Gon et Killua suivent le jeu vidéo ?",
+    "answer": ["Greed Island"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quelle est la technique du Nen de Kurapika pour chasser la Brigade Fantôme ?",
+    "answer": ["Chaînes de la chaîne de jugement", "Chain Jail"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est le roi des Fourmis Chimères ?",
+    "answer": ["Meruem"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom du manipulateur qui contrôle les autres avec des cartes ?",
+    "answer": ["Biscuit Krueger"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui devient le meilleur ami de Leorio ?",
+    "answer": ["Gon Freecss", "Killua Zoldyck"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est le membre le plus puissant de la Brigade Fantôme ?",
+    "answer": ["Chrollo Lucifer"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  
+  {
+    "question": "Q/ Qui est le dragon slayer légendaire membre de Fairy Tail ?",
+    "answer": ["Igneel"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom du guild mark de Fairy Tail sur la main de Lucy ?",
+    "answer": ["Rose sur la main droite"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la spécialité magique de Gajeel Redfox ?",
+    "answer": ["Fer"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est le Pilier du dragon de feu dans Fairy Tail ?",
+    "answer": ["Natsu Dragneel"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le vrai nom de Laxus Dreyar ?",
+    "answer": ["Laxus Dreyar"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel duo de frères est membre de Fairy Tail ?",
+    "answer": ["Elfman et Mirajane Strauss"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom de la guilde ennemie dirigée par Zero ?",
+    "answer": ["Oración Seis"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est l’ennemi principal de l’arc Tartaros ?",
+    "answer": ["Tartaros"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle magie possède Cobra, le membre de Oración Seis ?",
+    "answer": ["Magie du poison"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la capacité spéciale d’Erza Scarlet ?",
+    "answer": ["Requip", "Changer d’armure"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  
+  {
+    "question": "Q/ Quel est le prénom du héros principal de Hunter x Hunter ?",
+    "answer": ["Gon", "Gon Freecss"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom du meilleur ami de Gon ?",
+    "answer": ["Killua", "Killua Zoldyck"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quelle est la profession que souhaite obtenir Gon ?",
+    "answer": ["Hunter"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom du père de Gon ?",
+    "answer": ["Ging Freecss", "Ging"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quelle est la spécialité de Kurapika ?",
+    "answer": ["Chaînes", "Nen des Chaînes"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est Leorio ?",
+    "answer": ["Médecin", "Hunter Médecin"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom de la famille d’assassins de Killua ?",
+    "answer": ["Zoldyck"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est le frère aîné de Killua qui manipule les aiguilles ?",
+    "answer": ["Illumi Zoldyck", "Illumi"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le pouvoir spécial de Gon et Killua appelé énergie vitale ?",
+    "answer": ["Nen"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est l’ennemi principal lors de l’arc des Fourmis Chimères ?",
+    "answer": ["Meruem"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom du président des Hunters lors de l’examen de Gon ?",
+    "answer": ["Netero", "Isaac Netero"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom de la troupe criminelle où figure Hisoka parfois ?",
+    "answer": ["La Brigade Fantôme", "Genei Ryodan"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Combien de membres compte la Brigade Fantôme ?",
+    "answer": ["13"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le Nen de Hisoka ?",
+    "answer": ["Texture Trompeuse", "Bungee Gum"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le prénom de la sœur de Killua ?",
+    "answer": ["Alluka", "Alluka Zoldyck"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Qui est Chrollo Lucifer ?",
+    "answer": ["Chef de la Brigade Fantôme"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel jeu vidéo Gon et ses amis explorent-ils ?",
+    "answer": ["Greed Island"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quelle couleur prennent les yeux de Kurapika quand il s’énerve ?",
+    "answer": ["Rouge"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quel est le nom du roi des Fourmis Chimères ?",
+    "answer": ["Meruem"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  {
+    "question": "Q/ Quelle est la passion de Gon depuis petit ?",
+    "answer": ["La pêche"],
+    "manga": "🎯 Hunter x Hunter 🎯"
+  },
+  
+  {
+    "question": "Q/ Quel est le prénom du héros principal de Fairy Tail ?",
+    "answer": ["Natsu", "Natsu Dragneel"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom du dragon qui a élevé Natsu ?",
+    "answer": ["Igneel"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle magie utilise Lucy Heartfilia ?",
+    "answer": ["Magie des Esprits Stellaires", "Clés des Esprits"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est le maître de la guilde Fairy Tail au début de l’histoire ?",
+    "answer": ["Makarov Dreyar", "Makarov"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom du chat bleu compagnon de Natsu ?",
+    "answer": ["Happy"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la magie de Grey Fullbuster ?",
+    "answer": ["Magie de la Glace", "Ice Make"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la grande rivale de Fairy Tail ?",
+    "answer": ["Phantom Lord"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Comment s’appelle le frère de Natsu ?",
+    "answer": ["Zeref Dragneel", "Zeref"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est Erza Scarlet surnommée ‘Titania’ ?",
+    "answer": ["La Reine des Fées", "Titania"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la magie de Wendy Marvell ?",
+    "answer": ["Dragon Slayer du Ciel", "Magie du Vent"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la couleur des cheveux de Mirajane Strauss ?",
+    "answer": ["Blanc", "Argenté"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est le frère de Mirajane et Elfman ?",
+    "answer": ["Lisanna Strauss", "Lisanna"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle magie utilise Jellal Fernandes ?",
+    "answer": ["Magie Céleste"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom du roi des esprits célestes lié à Lucy ?",
+    "answer": ["Leo", "Loke"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est Luxus Dreyar pour Makarov ?",
+    "answer": ["Son petit-fils"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est la fille adoptive de Gildarts ?",
+    "answer": ["Cana Alberona", "Cana"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la marque de guilde tatouée sur Natsu ?",
+    "answer": ["Rouge sur l'épaule droite"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Qui est Acnologia ?",
+    "answer": ["Dragon noir", "Le Roi Dragon Noir"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quelle est la première guilde que rejoint Lucy ?",
+    "answer": ["Fairy Tail"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le titre du film dérivé de Fairy Tail sorti en 2012 ?",
+    "answer": ["La prêtresse du Phœnix"],
+    "manga": "⚔️ Fairy Tail ⚔️"
+  },
+  {
+  "question": "Q/ Quel est le nom complet de Nezuko ?",
+  "answer": ["Kamado Nezuko", "Nezuko"],
+  "manga": "⚔️ Demon Slayer ⚔️"
+},
+{
+  "question": "Q/ Quel souffle utilise Shinobu Kocho ?",
+  "answer": ["Souffle de l’insecte"],
+  "manga": "⚔️ Demon Slayer ⚔️"
+},
+{
+  "question": "Q/ Quel est le nom du forgeron du sabre de Tanjiro ?",
+  "answer": ["Haganezuka Hotaru", "Haganezuka"],
+  "manga": "⚔️ Demon Slayer ⚔️"
+},
+{
+  "question": "Q/ Qui est le Pilier de la Brume ?",
+  "answer": ["Muichiro Tokito", "Tokito"],
+  "manga": "⚔️ Demon Slayer ⚔️"
+},
+{
+  "question": "Q/ Comment s’appelle la famille qui soigne Tanjiro après certains combats ?",
+  "answer": ["La famille Urokodaki", "Urokodaki"],
+  "manga": "⚔️ Demon Slayer ⚔️"
+},
+  {
+  "question": "Q/ Quel est le héros numéro 2 avant de devenir numéro 1 ?",
+  "answer": ["Endeavor", "Enji Todoroki"],
+  "manga": "💥 My Hero Academia 💥"
+},
+{
+  "question": "Q/ Quel est le nom de code de Tenya Iida ?",
+  "answer": ["Ingenium"],
+  "manga": "💥 My Hero Academia 💥"
+},
+{
+  "question": "Q/ Quel pouvoir possède Ochaco Uraraka ?",
+  "answer": ["Gravité Zéro", "Zero Gravity"],
+  "manga": "💥 My Hero Academia 💥"
+},
+{
+  "question": "Q/ Qui est le professeur principal de la classe 1-A ?",
+  "answer": ["Shota Aizawa", "Eraserhead"],
+  "manga": "💥 My Hero Academia 💥"
+},
+{
+  "question": "Q/ Quel est le nom du héros numéro 2 après All Might ?",
+  "answer": ["Hawks", "Keigo Takami"],
+  "manga": "💥 My Hero Academia 💥"
+},
+  {
+  "question": "Q/ Quel est le vrai nom de l’Attack Titan ?",
+  "answer": ["Eren Jaeger", "Eren Yeager"],
+  "manga": "🛡️ Attack on Titan 🛡️"
+},
+{
+  "question": "Q/ Quel titan possède Reiner Braun ?",
+    "answer": ["Armored Titan", "Titan Cuirassé"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+},
+{
+  "question": "Q/ Qui est le commandant du Bataillon d’exploration avant Hange ?",
+  "answer": ["Erwin Smith"],
+  "manga": "🛡️ Attack on Titan 🛡️"
+},
+{
+  "question": "Q/ Qui est la demi-sœur adoptive d’Eren ?",
+  "answer": ["Mikasa Ackerman"],
+  "manga": "🛡️ Attack on Titan 🛡️"
+},
+{
+  "question": "Q/ Qui tue Zeke Jaeger ?",
+  "answer": ["Levi Ackerman"],
+  "manga": "🛡️ Attack on Titan 🛡️"
+},
+  {
+  "question": "Q/ Quel est le vrai nom de Goku ?",
+  "answer": ["Kakarot"],
+  "manga": "🐉 Dragon Ball 🐉"
+},
+{
+  "question": "Q/ Qui est le frère de Goku ?",
+  "answer": ["Raditz"],
+  "manga": "🐉 Dragon Ball 🐉"
+},
+{
+  "question": "Q/ Combien de Dragon Balls existe-t-il ?",
+  "answer": ["7"],
+  "manga": "🐉 Dragon Ball 🐉"
+},
+{
+  "question": "Q/ Qui a tué Freezer pour la première fois ?",
+  "answer": ["Trunks du futur", "Trunks"],
+  "manga": "🐉 Dragon Ball 🐉"
+},
+{
+  "question": "Q/ Quel est le nom du fils aîné de Goku ?",
+  "answer": ["Gohan"],
+  "manga": "🐉 Dragon Ball 🐉"
+},
+  {
+  "question": "Q/ Qui est le capitaine de la 6ème division ?",
+  "answer": ["Byakuya Kuchiki"],
+  "manga": "⚔️ Bleach ⚔️"
+},
+{
+  "question": "Q/ Quel est le nom du bankai d’Ichigo ?",
+  "answer": ["Tensa Zangetsu"],
+  "manga": "⚔️ Bleach ⚔️"
+},
+{
+  "question": "Q/ Quel capitaine possède un zanpakutō en forme de glace ?",
+  "answer": ["Toshiro Hitsugaya", "Hitsugaya"],
+  "manga": "⚔️ Bleach ⚔️"
+},
+{
+  "question": "Q/ Qui est l’ancien capitaine de la 5ème division et traître à Soul Society ?",
+  "answer": ["Sosuke Aizen", "Aizen"],
+  "manga": "⚔️ Bleach ⚔️"
+},
+{
+  "question": "Q/ Quel est le nom complet de Rukia ?",
+  "answer": ["Rukia Kuchiki"],
+  "manga": "⚔️ Bleach ⚔️"
+},
+  {
+  "question": "Q/ Qui est le premier membre à rejoindre l’équipage de Luffy ?",
+  "answer": ["Zoro", "Roronoa Zoro"],
+  "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+},
+{
+  "question": "Q/ Quel est le nom du navire avant le Thousand Sunny ?",
+  "answer": ["Going Merry"],
+  "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+},
+{
+  "question": "Q/ Quel personnage est appelé 'Dieu' à Skypiea ?",
+  "answer": ["Ener", "Enel"],
+  "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+},
+{
+  "question": "Q/ Qui est la mère de Luffy ?",
+  "answer": ["Inconnue", "Jamais révélée"],
+  "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+},
+{
+  "question": "Q/ Qui est l’empereur connu comme la 'Créature la plus forte du monde' ?",
+  "answer": ["Kaido"],
+  "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+},
+  {
+  "question": "Q/ Qui est le rival de Rock Lee ?",
+  "answer": ["Neji Hyuga", "Neji"],
+  "manga": "🎌 Naruto 🎌"
+},
+{
+  "question": "Q/ Quel est le nom de la technique signature de Naruto ?",
+  "answer": ["Rasengan"],
+  "manga": "🎌 Naruto 🎌"
+},
+{
+  "question": "Q/ Quel bijuu possède Gaara ?",
+  "answer": ["Shukaku", "Ichibi"],
+  "manga": "🎌 Naruto 🎌"
+},
+{
+  "question": "Q/ Quel membre de l’Akatsuki utilise des marionnettes ?",
+  "answer": ["Sasori"],
+  "manga": "🎌 Naruto 🎌"
+},
+{
+  "question": "Q/ Qui tue Jiraya ?",
+  "answer": ["Pain", "Nagato"],
+  "manga": "🎌 Naruto 🎌"
+},
+  
+  {
+    "question": "Q/ Quel est le vrai nom du héros 'Deku' ?",
+    "answer": ["Izuku Midoriya", "Midoriya Izuku"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Quel est le mentor principal de Midoriya ?",
+    "answer": ["All Might", "Toshinori Yagi"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Quel est le pouvoir de Katsuki Bakugo ?",
+    "answer": ["Explosion"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Quel est le rêve de Midoriya ?",
+    "answer": ["Devenir le plus grand héros", "Numéro 1 des héros"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Qui est le père spirituel de Shoto Todoroki ?",
+    "answer": ["Endeavor", "Enji Todoroki"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Quel est le nom de l’école où étudient les héros ?",
+    "answer": ["UA", "UA High", "Yuei"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Quel est le vrai nom du vilain 'Shigaraki' ?",
+    "answer": ["Tenko Shimura", "Shimura Tenko"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Qui possède le pouvoir One For All avant Midoriya ?",
+    "answer": ["All Might", "Toshinori Yagi"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Quel est le vrai nom du vilain 'All For One' ?",
+    "answer": ["Shigaraki Yoichi", "Yoichi Shigaraki"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  {
+    "question": "Q/ Qui est l’amie d’enfance de Midoriya et Bakugo ?",
+    "answer": ["Ochaco Uraraka", "Uraraka"],
+    "manga": "💥 My Hero Academia 💥"
+  },
+  
+  {
+    "question": "Q/ Quel est le prénom de la sœur de Tanjiro ?",
+    "answer": ["Nezuko"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom complet du héros principal ?",
+    "answer": ["Kamado Tanjiro", "Tanjiro"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Qui est le chef des pourfendeurs de démons ?",
+    "answer": ["Kagaya Ubuyashiki", "Ubuyashiki"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Quel souffle utilise Tanjiro au début de l’histoire ?",
+    "answer": ["Souffle de l'eau", "Breath of Water"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le démon principal, responsable de la mort de la famille de Tanjiro ?",
+    "answer": ["Muzan", "Muzan Kibutsuji"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le nom de famille de Zenitsu ?",
+    "answer": ["Agatsuma Zenitsu", "Zenitsu"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Inosuke porte un masque en forme de quoi ?",
+    "answer": ["Tête de sanglier", "Sanglier"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Qui est le Pilier de la Flamme ?",
+    "answer": ["Kyojuro Rengoku", "Rengoku"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Quel souffle utilise Mitsuri Kanroji ?",
+    "answer": ["Souffle de l'amour", "Breath of Love"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  {
+    "question": "Q/ Qui devient le Pilier du Son ?",
+    "answer": ["Tengen Uzui", "Uzui"],
+    "manga": "⚔️ Demon Slayer ⚔️"
+  },
+  [
+  {
+    "question": "Q/ Quel est le nom complet d'Ichigo ?",
+    "answer": ["Ichigo Kurosaki"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quel capitaine possède un bankai nommé Senbonzakura Kageyoshi ?",
+    "answer": ["Byakuya", "Byakuya Kuchiki"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le pouvoir principal de Rukia ?",
+    "answer": ["Glace", "Pouvoir de glace"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le prénom du père d’Ichigo ?",
+    "answer": ["Isshin"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Qui est le chef de la division 12 du Gotei 13 ?",
+    "answer": ["Mayuri", "Mayuri Kurotsuchi"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quel personnage utilise le zanpakuto 'Zangetsu' ?",
+    "answer": ["Ichigo", "Ichigo Kurosaki"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quel est le bankai de Toshiro Hitsugaya ?",
+    "answer": ["Daiguren Hyorinmaru"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Qui a trahi le Gotei 13 pour devenir le grand méchant ?",
+    "answer": ["Aizen", "Sosuke Aizen"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quel capitaine est surnommé le 'Kenpachi' ?",
+    "answer": ["Zaraki", "Kenpachi Zaraki"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+  {
+    "question": "Q/ Quelle organisation oppose les Shinigamis et possède les Espadas ?",
+    "answer": ["Arrancars", "Espadas"],
+    "manga": "⚔️ Bleach ⚔️"
+  },
+
+  {
+    "question": "Q/ Quel est le nom complet de Goku ?",
+    "answer": ["Son Goku", "Kakarot"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Qui est le prince des Saiyans ?",
+    "answer": ["Vegeta"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Qui a créé les Dragon Balls sur Terre ?",
+    "answer": ["Kami"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Quel est le nom du fils aîné de Goku ?",
+    "answer": ["Gohan"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Quel est le nom du frère de Goku ?",
+    "answer": ["Raditz"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Qui a vaincu Cell ?",
+    "answer": ["Gohan"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Quel est le nom du mentor de Goku enfant ?",
+    "answer": ["Maître Roshi", "Kame Sennin"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Quelle est la transformation légendaire des Saiyans ?",
+    "answer": ["Super Saiyan"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Qui a détruit la planète Vegeta ?",
+    "answer": ["Freezer", "Frieza"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+  {
+    "question": "Q/ Quel est le nom du créateur des Dragon Balls de Namek ?",
+    "answer": ["Guru"],
+    "manga": "🐉 Dragon Ball 🐉"
+  },
+
+  {
+    "question": "Q/ Quel est le vrai nom de Eren ?",
+    "answer": ["Eren Yeager", "Eren Jaeger"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Qui est la sœur adoptive d’Eren ?",
+    "answer": ["Mikasa", "Mikasa Ackerman"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Qui est le meilleur ami d’Eren ?",
+    "answer": ["Armin", "Armin Arlert"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Quel est le nom du Titan de Reiner ?",
+    "answer": ["Titan Cuirassé", "Armored Titan"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Qui est le capitaine du Bataillon d’Exploration ?",
+    "answer": ["Levi", "Levi Ackerman"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Quel est le Titan de Zeke ?",
+    "answer": ["Titan Bestial", "Beast Titan"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Quelle est la spécialité d’Hange Zoë ?",
+    "answer": ["Titans", "Étudier les Titans"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Quel est le nom du Titan que possède Eren ?",
+    "answer": ["Titan Assaillant", "Attack Titan"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Qui est la véritable identité du Titan Féminin ?",
+    "answer": ["Annie", "Annie Leonhart"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+  {
+    "question": "Q/ Qui est le commandant du Bataillon d’Exploration avant Erwin ?",
+    "answer": ["Keith Shadis"],
+    "manga": "🛡️ Attack on Titan 🛡️"
+  },
+    
+  {
+    "question": "Q/ Qui est le père de Naruto ?",
+    "answer": ["Minato", "Minato Namikaze"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Qui a été le premier sensei de Naruto ?",
+    "answer": ["Iruka", "Iruka Umino"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom du démon renard scellé en Naruto ?",
+    "answer": ["Kurama", "Kyubi"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Quel est le clan de Sasuke ?",
+    "answer": ["Uchiha"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Qui a tué Itachi ?",
+    "answer": ["Sasuke"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom complet de Kakashi ?",
+    "answer": ["Kakashi Hatake"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Qui est la mère de Naruto ?",
+    "answer": ["Kushina", "Kushina Uzumaki"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Quel personnage possède le Byakugan ?",
+    "answer": ["Hinata", "Neji", "Hyuga"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Quel est le vrai prénom du maître de Gaï ?",
+    "answer": ["Might Dai"],
+    "manga": "🎌 Naruto 🎌"
+  },
+  {
+    "question": "Q/ Qui devient le 5ème Hokage ?",
+    "answer": ["Tsunade"],
+    "manga": "🎌 Naruto 🎌"
+  },
+
+  {
+    "question": "Q/ Quel est le vrai nom de Luffy ?",
+    "answer": ["Monkey D. Luffy", "Luffy"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Qui est le frère de Ace ?",
+    "answer": ["Luffy", "Sabo"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Quel est le nom du sabreur de l’équipage du Chapeau de paille ?",
+    "answer": ["Zoro", "Roronoa Zoro"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Quel fruit du démon Luffy a-t-il mangé ?",
+    "answer": ["Gomu Gomu no Mi", "Hito Hito no Mi modèle Nika"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Qui est le médecin de l’équipage ?",
+    "answer": ["Chopper", "Tony Tony Chopper"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Qui est la navigatrice de l’équipage ?",
+    "answer": ["Nami"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Qui est le cuisinier de l’équipage ?",
+    "answer": ["Sanji", "Vinsmoke Sanji"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Comment s’appelle le frère juré de Luffy et Ace ?",
+    "answer": ["Sabo"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Quel est le rêve de Luffy ?",
+    "answer": ["Devenir le Roi des Pirates", "Roi des Pirates"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  },
+  {
+    "question": "Q/ Quel est le nom complet de Barbe Blanche ?",
+    "answer": ["Edward Newgate"],
+    "manga": "🏴‍☠️ One Piece 🏴‍☠️"
+  }
+    
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+  
+  
 ]
