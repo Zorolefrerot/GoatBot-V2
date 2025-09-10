@@ -465,9 +465,233 @@
     "question": "Que utilisa Shou Tucker pour créer sa première chimère parlante ?",
     "answer": ["sa femme", "femme"],
     "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  
+  {
+    "question": "Q/ Combien d'équipe y avait il au début de la sélection ninja de classe moyenne ?",
+    "answer": ["51", "cinquante-et-une"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Selon ino, quelles sont les deux choses que Sakura a qui sont hors du commun ?",
+    "answer": ["la superficie de son front et son intelligence", "front grand et intelligence"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Combien des membres étai reçu a la première épreuve de l'examen de sélection ninja de classe moyenne ?",
+    "answer": ["78", "soixante-dix-huit"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Sous la direction de qui étai la seconde épreuve de l'examen de sélection ninja de classe moyenne ?",
+    "answer": ["Anko mitarashi", "anko"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Dans quelle zone d'entraînement s'était déroulée la seconde épreuve de l'examen de sélection ninja ?",
+    "answer": ["44", "forêt de la mort"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Combien des portes a la zone d'entraînement 44 ?",
+    "answer": ["44", "quarante-quatre"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Combiné de temps devrait durer la seconde épreuve de l'examen de sélection moyenne ninja ?",
+    "answer": ["120 heures", "5 jours"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de kiba ?",
+    "answer": ["16", "seize"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de Shikamaru ?",
+    "answer": ["27", "vingt-sept"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de Naruto ?",
+    "answer": ["12", "douze"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de ninja d'oto ?",
+    "answer": ["20", "vingt"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de Gaara ?",
+    "answer": ["6", "six"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de Kabuto ?",
+    "answer": ["38", "trente-huit"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de ninja de kusa ?",
+    "answer": ["15", "quinze"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la seconde épreuve, quelle porte étai attribué à l'équipe de Neji ?",
+    "answer": ["41", "quarante-et-un"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Comment se nomme le chien de Kiba ?",
+    "answer": ["Akamaru", "aka"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Qui sont les 3 ninjas d'oto à participer à l'examen de sélection moyenne ninja ?",
+    "answer": ["Zaku, Dosu, Kin", "zaku et dosu et kin"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle est la première technique de feu que Sasuke utilise durant la seconde épreuve ?",
+    "answer": ["Katon la technique de la balsamine", "katon balsamine"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Où Naruto place précisément son étui à shuriken ?",
+    "answer": ["jambes droites", "sur ses jambes"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Comment Sasuke se libère de l'aura meurtrière du ninja du village de Kusa ?",
+    "answer": ["s'entaille la jambe", "se coupe la jambe"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle technique de Katon Sasuke utilise pour calciné le visage du ninja de Kusa ?",
+    "answer": ["Katon le feu du dragon", "feu du dragon"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Comment s'appelle le frère de Sasuke ?",
+    "answer": ["Itachi", "Uchiha Itachi"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quel est le niveau de dangerosité de Orochimaru ?",
+    "answer": ["S", "s"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle technique interdite Orochimaru a appris à Anko ?",
+    "answer": ["Ninpo la double mort des serpents", "double mort serpents"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Habituellement, l'homme exploite combien de pourcent de sa capacité musculaire ?",
+    "answer": ["20", "vingt"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle condition Gaï donne à Lee avant d'utiliser la fleur de lotus ?",
+    "answer": ["protéger un être cher", "sauver un proche"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Grâce à quoi Dosu a pu faire saigné Lee dans son oreille sans le toucher ?",
+    "answer": ["puissance du son", "ondes sonores"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Au-delà de combien de décibel le tympan humain se déchire-t-il ?",
+    "answer": ["150", "cent cinquante"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Pourquoi Choji s'est-il mis gravement en colère contre Zaku ?",
+    "answer": ["il lui a dit qu'il est gros", "insulte sur son poids"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle technique Zaku utilise pour bloquer le Boulet Humain de Choji ?",
+    "answer": ["ondes cinglante", "onde cinglante"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Pourquoi Sakura considère Ino comme une rivale ?",
+    "answer": ["elle est aussi amoureuse de Sasuke", "même intérêt pour Sasuke"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle technique Ino utilise pour pénétrer dans le corps de Kin ?",
+    "answer": ["Ninpo transposition", "transposition corporelle"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Durant la deuxième épreuve, de quel parchemin les ninjas d'Oto étai en possession ?",
+    "answer": ["terre", "parchemin terre"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Combien de minutes a pris l'équipe de Gaara pour arriver à la tour ?",
+    "answer": ["97", "quatre-vingt-dix-sept"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Combien de kilomètres séparent les portes à la tour dans la zone d'entraînement 44 ?",
+    "answer": ["10", "dix"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ De combien de millimètres d'épaisseur les aiguilles du ninja du village d'Amée pouvaient transpercer des plaques d'acier ?",
+    "answer": ["5", "cinq"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quelle technique Gaara utilise pour tuer le ninja du village d'Amée ?",
+    "answer": ["tombeau du désert", "désert tombeau"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ A quelle heure avait débuté la deuxième épreuve de l'examen de genin ?",
+    "answer": ["14h30", "14:30"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Qui vient empêcher Naruto d'ouvrir le rouleau terre donné par Anko ?",
+    "answer": ["Kabuto", "orochimaru espion"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ De quel village étaient les ninjas qui ont ouvert leurs rouleaux ciel ?",
+    "answer": ["Konoha", "village caché de la feuille"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Qui est l'espion d'Orochimaru durant la deuxième épreuve ?",
+    "answer": ["Kabuto", "Kabuto Yakushi"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Combien de participants ont passé la deuxième épreuve de l'examen de genin ?",
+    "answer": ["21", "vingt-et-un"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Qui a été désigné pour arbitrer les rencontres de la 3ème épreuve ?",
+    "answer": ["Hayate Gekko", "Hayate"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Quel ninja de Konoha abandonne avant le début du préliminaire de la 3ème épreuve ?",
+    "answer": ["Kabuto", "Kabuto Yakushi"],
+    "manga": "🎌Naruto🎌"
+  },
+  {
+    "question": "Q/ Lors de l'épreuve de genin, qui est l'espion d'Orochimaru hormis Kabuto ?",
+    "answer": ["Yoroi", "Yoroi Konoha"],
+    "manga": "🎌Naruto🎌"
   }
-    
   
-  
-  
+   
 ]
