@@ -1,1 +1,121 @@
-
+[
+  {
+    "question": "Q/ Quel punition Lucy donne à Natsu une fois arrivé à Edolas ?",
+    "answer": ["moulinette de la mort de lucy", "moulinette"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Comment s'appelle la petite sœur de Mirajane ?",
+    "answer": ["lisana", "lisanna"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Sugar Boy est le commandant de quelle unité magique des forces royales d'Edolas ?",
+    "answer": ["4em", "quatrième"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Dans quel cristal étaient les mages d'Earthland absorbés à Edolas ?",
+    "answer": ["cristal lacrima géant", "lacrima géant"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom complet de la chasseuse de fées à Edolas ?",
+    "answer": ["erza knightwalker", "erza"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Qui est le commandant de la 3e unité magique d'Edolas ?",
+    "answer": ["hughes", "commandant hughes"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Qui est le chef d'état major des forces d'Edolas ?",
+    "answer": ["bayro", "byro"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Qui est le commandant de la 1ère unité magique d'Edolas ?",
+    "answer": ["panther lily", "lily"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Comment s'appelle l'aide de camp du chef d'état major d'Edolas ?",
+    "answer": ["koko", "coco"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Qui est Faust ?",
+    "answer": ["roi d'edolas", "faust"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom de l'exceed de Wendy ?",
+    "answer": ["carla", "charle"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Qui est le chef de garde d'Extalia ?",
+    "answer": ["nichiya", "capitaine nichiya"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Comment est appelé le royaume des exceeds ?",
+    "answer": ["extalia", "royaume des exceeds"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Comment s'appelle la reine des exceeds ?",
+    "answer": ["chagot", "shagotte"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ À quoi compare-t-on les exceeds ?",
+    "answer": ["anges", "des anges"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom du père de Mistgun ?",
+    "answer": ["faust", "roi d'edolas"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom du père de Happy ?",
+    "answer": ["lucky", "lucky happy"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Quel est le nom de la mère de Happy ?",
+    "answer": ["mar", "mama mar"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Quelle est la plus ancienne membre de Fairy Tail ?",
+    "answer": ["kanna alperona", "kanna"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  {
+    "question": "Q/ Qui fut le premier maître de Fairy Tail ?",
+    "answer": ["mavis vermillion", "mavis"],
+    "manga": "🎌 Fairy Tail 🎌"
+  },
+  
+  { "question": "Quelle route emprunte Lucy et Kanna lors de la première épreuve sur l'île Tenrô ? 🎌Fairy Tail🎌", "answer": ["C", "Route C"] },
+  { "question": "Qui sont les membres de la bande de Raijin ? 🎌Fairy Tail🎌", "answer": ["Evergreen, Bixrow, Fried", "Bixrow, Evergreen, Fried"] },
+  { "question": "Qui utilise la technique 'Cartes escrocs sexy' ? 🎌Fairy Tail🎌", "answer": ["Kanna", "Cana"] },
+  { "question": "Qui est l'esprit du Verseau de Lucy ? 🎌Fairy Tail🎌", "answer": ["Aquarius", "Aquaris"] },
+  { "question": "Quelle est l'armure aquatique de Erza ? 🎌Fairy Tail🎌", "answer": ["Neptune", "Armure Neptune"] },
+  { "question": "Quelle est le nom de l'attaque la plus puissante de Natsu utilisée contre Gildarts sur l'île Tenrô ? 🎌Fairy Tail🎌", "answer": ["Lotus Pourpre", "Technique secrète du chasseur de dragon"] },
+  { "question": "Pourquoi l'île Tenrô est-elle sacrée pour Fairy Tail ? 🎌Fairy Tail🎌", "answer": ["Mavis", "Mavis Vermillon"] },
+  { "question": "Quel mage est surnommé 'Le mage noir' ? 🎌Fairy Tail🎌", "answer": ["Zeleph", "Zeref"] },
+  { "question": "Qui est le maître de la guilde clandestine de Grimoire Heart ? 🎌Fairy Tail🎌", "answer": ["Hadès", "Precht"] },
+  { "question": "Quelle est la guilde la plus puissante de Fiore ? 🎌Fairy Tail🎌", "answer": ["Fairy Tail", "FT"] },
+  { "question": "De quelle alliance les Oracion Seis sont-ils l'un des piliers ? 🎌Fairy Tail🎌", "answer": ["Baram", "Alliance Baram"] },
+  { "question": "Qui vient aider Reby lorsqu'elle est attaquée par Yomazu et Kawazu ? 🎌Fairy Tail🎌", "answer": ["Gadjil", "Gajeel"] },
+  { "question": "Qui utilise Egg Buster ? 🎌Fairy Tail🎌", "answer": ["Kawazu", "Kawa"] },
+  { "question": "Qui utilise Morsure Hurlante ? 🎌Fairy Tail🎌", "answer": ["Yomazu", "Yoma"] },
+  { "question": "Quelle est la bande la plus puissante de la guilde Grimoire Heart ? 🎌Fairy Tail🎌", "answer": ["Sept Frères du Purgatoire", "Purgatoire"] },
+  { "question": "Qui est la magicienne du temps de Grimoire Heart ? 🎌Fairy Tail🎌", "answer": ["Ultia", "Ultear"] },
+  { "question": "Qui est le premier des Sept Frères du Purgatoire à arriver sur l'île Tenrô ? 🎌Fairy Tail🎌", "answer": ["Azuma", "Azuma-san"] }
+  
+]
