@@ -314,7 +314,159 @@
     "question": "Qui sauve Sado Yasutora de Di Roy ?",
     "answer": ["ichigo"],
     "manga": "🎌Bleach🎌"
+  },
+  
+  {
+    "question": "Quelles sont les deux choses que pouvait faire l'alchimiste de glace avec l'eau au début du manga ?",
+    "answer": ["congélation", "ebullition"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Comment est surnommé Edward ?",
+    "answer": ["l'alchimiste fullmetal", "fullmetal"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est le nom de la femme et de la fille de Maes Hughes ?",
+    "answer": ["gracia", "elicia"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est le pourcentage d'eau contenu dans le corps humain ?",
+    "answer": ["70", "70%"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Qui est l'alchimiste de flamme ?",
+    "answer": ["roy mustang", "mustang"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Qu'appelle-t-on un chien de l'armée ?",
+    "answer": ["un alchimiste d'état", "alchimiste d'état"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quelle est la science qui permet de comprendre, de décomposer et de recomposer la matière ?",
+    "answer": ["l'alchimie", "alchimie"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est le tabou absolu de l'alchimie ?",
+    "answer": ["la transmutation humaine", "transmutation humaine"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Grâce à quoi Edward et Alphonse ont appris l'alchimie ?",
+    "answer": ["des livres", "livres"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Comment est morte la mère de Edward et Alphonse ?",
+    "answer": ["grave maladie", "maladie"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "En quelle année est décédée Trisha Elric ?",
+    "answer": ["1904", "an 1904"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "En quelle année est née Trisha Elric ?",
+    "answer": ["1878", "an 1878"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "À quel âge est morte la mère de Edward et Alphonse ?",
+    "answer": ["26", "26 ans"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Comment est appelé le mécanisme placé dans le bras de Edward ?",
+    "answer": ["auto-mail", "automail"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Combien de temps devrait prendre l'opération et la rééducation du bras et de la jambe d'Edward ?",
+    "answer": ["3 ans", "trois ans"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est l'objet qui atteste du titre d'alchimiste d'état d'Edward ?",
+    "answer": ["une montre d'argent", "montre d'argent"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Qui est venu dans la ville de Lior pour enseigner la parole de dieu ?",
+    "answer": ["cornello", "père cornello"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quelle est la religion qui intéresse le plus Edward ?",
+    "answer": ["athée", "il est athée"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est le nom de la fille qui accueille Edward et Alphonse au temple du père Cornello ?",
+    "answer": ["rose", "rosé"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est l'objet très particulier, l'amplificateur qui permet à n'importe quel alchimiste de réaliser l'impossible ?",
+    "answer": ["pierre philosophale", "la pierre philosophale"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Pourquoi Rose avait-elle décidé de suivre le père Cornello ?",
+    "answer": ["il lui avait promis de ressusciter son amour", "pour revoir son amour"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "À quelle créature Cornello fait-il appel pour combattre les frères Elric ?",
+    "answer": ["une chimère", "chimère"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel moyen de transport les frères Elric ont-ils utilisé pour arriver à Lior ?",
+    "answer": ["le train", "train"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Comment s'appelle la grand-mère de Winry Rockbell ?",
+    "answer": ["pinako rockbell", "pinako"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Comment Shou Tucker est-il devenu alchimiste d'état ?",
+    "answer": ["il a créé une chimère qui comprend le langage humain", "chimère parlante"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quelle est la phrase répétitive de la première chimère parlante de Shou Tucker ?",
+    "answer": ["je veux mourir", "je veux mourir !"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est le surnom de Shou Tucker ?",
+    "answer": ["l'alchimiste tisseur de vie", "tisseur de vie"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "À quel âge Edward a-t-il essayé de transmuter sa mère ?",
+    "answer": ["11", "11 ans"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Quel est le nom du chien de Nina ?",
+    "answer": ["alexander", "alexandre"],
+    "manga": "🎌Fullmetal Alchemist🎌"
+  },
+  {
+    "question": "Que utilisa Shou Tucker pour créer sa première chimère parlante ?",
+    "answer": ["sa femme", "femme"],
+    "manga": "🎌Fullmetal Alchemist🎌"
   }
+    
   
   
   
