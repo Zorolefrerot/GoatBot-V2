@@ -5,8 +5,8 @@ const activeSessions = {};
 
 module.exports = {
   config: {
-    name: "quizz",
-    aliases: ["quiz", "qg"],
+    name: "protagoniste",
+    aliases: ["prota", "qp"],
     role: "0",
     author: "Merdi Madimba",
     version: "3.0",
