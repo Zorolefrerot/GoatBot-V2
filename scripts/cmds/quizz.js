@@ -90,8 +90,8 @@ module.exports = {
     // === CHOIX DU NOMBRE DE QUESTIONS ===
     if (session.status === "choosingQuestions" && !isNaN(body)) {
       const nbQuestions = parseInt(body);
-      if (nbQuestions <= 0 || nbQuestions > 50) {
-        return message.reply("⚠️ Choisissez un nombre valide entre 1 et 50.");
+      if (nbQuestions <= 0 || nbQuestions > 100) {
+        return message.reply("⚠️ Choisissez un nombre valide entre 1 et 100.");
       }
 
       const filePath = path.join(__dirname, "culture_generale_questions.json");
