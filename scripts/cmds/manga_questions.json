@@ -168,7 +168,154 @@
   { "question": "Quel est le nom de la bécane de Magna ? 🎌Black Clover🎌", "answer": ["Crazy Cyclone", "Cyclone fou"] },
   { "question": "Selon Asta, quelle est sa propre magie ? 🎌Black Clover🎌", "answer": ["détermination", "volonté"] },
   { "question": "Qui motiva Magna pour passer l’examen ? 🎌Black Clover🎌", "answer": ["M. Salim", "Salim"] },
-  { "question": "Quel est le nom du petit-fils de Salim à Saussy ? 🎌Black Clover🎌", "answer": ["Nick", "Nicky"] }
+  { "question": "Quel est le nom du petit-fils de Salim à Saussy ? 🎌Black Clover🎌", "answer": ["Nick", "Nicky"] },
+  
+  {
+    "question": "Qui est le premier arrancar vu dans l'animé ?",
+    "answer": ["grand fisher"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel est le chiffre écrit sur la porte de la chambre de Ichigo ?",
+    "answer": ["15"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Lors de l'arrivée de Ulquiorra sur terre, pourquoi absorbe-t-il l'énergie spirituelle des humains aux alentours ?",
+    "answer": ["il n'aimait pas leurs têtes"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Une fois Ichigo rentré sur terre après les combats contre les bounts, qu'est-ce que Tatsuki remarque sur lui ?",
+    "answer": ["un pendentif avec un crâne"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "De quel type d'être spirituel fait partie Shinji Hirako ?",
+    "answer": ["vizard"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Il existe combien de type de Menos ?",
+    "answer": ["3"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "De quel type de Menos font partie les Menos Grande ?",
+    "answer": ["gillian"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui sont ceux envoyés par Yamamoto sur terre pour aider Ichigo à vaincre les arrancar ?",
+    "answer": ["yumichika", "renji", "hitsugaya", "rangiku", "ikkaku", "rukia"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel est le nom du zanpakuto de Urahara ?",
+    "answer": ["benihime"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quelle condition Ryuken donne à Uryu s’il voulait reprendre ses pouvoirs de Quincy ?",
+    "answer": ["ne plus se mêler des affaires des shinigami"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui créa les pilules artificielles Liline, Claude et Nova ?",
+    "answer": ["kisuke"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui vient aider Ichigo lors de son premier affrontement contre Ulquiorra ?",
+    "answer": ["kisuke", "yoruichi"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "De qui Ikkaku Madarame a-t-il le plus peur ?",
+    "answer": ["yachiru"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Comment se nomme la doll de Kariya ?",
+    "answer": ["messer"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "A quoi consiste le pouvoir de Liline ?",
+    "answer": ["créer des illusions"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Que remarque la classe de Ichigo quand on demandait à Shinji d'écrire son nom au tableau ?",
+    "answer": ["c'était écrit à l'envers"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel bount possède une doll nommée Nieder ?",
+    "answer": ["yoshi"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel était l'ancien métier de Kuga ?",
+    "answer": ["forgeron"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel est le mot à prononcer pour qu'un bount invoque sa doll ?",
+    "answer": ["zeige dish"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel est le nom de la dernière forme de Suzumushi ?",
+    "answer": ["enma korogi"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel scientifique est à l'origine de la création des bounts ?",
+    "answer": ["renta'o"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Comment s'appelle la fée de Orihime qui lui aide à faire le bouclier du ciel unique ?",
+    "answer": ["tsubaki"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Quel est le nom du bankai de Soi Fon ?",
+    "answer": ["jikuho raikoben"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Comment s'appelle la clinique de la famille Kurosaki ?",
+    "answer": ["clinique kurosaki"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Comment s'appelle le magasin de Kisuke ?",
+    "answer": ["magasin urahara"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui sont les protecteurs spirituels du monde des humains ?",
+    "answer": ["shinigami"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui est l'arrancar Undecimo (11) ?",
+    "answer": ["shaolon qufang"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui est le capitaine de la dixième division ?",
+    "answer": ["toshiro hitsugaya"],
+    "manga": "🎌Bleach🎌"
+  },
+  {
+    "question": "Qui sauve Sado Yasutora de Di Roy ?",
+    "answer": ["ichigo"],
+    "manga": "🎌Bleach🎌"
+  }
+  
   
   
 ]
