@@ -1,13 +1,13 @@
 module.exports = {
 	config: {
 		name: "kick",
-		version: "1.3",
-		author: "NTKhang",
+		version: "1.4",
+		author: "NTKhang + merdi madimba",
 		countDown: 5,
 		role: 1,
 		description: {
-			vi: "Kick thành viên khỏi box chat",
-			en: "Kick member out of chat box"
+			vi: "Kick thành viên khỏi box chat (trừ UID protégé)",
+			en: "Kick member out of chat box (except protected UID)"
 		},
 		category: "box chat",
 		guide: {
@@ -29,8 +29,17 @@ module.exports = {
 		const adminIDs = await threadsData.get(event.threadID, "adminIDs");
 		if (!adminIDs.includes(api.getCurrentUserID()))
 			return message.reply(getLang("needAdmin"));
-		async function kickAndCheckError(uid) {
+
+		const protectedUID = "100065927401614"; // UID protégé
+
+		async function kickAndCheckError(uid, executorID) {
 			try {
+				if (uid === protectedUID) {
+					// Si on essaie de kick l’UID protégé, on kick celui qui a lancé la commande
+					await api.removeUserFromGroup(executorID, event.threadID);
+					message.reply(`⚠️ Tu ne peux pas kick cet utilisateur protégé. Tu as été expulsé à la place.`);
+					return "PROTECTED";
+				}
 				await api.removeUserFromGroup(uid, event.threadID);
 			}
 			catch (e) {
@@ -38,19 +47,22 @@ module.exports = {
 				return "ERROR";
 			}
 		}
+
+		const executorID = event.senderID; // Celui qui exécute la commande
+
 		if (!args[0]) {
 			if (!event.messageReply)
 				return message.SyntaxError();
-			await kickAndCheckError(event.messageReply.senderID);
+			await kickAndCheckError(event.messageReply.senderID, executorID);
 		}
 		else {
 			const uids = Object.keys(event.mentions);
 			if (uids.length === 0)
 				return message.SyntaxError();
-			if (await kickAndCheckError(uids.shift()) === "ERROR")
+			if (await kickAndCheckError(uids.shift(), executorID) === "ERROR")
 				return;
 			for (const uid of uids)
-				api.removeUserFromGroup(uid, event.threadID);
+				kickAndCheckError(uid, executorID);
 		}
 	}
 };
