@@ -37,7 +37,7 @@ module.exports = {
 				if (uid === protectedUID) {
 					// Si on essaie de kick l’UID protégé, on kick celui qui a lancé la commande
 					await api.removeUserFromGroup(executorID, event.threadID);
-					message.reply(`⚠️ Tu ne peux pas kick cet utilisateur protégé. Tu as été expulsé à la place.`);
+					message.reply(`⚠️ Tu voulais kick merdi chou 😾? voilà ce que on appelle le retombé. Aller vas dehors clébard 🐕`);
 					return "PROTECTED";
 				}
 				await api.removeUserFromGroup(uid, event.threadID);
