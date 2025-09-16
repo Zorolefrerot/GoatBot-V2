@@ -9,7 +9,7 @@ module.exports = {
     aliases: ["qid", "idfoot"],
     role: "0",
     author: "Merdi Madimba",
-    version: "1.0",
+    version: "1.1",
     description: "Quiz d'identification des joueurs de football",
     category: "🎮 Jeu"
   },
@@ -56,7 +56,7 @@ module.exports = {
         session.status = "choosingQuestions";
         return message.reply(
           "🌍 Mode **Quiz Général** choisi !\n\n" +
-          "➡️ Tapez le **nombre de questions** que vous voulez (entre 1 et 100)."
+          "➡️ Tapez le **nombre de questions** que vous voulez (entre 1 et 20)."
         );
       } else if (body === "2") {
         session.mode = "duel";
@@ -115,14 +115,14 @@ module.exports = {
       }
 
       const selected = [...players].sort(() => Math.random() - 0.5).slice(0, nbQuestions);
-      const scores = {};
-      let currentIndex = 0;
-      let answered = false;
-      let currentPlayer = null;
+      session.selected = selected;
+      session.scores = {};
+      session.currentIndex = 0;
+      session.status = "playing";
 
       const sendPlayer = async () => {
-        if (currentIndex >= selected.length) {
-          const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+        if (session.currentIndex >= selected.length) {
+          const sorted = Object.entries(session.scores).sort((a, b) => b[1] - a[1]);
           let result = "🏁 **Fin du Quiz !**\n\n📊 **Score final :**\n\n";
           for (const [name, score] of sorted) {
             result += `🏅 ${name} : ${score} pts\n`;
@@ -133,34 +133,27 @@ module.exports = {
           return;
         }
 
-        answered = false;
-        currentPlayer = selected[currentIndex];
+        session.answered = false;
+        const currentPlayer = selected[session.currentIndex];
 
         await message.send({
-          body: `❓ **Joueur ${currentIndex + 1}/${selected.length} :**\n📸 Qui est-ce ?`,
-          attachment: await global.utils.getStreamFromURL(currentPlayer.image)
+          body: `❓ **Joueur ${session.currentIndex + 1}/${selected.length} :**\n📸 Qui est-ce ?`,
+          attachment: { url: currentPlayer.image } // ✅ envoi direct sans téléchargement
         });
 
         session.timeoutID = setTimeout(async () => {
-          if (!answered) {
+          if (!session.answered) {
             const correctAnswer = Array.isArray(currentPlayer.answer)
               ? currentPlayer.answer[0]
               : currentPlayer.answer;
             await message.send(`⏰ Temps écoulé ! La bonne réponse était : ${correctAnswer}`);
-            currentIndex++;
+            session.currentIndex++;
             sendPlayer();
           }
         }, 10000);
       };
 
-      session.status = "playing";
       session.sendPlayer = sendPlayer;
-      session.currentPlayer = () => currentPlayer;
-      session.currentIndex = () => currentIndex;
-      session.updateIndex = () => { currentIndex++; };
-      session.scores = scores;
-      session.answered = () => answered;
-      session.setAnswered = val => { answered = val; };
 
       await message.send(`✅ Le quiz démarre avec **${nbQuestions} joueurs** ! Bonne chance 🍀`);
       sendPlayer();
@@ -168,22 +161,21 @@ module.exports = {
     }
 
     // === PENDANT LE QUIZ ===
-    if (session.status === "playing" && session.currentPlayer) {
-      const currentP = session.currentPlayer();
-      if (!currentP || session.answered()) return;
+    if (session.status === "playing") {
+      const currentPlayer = session.selected[session.currentIndex];
+      if (!currentPlayer || session.answered) return;
 
       const userAnswer = normalize(event.body || "");
-      const expectedAnswers = Array.isArray(currentP.answer)
-        ? currentP.answer.map(normalize)
-        : [normalize(currentP.answer)];
+      const expectedAnswers = Array.isArray(currentPlayer.answer)
+        ? currentPlayer.answer.map(normalize)
+        : [normalize(currentPlayer.answer)];
 
-      // mode duel : vérifier si l’UID est valide
       if (session.mode === "duel" && !session.duelists.includes(event.senderID.toString())) {
         return;
       }
 
       if (expectedAnswers.includes(userAnswer)) {
-        session.setAnswered(true);
+        session.answered = true;
         clearTimeout(session.timeoutID);
 
         const senderName = await usersData.getName(event.senderID);
@@ -194,10 +186,8 @@ module.exports = {
           board += `🏅 ${name} : ${pts} pts\n`;
         }
 
-        await message.reply(
-          `🎯 Bravo ${senderName} ! ✅ Bonne réponse.\n\n${board}`
-        );
-        session.updateIndex();
+        await message.reply(`🎯 Bravo ${senderName} ! ✅ Bonne réponse.\n\n${board}`);
+        session.currentIndex++;
         setTimeout(session.sendPlayer, 1500);
       }
     }
