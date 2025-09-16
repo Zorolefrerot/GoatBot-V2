@@ -83,15 +83,15 @@ module.exports = {
         "✅ Joueurs enregistrés :\n" +
         `👤 Joueur 1 : ${parts[0]}\n` +
         `👤 Joueur 2 : ${parts[1]}\n\n` +
-        "➡️ Maintenant, tapez le **nombre de questions** (entre 1 et 100)."
+        "➡️ Maintenant, tapez le **nombre de questions** (entre 1 et 20)."
       );
     }
 
     // === CHOIX DU NOMBRE DE QUESTIONS ===
     if (session.status === "choosingQuestions" && !isNaN(body)) {
       const nbQuestions = parseInt(body);
-      if (nbQuestions < 1 || nbQuestions > 100) {
-        return message.reply("⚠️ Choisissez un nombre valide entre **1 et 100**.");
+      if (nbQuestions < 1 || nbQuestions > 20) {
+        return message.reply("⚠️ Choisissez un nombre valide entre **1 et 20**.");
       }
 
       const filePath = path.join(__dirname, "idfoot.json");
