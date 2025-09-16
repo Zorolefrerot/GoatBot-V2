@@ -1,0 +1,42 @@
+[
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg",
+    "answer": ["ronaldo", "cristiano", "cristiano ronaldo"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "answer": ["messi", "lionel", "lionel messi"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Neymar_2018.jpg",
+    "answer": ["neymar", "neymar jr", "neymar jr da silva santos"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kylian_Mbapp%C3%A9_2019.jpg",
+    "answer": ["mbappe", "kylian", "kylian mbappe"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Kevin_De_Bruyne_20180709.jpg",
+    "answer": ["de bruyne", "kevin", "kevin de bruyne"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Harry_Kane_2018.jpg",
+    "answer": ["kane", "harry", "harry kane"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Robert_Lewandowski_2021.jpg",
+    "answer": ["lewandowski", "robert", "robert lewandowski"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/07/Sergio_Ramos_2018.jpg",
+    "answer": ["ramos", "sergio", "sergio ramos"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Luka_Modri%C4%87_2018.jpg",
+    "answer": ["modric", "luka", "luka modric"]
+  },
+  { 
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Eden_Hazard_2018.jpg",
+    "answer": ["hazard", "eden", "eden hazard"]
+  }
+]
