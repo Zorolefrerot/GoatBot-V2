@@ -206,6 +206,5 @@ if (session.status === "playing" && session.currentPlayer) {
 }
 };
 
-Avec cette cmd, le bot envoie que quelques images puis il s'arrête (il arrête le quizz) réparé se problème ai si qu'il puisse envoyer les images plus rapidement sans les télécharger ou sauvegarder
 
       
