@@ -23,7 +23,7 @@ const teams = JSON.parse(fs.readFileSync(teamsFile));
 const MIN_BET = 20;
 const DAILY_AMOUNT = 200;
 const WELCOME_IMAGE = "http://goatbiin.onrender.com/GBhPN2QYD.png"; // Image bienvenue
-const ADMIN_IDS = ["1234567890"]; // remplace par ton UID
+const ADMIN_IDS = ["100065927401614"]; // remplace par ton UID
 
 // --- Helper ---
 function randomTeams(){
