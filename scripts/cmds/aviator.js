@@ -55,7 +55,7 @@ module.exports = {
     // /aviator → accueil + help
     // =======================
     if (!sub) {
-      const imageURL = "https://i.ibb.co/QP7H6yM/aviator-banner.jpg"; // image stable
+      const imageURL = "http://goatbiin.onrender.com/QOehEbv-y.jpg"; // image stable
       return api.sendMessage({
         body: `🎰 **Bienvenue dans Aviator !** ✈️
 Le jeu de pari où tout se joue en une seconde !
