@@ -43,7 +43,7 @@ module.exports = {
     // /aviator → message d’accueil + help
     // =======================
     if (!sub) {
-      const imageURL = "https://i.ibb.co/xG7wPbC/aviator-game.jpg"; // ← change cette image
+      const imageURL = "http://goatbiin.onrender.com/xVX8rBkZT.jpg"; // ← change cette image
       return api.sendMessage({
         body:
 `🎰 **Bienvenue dans Aviator !** ✈️
