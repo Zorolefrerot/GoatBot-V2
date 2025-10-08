@@ -1,13 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
-// Fichier pour stocker les données utilisateurs
+// === FICHIER DE SAUVEGARDE ===
 const dataFile = path.join(__dirname, "aviator-data.json");
-
-// Charger ou créer le fichier
 if (!fs.existsSync(dataFile)) fs.writeFileSync(dataFile, JSON.stringify({}));
 
-// Fonctions utilitaires
 function loadData() {
   return JSON.parse(fs.readFileSync(dataFile));
 }
@@ -15,110 +12,90 @@ function saveData(data) {
   fs.writeFileSync(dataFile, JSON.stringify(data, null, 2));
 }
 
-// Sessions actives par groupe
-const activeGames = {};
+const activeGames = {}; // jeux par salon
 
 module.exports = {
   config: {
     name: "aviator",
-    aliases: [],
-    version: "2.0",
+    version: "4.0",
     author: "Merdi Madimba",
     role: 0,
-    description: "Jeu de pari Aviator avec système de retrait @cash",
-    category: "🎮 Jeux"
+    category: "🎮 Jeux",
+    description: "Jeu de pari Aviator ✈️ réaliste jusqu’à 500 000x"
   },
 
   onStart: async function ({ api, event, args }) {
     const { threadID, senderID, messageID } = event;
     const data = loadData();
-    const prefix = "/";
-
-    // Créer le profil s'il n'existe pas
     if (!data[senderID]) data[senderID] = { money: 0, lastDaily: 0, name: "" };
-    const user = data[senderID];
 
-    // Met à jour le nom s'il n’est pas enregistré
-    if (!user.name || user.name.trim() === "") {
+    // récupérer nom
+    if (!data[senderID].name) {
       try {
-        const name = await api.getUserInfo(senderID);
-        user.name = name[senderID].name || "Joueur inconnu";
+        const info = await api.getUserInfo(senderID);
+        data[senderID].name = info[senderID].name || "Joueur inconnu";
       } catch {
-        user.name = "Joueur inconnu";
+        data[senderID].name = "Joueur inconnu";
       }
       saveData(data);
     }
 
+    const prefix = "/";
     const sub = args[0];
+    const user = data[senderID];
 
-    // =======================
-    // /aviator → accueil + help
-    // =======================
+    // === MENU D'ACCUEIL ===
     if (!sub) {
-      const imageURL = "http://goatbiin.onrender.com/QOehEbv-y.jpg"; // image stable
+      const imageURL = "http://goatbiin.onrender.com/QOehEbv-y.jpg";
       return api.sendMessage({
-        body: `🎰 **Bienvenue dans Aviator !** ✈️
-Le jeu de pari où tout se joue en une seconde !
+        body: `🎰 **Bienvenue dans Aviator !** ✈️  
+💥 Jeu de pari aléatoire ultra rapide et risqué !  
 
 💵 Commandes :
-- ${prefix}aviator solde → voir ton solde
-- ${prefix}aviator daily → obtenir 200$ chaque 24H
-- ${prefix}aviator bet [montant] → parier
-- ${prefix}aviator top → top 10 des plus riches
-
-⚠️ Mise minimale : 20$
-💸 Pour retirer ton pari, tape **@cash** avant que l’avion parte.`,
+- ${prefix}aviator solde → voir ton solde  
+- ${prefix}aviator daily → obtenir 200$ chaque 24h  
+- ${prefix}aviator bet [montant] → lancer une partie  
+- ${prefix}aviator top → top 10 des joueurs  
+💸 Retire ton pari en tapant **@cash** pendant le vol !`,
         attachment: await global.utils.getStreamFromURL(imageURL)
       }, threadID, messageID);
     }
 
-    // =======================
-    // /aviator solde
-    // =======================
+    // === SOLDE ===
     if (sub === "solde") {
-      return api.sendMessage(`💰 ${user.name}, ton solde actuel est de : ${user.money}$`, threadID, messageID);
+      return api.sendMessage(`💰 ${user.name}, ton solde est de **${user.money}$**.`, threadID, messageID);
     }
 
-    // =======================
-    // /aviator daily
-    // =======================
+    // === DAILY ===
     if (sub === "daily") {
       const now = Date.now();
       if (now - user.lastDaily < 24 * 60 * 60 * 1000) {
-        const remaining = Math.ceil((24 * 60 * 60 * 1000 - (now - user.lastDaily)) / (1000 * 60 * 60));
-        return api.sendMessage(`🕒 Tu as déjà pris ton daily. Reviens dans ${remaining}h.`, threadID, messageID);
+        const h = Math.ceil((24 * 60 * 60 * 1000 - (now - user.lastDaily)) / (1000 * 60 * 60));
+        return api.sendMessage(`🕒 Tu dois attendre encore ${h}h pour réclamer ton daily.`, threadID, messageID);
       }
       user.money += 200;
       user.lastDaily = now;
       saveData(data);
-      return api.sendMessage(`✅ Tu as reçu 200$ !\n💵 Nouveau solde : ${user.money}$`, threadID, messageID);
+      return api.sendMessage(`✅ Tu as reçu **200$** ! Nouveau solde : ${user.money}$`, threadID, messageID);
     }
 
-    // =======================
-    // /aviator top
-    // =======================
+    // === TOP 10 ===
     if (sub === "top") {
-      const sorted = Object.entries(data)
-        .sort((a, b) => b[1].money - a[1].money)
-        .slice(0, 10);
-      const msg = sorted.map(([uid, u], i) => `${i + 1}. ${u.name} → ${u.money}$`).join("\n");
-      return api.sendMessage(`🏆 **Top 10 des plus riches :**\n${msg || "Aucun joueur pour le moment."}`, threadID, messageID);
+      const sorted = Object.entries(data).sort((a, b) => b[1].money - a[1].money).slice(0, 10);
+      const msg = sorted.map(([id, u], i) => `${i + 1}. ${u.name} → ${u.money}$`).join("\n");
+      return api.sendMessage(`🏆 **Top 10 des plus riches :**\n${msg}`, threadID);
     }
 
-    // =======================
-    // /aviator bet [montant]
-    // =======================
+    // === PARI ===
     if (sub === "bet") {
-      if (activeGames[threadID]) return api.sendMessage("⏳ Une partie est déjà en cours dans ce groupe.", threadID, messageID);
-
+      if (activeGames[threadID]) return api.sendMessage("⏳ Une partie est déjà en cours ici !", threadID);
       const amount = parseFloat(args[1]);
-      if (isNaN(amount) || amount < 20) return api.sendMessage("❌ Mise invalide. Mise minimale : 20$", threadID, messageID);
-      if (user.money < amount) return api.sendMessage("❌ Tu n’as pas assez d’argent.", threadID, messageID);
+      if (isNaN(amount) || amount < 20) return api.sendMessage("❌ Mise minimale : 20$", threadID);
+      if (user.money < amount) return api.sendMessage("❌ Solde insuffisant.", threadID);
 
       activeGames[threadID] = { player: senderID, bet: amount, state: "waiting" };
-
       return api.sendMessage(
-        `💸 Tu veux parier ${amount}$ ?\nTape **1** pour confirmer.`,
+        `💸 Tu veux miser **${amount}$** ? Tape **1** pour confirmer.`,
         threadID,
         (err, info) => {
           global.GoatBot.onReply.set(info.messageID, {
@@ -133,9 +110,7 @@ Le jeu de pari où tout se joue en une seconde !
     }
   },
 
-  // =======================
-  // Gestion des réponses
-  // =======================
+  // === GESTION DES RÉPONSES ===
   onReply: async function ({ api, event, Reply }) {
     const { threadID, senderID, body } = event;
     const data = loadData();
@@ -147,30 +122,18 @@ Le jeu de pari où tout se joue en une seconde !
 
       const user = data[senderID];
       if (user.money < Reply.amount) return api.sendMessage("❌ Solde insuffisant.", threadID);
-
       user.money -= Reply.amount;
       saveData(data);
 
-      api.sendMessage(`✅ Pari confirmé ! Décollage imminent... ✈️`, threadID);
-      activeGames[threadID] = {
-        player: senderID,
-        bet: Reply.amount,
-        multiplier: 1.0,
-        crashed: false,
-        interval: null,
-        state: "running"
-      };
-
+      api.sendMessage(`✅ Pari confirmé ! L’avion décolle... ✈️`, threadID);
       startAviatorGame(api, threadID, senderID, Reply.amount);
     }
 
-    // --- Retrait @cash ---
+    // --- Retrait en direct ---
     if (body.trim().toLowerCase() === "@cash") {
       const game = activeGames[threadID];
-      if (!game || game.state !== "running") return;
-      if (senderID !== game.player) return;
-
-      if (game.crashed) return api.sendMessage("🚀 L’avion est déjà parti ! Tu ne peux plus retirer.", threadID);
+      if (!game || game.player !== senderID) return;
+      if (game.crashed || game.state !== "running") return api.sendMessage("🚀 Trop tard ! L’avion est parti 💥", threadID);
 
       const gain = Math.floor(game.bet * game.multiplier);
       const data = loadData();
@@ -180,45 +143,63 @@ Le jeu de pari où tout se joue en une seconde !
       clearInterval(game.interval);
       delete activeGames[threadID];
 
-      api.sendMessage(`💰 Tu as retiré ${gain}$ à ${game.multiplier.toFixed(2)}x !\n✅ Partie terminée.`, threadID);
+      return api.sendMessage(`💰 Retrait réussi à **${game.multiplier.toFixed(2)}x** ! Tu gagnes **${gain}$** 🎉`, threadID);
     }
   }
 };
 
-// =======================
-// Fonction principale du jeu
-// =======================
+// === LOGIQUE DU JEU ===
 async function startAviatorGame(api, threadID, playerID, bet) {
-  const game = activeGames[threadID];
-  const crashPoint = randomCrashPoint();
-  game.multiplier = 1.0;
+  const data = loadData();
+  const user = data[playerID];
+  const game = activeGames[threadID] = {
+    player: playerID,
+    bet,
+    multiplier: 1.0,
+    crashed: false,
+    state: "running"
+  };
+
+  const crashPoint = generateCrashPoint();
+
+  api.sendMessage(`🚀 Le vol commence ! Tape **@cash** pour retirer avant que l’avion explose !`, threadID);
 
   game.interval = setInterval(() => {
     if (!activeGames[threadID]) return clearInterval(game.interval);
+
+    // Avancement progressif du multiplicateur
+    let jump = Math.random() * 10;
+    if (game.multiplier < 10) jump = Math.random() * 1.5;
+    else if (game.multiplier < 50) jump = Math.random() * 4;
+    else if (game.multiplier < 500) jump = Math.random() * 15;
+    else if (game.multiplier < 5000) jump = Math.random() * 100;
+    else jump = Math.random() * 5000;
+
+    game.multiplier += jump;
 
     if (game.multiplier >= crashPoint) {
       clearInterval(game.interval);
       game.crashed = true;
       game.state = "finished";
-      api.sendMessage("🚀🔴 L’avion est parti ! Pari perdu ❌", threadID);
+      api.sendMessage(`💥 L’avion s’est écrasé à **${crashPoint.toFixed(2)}x** ! ${user.name} a tout perdu 😭`, threadID);
       delete activeGames[threadID];
       return;
     }
 
-    game.multiplier += 0.5;
-    api.sendMessage(`✈️ ${game.multiplier.toFixed(2)}x`, threadID);
-  }, 2000);
+    api.sendMessage(`✈️ Multiplicateur : **${game.multiplier.toFixed(2)}x**`, threadID);
+  }, 1500);
 }
 
-// =======================
-// Probabilités du crash
-// =======================
-function randomCrashPoint() {
+// === GÉNÉRATION DU POINT DE CRASH ===
+function generateCrashPoint() {
   const r = Math.random() * 100;
-  if (r < 50) return Math.random() * 14 + 1;        // 1.00x à 15.00x (50%)
-  if (r < 60) return Math.random() * 45 + 15.5;     // 15.5x à 60x (10%)
-  if (r < 70) return Math.random() * 49.5 + 50.5;   // 50.5x à 100x (10%)
-  if (r < 80) return Math.random() * 249.5 + 100.5; // 100.5x à 350x (10%)
-  if (r < 85) return Math.random() * 149.5 + 350.5; // 350.5x à 500x (5%)
-  return Math.random() * 9999500 + 500.5;           // 500.5x à 10,000,000x (5%)
-}
+  if (r < 50) return 1 + Math.random() * 1.5;        // 50% → entre 1x et 2.5x
+  if (r < 70) return 2.5 + Math.random() * 7.5;      // 20% → entre 2.5x et 10x
+  if (r < 80) return 10 + Math.random() * 40;        // 10% → entre 10x et 50x
+  if (r < 85) return 50 + Math.random() * 150;       // 5% → entre 50x et 200x
+  if (r < 90) return 200 + Math.random() * 300;      // 5% → entre 200x et 500x
+  if (r < 95) return 500 + Math.random() * 4500;     // 5% → entre 500x et 5000x
+  if (r < 97) return 5000 + Math.random() * 20000;   // 2% → entre 5k et 25k
+  if (r < 99) return 25000 + Math.random() * 75000;  // 2% → entre 25k et 100k
+  return 100000 + Math.random() * 400000;            // 1% → entre 100k et 500k
+        }
