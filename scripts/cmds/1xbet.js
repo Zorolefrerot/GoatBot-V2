@@ -335,5 +335,5 @@ module.exports = {
     }
 
     return api.sendMessage("❓ Commande inconnue. Tape `/1xbet` pour l’aide.", threadID, messageID);
-  },
+  }
 };
