@@ -22,7 +22,7 @@ const activeGames = {}; // parties actives par salon
 module.exports = {
   config: {
     name: "aviator",
-    version: "6.0",
+    version: "6.1",
     author: "Merdi Madimba",
     role: 0,
     category: "🎮 Jeux",
@@ -36,6 +36,7 @@ module.exports = {
 
     if (!data[senderID]) data[senderID] = { money: 0, lastDaily: 0, name: "" };
 
+    // Récupérer nom utilisateur si vide
     if (!data[senderID].name) {
       try {
         const info = await api.getUserInfo(senderID);
@@ -116,7 +117,7 @@ module.exports = {
 
         if (activeGames[threadID]) return api.sendMessage("⏳ Une partie est déjà en cours dans ce salon. Attends la fin.", threadID);
 
-        // Déduire directement la mise et lancer le jeu
+        // Déduire la mise et lancer le jeu
         data[senderID].money -= amount;
         saveData(data);
 
@@ -129,14 +130,15 @@ module.exports = {
         if (!game || game.player !== senderID) return api.sendMessage("🚫 Aucune partie en cours pour toi dans ce salon.", threadID);
         if (game.crashed || game.state !== "running") return api.sendMessage("🚀 Trop tard ! L’avion est déjà parti 💥", threadID);
 
-        const gain = Math.floor(game.bet * game.multiplier);
+        // Gain basé sur le multiplicateur actuel
+        const gain = Math.floor(game.bet * game.currentMultiplier);
         data[senderID].money += gain;
         saveData(data);
 
         clearInterval(game.interval);
         delete activeGames[threadID];
 
-        return api.sendMessage(`💰 Retrait réussi à **${game.multiplier.toFixed(2)}x** ! Tu gagnes **${gain}$** 🎉`, threadID);
+        return api.sendMessage(`💰 Retrait réussi à **${game.currentMultiplier.toFixed(2)}x** ! Tu gagnes **${gain}$** 🎉`, threadID);
       }
 
       default:
@@ -154,18 +156,20 @@ async function startAviatorGame(api, threadID, playerID, bet) {
     player: playerID,
     bet,
     multiplier: 1.0,
+    currentMultiplier: 1.0,
     crashed: false,
     state: "running"
   };
 
   const crashPoint = generateCrashPoint();
-  api.sendMessage(`🛫 Le vol commence ! Utilise /aviator cash pour retirer avant que l’avion s’écrase ! 💥`, threadID);
+  api.sendMessage(`🛫 Le vol commence ! Utilise /aviator cash ou /av cash pour retirer avant que l’avion s’écrase ! 💥`, threadID);
 
   game.interval = setInterval(() => {
     if (!activeGames[threadID]) return clearInterval(game.interval);
 
     let jump = Math.random() * (game.multiplier < 5 ? 1.2 : game.multiplier < 20 ? 3 : game.multiplier < 100 ? 10 : 50);
     game.multiplier += jump;
+    game.currentMultiplier = game.multiplier;
 
     if (Math.random() < 0.03 || game.multiplier >= crashPoint) {
       clearInterval(game.interval);
