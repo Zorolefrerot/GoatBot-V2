@@ -65,7 +65,7 @@ function computeOdds(A, B) {
 
 // === GÉNÉRATION DE SCORE ===
 function randomScore(result) {
-  const maxGoals = 10; // max 10 buts par équipe
+  const maxGoals = 10;
   if (result === "A") return `${1 + randomInt(maxGoals)}-${randomInt(maxGoals)}`;
   if (result === "B") return `${randomInt(maxGoals)}-${1 + randomInt(maxGoals)}`;
   const score = randomInt(maxGoals + 1);
@@ -116,7 +116,7 @@ function scheduleResolve(match) {
 }
 
 // === RÉSOLUTION DES MATCHS ===
-function resolveMatchRoutine(matchId) {
+async function resolveMatchRoutine(matchId) {
   matches = loadMatches();
   const data = loadData();
   const match = matches.find((m) => m.id === matchId);
@@ -131,9 +131,9 @@ function resolveMatchRoutine(matchId) {
   const [goalsA, goalsB] = score.split("-").map(Number);
   const isDraw = goalsA === goalsB;
 
-  match.bets.forEach((bet) => {
+  for (let bet of match.bets) {
     const user = data[bet.user];
-    if (!user) return;
+    if (!user) continue;
 
     if (isDraw) {
       if (bet.choice === "N") {
@@ -150,7 +150,7 @@ function resolveMatchRoutine(matchId) {
           global.api.sendMessage(`💥 ${user.name}, tu as perdu ta mise de ${bet.amount}$ 😭\n📊 ${match.teamA.name} ${score} ${match.teamB.name}`, bet.threadID);
         } catch {}
       }
-      return;
+      continue;
     }
 
     if (bet.choice === result) {
@@ -167,13 +167,12 @@ function resolveMatchRoutine(matchId) {
         global.api.sendMessage(`💥 ${user.name}, tu as perdu ta mise de ${bet.amount}$ 😭\n📊 ${match.teamA.name} ${score} ${match.teamB.name}`, bet.threadID);
       } catch {}
     }
-  });
+  }
 
   saveData(data);
   saveMatches(matches);
 
   const resultText = isDraw ? "Match nul ⚖️" : result === "A" ? match.teamA.name : match.teamB.name;
-
   const summary = `🏁 **Résultat du Match ${match.id}**
 ⚽ ${match.teamA.name} ${score} ${match.teamB.name}
 🎯 Résultat : ${resultText}
@@ -199,7 +198,7 @@ module.exports = {
   config: {
     name: "1xbet",
     aliases: ["bet", "betmatch"],
-    version: "6.2",
+    version: "6.3",
     author: "Merdi Madimba",
     role: 0,
     description: "💵 Simulation de paris sur les matchs de foot ⚽",
@@ -210,7 +209,16 @@ module.exports = {
     const { threadID, senderID, messageID } = event;
     const data = loadData();
 
-    if (!data[senderID]) data[senderID] = { money: 0, lastDaily: 0, name: `Joueur-${senderID}`, bets: [] };
+    // Récupération du vrai nom Facebook
+    if (!data[senderID]) {
+      const info = await api.getUserInfo(senderID);
+      data[senderID] = {
+        money: 0,
+        lastDaily: 0,
+        name: info[senderID]?.name || `Joueur-${senderID}`,
+        bets: [],
+      };
+    }
     const user = data[senderID];
     const cmd = (args[0] || "").toLowerCase();
 
@@ -279,6 +287,31 @@ module.exports = {
         messageID
       );
     }
+
+    if (cmd === "mybets") {
+      if (!user.bets.length) return api.sendMessage("📭 Tu n’as aucun pari actif.", threadID, messageID);
+      const txt = user.bets
+        .slice(-10)
+        .reverse()
+        .map((b) => `🎯 Match ${b.matchID} | Choix: ${b.choice} | 💵 ${b.amount}$ | Cote: ${b.odds} | ${
+          b.status === "win" ? "✅ Gagné" : b.status === "lose" ? "❌ Perdu" : b.status === "draw" ? "⚖️ Nul" : "⏳ En attente"
+        }`)
+        .join("\n");
+      return api.sendMessage(`📋 **Tes derniers paris :**\n\n${txt}`, threadID, messageID);
+    }
+
+    if (cmd === "top") {
+      const top = Object.values(data)
+        .map((u) => ({ name: u.name, money: u.money }))
+        .sort((a, b) => b.money - a.money)
+        .slice(0, 10);
+      const msg = top.map((t, i) => `${i + 1}. 🏅 ${t.name} → ${t.money}$`).join("\n");
+      return api.sendMessage(`🏆 **Top 10 des plus riches :**\n\n${msg}`, threadID, messageID);
+    }
+
+    return api.sendMessage("❓ Commande inconnue. Tape `/1xbet` pour l’aide.", threadID, messageID);
+  },
+};    }
 
     if (cmd === "mybets") {
       if (!user.bets.length) return api.sendMessage("📭 Tu n’as aucun pari actif.", threadID, messageID);
