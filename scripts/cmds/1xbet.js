@@ -231,19 +231,15 @@ module.exports = {
     // === FAKE ===
     return api.sendMessage("❓ Commande inconnue. Tape /1xbet pour l'aide.", threadID, messageID);
   }
-};t text = created.map(m => `📍 Match ${m.id}
+};if (open.length === 0) {
+  const created = createMatches(threadID, MATCH_COUNT);
+  // on affiche les matchs créés
+  const text = created.map(m => `📍 Match ${m.id}
 ⚽ ${m.teamA.name} 🆚 ${m.teamB.name}
 📈 Cotes → 🅰️ ${m.odds.A} | 🟰 ${m.odds.N} | 🅱️ ${m.odds.B}
 ⏱ Statut : ${m.status.toUpperCase()}`).join("\n\n");
-        return api.sendMessage(`📋 Matchs disponibles :\n\n${text}`, threadID, messageID);
-      } else {
-        // affiche les matchs open (les mêmes jusqu'à fermeture)
-        const text = open.map(m => `📍 Match ${m.id}
-⚽ ${m.teamA.name} 🆚 ${m.teamB.name}
-📈 Cotes → 🅰️ ${m.odds.A} | 🟰 ${m.odds.N} | 🅱️ ${m.odds.B}
-⏱ Statut : ${m.status.toUpperCase()}`).join("\n\n");
-        return api.sendMessage(`📋 Matchs disponibles :\n\n${text}`, threadID, messageID);
-      }
+  return api.sendMessage(`📋 Matchs disponibles :\n\n${text}`, threadID, messageID);
+}
     }
 
     // PARI : /1xbet bet [id] [A|N|B] [amount]
