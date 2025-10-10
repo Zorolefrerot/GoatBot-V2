@@ -159,7 +159,6 @@ function resolveMatch(matchId) {
   saveData(data);
   saveMatches(matches);
 
-  // ✅ Envoie le message global dans le groupe d’origine
   if (threadToNotify) {
     try {
       global.api.sendMessage(`${recap}${gainsText || "Aucun pari enregistré pour ce match."}`, threadToNotify);
@@ -174,7 +173,7 @@ module.exports = {
   config: {
     name: "1xbet",
     aliases: ["bet", "betmatch"],
-    version: "1.3",
+    version: "1.4",
     author: "Merdi Madimba",
     role: 0,
     description: "Simulation de paris sur matchs",
@@ -249,6 +248,35 @@ module.exports = {
           return `🎯 Match ${b.matchID} (${m ? `${m.teamA.name} vs ${m.teamB.name}` : "Terminé"})\n💵 Mise: ${b.amount}$ | Choix: ${b.choice} | Cote: ${b.odds}\n📊 Statut: ${status}`;
         }).join("\n\n");
         return api.sendMessage(`📋 TES PARIS :\n\n${list}`, threadID, messageID);
+      }
+
+      case "bet": {
+        const [idArg, choice, amountArg] = args.slice(1);
+        const matchID = Number(idArg);
+        const amount = Number(amountArg);
+        if (!matchID || !choice || !amount) 
+          return api.sendMessage("❌ Usage : /1xbet bet [ID] [A|N|B] [montant]", threadID, messageID);
+
+        const match = matches.find(m => m.id === matchID && m.status === "open");
+        if (!match) return api.sendMessage("❌ Match introuvable ou déjà fermé.", threadID, messageID);
+
+        const upperChoice = choice.toUpperCase();
+        if (!["A","N","B"].includes(upperChoice)) return api.sendMessage("❌ Choix invalide. Utilise A, N ou B.", threadID, messageID);
+        if (amount < MIN_BET) return api.sendMessage(`❌ Mise minimum : ${MIN_BET}$`, threadID, messageID);
+        if (amount > user.money) return api.sendMessage("❌ Solde insuffisant.", threadID, messageID);
+
+        // Débit du joueur et enregistrement du pari
+        user.money -= amount;
+        const odds = match.odds[upperChoice];
+        const betData = { matchID, choice: upperChoice, amount, odds, status: "pending", user: senderID };
+        user.bets.push(betData);
+        match.bets.push(betData);
+        saveData(data);
+        saveMatches(matches);
+
+        closeMatchAndScheduleResolve(match);
+
+        return api.sendMessage(`🎯 Pari accepté : ${match.teamA.name} 🆚 ${match.teamB.name}\nChoix : ${upperChoice} | Mise : ${amount}$ | Cote : ${odds}`, threadID, messageID);
       }
 
       default:
