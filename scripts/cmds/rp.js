@@ -4,8 +4,8 @@ const { getStreamsFromAttachment } = global.utils;
 const MAX_PV = 200;
 
 // Import Pokémon et phrases depuis le même dossier
-const POKEMONS = require("pokemon.js"); // Assure-toi que pokemon.js est dans le même dossier
-const VF = require("vf.js"); // Phrases interactives
+const POKEMONS = require("./pokemon.js"); // utiliser ./ pour éviter l’erreur
+const VF = require("./vf.js"); // phrases interactives
 
 module.exports = {
   config: {
@@ -71,7 +71,7 @@ module.exports = {
     const player = combat.players.find(p => p.id === event.senderID);
     const opponent = combat.players.find(p => p.id !== event.senderID);
 
-    // Début du choix
+    // Début du choix  
     if (!combat.active && args[0].toLowerCase() === "start") {  
       combat.active = true;  
       combat.choosing = true;  
@@ -110,7 +110,7 @@ module.exports = {
         return api.sendMessage(  
           `🔥 **Le combat commence !** 🔥\n${combat.players[0].name} vs ${combat.players[1].name}\n` +  
           `Premier Pokémon actif : ${combat.players[0].currentPokemon.name} VS ${combat.players[1].currentPokemon.name}\n` +  
-          `💡 Actions : A (attaque), X (attaque ultime), Y (technique spéciale), B (changer de Pokémon)`,  
+          `💡 Actions : A (attaque), X (attaque ultime), Y (technique spéciale), B (changer de Pokémon)`,
           event.threadID  
         );  
       }  
@@ -177,6 +177,7 @@ module.exports = {
       }  
     }  
 
+    // Passer au tour suivant
     combat.turn = combat.turn === 0 ? 1 : 0;
   },
 
@@ -189,7 +190,7 @@ module.exports = {
 
     if (!player.pokemons[change] || player.pokemons[change].pv <= 0)   
       return message.reply("❌ Pokémon invalide ou KO !");  
-      
+
     player.currentPokemon = player.pokemons[change];  
     message.reply(`🔄 ${player.name} a changé de Pokémon ! Nouveau Pokémon actif : ${player.currentPokemon.name}`);
   }
