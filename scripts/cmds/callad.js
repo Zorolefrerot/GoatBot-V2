@@ -7,7 +7,7 @@ const ADMIN_GROUP_TID = "29968396699442660";
 module.exports = {
   config: {
     name: "callad",
-    version: "3.0",
+    version: "3.1",
     author: "Mod by 𝗠𝗘𝗥𝗗𝗜 𝗠𝗔𝗗𝗜𝗠𝗕𝗔 💫",
     countDown: 5,
     role: 0,
@@ -27,15 +27,15 @@ module.exports = {
       missingMessage: "⚠️ Veuillez entrer un message à envoyer à l’administrateur.",
       success: "✅ Votre message a été transmis avec succès à l’administration !",
       failed: "❌ Une erreur est survenue lors de l’envoi du message.",
-      feedback:
+      feedback: 
 `💌 **𝗡𝗢𝗨𝗩𝗘𝗔𝗨 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 𝗥𝗘𝗖̧𝗨 !**
 ━━━━━━━━━━━━━━━
-👤 **De :** %1  
-🆔 **UID :** %2  
-🏠 **Source :** %3  
+👤 **De :** %1
+🆔 **UID :** %2
+🏠 **Source :** %3
 ━━━━━━━━━━━━━━━
 📝 **Contenu :**
-%4  
+%4
 ━━━━━━━━━━━━━━━
 💠 **Administrateur : 𝗠𝗘𝗥𝗗𝗜 𝗠𝗔𝗗𝗜𝗠𝗕𝗔 💫**`,
       replyUser:
@@ -103,6 +103,9 @@ module.exports = {
     switch (type) {
       case "adminReply": {
         const replyContent = args.join(" ") || "— (message vide) —";
+
+        // ✅ CORRECTION : envoyer dans un thread avec l'utilisateur
+        const userThreadID = userID; // l'API Messenger accepte directement l'UID
         const replyMsg = {
           body: getLang("replyUser", replyContent),
           attachment: await getStreamsFromAttachment(
@@ -111,7 +114,7 @@ module.exports = {
         };
 
         try {
-          const info = await api.sendMessage(replyMsg, userID);
+          const info = await api.sendMessage(replyMsg, userThreadID);
           message.reply(getLang("replySuccess"));
 
           // L’utilisateur peut répondre à son tour
@@ -122,7 +125,7 @@ module.exports = {
             adminName: senderName
           });
         } catch (error) {
-          message.reply("❌ Erreur lors de l’envoi de la réponse à l’utilisateur.");
+          message.reply("❌ Impossible d’envoyer la réponse à l’utilisateur. Il doit avoir déjà parlé au bot en MP.");
           log.err("SEND REPLY USER", error);
         }
         break;
