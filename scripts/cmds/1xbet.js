@@ -30,21 +30,21 @@ const teams = JSON.parse(fs.readFileSync(teamsFile));
 const MIN_BET = 20;
 const DAILY_AMOUNT = 200;
 const MATCH_COUNT = 5;
-const RESOLVE_TIME = 30 * 1000; // 30s
+const RESOLVE_TIME = 30 * 1000; // 30 secondes
 const WELCOME_IMAGE = "http://goatbiin.onrender.com/GBhPN2QYD.png";
 
-// === FONCTIONS UTILES ===
-function randomInt(max) { return Math.floor(Math.random() * max); }
+// === OUTILS ===
+function randomInt(max) { return Math.floor(Math.random() * (max + 1)); }
 
 function pickTwoDistinct(arr) {
-  const i = randomInt(arr.length);
+  const i = randomInt(arr.length - 1);
   let j;
-  do j = randomInt(arr.length); while (j === i && arr.length > 1);
+  do j = randomInt(arr.length - 1); while (j === i);
   return [arr[i], arr[j]];
 }
 
 function computeOdds(A, B) {
-  const drawProb = 0.12;
+  const drawProb = 0.15;
   const total = A.strength + B.strength;
   const probA = (A.strength / total) * (1 - drawProb);
   const probB = (B.strength / total) * (1 - drawProb);
@@ -56,25 +56,6 @@ function computeOdds(A, B) {
     N: Number((1 / probN * randomizer()).toFixed(2)),
     B: Number((1 / probB * randomizer()).toFixed(2)),
   };
-}
-
-function randomScore(result) {
-  const maxGoals = 10;
-  if (result === "A") return `${1 + randomInt(maxGoals)}-${randomInt(maxGoals)}`;
-  if (result === "B") return `${randomInt(maxGoals)}-${1 + randomInt(maxGoals)}`;
-  const s = randomInt(maxGoals + 1);
-  return `${s}-${s}`;
-}
-
-function pickResultByStrength(match) {
-  const total = match.teamA.strength + match.teamB.strength;
-  const drawProb = 0.12;
-  const probA = (match.teamA.strength / total) * (1 - drawProb);
-  const probB = (match.teamB.strength / total) * (1 - drawProb);
-  const r = Math.random();
-  if (r < drawProb) return "N";
-  if (r < drawProb + probA) return "A";
-  return "B";
 }
 
 // === MATCHES ===
@@ -93,7 +74,7 @@ function createMatches(threadID, count = MATCH_COUNT) {
       odds,
       status: "open",
       createdAt: Date.now(),
-      createdInThread: threadID, // ✅ Stocke le groupe où le match est créé
+      createdInThread: threadID,
       bets: [],
     };
     matches.push(match);
@@ -116,30 +97,37 @@ function resolveMatch(matchId) {
   const match = matches.find(m => m.id === matchId);
   if (!match || match.status === "finished") return;
 
-  const result = pickResultByStrength(match);
-  const score = randomScore(result);
-  match.status = "finished";
-  match.result = result;
+  // Génère un score réaliste (0 à 5)
+  const goalsA = randomInt(5);
+  const goalsB = randomInt(5);
+  const score = `${goalsA}-${goalsB}`;
   match.score = score;
+  match.status = "finished";
 
-  const [goalsA, goalsB] = score.split("-").map(Number);
-  const isDraw = goalsA === goalsB;
+  // Détermine le résultat
+  let result;
+  if (goalsA > goalsB) result = "A";
+  else if (goalsB > goalsA) result = "B";
+  else result = "N";
+  match.result = result;
+
   const threadToNotify = match.createdInThread;
-
   let recap = `🏁 𝙍é𝙨𝙪𝙡𝙩𝙖𝙩 𝙈𝙖𝙩𝙘𝙝 ${match.id}\n⚽ ${match.teamA.name} ${score} ${match.teamB.name}\n`;
 
-  const resText = isDraw ? "⚖️ 𝙈𝙖𝙩𝙘𝙝 𝙉𝙪𝙡" :
-    (result === "A" ? `🏆 ${match.teamA.name} 𝙖 𝙜𝙖𝙜𝙣é !` : `🏆 ${match.teamB.name} 𝙖 𝙜𝙖𝙜𝙣é !`);
+  const resText = result === "N"
+    ? "⚖️ 𝙈𝙖𝙩𝙘𝙝 𝙉𝙪𝙡"
+    : `🏆 ${(result === "A" ? match.teamA.name : match.teamB.name)} 𝙖 𝙜𝙖𝙜𝙣é !`;
   recap += `🎯 𝙍é𝙨𝙪𝙡𝙩𝙖𝙩 : ${resText}\n\n`;
 
   let gainsText = "";
 
+  // Paiement des paris
   for (const bet of match.bets) {
     const user = data[bet.user];
     if (!user) continue;
     const userBet = user.bets.find(b => b.matchID === match.id && b.status === "pending");
 
-    if ((isDraw && bet.choice === "N") || (!isDraw && bet.choice === result)) {
+    if (bet.choice === result) {
       const gain = Math.floor(bet.amount * bet.odds);
       user.money += gain;
       bet.status = "win";
@@ -159,7 +147,6 @@ function resolveMatch(matchId) {
   saveData(data);
   saveMatches(matches);
 
-  // ✅ Envoie le message global dans le groupe d’origine (si présent)
   if (threadToNotify) {
     try {
       global.api.sendMessage(`${recap}${gainsText || "Aucun pari enregistré pour ce match."}`, threadToNotify);
@@ -173,11 +160,11 @@ function resolveMatch(matchId) {
 module.exports = {
   config: {
     name: "1xbet",
-    aliases: ["bet", "betmatch"],
-    version: "1.4",
+    aliases: ["bet"], 
+    version: "2.0",
     author: "Merdi Madimba",
     role: 0,
-    description: "Simulation de paris sur matchs",
+    description: "Simulation de paris sportifs avec cotes, résultats et classement global.",
     category: "🎮 Jeux"
   },
 
@@ -186,7 +173,7 @@ module.exports = {
     const { threadID, senderID, messageID } = event;
     const data = loadData();
 
-    // === INITIALISATION UTILISATEUR ===
+    // Init joueur
     if (!data[senderID]) {
       let fbName = `Joueur-${senderID}`;
       try {
@@ -200,16 +187,16 @@ module.exports = {
     const user = data[senderID];
     const cmd = (args[0] || "").toLowerCase();
 
-    // === MENU PRINCIPAL ===
+    // === MENU ===
     if (!cmd) {
       const body = `🏟️ 1𝙓𝘽𝙀𝙏 𝙋𝘼𝙍𝙄𝙎 𝙎𝙋𝙊𝙍𝙏𝙄𝙁 🏟️
 
-⚽ /1xbet matches → 𝘼𝙛𝙛𝙞𝙘𝙝𝙚 𝙡𝙚𝙨 ${MATCH_COUNT} 𝙢𝙖𝙩𝙘𝙝𝙨  
-🎰 /1xbet bet [𝙄𝘿] [𝘼|𝙉|𝘽] [𝙢𝙤𝙣𝙩𝙖𝙣𝙩]  
-👤 /1xbet mybets → 𝙏𝙚𝙨 𝙥𝙖𝙧𝙞𝙨  
-💵 /1xbet solde → 𝙎𝙤𝙡𝙙𝙚  
-💳 /1xbet daily → 𝘽𝙤𝙣𝙪𝙨 +${DAILY_AMOUNT}$  
-📃 /1xbet top → 𝙏𝙤𝙥 10 𝙟𝙤𝙪𝙚𝙪𝙧𝙨`;
+⚽ /av matches → Voir les matchs
+🎰 /av bet [ID] [A|N|B] [montant]
+👤 /av mybets → Tes paris
+💵 /av solde → Ton solde
+💳 /av daily → Bonus +${DAILY_AMOUNT}$
+🏆 /av top → Top 10 des meilleurs joueurs`;
 
       try {
         const stream = await global.utils.getStreamFromURL(WELCOME_IMAGE);
@@ -219,15 +206,15 @@ module.exports = {
       }
     }
 
-    // === GESTION COMMANDES ===
+    // === COMMANDES ===
     switch (cmd) {
       case "matches": {
         let open = matches.filter(m => m.status === "open" && m.createdInThread === threadID);
         if (!open.length) open = createMatches(threadID, MATCH_COUNT);
         const list = open.map(m =>
-          `📍 𝙈𝙖𝙩𝙘𝙝 ${m.id}\n⚽ ${m.teamA.name} 🆚 ${m.teamB.name}\n📈 Cotes → 🅰️ ${m.odds.A} | 🟰 ${m.odds.N} | 🅱️ ${m.odds.B}\n⏱ Statut : ${m.status}`
+          `📍 Match ${m.id}\n⚽ ${m.teamA.name} 🆚 ${m.teamB.name}\n📈 Cotes → 🅰️ ${m.odds.A} | 🟰 ${m.odds.N} | 🅱️ ${m.odds.B}\n⏱ Statut : ${m.status}`
         ).join("\n\n");
-        return api.sendMessage(`📋 𝙈𝙖𝙩𝙘𝙝𝙨 𝙙𝙞𝙨𝙥𝙤𝙣𝙞𝙗𝙡𝙚𝙨 :\n\n${list}`, threadID, messageID);
+        return api.sendMessage(`📋 MATCHS DISPONIBLES :\n\n${list}`, threadID, messageID);
       }
 
       case "solde":
@@ -236,21 +223,34 @@ module.exports = {
       case "daily": {
         const now = Date.now();
         if (now - (user.lastDaily || 0) < 24 * 60 * 60 * 1000)
-          return api.sendMessage("🕒 Tu as déjà pris ton daily. Reviens dans 24h.", threadID, messageID);
+          return api.sendMessage("🕒 Reviens dans 24h pour réclamer ton bonus.", threadID, messageID);
         user.money += DAILY_AMOUNT;
         user.lastDaily = now;
         saveData(data);
         return api.sendMessage(`✅ +${DAILY_AMOUNT}$ ajoutés à ton solde !`, threadID, messageID);
       }
 
+      // 🏆 CLASSEMENT GLOBAL
       case "top": {
-        const top = Object.entries(data)
-          .map(([id, u]) => ({ id, name: u.name || `Joueur-${id}`, money: u.money || 0 }))
+        const players = Object.values(data)
+          .map(u => ({ name: u.name || "Joueur", money: u.money || 0 }))
           .sort((a, b) => b.money - a.money)
           .slice(0, 10);
-        if (!top.length) return api.sendMessage("ℹ️ Aucun joueur enregistré.", threadID, messageID);
-        const text = top.map((t, i) => `${i + 1}. 🏅 ${t.name} → ${t.money}$`).join("\n");
-        return api.sendMessage(`🏆 🅃🄾🄿 10 🄿🄰🅁🄸🄴🅄🅁🅂 :\n\n${text}`, threadID, messageID);
+
+        if (!players.length)
+          return api.sendMessage("📭 Aucun joueur enregistré pour le moment.", threadID, messageID);
+
+        const medals = ["🥇", "🥈", "🥉"];
+        const topList = players.map((p, i) => {
+          const icon = medals[i] || "🏅";
+          return `${icon} ${i + 1}. ${p.name} — ${p.money}$`;
+        }).join("\n");
+
+        return api.sendMessage(
+          `🏆 𝙏𝙊𝙋 𝟏𝟎 𝙅𝙊𝙐𝙀𝙐𝙍𝙎 1𝙓𝘽𝙀𝙏 🏆\n\n${topList}`,
+          threadID,
+          messageID
+        );
       }
 
       case "mybets": {
@@ -267,16 +267,15 @@ module.exports = {
       }
 
       case "bet": {
-        // /1xbet bet [ID] [A|N|B] [montant]
         const [idArg, choiceArg, amountArg] = args.slice(1);
         const matchID = Number(idArg);
-        const upperChoice = (choiceArg || "").toUpperCase();
+        const choice = (choiceArg || "").toUpperCase();
         const amount = Number(amountArg);
 
-        if (!matchID || !upperChoice || !amount)
-          return api.sendMessage("❌ Usage : /1xbet bet [ID] [A|N|B] [montant]", threadID, messageID);
+        if (!matchID || !choice || !amount)
+          return api.sendMessage("❌ Usage : /av bet [ID] [A|N|B] [montant]", threadID, messageID);
 
-        if (!["A", "N", "B"].includes(upperChoice))
+        if (!["A", "N", "B"].includes(choice))
           return api.sendMessage("❌ Choix invalide. Utilise A, N ou B.", threadID, messageID);
 
         if (amount < MIN_BET) return api.sendMessage(`❌ Mise minimum : ${MIN_BET}$`, threadID, messageID);
@@ -284,44 +283,28 @@ module.exports = {
 
         const match = matches.find(m => m.id === matchID);
         if (!match) return api.sendMessage("❌ Match introuvable.", threadID, messageID);
-        if (match.status !== "open") return api.sendMessage("🚫 Match déjà fermé aux paris.", threadID, messageID);
+        if (match.status !== "open") return api.sendMessage("🚫 Match fermé aux paris.", threadID, messageID);
 
-        // Retirer l'argent et enregistrer le pari
+        // Enregistre pari
         user.money -= amount;
-
-        const betObj = {
-          user: senderID,
-          choice: upperChoice,
-          amount,
-          odds: match.odds[upperChoice],
-          threadID
-        };
-
+        const betObj = { user: senderID, choice, amount, odds: match.odds[choice], threadID };
         match.bets.push(betObj);
-        user.bets.push({
-          matchID,
-          choice: upperChoice,
-          amount,
-          odds: match.odds[upperChoice],
-          status: "pending",
-          placedAt: Date.now()
-        });
-
+        user.bets.push({ matchID, choice, amount, odds: match.odds[choice], status: "pending", placedAt: Date.now() });
         saveData(data);
         saveMatches(matches);
 
-        // Fermer le match et programmer la résolution
+        // Ferme et planifie résultat
         closeMatchAndScheduleResolve(match);
 
         return api.sendMessage(
-          `🎯 Pari accepté : Match ${match.id} — ${match.teamA.name} 🆚 ${match.teamB.name}\nChoix : ${upperChoice} | Mise : ${amount}$ | Cote : ${match.odds[upperChoice]}\n⌛ Résultat dans ~${Math.round(RESOLVE_TIME/1000)}s.`,
+          `🎯 Pari accepté : Match ${match.id} — ${match.teamA.name} 🆚 ${match.teamB.name}\nChoix : ${choice} | Mise : ${amount}$ | Cote : ${match.odds[choice]}\n⌛ Résultat dans ~${Math.round(RESOLVE_TIME / 1000)}s.`,
           threadID,
           messageID
         );
       }
 
       default:
-        return api.sendMessage("❓ Commande inconnue. Tape /1xbet pour le menu.", threadID, messageID);
+        return api.sendMessage("❓ Commande inconnue. Tape /av pour le menu.", threadID, messageID);
     }
   }
 };
