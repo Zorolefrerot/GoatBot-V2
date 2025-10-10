@@ -68,11 +68,10 @@ module.exports = {
 📊 **𝗖𝗛𝗔𝗥𝗚𝗘 𝗖𝗣𝗨 :** ${cpuLoad} %
 
 💾 **𝗥𝗔𝗠 :** ${usedMem.toFixed(2)} Go / ${totalMem.toFixed(2)} Go (${memUsagePercent}%)
-🧩 **𝗦𝗬𝗦𝗧𝗘𝗠𝗘 :** ${platform.toUpperCase()} (${arch})
-🌐 **𝗛𝗢𝗦𝗧 :** ${hostName}
+🧩 **𝗦𝗬𝗦𝗧𝗘𝗠𝗘 :** ${platform.toUpperCase()} (${arch}
 🟢 **𝗡𝗢𝗗𝗘.𝗝𝗦 :** ${nodeVersion}
 
-🚀 **𝗢𝗪𝗘𝗡𝗘𝗥 :** 𝗕𝘆 𝗠𝗲𝗿𝗱𝗶 𝗠𝗮𝗱𝗶𝗺𝗯𝗮🌐
+🚀 **𝗢𝗪𝗡𝗘𝗥 :** 𝗕𝘆 𝗠𝗲𝗿𝗱𝗶 𝗠𝗮𝗱𝗶𝗺𝗯𝗮🌐
 `;
 
       return api.sendMessage(message, event.threadID);
