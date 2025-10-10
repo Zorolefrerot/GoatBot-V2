@@ -2,11 +2,10 @@ const { getStreamsFromAttachment, log } = global.utils;
 const fs = require("fs");
 const path = require("path");
 
-// Import Pokémon et phrases
-const POKEMONS = require("./Pokémon.js"); // Contiendra tous les pokémons et leurs techniques
-const VF = require("./vf.js"); // Contiendra les phrases interactives
+// Import Pokémon et phrases depuis le même dossier
+const POKEMONS = require("pokemon.js"); // pas besoin de ./ si dans le même dossier
+const VF = require("vf.js"); // phrases interactives
 
-// PV max par Pokémon
 const MAX_PV = 200;
 
 module.exports = {
@@ -23,7 +22,6 @@ module.exports = {
   onStart: async function({ args, event, message, usersData, api }) {
     if (!args[0]) return message.reply("⚠️ Veuillez taguer ou donner l'UID du joueur 2 pour commencer le combat.");
 
-    // Joueur 1
     const player1 = {
       id: event.senderID,
       name: await usersData.getName(event.senderID),
@@ -31,7 +29,6 @@ module.exports = {
       currentPokemon: null
     };
 
-    // Joueur 2
     const player2ID = args[0].replace(/[^0-9]/g, "");
     const player2Name = await usersData.getName(player2ID);
     const player2 = {
@@ -41,7 +38,6 @@ module.exports = {
       currentPokemon: null
     };
 
-    // Message de bienvenue
     const welcomeMsg = {
       body: `⚡🔥 **Bienvenue au Combat Pokémon !** 🔥⚡
 ─────────────────────────────
@@ -57,10 +53,9 @@ module.exports = {
 
     await api.sendMessage(welcomeMsg, event.threadID);
 
-    // Préparer le combat (inactif jusqu'à start)
     const combat = {
       players: [player1, player2],
-      turn: 0, // 0 = joueur1, 1 = joueur2
+      turn: 0,
       active: false,
       choosing: false,
       log: []
@@ -77,11 +72,11 @@ module.exports = {
     const player = combat.players.find(p => p.id === event.senderID);
     const opponent = combat.players.find(p => p.id !== event.senderID);
 
-    // ---------------- Début du choix ----------------
+    // Début du choix
     if (!combat.active && args[0].toLowerCase() === "start") {
       combat.active = true;
       combat.choosing = true;
-      combat.turn = 0; // joueur1 commence
+      combat.turn = 0;
       const currentPlayer = combat.players[combat.turn];
 
       return message.reply(
@@ -91,7 +86,7 @@ module.exports = {
       );
     }
 
-    // ---------------- Choix des Pokémon ----------------
+    // Choix des Pokémon
     if (combat.choosing) {
       const indexes = args.join(" ").split(",").map(n => parseInt(n.trim()) - 1);
       if (indexes.length !== 3) return message.reply("⚠️ Vous devez choisir exactement 3 Pokémon en envoyant leurs numéros !");
@@ -104,7 +99,6 @@ module.exports = {
       player.currentPokemon = player.pokemons[0];
       message.reply(`✅ ${player.name} a choisi : ${player.pokemons.map(p => p.name).join(", ")}`);
 
-      // Passer au joueur suivant
       if (combat.turn === 0) {
         combat.turn = 1;
         const nextPlayer = combat.players[combat.turn];
@@ -113,7 +107,7 @@ module.exports = {
         );
       } else {
         combat.choosing = false;
-        combat.turn = 0; // joueur1 commence le combat
+        combat.turn = 0;
         return api.sendMessage(
           `🔥 **Le combat commence !** 🔥\n${combat.players[0].name} vs ${combat.players[1].name}\n` +
           `Premier Pokémon actif : ${combat.players[0].currentPokemon.name} VS ${combat.players[1].currentPokemon.name}\n` +
@@ -123,7 +117,7 @@ module.exports = {
       }
     }
 
-    // ---------------- Combat ----------------
+    // Combat
     if (!combat.active || combat.choosing) return;
 
     const action = args[0].toUpperCase();
@@ -131,7 +125,7 @@ module.exports = {
 
     if (!["A", "X", "Y", "B"].includes(action)) return message.reply("⚠️ Action invalide. Utilisez A, X, Y ou B.");
 
-    // -------- Attaque normale --------
+    // Attaque normale
     if (action === "A") {
       const damage = Math.floor(Math.random() * 20) + 10;
       opponent.currentPokemon.pv -= damage;
@@ -140,7 +134,7 @@ module.exports = {
       message.reply(`⚔️ ${phrase}\n💖 PV de ${opponent.currentPokemon.name} : ${opponent.currentPokemon.pv}/200`);
     }
 
-    // -------- Technique ultime --------
+    // Technique ultime
     if (action === "X") {
       if (currentPoke.ultimateUsed) return message.reply("❌ Cette technique ultime a déjà été utilisée !");
       const damage = Math.floor(Math.random() * 50) + 30;
@@ -151,7 +145,7 @@ module.exports = {
       message.reply(`💥 ${phrase}\n💖 PV de ${opponent.currentPokemon.name} : ${opponent.currentPokemon.pv}/200`);
     }
 
-    // -------- Technique spéciale --------
+    // Technique spéciale
     if (action === "Y") {
       const effect = Math.floor(Math.random() * 30) + 10;
       currentPoke.pv += effect;
@@ -161,7 +155,7 @@ module.exports = {
       message.reply(`🛡️ ${phrase}\n💖 PV de ${currentPoke.name} : ${currentPoke.pv}/200`);
     }
 
-    // -------- Changer de Pokémon --------
+    // Changer de Pokémon
     if (action === "B") {
       message.reply(`⚡ Choisissez le numéro du Pokémon à envoyer (1, 2 ou 3) :`);
       global.GoatBot.onReply.set(event.messageID, {
@@ -172,7 +166,7 @@ module.exports = {
       return;
     }
 
-    // -------- Vérification KO --------
+    // Vérification KO
     if (opponent.currentPokemon.pv <= 0) {
       message.reply(`💥 ${opponent.currentPokemon.name} est KO !`);
       const remaining = opponent.pokemons.filter(p => p.pv > 0);
@@ -185,7 +179,6 @@ module.exports = {
       }
     }
 
-    // Tour suivant
     combat.turn = combat.turn === 0 ? 1 : 0;
   },
 
