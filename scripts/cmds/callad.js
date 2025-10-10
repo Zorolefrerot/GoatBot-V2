@@ -7,7 +7,7 @@ const ADMIN_GROUP_TID = "29968396699442660";
 module.exports = {
   config: {
     name: "callad",
-    version: "3.1",
+    version: "4.0",
     author: "Mod by 𝗠𝗘𝗥𝗗𝗜 𝗠𝗔𝗗𝗜𝗠𝗕𝗔 💫",
     countDown: 5,
     role: 0,
@@ -38,13 +38,12 @@ module.exports = {
 %4
 ━━━━━━━━━━━━━━━
 💠 **Administrateur : 𝗠𝗘𝗥𝗗𝗜 𝗠𝗔𝗗𝗜𝗠𝗕𝗔 💫**`,
-      replyUser:
-`📬 **𝗥𝗘́𝗣𝗢𝗡𝗦𝗘 𝗗𝗘 𝗟’𝗔𝗗𝗠𝗜𝗡𝗜𝗦𝗧𝗥𝗔𝗧𝗘𝗨𝗥**
+      replyAdmin:
+`📬 **💬 RÉPONSE DE 𝗠𝗘𝗥𝗗𝗜 𝗠𝗔𝗗𝗜𝗠𝗕𝗔 💫**
 ━━━━━━━━━━━━━━━
 %1
-━━━━━━━━━━━━━━━
-💬 Vous pouvez répondre ici pour continuer la discussion.`,
-      replySuccess: "✅ Réponse envoyée à l’utilisateur avec succès 💌",
+━━━━━━━━━━━━━━━`,
+      replySuccess: "✅ Réponse envoyée avec succès dans le groupe de l’utilisateur 💌",
       sendByGroup: "💬 Groupe : %1\n🆔 Thread ID : %2",
       sendByUser: "📩 Message envoyé depuis une conversation privée."
     }
@@ -81,12 +80,12 @@ module.exports = {
       const sentMessage = await api.sendMessage(formMessage, ADMIN_GROUP_TID);
       message.reply(getLang("success"));
 
-      // Sauvegarde pour permettre la réponse
+      // Sauvegarde pour permettre la réponse dans le groupe d'origine
       global.GoatBot.onReply.set(sentMessage.messageID, {
         commandName,
         type: "adminReply",
         userID: senderID,
-        threadID: threadID,
+        originalThreadID: threadID, // <-- On garde le groupe d'origine
         messageIDSender: event.messageID
       });
     } catch (error) {
@@ -97,44 +96,44 @@ module.exports = {
 
   // ======= GESTION DES RÉPONSES =======
   onReply: async function ({ args, event, api, message, Reply, getLang, commandName, usersData }) {
-    const { type, userID, threadID } = Reply;
+    const { type, userID, originalThreadID, messageIDSender } = Reply;
     const senderName = await usersData.getName(event.senderID);
+    const replyContent = args.join(" ") || "— (message vide) —";
 
     switch (type) {
       case "adminReply": {
-        const replyContent = args.join(" ") || "— (message vide) —";
-
-        // ✅ CORRECTION : envoyer dans un thread avec l'utilisateur
-        const userThreadID = userID; // l'API Messenger accepte directement l'UID
+        // ✅ L'admin répond, le message part dans le groupe d'origine
         const replyMsg = {
-          body: getLang("replyUser", replyContent),
+          body: getLang("replyAdmin", replyContent),
           attachment: await getStreamsFromAttachment(
             event.attachments.filter(item => mediaTypes.includes(item.type))
-          )
+          ),
+          replyToMessageID: messageIDSender // répond au message original
         };
 
         try {
-          const info = await api.sendMessage(replyMsg, userThreadID);
+          const sentInfo = await api.sendMessage(replyMsg, originalThreadID);
           message.reply(getLang("replySuccess"));
 
-          // L’utilisateur peut répondre à son tour
-          global.GoatBot.onReply.set(info.messageID, {
+          // On permet à l’utilisateur de répondre à nouveau
+          global.GoatBot.onReply.set(sentInfo.messageID, {
             commandName,
             type: "userReply",
-            threadID: event.threadID,
-            adminName: senderName
+            originalThreadID,
+            adminName: senderName,
+            messageIDSender
           });
         } catch (error) {
-          message.reply("❌ Impossible d’envoyer la réponse à l’utilisateur. Il doit avoir déjà parlé au bot en MP.");
-          log.err("SEND REPLY USER", error);
+          message.reply("❌ Impossible d’envoyer la réponse dans le groupe.");
+          log.err("ADMIN REPLY ERROR", error);
         }
         break;
       }
 
       case "userReply": {
-        const replyContent = args.join(" ") || "— (message vide) —";
+        // L'utilisateur répond → envoie au groupe admin
         const replyForm = {
-          body: `📨 **𝗥𝗘́𝗣𝗢𝗡𝗦𝗘 𝗗𝗘 ${senderName} (${event.senderID}) :**\n━━━━━━━━━━━━━━━\n${replyContent}`,
+          body: `📨 **𝗥𝗘́𝗣𝗢𝗡𝗦𝗘 DE ${senderName} (${event.senderID}) :**\n━━━━━━━━━━━━━━━\n${replyContent}`,
           mentions: [{ id: event.senderID, tag: senderName }],
           attachment: await getStreamsFromAttachment(
             event.attachments.filter(item => mediaTypes.includes(item.type))
@@ -148,10 +147,11 @@ module.exports = {
             commandName,
             type: "adminReply",
             userID: event.senderID,
-            threadID: event.threadID
+            originalThreadID,
+            messageIDSender: event.messageID
           });
         } catch (error) {
-          message.reply("❌ Impossible d’envoyer votre réponse.");
+          message.reply("❌ Impossible d’envoyer votre réponse à l’administration.");
           log.err("USER REPLY ERROR", error);
         }
         break;
