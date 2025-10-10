@@ -1,0 +1,38 @@
+{
+  "attack": [
+    "{attacker} bondit et frappe {target} avec {move}, infligeant {damage} PV !",
+    "{attacker} saute en l'air, tourne et attaque {target} avec {move}, causant {damage} dégâts !",
+    "{attacker} se précipite sur {target} et enchaîne {move}, infligeant {damage} PV !",
+    "D'un geste agile, {attacker} utilise {move} sur {target}, infligeant {damage} points de dégâts !",
+    "{attacker} fonce vers {target} et assène {move}, réduisant ses PV de {damage} !",
+    "{attacker} bondit en arrière puis attaque {target} avec {move}, infligeant {damage} PV !",
+    "{attacker} fait un tour sur lui-même avant de frapper {target} avec {move}, causant {damage} dégâts !",
+    "Avec une pirouette, {attacker} touche {target} avec {move}, infligeant {damage} PV !",
+    "{attacker} effectue un saut spectaculaire et frappe {target} avec {move}, infligeant {damage} !",
+    "{attacker} se penche et projette {move} sur {target}, causant {damage} PV !"
+  ],
+  "ultimate": [
+    "💥 {attacker} déclenche {move}, une attaque ultime dévastatrice sur {target} pour {damage} PV !",
+    "{attacker} concentre toute sa puissance et utilise {move} sur {target}, infligeant {damage} dégâts !",
+    "⚡ Explosion ! {attacker} frappe {target} avec {move}, causant {damage} PV !",
+    "🔥 {attacker} saute, tourbillonne et frappe {target} avec {move}, infligeant {damage} PV !",
+    "{attacker} libère {move}, une attaque spectaculaire sur {target}, qui perd {damage} PV !",
+    "💫 {attacker} concentre son énergie et projette {move} sur {target}, infligeant {damage} PV !",
+    "{attacker} exécute un saut majestueux et frappe {target} avec {move}, infligeant {damage} PV !",
+    "⚡ {attacker} déclenche {move} avec un éclair, frappant {target} pour {damage} PV !",
+    "🔥 Puissance maximale ! {attacker} envoie {move} sur {target}, causant {damage} PV !",
+    "{attacker} fusionne force et vitesse pour utiliser {move} sur {target}, infligeant {damage} PV !"
+  ],
+  "special": [
+    "✨ {attacker} utilise {move} et récupère {heal} PV, se sentant revigoré !",
+    "💖 {attacker} se concentre et applique {move}, regagnant {heal} PV !",
+    "🛡️ {attacker} déploie {move}, renforçant sa défense et récupérant {heal} PV !",
+    "🌟 {attacker} invoque {move}, un souffle régénérateur qui restaure {heal} PV !",
+    "💫 {attacker} ferme les yeux et utilise {move}, récupérant {heal} PV !",
+    "✨ {attacker} effectue un petit saut et utilise {move}, regagnant {heal} PV !",
+    "💖 {attacker} se stabilise et applique {move}, récupérant {heal} PV avec énergie !",
+    "🛡️ {attacker} canalise {move}, un soin puissant qui restaure {heal} PV !",
+    "🌟 {attacker} concentre sa force et utilise {move}, récupérant {heal} PV !",
+    "💫 {attacker} étend ses bras et applique {move}, regagnant {heal} PV !"
+  ]
+}
