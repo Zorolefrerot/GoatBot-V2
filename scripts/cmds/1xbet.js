@@ -159,6 +159,7 @@ function resolveMatch(matchId) {
   saveData(data);
   saveMatches(matches);
 
+  // ✅ Envoie le message global dans le groupe d’origine (si présent)
   if (threadToNotify) {
     try {
       global.api.sendMessage(`${recap}${gainsText || "Aucun pari enregistré pour ce match."}`, threadToNotify);
@@ -191,7 +192,7 @@ module.exports = {
       try {
         const info = await api.getUserInfo(senderID);
         if (info && info[senderID]?.name) fbName = info[senderID].name;
-      } catch {}
+      } catch { }
       data[senderID] = { money: 0, lastDaily: 0, name: fbName, bets: [] };
       saveData(data);
     }
@@ -202,17 +203,20 @@ module.exports = {
     // === MENU PRINCIPAL ===
     if (!cmd) {
       const body = `🏟️ 1𝙓𝘽𝙀𝙏 𝙋𝘼𝙍𝙄𝙎 𝙎𝙋𝙊𝙍𝙏𝙄𝙁 🏟️
-⚽ /1xbet matches → 𝘼𝙛𝙛𝙞𝙘𝙝𝙚 𝙡𝙚𝙨 ${MATCH_COUNT} 𝙢𝙖𝙩𝙘𝙝𝙨
-🎰 /1xbet bet [𝙄𝘿] [𝘼|𝙉|𝘽] [𝙢𝙤𝙣𝙩𝙖𝙣𝙩]
-👤 /1xbet mybets → 𝙏𝙚𝙨 𝙥𝙖𝙧𝙞𝙨
-💵 /1xbet solde → 𝙎𝙤𝙡𝙙𝙚
-💳 /1xbet daily → 𝘽𝙤𝙣𝙪𝙨 +${DAILY_AMOUNT}$
+
+⚽ /1xbet matches → 𝘼𝙛𝙛𝙞𝙘𝙝𝙚 𝙡𝙚𝙨 ${MATCH_COUNT} 𝙢𝙖𝙩𝙘𝙝𝙨  
+🎰 /1xbet bet [𝙄𝘿] [𝘼|𝙉|𝘽] [𝙢𝙤𝙣𝙩𝙖𝙣𝙩]  
+👤 /1xbet mybets → 𝙏𝙚𝙨 𝙥𝙖𝙧𝙞𝙨  
+💵 /1xbet solde → 𝙎𝙤𝙡𝙙𝙚  
+💳 /1xbet daily → 𝘽𝙤𝙣𝙪𝙨 +${DAILY_AMOUNT}$  
 📃 /1xbet top → 𝙏𝙤𝙥 10 𝙟𝙤𝙪𝙚𝙪𝙧𝙨`;
 
       try {
         const stream = await global.utils.getStreamFromURL(WELCOME_IMAGE);
         return api.sendMessage({ body, attachment: stream }, threadID, messageID);
-      } catch { return api.sendMessage(body, threadID, messageID); }
+      } catch {
+        return api.sendMessage(body, threadID, messageID);
+      }
     }
 
     // === GESTION COMMANDES ===
@@ -239,44 +243,81 @@ module.exports = {
         return api.sendMessage(`✅ +${DAILY_AMOUNT}$ ajoutés à ton solde !`, threadID, messageID);
       }
 
+      case "top": {
+        const top = Object.entries(data)
+          .map(([id, u]) => ({ id, name: u.name || `Joueur-${id}`, money: u.money || 0 }))
+          .sort((a, b) => b.money - a.money)
+          .slice(0, 10);
+        if (!top.length) return api.sendMessage("ℹ️ Aucun joueur enregistré.", threadID, messageID);
+        const text = top.map((t, i) => `${i + 1}. 🏅 ${t.name} → ${t.money}$`).join("\n");
+        return api.sendMessage(`🏆 🅃🄾🄿 10 🄿🄰🅁🄸🄴🅄🅁🅂 :\n\n${text}`, threadID, messageID);
+      }
+
       case "mybets": {
         if (!user.bets.length) return api.sendMessage("📭 Aucun pari enregistré.", threadID, messageID);
         const list = user.bets.slice(-10).reverse().map(b => {
           const m = matches.find(x => x.id === b.matchID);
           const status = b.status === "win" ? "✅ Gagné" :
-                         b.status === "lose" ? "❌ Perdu" : "⏳ En attente";
-          return `🎯 Match ${b.matchID} (${m ? `${m.teamA.name} vs ${m.teamB.name}` : "Terminé"})\n💵 Mise: ${b.amount}$ | Choix: ${b.choice} | Cote: ${b.odds}\n📊 Statut: ${status}`;
+                         b.status === "lose" ? "❌ Perdu" :
+                         "⏳ En attente";
+          const gainText = b.gain ? ` | Gain: ${b.gain}$` : "";
+          return `🎯 Match ${b.matchID} (${m ? `${m.teamA.name} vs ${m.teamB.name}` : "Terminé"})\n💵 Mise: ${b.amount}$ | Choix: ${b.choice} | Cote: ${b.odds}${gainText}\n📊 Statut: ${status}`;
         }).join("\n\n");
         return api.sendMessage(`📋 TES PARIS :\n\n${list}`, threadID, messageID);
       }
 
       case "bet": {
-        const [idArg, choice, amountArg] = args.slice(1);
+        // /1xbet bet [ID] [A|N|B] [montant]
+        const [idArg, choiceArg, amountArg] = args.slice(1);
         const matchID = Number(idArg);
+        const upperChoice = (choiceArg || "").toUpperCase();
         const amount = Number(amountArg);
-        if (!matchID || !choice || !amount) 
+
+        if (!matchID || !upperChoice || !amount)
           return api.sendMessage("❌ Usage : /1xbet bet [ID] [A|N|B] [montant]", threadID, messageID);
 
-        const match = matches.find(m => m.id === matchID && m.status === "open");
-        if (!match) return api.sendMessage("❌ Match introuvable ou déjà fermé.", threadID, messageID);
+        if (!["A", "N", "B"].includes(upperChoice))
+          return api.sendMessage("❌ Choix invalide. Utilise A, N ou B.", threadID, messageID);
 
-        const upperChoice = choice.toUpperCase();
-        if (!["A","N","B"].includes(upperChoice)) return api.sendMessage("❌ Choix invalide. Utilise A, N ou B.", threadID, messageID);
         if (amount < MIN_BET) return api.sendMessage(`❌ Mise minimum : ${MIN_BET}$`, threadID, messageID);
         if (amount > user.money) return api.sendMessage("❌ Solde insuffisant.", threadID, messageID);
 
-        // Débit du joueur et enregistrement du pari
+        const match = matches.find(m => m.id === matchID);
+        if (!match) return api.sendMessage("❌ Match introuvable.", threadID, messageID);
+        if (match.status !== "open") return api.sendMessage("🚫 Match déjà fermé aux paris.", threadID, messageID);
+
+        // Retirer l'argent et enregistrer le pari
         user.money -= amount;
-        const odds = match.odds[upperChoice];
-        const betData = { matchID, choice: upperChoice, amount, odds, status: "pending", user: senderID };
-        user.bets.push(betData);
-        match.bets.push(betData);
+
+        const betObj = {
+          user: senderID,
+          choice: upperChoice,
+          amount,
+          odds: match.odds[upperChoice],
+          threadID
+        };
+
+        match.bets.push(betObj);
+        user.bets.push({
+          matchID,
+          choice: upperChoice,
+          amount,
+          odds: match.odds[upperChoice],
+          status: "pending",
+          placedAt: Date.now()
+        });
+
         saveData(data);
         saveMatches(matches);
 
+        // Fermer le match et programmer la résolution
         closeMatchAndScheduleResolve(match);
 
-        return api.sendMessage(`🎯 Pari accepté : ${match.teamA.name} 🆚 ${match.teamB.name}\nChoix : ${upperChoice} | Mise : ${amount}$ | Cote : ${odds}`, threadID, messageID);
+        return api.sendMessage(
+          `🎯 Pari accepté : Match ${match.id} — ${match.teamA.name} 🆚 ${match.teamB.name}\nChoix : ${upperChoice} | Mise : ${amount}$ | Cote : ${match.odds[upperChoice]}\n⌛ Résultat dans ~${Math.round(RESOLVE_TIME/1000)}s.`,
+          threadID,
+          messageID
+        );
       }
 
       default:
