@@ -31,7 +31,7 @@ module.exports = {
       
       const prompt = event.body.substring(prefix.length).trim();
       if (!prompt) {
-        await message.reply("[🎯𝗠𝗘𝗥𝗬𝗟 𝗔𝗜🎯]\n 𝘘𝘜𝘌𝘓𝘓𝘌 𝘌𝘚𝘛 𝘝𝘖𝘛𝘙𝘌 𝘘𝘜𝘌𝘚𝘛𝘐𝘖𝘕 ?");
+        await message.reply("[💎 | 𝗠𝗘𝗥𝗬𝗟]\n 👋𝘚𝘢𝘭𝘶𝘵 𝘮𝘰𝘪 𝘤'𝘦𝘴𝘵 @𝗠𝗲𝗿𝘆𝗹 𝘷𝘰𝘵𝘳𝘦 𝘤𝘩𝘢𝘵𝘣𝘰𝘵😊\n 𝘘𝘶𝘦𝘭𝘭𝘦 𝘦𝘴𝘵 𝘷𝘰𝘵𝘳𝘦 𝘲𝘶𝘦𝘴𝘵𝘪𝘰𝘯⁉️");
         return;
       }
 
@@ -59,33 +59,76 @@ module.exports = {
       }
 
       // Construire la question avec contexte
-      const questionAvecContexte = `Date et heure actuelles: ${dateHeure}. Question: ${prompt}`;
+      const questionAvecContexte = `Date et heure actuelles: ${dateHeure}. Question de l'utilisateur: ${prompt}`;
 
-      // Appel à l'API gratuite
-      const response = await axios.get(`https://free-unoficial-gpt4o-mini-api-g70n.onrender.com/chat/?query=${encodeURIComponent(questionAvecContexte)}`, {
-        headers: { 'Accept': 'application/json' },
-        timeout: 30000
-      });
+      // API 1: Llama API via SamirXR
+      try {
+        const response = await axios.get(`https://api.samirxpikachu.run.place/llama?content=${encodeURIComponent(questionAvecContexte)}`, {
+          timeout: 20000
+        });
 
-      let answer = response.data.response || response.data.answer || response.data.message || "Désolé, je n'ai pas pu obtenir de réponse.";
-      
-      await message.reply(`[𝗠𝗘𝗥𝗬𝗟💎]\n\n${answer}\n\n📅 ${dateHeure}`);
+        if (response.data && response.data.response) {
+          await message.reply(`[💎 | 𝗠𝗘𝗥𝗬𝗟]\n\n${response.data.response}\n\n📅 ${dateHeure}`);
+          return;
+        }
+      } catch (err) {
+        console.log("API 1 failed, trying API 2...");
+      }
+
+      // API 2: GPT4 API
+      try {
+        const response2 = await axios.get(`https://api.kenliejugarap.com/freegpt4o8k/?question=${encodeURIComponent(questionAvecContexte)}`, {
+          timeout: 20000
+        });
+
+        if (response2.data && response2.data.response) {
+          await message.reply(`[💎 | 𝗠𝗘𝗥𝗬𝗟]\n\n${response2.data.response}\n\n📅 ${dateHeure}`);
+          return;
+        }
+      } catch (err) {
+        console.log("API 2 failed, trying API 3...");
+      }
+
+      // API 3: SimSimi API
+      try {
+        const response3 = await axios.post('https://simsimi.vn/web/simtalk', 
+          `text=${encodeURIComponent(prompt)}&lc=fr`, 
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            timeout: 15000
+          }
+        );
+
+        if (response3.data && response3.data.success) {
+          await message.reply(`[💎 | 𝗠𝗘𝗥𝗬𝗟]\n\n${response3.data.success}\n\n📅 ${dateHeure}`);
+          return;
+        }
+      } catch (err) {
+        console.log("API 3 failed, trying API 4...");
+      }
+
+      // API 4: Dernière option - AI ChatBot
+      try {
+        const response4 = await axios.get(`https://hashier-api-chatgpt-v1-0.onrender.com/api/chatgpt?query=${encodeURIComponent(questionAvecContexte)}`, {
+          timeout: 20000
+        });
+
+        if (response4.data && response4.data.response) {
+          await message.reply(`[💎 | 𝗠𝗘𝗥𝗬𝗟]\n\n${response4.data.response}\n\n📅 ${dateHeure}`);
+          return;
+        }
+      } catch (err) {
+        console.log("All APIs failed");
+      }
+
+      // Si toutes les APIs échouent
+      await message.reply("❌ Désolé, je ne peux pas répondre pour le moment. Les services AI sont temporairement indisponibles. Veuillez réessayer dans quelques instants.");
 
     } catch (error) {
-      console.error("Error:", error.message);
-      
-      // Fallback vers une autre API si la première échoue
-      try {
-        const fallbackResponse = await axios.get(`https://api.popcat.xyz/chatbot?msg=${encodeURIComponent(prompt)}&owner=Merdi+Madimba&botname=AE-sther`, {
-          timeout: 15000
-        });
-        
-        const answer = fallbackResponse.data.response || "Désolé, je ne peux pas répondre pour le moment.";
-        await message.reply(`[𝗠𝗘𝗥𝗬𝗟💎]\n\n${answer}`);
-      } catch (fallbackError) {
-        console.error("Fallback Error:", fallbackError.message);
-        await message.reply("❌ Désolé, je ne peux pas répondre pour le moment. Veuillez réessayer dans quelques instants.");
-      }
+      console.error("Error in ask command:", error.message);
+      await message.reply("❌ Une erreur s'est produite. Veuillez réessayer.");
     }
   }
 };
