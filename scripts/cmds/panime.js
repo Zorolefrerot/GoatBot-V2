@@ -5,7 +5,7 @@ module.exports = {
     name: "panime",
     aliases: ["personnage", "animeinfo", "wikianime"],
     version: "2.0",
-    author: "Merdi Madimba & GPT-5",
+    author: "Merdi Madimba",
     countDown: 5,
     role: 0,
     shortDescription: "Afficher les infos d’un personnage d’anime",
